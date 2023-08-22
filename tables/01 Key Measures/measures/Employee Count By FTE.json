@@ -1,0 +1,26 @@
+{
+  "name": "Employee Count By FTE",
+  "description": "Количество сотрудников по связке: Employee Tribe Current = Resource tribe",
+  "expression": [
+    "CALCULATE (",
+    "    [Employee Count with Capacity FOT],",
+    "    TREATAS (",
+    "        VALUES ( 'Resource Tribe'[Resource Tribe] ),",
+    "        Employees[Employee Tribe Current]",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Employee Count with Capacity FOT] ),",
+      "    TREATAS (",
+      "        VALUES ( 'Resource Tribe'[Resource Tribe] ),",
+      "        Employees[Employee Tribe Current]",
+      "    )",
+      ")"
+    ]
+  }
+}

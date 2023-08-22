@@ -1,0 +1,7 @@
+{
+  "name": "SUM_RUB",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "SUM_RUB",
+  "sourceProviderType": "decimal"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "abf40698-7472-4d85-992f-40c1efeacde8",
+  "fromTable": "Requirements",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

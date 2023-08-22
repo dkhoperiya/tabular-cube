@@ -1,0 +1,6 @@
+{
+  "name": "InvestmentProject",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "InvestmentProject"
+}

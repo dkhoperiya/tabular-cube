@@ -1,0 +1,8 @@
+{
+  "name": "Business Product Object Id (SoL)",
+  "dataType": "int64",
+  "sourceColumn": "BusinessProductObjectId",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

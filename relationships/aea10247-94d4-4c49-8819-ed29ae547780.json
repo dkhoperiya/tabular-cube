@@ -1,0 +1,7 @@
+{
+  "name": "aea10247-94d4-4c49-8819-ed29ae547780",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "Project_Code",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

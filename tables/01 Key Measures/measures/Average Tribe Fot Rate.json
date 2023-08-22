@@ -1,0 +1,31 @@
+{
+  "name": "Average Tribe Fot Rate",
+  "expression": [
+    "/* Количество строк в таблице Capacity для текущего контекста */",
+    "VAR _rows_number =",
+    "    COUNTROWS( Capacity )",
+    "/* Код трайба в конкретной строке */",
+    "VAR _cur_tribe =",
+    "    SELECTEDVALUE (Employees[EmployeeTribeCode])",
+    "/* Таблица выбранных дат */",
+    "VAR _dates =",
+    "    VALUES ( Dates[Date] )",
+    "    ",
+    "/*Таблица всех строк для текущего трайба и периода времени из таблицы Capacity*/",
+    "VAR _capacity =",
+    "    CALCULATETABLE (",
+    "        Capacity,",
+    "        ALL ( Capacity ), -- Снимаем все фильтры",
+    "        TREATAS ( { _cur_tribe }, Capacity[TribeCode] ),",
+    "        _dates",
+    "    )",
+    "",
+    "/* Если для текущего контекста есть строки в таблице Capacity, то вычисляем меру */    ",
+    "RETURN",
+    "    IF (",
+    "        _rows_number > 0,",
+    "        CALCULATE ( [Average Fot Rate], _capacity )",
+    "    )"
+  ],
+  "displayFolder": "07. Budget Role Rates"
+}

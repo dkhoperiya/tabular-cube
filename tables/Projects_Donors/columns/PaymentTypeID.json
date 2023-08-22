@@ -1,0 +1,8 @@
+{
+  "name": "PaymentTypeID",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "PaymentTypeID",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

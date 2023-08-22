@@ -1,0 +1,19 @@
+{
+  "name": "Remaining Hours",
+  "description": "Разница между общим фондом часов по сотруднику по его ШР и часами, списанными сотрудником на все проекты",
+  "expression": "[Net Util FTE] - [Fact Hours]",
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [Net Util FTE]",
+      "VAR x2 = [Fact Hours]",
+      "RETURN",
+      "    ROW (",
+      "        \"Net Util FTE\", x1,",
+      "        \"Fact Hours\", x2,",
+      "        \"Remaining Hours\", x1 - x2",
+      "    )"
+    ]
+  }
+}

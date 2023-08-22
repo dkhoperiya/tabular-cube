@@ -1,0 +1,20 @@
+{
+  "name": "_FACT_EMPL_COUNT_ON_PERIOD_END",
+  "expression": [
+    "VAR _F_DATE =",
+    "    DATE ( YEAR ( TODAY () ), MONTH ( TODAY () ), 1 ) - 1",
+    "VAR _MONTH_IN_PERIOD =",
+    "    (",
+    "        YEAR ( CALCULATE ( MAX ( Dates[Date] ), ALLSELECTED ( Dates[Date] ) ) )",
+    "            - YEAR ( TODAY () ) + 1",
+    "    ) * 12",
+    "return",
+    "    CALCULATE (",
+    "        [Численность на конец периода],",
+    "        ALL(dates),",
+    "        KEEPFILTERS ( Dates[Date] = _F_DATE )",
+    "    )"
+  ],
+  "isHidden": true,
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses"
+}

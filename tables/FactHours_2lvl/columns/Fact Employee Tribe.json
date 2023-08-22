@@ -1,0 +1,7 @@
+{
+  "name": "Fact Employee Tribe",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Fact Employee Tribe",
+  "sourceProviderType": "int"
+}

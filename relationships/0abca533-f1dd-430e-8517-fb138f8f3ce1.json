@@ -1,0 +1,7 @@
+{
+  "name": "0abca533-f1dd-430e-8517-fb138f8f3ce1",
+  "fromTable": "TeamCosts",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

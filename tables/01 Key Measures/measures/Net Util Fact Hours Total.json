@@ -1,0 +1,17 @@
+{
+  "name": "Net Util Fact Hours Total",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Hours Total],",
+    "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+    "    KEEPFILTERS ( 'FactHours'[EmploymentType] IN { 0, 1 } ),",
+    "    FILTER (",
+    "        Projects,",
+    "        Projects[Project Util Category] <> \"Административный\"",
+    "            && NOT Projects[Project Status] IN { \"Canceled\" }",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact"
+}

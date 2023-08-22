@@ -1,0 +1,7 @@
+{
+  "name": "25895c1f-9c4e-41ce-81a2-5db51baf880a",
+  "fromTable": "Hyperion Plan",
+  "fromColumn": "P_MONTH",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

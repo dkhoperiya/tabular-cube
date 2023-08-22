@@ -1,0 +1,7 @@
+{
+  "name": "BU Code",
+  "dataType": "int64",
+  "sourceColumn": "bu_code",
+  "formatString": "###0",
+  "summarizeBy": "none"
+}

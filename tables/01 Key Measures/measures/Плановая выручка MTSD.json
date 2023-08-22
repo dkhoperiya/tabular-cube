@@ -1,0 +1,9 @@
+{
+  "name": "Плановая выручка MTSD",
+  "expression": "CALCULATE([Plan Revenue G6], 'BusinessUnits'[Entity Code] = \"1\")",
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( DETAILROWS ( [Plan Revenue G6] ) )"
+  }
+}

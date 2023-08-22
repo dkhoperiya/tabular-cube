@@ -1,0 +1,7 @@
+{
+  "name": "6a0f7d08-f5e3-4950-881f-0a677f74e72c",
+  "fromTable": "Budget_MR27",
+  "fromColumn": "ProjectTribe_Code",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

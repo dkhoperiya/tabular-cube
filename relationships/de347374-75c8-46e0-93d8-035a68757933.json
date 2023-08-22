@@ -1,0 +1,7 @@
+{
+  "name": "de347374-75c8-46e0-93d8-035a68757933",
+  "fromTable": "Projects",
+  "fromColumn": "Capex MTS",
+  "toTable": "Project Capex MTS",
+  "toColumn": "Capex_MTS_ID"
+}

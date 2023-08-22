@@ -1,0 +1,7 @@
+{
+  "name": "c496d640-e83d-4c3c-8af6-74c1e3a618a2",
+  "fromTable": "TeamBudgeting_Hours_Calculation",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

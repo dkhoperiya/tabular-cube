@@ -1,0 +1,13 @@
+{
+  "name": "Service Projects",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_viw_ServiceProjects = Source{[Schema=\"dbo\",Item=\"viw_ServiceProjects\"]}[Data]",
+      "in",
+      "    dbo_viw_ServiceProjects"
+    ]
+  }
+}

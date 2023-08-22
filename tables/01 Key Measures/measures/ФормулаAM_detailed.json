@@ -1,0 +1,15 @@
+{
+  "name": "ФормулаAM_detailed",
+  "expression": [
+    "CALCULATE (",
+    "    [FactCurrentActRMSProjectCosts] + [FactCurrentActMargin] + [FactCurrentActOverheadCosts] + [FactCurrentActOtherExpenses],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"ФормулаAM_detailed\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ChangeDate",
+  "dataType": "dateTime",
+  "sourceColumn": "ChangeDate",
+  "formatString": "dd.MM.yyyy",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"LAYOUT_ADD_TO_PERSPECTIVES\"]}"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Vacation Hours",
+  "description": "Часы отпуска",
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "     IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "RETURN",
+    "    CALCULATE (",
+    "        SUM ( Capacity[Vacation] ),",
+    "        KEEPFILTERS ( 'Capacity'[BudgetRates_Version] = BudgetRatesVersion )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER (",
+      "            Capacity,",
+      "            Capacity[Vacation] > 0",
+      "                && 'Capacity'[BudgetRates_Version] = BudgetRatesVersion",
+      "        ),",
+      "        \"Employee\", RELATED ( Employees[Employee] ),",
+      "        \"Employee BU\", Capacity[BuCode],",
+      "        \"Employee Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Employment Percenatge\", RELATED ( Employees[Employment Percentage] ),",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Chapter\", RELATED ( 'Chapters'[Chapter] ),",
+      "        \"Competence\", RELATED ( Competences[Competence] ),",
+      "        \"Date\", Capacity[date],",
+      "        \"Vacation Hours\", Capacity[Vacation]",
+      "    )"
+    ]
+  }
+}

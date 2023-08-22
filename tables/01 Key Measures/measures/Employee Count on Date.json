@@ -1,0 +1,15 @@
+{
+  "name": "Employee Count on Date",
+  "expression": [
+    "blank()",
+    "//CALCULATE (",
+    "//    SUM ( NumberOfEmployeeOnDate[ActiveCount] ),",
+    "//    LASTNONBLANK (",
+    "//        Dates[Date],",
+    "//        CALCULATE ( SUM ( NumberOfEmployeeOnDate[ActiveCount] ) )",
+    "//    )",
+    "//)"
+  ],
+  "isHidden": true,
+  "displayFolder": "09. HR\\00. Back Up"
+}

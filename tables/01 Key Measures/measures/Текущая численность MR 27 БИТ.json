@@ -1,0 +1,52 @@
+{
+  "name": "Текущая численность MR 27 БИТ",
+  "description": "Экономически активная численность - активные сотрудники, без учета сотрудников в декретном отпуске",
+  "expression": [
+    "CALCULATE (",
+    "    [EmployeeCount],",
+    "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ),",
+    "    KEEPFILTERS ( Employees[Is Vacancy] <> TRUE ),",
+    "    KEEPFILTERS ( 'Employees'[LegalEntity]",
+    "        IN {",
+    "        \"МТС Диджитал\",",
+    "        \"СитТелекомСолюшнс\",",
+    "        \"СитТСТашкент\",",
+    "        \"ITM-Belarus\",",
+    "        \"БелЭнвижн\",",
+    "        \"NVCzechRepublic\",",
+    "        \"ITM-Ukraine\",",
+    "        \"СитТСУкраина\",",
+    "        \"Энвижн\"",
+    "    } ),",
+    "    KEEPFILTERS ( 'Employees'[Employee Division Current] = \"БИТ\" ),",
+    "    KEEPFILTERS ( 'Employees'[Trainee] = \"No\" ),",
+    "    KEEPFILTERS ( 'Employees'[Outsourcer] = \"No\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ),",
+      "    KEEPFILTERS ( Employees[Is Vacancy] <> TRUE ),",
+      "    KEEPFILTERS ( 'Employees'[LegalEntity]",
+      "        IN {",
+      "        \"МТС ИТ\",",
+      "        \"СитТелекомСолюшнс\",",
+      "        \"СитТСТашкент\",",
+      "        \"ITM-Belarus\",",
+      "        \"БелЭнвижн\",",
+      "        \"NVCzechRepublic\",",
+      "        \"ITM-Ukraine\",",
+      "        \"СитТСУкраина\",",
+      "        \"Энвижн\"",
+      "    } ),",
+      "    KEEPFILTERS ( 'Employees'[Employee Division Current] = \"БИТ\" ),",
+      "    KEEPFILTERS ( 'Employees'[Trainee] = \"No\" ),",
+      "    KEEPFILTERS ( 'Employees'[Outsourcer] = \"No\" )",
+      ")"
+    ]
+  }
+}

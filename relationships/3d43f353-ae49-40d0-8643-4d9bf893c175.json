@@ -1,0 +1,7 @@
+{
+  "name": "3d43f353-ae49-40d0-8643-4d9bf893c175",
+  "fromTable": "Capacity",
+  "fromColumn": "TribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

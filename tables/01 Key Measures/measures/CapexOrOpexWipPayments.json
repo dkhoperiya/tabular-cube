@@ -1,0 +1,16 @@
+{
+  "name": "CapexOrOpexWipPayments",
+  "expression": [
+    "IF (",
+    "    MAX ( Projects[Project Type for MTS] ) = \"капекс\",",
+    "    1,",
+    "    IF (",
+    "        MAX ( Projects[Project Type for MTS] ) = \"опекс\"",
+    "            && MAX ( Projects[PaymentTypeID] ) = 1,",
+    "        1,",
+    "        0",
+    "    )",
+    ")"
+  ],
+  "displayFolder": "16. WIP"
+}

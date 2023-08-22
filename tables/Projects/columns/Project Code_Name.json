@@ -1,0 +1,6 @@
+{
+  "type": "calculated",
+  "name": "Project Code_Name",
+  "dataType": "string",
+  "expression": "'Projects'[Project Code] & \"_\" & 'Projects'[Project Name]"
+}

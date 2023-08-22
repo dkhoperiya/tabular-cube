@@ -1,0 +1,7 @@
+{
+  "name": "704ce45c-7c54-4adc-8a93-9efba0e4e979",
+  "fromTable": "PlanIncome_SumAct",
+  "fromColumn": "plan_date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

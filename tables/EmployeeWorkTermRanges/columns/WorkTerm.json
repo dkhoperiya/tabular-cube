@@ -1,0 +1,6 @@
+{
+  "name": "WorkTerm",
+  "dataType": "string",
+  "sourceColumn": "WorkTerm",
+  "sortByColumn": "ID"
+}

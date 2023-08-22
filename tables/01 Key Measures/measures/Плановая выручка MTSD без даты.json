@@ -1,0 +1,6 @@
+{
+  "name": "Плановая выручка MTSD без даты",
+  "expression": "CALCULATE([Плановая выручка MTSD], ALL(Dates))",
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\С фильтром по дате"
+}

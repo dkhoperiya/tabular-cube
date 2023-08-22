@@ -1,0 +1,20 @@
+{
+  "name": "Options",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = Table.FromRecords(",
+      "        {",
+      "            [id=0, Plan Hours Mode=\"Full\", Wip History Mode = \"As Is\"],",
+      "            [id=1, Plan Hours Mode=\"Probability\", Wip History Mode = \"As Is\" ],",
+      "            [id=3, Plan Hours Mode=\"Full\", Wip History Mode = \"Open Period\" ],",
+      "            [id=4, Plan Hours Mode=\"Probability\", Wip History Mode = \"Open Period\" ]",
+      "        }),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"id\", Int64.Type}, {\"Plan Hours Mode\", type text}, {\"Wip History Mode\", type text}})",
+      "in ",
+      "    #\"Changed Type\""
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "b241a5af-7d7c-41d1-bb52-747e134bd1ee",
+  "fromTable": "Milestones",
+  "fromColumn": "project_code",
+  "toTable": "Projects",
+  "toColumn": "Project Code",
+  "crossFilteringBehavior": "bothDirections"
+}

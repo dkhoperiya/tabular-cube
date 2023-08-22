@@ -1,0 +1,7 @@
+{
+  "name": "6d677642-68c6-4c74-8d74-09f6e6c8d941",
+  "fromTable": "FactHours_Renormilized",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

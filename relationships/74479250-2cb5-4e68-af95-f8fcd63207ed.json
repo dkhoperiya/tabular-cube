@@ -1,0 +1,7 @@
+{
+  "name": "74479250-2cb5-4e68-af95-f8fcd63207ed",
+  "fromTable": "FactProjectExpenses",
+  "fromColumn": "ACCOUNTING_DATE",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

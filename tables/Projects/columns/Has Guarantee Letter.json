@@ -1,0 +1,5 @@
+{
+  "name": "Has Guarantee Letter",
+  "dataType": "boolean",
+  "sourceColumn": "HasGuaranteeLetter"
+}

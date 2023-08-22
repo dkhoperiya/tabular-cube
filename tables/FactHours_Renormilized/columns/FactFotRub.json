@@ -1,0 +1,6 @@
+{
+  "name": "FactFotRub",
+  "dataType": "decimal",
+  "sourceColumn": "FactFotRub",
+  "summarizeBy": "none"
+}

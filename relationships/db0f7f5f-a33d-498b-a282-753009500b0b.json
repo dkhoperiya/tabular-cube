@@ -1,0 +1,7 @@
+{
+  "name": "db0f7f5f-a33d-498b-a282-753009500b0b",
+  "fromTable": "ProductFinancialMetrics",
+  "fromColumn": "SolObjectId",
+  "toTable": "Business Products",
+  "toColumn": "BusinessProductObjectId"
+}

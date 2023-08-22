@@ -1,0 +1,7 @@
+{
+  "name": "9ddcbedb-4785-43f7-ac29-eb83fcccb802",
+  "fromTable": "TribeRoleCosts",
+  "fromColumn": "role_code",
+  "toTable": "Roles",
+  "toColumn": "Role Code"
+}

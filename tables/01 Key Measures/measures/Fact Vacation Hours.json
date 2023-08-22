@@ -1,0 +1,19 @@
+{
+  "name": "Fact Vacation Hours",
+  "expression": [
+    "CALCULATE (",
+    "        [Fact Hours],",
+    "        KEEPFILTERS ( 'Projects'[Project Code] IN {\"I00001\", \"I00003\"} )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( 'Projects'[Project Code] IN { \"I00001\", \"I00003\" } )",
+      ")"
+    ]
+  }
+}

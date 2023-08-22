@@ -1,0 +1,14 @@
+{
+  "name": "PO KPI GrossMargin",
+  "expression": [
+    "VAR v =",
+    "    SUM ( 'PL_ProductOwner_KPI'[GrossMargin] )",
+    "RETURN",
+    "    IF ( v = 0, BLANK (), v )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\03. Goal\\01. Product Owner KPI",
+  "detailRowsDefinition": {
+    "expression": "PL_ProductOwner_KPI"
+  }
+}

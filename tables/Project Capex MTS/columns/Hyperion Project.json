@@ -1,0 +1,6 @@
+{
+  "type": "calculated",
+  "name": "Hyperion Project",
+  "dataType": "string",
+  "expression": "'Project Capex MTS'[Capex_MTS_ID] & \"_\" & 'Project Capex MTS'[Hyperion Project Name]"
+}

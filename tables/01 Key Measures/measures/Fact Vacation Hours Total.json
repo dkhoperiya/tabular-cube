@@ -1,0 +1,11 @@
+{
+  "name": "Fact Vacation Hours Total",
+  "expression": [
+    "CALCULATE (",
+    "        [Fact Hours Total],",
+    "        KEEPFILTERS ( 'Projects'[Project Code] IN {\"I00001\", \"I00003\"} )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TechOwner",
+  "dataType": "string",
+  "sourceColumn": "TechOwnerName",
+  "sourceProviderType": "nvarchar"
+}

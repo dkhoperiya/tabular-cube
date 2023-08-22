@@ -1,0 +1,13 @@
+{
+  "name": "ReleaseProjectPlanKoef",
+  "dataType": "double",
+  "isHidden": true,
+  "sourceColumn": "ReleaseProjectPlanKoef",
+  "formatString": "0.0%;-0.0%;0.0%",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"META_AVOID_FLOAT\"]}"
+    }
+  ]
+}

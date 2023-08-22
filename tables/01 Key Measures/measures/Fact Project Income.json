@@ -1,0 +1,33 @@
+{
+  "name": "Fact Project Income",
+  "expression": [
+    "/*Фактический доход от собственных проектов*/",
+    "[Fact Project Income Own Projects]",
+    "    + /*Перепродажи считаем по сумме указанной в колнке план*/",
+    "    CALCULATE (",
+    "        SUM ( ProjectExpenses_RMS[plan_expense_amount] ),",
+    "        KEEPFILTERS ( ProjectExpenses_RMS[fact_expense_amount] <> 0 ),",
+    "        KEEPFILTERS ( ProjectExpenses_RMS[Expense Type] = \"105\" )",
+    "    ) * ( 1.07 )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\03. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fact Project Income Own Projects] )",
+      "VAR _Y =",
+      "    CALCULATE (",
+      "        SUM ( ProjectExpenses_RMS[plan_expense_amount] ),",
+      "        KEEPFILTERS ( ProjectExpenses_RMS[fact_expense_amount] <> 0 ),",
+      "        KEEPFILTERS ( ProjectExpenses_RMS[Expense Type] = \"105\" )",
+      "    ) * ( 1.07 )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Project Income Own Projects\", _X,",
+      "        \"Plan Resold Expenses\", _Y,",
+      "        \"Fact Project Income\", _X + _Y",
+      "    )"
+    ]
+  }
+}

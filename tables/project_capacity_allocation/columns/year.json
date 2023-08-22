@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "year",
+  "dataType": "int64",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[year]"
+}

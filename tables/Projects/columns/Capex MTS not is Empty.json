@@ -1,0 +1,13 @@
+{
+  "type": "calculated",
+  "name": "Capex MTS not is Empty",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "VAR rel_capex =",
+    "    ISBLANK ( Projects[Capex MTS] )",
+    "RETURN",
+    "    IF ( rel_capex, \"Не сопоставлен\", \"Сопоставлен\" )"
+  ],
+  "displayFolder": "03. Capex MTS"
+}

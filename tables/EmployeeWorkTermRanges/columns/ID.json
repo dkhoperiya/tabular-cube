@@ -1,0 +1,12 @@
+{
+  "name": "ID",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "ID",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"DISABLE_ATTRIBUTE_HIERACHIES\"]}"
+    }
+  ]
+}

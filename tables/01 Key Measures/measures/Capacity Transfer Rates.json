@@ -1,0 +1,50 @@
+{
+  "name": "Capacity Transfer Rates",
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+    "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "RETURN",
+    "    CALCULATE (",
+    "        SUMX ( Capacity, 'Capacity'[WorkingHoursWithCapacityK] * 'Capacity'[TransferRate] ),",
+    "        KEEPFILTERS ( 'Capacity'[BudgetRates_Version] = BudgetRatesVersion ),",
+    "        KEEPFILTERS ( 'Capacity'[IsVacancy] = FALSE () )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER (",
+      "            Capacity,",
+      "            'Capacity'[BudgetRates_Version] = BudgetRatesVersion",
+      "                && Capacity[IsVacancy] = FALSE ()",
+      "        ),",
+      "        \"Employee\", RELATED ( Employees[Employee] ),",
+      "        \"Employee BU\", Capacity[BuCode],",
+      "        \"Employee Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Chapter\", RELATED ( 'Chapters'[Chapter] ),",
+      "        \"Competence\", RELATED ( Competences[Competence] ),",
+      "        \"Date\", Capacity[date],",
+      "        \"FTE\", 'Capacity'[WorkingHours],",
+      "        \"Person Utilization\", Capacity[Utilization],",
+      "        \"Capacity\", 'Capacity'[WorkingHoursWithCapacityK],",
+      "        \"Transfer Rate\", 'Capacity'[TransferRate],",
+      "        \"BudgetRatesVersion\", BudgetRatesVersion,",
+      "        \"Capacity FOT Rates\", 'Capacity'[WorkingHoursWithCapacityK] * 'Capacity'[FotRate]",
+      "    )"
+    ]
+  }
+}

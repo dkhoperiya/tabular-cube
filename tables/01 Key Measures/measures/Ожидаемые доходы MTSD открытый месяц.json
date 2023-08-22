@@ -1,0 +1,6 @@
+{
+  "name": "Ожидаемые доходы MTSD открытый месяц",
+  "expression": "SUM(WIP_Revenue_Correction[ManualValue])",
+  "formatString": "#,0",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Fcst Resold Exp with Koef",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Resold Exp with koef],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Resold Exp with koef],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\03. Income\\03. Forecast"
+}

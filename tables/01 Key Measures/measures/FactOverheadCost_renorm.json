@@ -1,0 +1,9 @@
+{
+  "name": "FactOverheadCost_renorm",
+  "expression": "SUM('FactHours_Renormilized'[FactOverheadRub])",
+  "formatString": "#,##0.00",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "'FactHours_Renormilized'"
+  }
+}

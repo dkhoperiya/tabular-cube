@@ -1,0 +1,5 @@
+{
+  "name": "EndPeriodDate",
+  "dataType": "dateTime",
+  "sourceColumn": "EndPeriodDate"
+}

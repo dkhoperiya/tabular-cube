@@ -1,0 +1,7 @@
+{
+  "name": "d70e4250-eaa6-4e60-aaac-b03e0da88992",
+  "fromTable": "PlanIncome",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

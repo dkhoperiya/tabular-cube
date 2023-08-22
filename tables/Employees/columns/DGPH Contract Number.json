@@ -1,0 +1,5 @@
+{
+  "name": "DGPH Contract Number",
+  "dataType": "string",
+  "sourceColumn": "DGPH Contract Number"
+}

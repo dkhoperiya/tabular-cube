@@ -1,0 +1,14 @@
+{
+  "name": "FactRub_Digital до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [FactRub_Digital],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\С фильтом по дате"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Субподряд_Командировки_Прочее",
+  "expression": [
+    "CALCULATE (",
+    "    [Остальной субподряд] + [Прочие и командировки] + [FactMarginExtrSubcontr] + [FactMarginCommandOtherExp],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"Субподряд_Командировки_Прочее\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате"
+}

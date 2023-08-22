@@ -1,0 +1,6 @@
+{
+  "name": "MonthDate",
+  "dataType": "dateTime",
+  "isHidden": true,
+  "sourceColumn": "MonthDate"
+}

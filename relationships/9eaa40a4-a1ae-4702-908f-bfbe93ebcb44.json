@@ -1,0 +1,7 @@
+{
+  "name": "9eaa40a4-a1ae-4702-908f-bfbe93ebcb44",
+  "fromTable": "TeamBudgeting_Hours_Calculation",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

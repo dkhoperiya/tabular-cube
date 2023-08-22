@@ -1,0 +1,9 @@
+{
+  "name": "Ожидаемые расходы командировки",
+  "expression": "[Plan Travel Exp] - [Fact Travel Exp]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( DETAILROWS ( [Plan Travel Exp] ) )"
+  }
+}

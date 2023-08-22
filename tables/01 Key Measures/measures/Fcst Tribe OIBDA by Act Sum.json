@@ -1,0 +1,20 @@
+{
+  "name": "Fcst Tribe OIBDA by Act Sum",
+  "expression": "[Fcst Tribe GM by Act Sum] - [Fcst Tribe OPEX]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04.a Forecast 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fcst Tribe GM by Act Sum] )",
+      "VAR y =",
+      "    CALCULATE ( [Fcst Tribe OPEX] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Tribe GM by Act Sum\", x,",
+      "        \"Fcst Tribe OPE\", y,",
+      "        \"Fcst Tribe OIBDA by Act Sum\", x - y",
+      "    )"
+    ]
+  }
+}

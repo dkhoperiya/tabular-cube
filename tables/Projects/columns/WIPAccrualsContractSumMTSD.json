@@ -1,0 +1,7 @@
+{
+  "name": "WIPAccrualsContractSumMTSD",
+  "dataType": "decimal",
+  "sourceColumn": "WIPAccrualsContractSumMTSD",
+  "formatString": "#,0.00",
+  "summarizeBy": "none"
+}

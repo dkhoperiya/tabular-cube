@@ -1,0 +1,6 @@
+{
+  "name": "WIPAccrualsCustomerMTSD",
+  "dataType": "string",
+  "sourceColumn": "WIPAccrualsCustomerMTSD",
+  "sourceProviderType": "nvarchar"
+}

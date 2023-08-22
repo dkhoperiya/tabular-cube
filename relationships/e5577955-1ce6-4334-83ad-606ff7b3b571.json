@@ -1,0 +1,7 @@
+{
+  "name": "e5577955-1ce6-4334-83ad-606ff7b3b571",
+  "fromTable": "WIPCalculation_2lvl",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

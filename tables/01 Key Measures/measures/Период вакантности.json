@@ -1,0 +1,14 @@
+{
+  "name": "Период вакантности",
+  "expression": [
+    "CALCULATE (",
+    "    IF (",
+    "        DATEDIFF ( MAX ( Employees[VacantDate] ), TODAY (), DAY ) > 0,",
+    "        DATEDIFF ( MAX ( Employees[VacantDate] ), TODAY (), DAY ),",
+    "        0",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики"
+}

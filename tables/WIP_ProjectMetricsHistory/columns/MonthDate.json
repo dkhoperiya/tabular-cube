@@ -1,0 +1,5 @@
+{
+  "name": "MonthDate",
+  "dataType": "dateTime",
+  "sourceColumn": "MonthDate"
+}

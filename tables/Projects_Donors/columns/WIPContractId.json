@@ -1,0 +1,6 @@
+{
+  "name": "WIPContractId",
+  "dataType": "string",
+  "sourceColumn": "WIPContractId",
+  "sourceProviderType": "uniqueidentifier"
+}

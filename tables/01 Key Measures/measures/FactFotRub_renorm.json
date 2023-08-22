@@ -1,0 +1,8 @@
+{
+  "name": "FactFotRub_renorm",
+  "expression": "SUM ( 'FactHours_Renormilized'[FactFotRub] )",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "'FactHours_Renormilized'"
+  }
+}

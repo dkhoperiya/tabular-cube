@@ -1,0 +1,36 @@
+{
+  "name": "Fact Tribe Costs Subcontracts MTSIT STS with K",
+  "expression": [
+    "SUMX (",
+    "    FILTER (",
+    "        'WIPCalculation_2lvl',",
+    "        'WIPCalculation_2lvl'[projecttribe_code] <> 'WIPCalculation_2lvl'[Tribe_Code]",
+    "    ),",
+    "    'WIPCalculation_2lvl'[Debet] * ( 1 + 'WIPCalculation_2lvl'[Fact FOT K] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact\\01. Additional",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        'WIPCalculation_2lvl',",
+      "        'WIPCalculation_2lvl'[projecttribe_code] <> 'WIPCalculation_2lvl'[tribe_code]",
+      "    ),",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Budget Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Project Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "    \"Responcibility Center\", 'WIPCalculation_2lvl'[responsibility_center],",
+      "    \"BusinessUnit\", 'WIPCalculation_2lvl'[BuCode],",
+      "    \"Month Date\", 'WIPCalculation_2lvl'[month_date],",
+      "    \"PL Code\", 'WIPCalculation_2lvl'[pl_code],",
+      "    \"Source Sheet\", 'WIPCalculation_2lvl'[Source Sheet],",
+      "    \"Source File\", 'WIPCalculation_2lvl'[Source WB],",
+      "    \"Debet\", 'WIPCalculation_2lvl'[Debet],",
+      "    \"FOT Koefficient\", 'WIPCalculation_2lvl'[Fact FOT K],",
+      "    \"Fact Tribe Costs Subcontracts MTSIT STS with K\", 'WIPCalculation_2lvl'[Debet] * ( 1 + 'WIPCalculation_2lvl'[Fact FOT K] )",
+      ")"
+    ]
+  }
+}

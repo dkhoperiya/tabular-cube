@@ -1,0 +1,7 @@
+{
+  "name": "f883cdd4-09aa-41b6-8345-f7c3af2b6196",
+  "fromTable": "WIP_Acts_Drafts",
+  "fromColumn": "EndPeriodDate",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

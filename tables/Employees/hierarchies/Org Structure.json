@@ -1,0 +1,35 @@
+{
+  "name": "Org Structure",
+  "levels": [
+    {
+      "name": "Cluster",
+      "ordinal": 0,
+      "column": "Employee Cluster Current"
+    },
+    {
+      "name": "Tribe",
+      "ordinal": 1,
+      "column": "Employee Tribe Current"
+    },
+    {
+      "name": "Chapter",
+      "ordinal": 2,
+      "column": "Employee Chapter Current"
+    },
+    {
+      "name": "SubGroup",
+      "ordinal": 4,
+      "column": "Employee SubGroup Current"
+    },
+    {
+      "name": "Group",
+      "ordinal": 3,
+      "column": "Employee Group Current"
+    },
+    {
+      "name": "Employee",
+      "ordinal": 5,
+      "column": "Employee"
+    }
+  ]
+}

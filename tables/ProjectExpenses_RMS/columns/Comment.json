@@ -1,0 +1,5 @@
+{
+  "name": "Comment",
+  "dataType": "string",
+  "sourceColumn": "Comment"
+}

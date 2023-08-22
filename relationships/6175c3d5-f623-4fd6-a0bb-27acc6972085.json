@@ -1,0 +1,7 @@
+{
+  "name": "6175c3d5-f623-4fd6-a0bb-27acc6972085",
+  "fromTable": "FactHours_Renormilized",
+  "fromColumn": "PersonCode",
+  "toTable": "Employees",
+  "toColumn": "Employee Code"
+}

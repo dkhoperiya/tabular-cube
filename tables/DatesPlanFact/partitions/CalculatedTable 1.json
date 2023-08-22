@@ -1,0 +1,18 @@
+{
+  "name": "CalculatedTable 1",
+  "source": {
+    "type": "calculated",
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        'Dates',",
+      "        'Dates'[FinancialPeriodIsClosed]",
+      "            && 'Dates'[Date] >= DATE ( 2017, 1, 1 )",
+      "    ),",
+      "    \"DateKey\", [DateKey],",
+      "    \"Date\", [Date],",
+      "    \"Month Date\", [Month Date]",
+      ")"
+    ]
+  }
+}

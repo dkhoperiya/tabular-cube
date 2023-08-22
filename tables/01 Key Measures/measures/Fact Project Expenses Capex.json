@@ -1,0 +1,20 @@
+{
+  "name": "Fact Project Expenses Capex",
+  "description": "Фактически расходы на проекте. Включает фактическую себестоимость из трудозатрат, фактический субподряд из трудозатрат, расходы на командировки, внешний субподряд, прочие операционные расходы.",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"CAPEX\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    FactProjectExpenses,",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"CAPEX\" )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Capitalization Percent",
+  "dataType": "double",
+  "sourceColumn": "Capitalization Percent",
+  "formatString": "#,##0.0 %",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"META_AVOID_FLOAT\"]}"
+    }
+  ]
+}

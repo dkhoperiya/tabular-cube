@@ -1,0 +1,10 @@
+{
+  "name": "KPI Gross Margin YTD",
+  "description": "Цель по GM накопительным итогом по году",
+  "expression": "CALCULATE ( [KPI Gross Margin], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\04. Goals",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [KPI Gross Margin] )"
+  }
+}

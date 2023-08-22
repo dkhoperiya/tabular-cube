@@ -1,0 +1,6 @@
+{
+  "name": "Factor Name",
+  "dataType": "string",
+  "sourceColumn": "Name",
+  "sortByColumn": "Ordinal"
+}

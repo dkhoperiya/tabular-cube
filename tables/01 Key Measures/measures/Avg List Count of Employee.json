@@ -1,0 +1,20 @@
+{
+  "name": "Avg List Count of Employee",
+  "expression": [
+    "AVERAGEX (",
+    "    VALUES ( Dates[Month Date] ),",
+    "    VAR cur_m =",
+    "        CALCULATE ( [Численность на дату] )",
+    "    VAR next_m =",
+    "        CALCULATE ( [Численность на дату], DATEADD ( Dates[Date], 1, MONTH ) )",
+    "    VAR next_m1 =",
+    "        IF ( ISBLANK ( next_m ), cur_m, next_m )",
+    "    RETURN",
+    "        ( cur_m + next_m1 )",
+    "            / 2",
+    ")"
+  ],
+  "formatString": "#,0.00",
+  "isHidden": true,
+  "displayFolder": "09. HR\\00. Back Up"
+}

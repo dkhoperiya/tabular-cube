@@ -1,0 +1,5 @@
+{
+  "name": "JiraLink",
+  "dataType": "string",
+  "sourceColumn": "JiraLink"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "project_code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "project_code",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"DISABLE_ATTRIBUTE_HIERACHIES\"]}"
+    }
+  ]
+}

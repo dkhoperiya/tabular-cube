@@ -1,0 +1,17 @@
+{
+  "name": "FactHours renorm до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [FactHours renorm],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "16. WIP\\Метрики перенормализации",
+  "detailRowsDefinition": {
+    "expression": "FactHours_Renormilized"
+  }
+}

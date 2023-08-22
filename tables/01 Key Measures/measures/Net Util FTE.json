@@ -1,0 +1,38 @@
+{
+  "name": "Net Util FTE",
+  "description": "FTE к утилизации. FTE сотрудников за исключением тех дат, когда сотрудник находся в стаутсе \"MATERNITY\" или в роли \"OH Admin\"",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'Capacity'[WorkingHours] ),",
+    "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+    "    KEEPFILTERS ( NOT (Capacity[StatusCode]) IN {30, 40} ),",
+    "    KEEPFILTERS ( Capacity[BudgetRates_Version] = \"Ставки RMS\" ),",
+    "    KEEPFILTERS ( Capacity[EmploymentType] IN { \"Штатное расписание\", \"Стажер\" } )",
+    ")",
+    ""
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        Capacity,",
+      "        KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+      "        KEEPFILTERS ( Capacity[StatusCode] <> 30 ),",
+      "        KEEPFILTERS ( Capacity[BudgetRates_Version] = \"Ставки RMS\" ),",
+      "        KEEPFILTERS ( Capacity[EmploymentType] IN { \"Штатное расписание\", \"Стажер\" } )",
+      "    ),",
+      "    \"Employee\", RELATED ( Employees[Employee] ),",
+      "    \"Employee BU\", Capacity[BuCode],",
+      "    \"Employee Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Employment Percenatge\", RELATED ( Employees[Employment Percentage] ),",
+      "    \"Role\", RELATED ( Roles[Role] ),",
+      "    \"Chapter\", RELATED ( 'Chapters'[Chapter] ),",
+      "    \"Competence\", RELATED ( Competences[Competence] ),",
+      "    \"Date\", Capacity[date],",
+      "    \"FTE\", 'Capacity'[WorkingHours]",
+      ")"
+    ]
+  }
+}

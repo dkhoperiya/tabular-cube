@@ -1,0 +1,7 @@
+{
+  "name": "ChangeDateTime",
+  "dataType": "dateTime",
+  "isHidden": true,
+  "sourceColumn": "ChangeDateTime",
+  "formatString": "dd.MM.yyyy HH:mm:ss"
+}

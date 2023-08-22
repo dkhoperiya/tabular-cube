@@ -1,0 +1,7 @@
+{
+  "name": "59000a8e-97dd-4e8f-b732-d8bf2bb262c4",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "tribe_code",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

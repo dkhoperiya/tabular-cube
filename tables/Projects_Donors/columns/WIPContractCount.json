@@ -1,0 +1,8 @@
+{
+  "name": "WIPContractCount",
+  "dataType": "int64",
+  "sourceColumn": "WIPContractCount",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

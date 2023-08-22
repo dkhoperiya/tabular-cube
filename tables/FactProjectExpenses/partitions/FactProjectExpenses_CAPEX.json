@@ -1,0 +1,26 @@
+{
+  "name": "FactProjectExpenses_CAPEX",
+  "mode": "import",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    fin_viw_FactProjectExpenses_CAPEX = Source{[Schema=\"dbo\",Item=\"viw_FactProjectExpenses_CAPEX2\"]}[Data]",
+      "in",
+      "    fin_viw_FactProjectExpenses_CAPEX"
+    ]
+  },
+  "annotations": [
+    {
+      "name": "QueryEditorSerialization",
+      "value": [
+        "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+        "    Source = #\"SQL/plan-db-01 bss nvg ru;OLAP_Staging\",",
+        "    fin_viw_FactProjectExpenses_CAPEX = Source{[Schema=\"fin\",Item=\"viw_FactProjectExpenses_CAPEX\"]}[Data]",
+        "in",
+        "    fin_viw_FactProjectExpenses_CAPEX</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+      ]
+    }
+  ]
+}

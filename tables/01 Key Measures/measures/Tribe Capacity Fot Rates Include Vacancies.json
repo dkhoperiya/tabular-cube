@@ -1,0 +1,46 @@
+{
+  "name": "Tribe Capacity Fot Rates Include Vacancies",
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "RETURN",
+    "    CALCULATE (",
+    "        SUM ( Capacity[TargetTribeCapacityInFotRates] ),",
+    "        KEEPFILTERS ( 'Capacity'[BudgetRates_Version] = BudgetRatesVersion )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER ( Capacity, 'Capacity'[BudgetRates_Version] = BudgetRatesVersion ),",
+      "        \"EmployeeCode\", Capacity[EmployeeCode],",
+      "        \"Employee\", RELATED ( Employees[Employee] ),",
+      "        \"Employee BU\", Capacity[BuCode],",
+      "        \"Employee Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Chapter\", RELATED ( 'Chapters'[Chapter] ),",
+      "        \"Competence\", RELATED ( Competences[Competence] ),",
+      "        \"Date\", Capacity[date],",
+      "        \"BudgetRatesVersion\", BudgetRatesVersion,",
+      "        \"FTE\", 'Capacity'[WorkingHours],",
+      "        \"Tribe Utilization\", 'Capacity'[TribeTargetUtilization],",
+      "        \"Tribe Capacity\", 'Capacity'[WorkingHours] * 'Capacity'[TribeTargetUtilization],",
+      "        \"Tribe Capacity In Fot Rates\",",
+      "            'Capacity'[WorkingHours] * 'Capacity'[TribeTargetUtilization] * 'Capacity'[FotRate]",
+      "    )"
+    ]
+  }
+}

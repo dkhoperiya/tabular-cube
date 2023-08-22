@@ -1,0 +1,6 @@
+{
+  "name": "DATE",
+  "dataType": "dateTime",
+  "sourceColumn": "DATE",
+  "sourceProviderType": "date"
+}

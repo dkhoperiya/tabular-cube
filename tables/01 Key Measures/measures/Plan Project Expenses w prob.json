@@ -1,0 +1,7 @@
+{
+  "name": "Plan Project Expenses w prob",
+  "expression": "SUMX ( 'Projects', 'Projects'[Project Probability] * [Plan Project Expenses] )",
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan"
+}

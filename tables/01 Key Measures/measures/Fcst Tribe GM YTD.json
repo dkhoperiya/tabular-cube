@@ -1,0 +1,18 @@
+{
+  "name": "Fcst Tribe GM YTD",
+  "expression": "[Fcst Tribe Income YTD] - [Fcst Tribe Expenses YTD]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Tribe Income YTD]",
+      "VAR _Y = [Fcst Tribe Expenses YTD]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Tribe Income YTD\", _X,",
+      "        \"Fcst Tribe Expenses YTD\", _Y,",
+      "        \"Fcst Tribe GM YTD\", _X - _Y",
+      "    )"
+    ]
+  }
+}

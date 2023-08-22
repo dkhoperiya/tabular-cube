@@ -1,0 +1,6 @@
+{
+  "name": "UserStory Url",
+  "dataType": "string",
+  "sourceColumn": "UserStoryUrl",
+  "dataCategory": "WebURL"
+}

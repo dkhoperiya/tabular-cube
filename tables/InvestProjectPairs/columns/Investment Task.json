@@ -1,0 +1,5 @@
+{
+  "name": "Investment Task",
+  "dataType": "string",
+  "sourceColumn": "InvestmentTask"
+}

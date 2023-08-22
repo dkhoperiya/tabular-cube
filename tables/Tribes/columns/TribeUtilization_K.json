@@ -1,0 +1,7 @@
+{
+  "name": "TribeUtilization_K",
+  "dataType": "decimal",
+  "sourceColumn": "TribeUtilization_K",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

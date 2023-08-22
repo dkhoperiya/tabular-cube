@@ -1,0 +1,6 @@
+{
+  "name": "TaskOebsName",
+  "dataType": "string",
+  "sourceColumn": "TaskOebsName",
+  "sourceProviderType": "nvarchar"
+}

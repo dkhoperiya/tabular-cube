@@ -1,0 +1,26 @@
+{
+  "name": "Fcst Work Hours SQA",
+  "description": "Прогноз чч трайба SQA по средневзвешенной ставке.",
+  "expression": [
+    "DIVIDE (",
+    "    [Fcst Transfer Cost of Works SQA],",
+    "    [Historical WA Transfer Rate SQA]",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\01. QA Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Transfer Cost of Works SQA] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Historical WA Transfer Rate SQA] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Transfer Cost of Works SQA\", _X,",
+      "        \"Historical WA Transfer Rate SQA\", _Y,",
+      "        \"Fcst Work Hours SQA\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

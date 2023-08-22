@@ -1,0 +1,23 @@
+{
+  "type": "calculated",
+  "name": "ProjectStageId",
+  "dataType": "int64",
+  "isHidden": true,
+  "expression": [
+    "VAR _DATE =",
+    "    RELATED ( Dates[Date] )",
+    "VAR _PROJECT_G2_COMPLETED =",
+    "    RELATED ( Projects[Project G2 Complete] )",
+    "VAR _PROJECT_G2_DATE =",
+    "    RELATED ( Projects[Min Plan Date G2] )",
+    "RETURN",
+    "    IF (",
+    "        _PROJECT_G2_COMPLETED",
+    "            && _PROJECT_G2_DATE < _DATE",
+    "            || _PROJECT_G2_DATE = BLANK (),",
+    "        3,",
+    "        2",
+    "    )"
+  ],
+  "formatString": "#,##0"
+}

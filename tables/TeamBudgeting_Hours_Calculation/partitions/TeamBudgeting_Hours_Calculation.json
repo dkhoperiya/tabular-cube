@@ -1,0 +1,13 @@
+{
+  "name": "TeamBudgeting_Hours_Calculation",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    TeamBudgeting_Hours_Calculation = Source{[Schema=\"dbo\",Item=\"viw_TeamBudgeting_Hours_Calculation\"]}[Data]",
+      "in",
+      "    TeamBudgeting_Hours_Calculation"
+    ]
+  }
+}

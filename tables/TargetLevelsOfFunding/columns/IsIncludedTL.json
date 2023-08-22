@@ -1,0 +1,6 @@
+{
+  "name": "IsIncludedTL",
+  "dataType": "boolean",
+  "sourceColumn": "IsIncludedTL",
+  "sourceProviderType": "bit"
+}

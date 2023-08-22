@@ -1,0 +1,11 @@
+{
+  "name": "FinUtilization_renorm_%",
+  "expression": [
+    "VAR x =",
+    "    DIVIDE ( [FinUtilizationFactFot_renorm], [Fin Utilization FTE] )",
+    "RETURN",
+    "    IF ( x > 1, 1, x )"
+  ],
+  "formatString": "#,##0.00 %",
+  "displayFolder": "04. Capacity\\01. Utilization\\Fin Utilization"
+}

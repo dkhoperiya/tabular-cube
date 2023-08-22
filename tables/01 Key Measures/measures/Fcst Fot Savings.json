@@ -1,0 +1,24 @@
+{
+  "name": "Fcst Fot Savings",
+  "expression": "[PlanFotRub] - [Fact/Fcst Salary Costs Current Staff] - [Fcst Salary Costs Vacancies Only]",
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _A =",
+      "    CALCULATE ( [PlanFotRub] )",
+      "VAR _B =",
+      "    CALCULATE ( [Fact/Fcst Salary Costs Current Staff] )",
+      "VAR _C =",
+      "    CALCULATE ( [Fcst Salary Costs Vacancies Only] )",
+      "RETURN",
+      "    ROW (",
+      "        \"PlanFotRub\", _A,",
+      "        \"Fact/Fcst Salary Costs Current Staff\", _B,",
+      "        \"Fcst Salary Costs Vacancies Only\", _C,",
+      "        \"Fcst Fot Savings\",",
+      "            _A - _B - _C",
+      "    )"
+    ]
+  }
+}

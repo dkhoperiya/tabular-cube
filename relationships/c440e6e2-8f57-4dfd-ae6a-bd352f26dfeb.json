@@ -1,0 +1,7 @@
+{
+  "name": "c440e6e2-8f57-4dfd-ae6a-bd352f26dfeb",
+  "fromTable": "PlanHours",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

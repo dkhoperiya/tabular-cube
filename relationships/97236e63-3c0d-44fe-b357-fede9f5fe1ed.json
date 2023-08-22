@@ -1,0 +1,7 @@
+{
+  "name": "97236e63-3c0d-44fe-b357-fede9f5fe1ed",
+  "fromTable": "ProductFinancialMetrics",
+  "fromColumn": "PL_Item_Code",
+  "toTable": "PL Items",
+  "toColumn": "PL Item Code"
+}

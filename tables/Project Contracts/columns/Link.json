@@ -1,0 +1,7 @@
+{
+  "name": "Link",
+  "dataType": "string",
+  "sourceColumn": "Link",
+  "sourceProviderType": "nvarchar",
+  "dataCategory": "WebURL"
+}

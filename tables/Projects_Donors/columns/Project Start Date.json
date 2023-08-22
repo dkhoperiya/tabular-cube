@@ -1,0 +1,7 @@
+{
+  "name": "Project Start Date",
+  "dataType": "dateTime",
+  "sourceColumn": "StartDate",
+  "formatString": "dd.MM.yyyy",
+  "sourceProviderType": "datetime2"
+}

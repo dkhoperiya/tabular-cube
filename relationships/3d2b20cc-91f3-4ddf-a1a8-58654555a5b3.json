@@ -1,0 +1,7 @@
+{
+  "name": "3d2b20cc-91f3-4ddf-a1a8-58654555a5b3",
+  "fromTable": "FactHours",
+  "fromColumn": "Project_TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "4d6273e8-b77b-42e5-ba41-bd91f17246ac",
+  "fromTable": "PL_Project_KPI",
+  "fromColumn": "kpi_date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

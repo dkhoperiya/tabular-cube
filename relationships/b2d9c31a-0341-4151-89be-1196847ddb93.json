@@ -1,0 +1,7 @@
+{
+  "name": "b2d9c31a-0341-4151-89be-1196847ddb93",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "Work Term Range ID",
+  "toTable": "EmployeeWorkTermRanges",
+  "toColumn": "ID"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Historical WA Transfer Rate PMI",
+  "description": "Средневзвешенная трансфертная ставка трайба PMI.",
+  "expression": [
+    "CALCULATE (",
+    "    [Historical WA Transfer Rate],",
+    "    FILTER (",
+    "        ALLEXCEPT ( Capacity, Dates, Roles,'Competences' ),",
+    "        Capacity[TribeCode] = 60",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\02. PMI",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    FILTER (",
+      "        SELECTCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                Capacity,",
+      "                ALLEXCEPT ( Capacity, Dates, Roles, 'Competences' ),",
+      "                Capacity[TribeCode] = 60,",
+      "                Capacity[BudgetRates_Version] = BudgetRatesVersion",
+      "            ),",
+      "            \"Employee\", RELATED ( Employees[Employee] ),",
+      "            \"BusinessUnit\", 'Capacity'[BuCode],",
+      "            \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "            \"Role\", RELATED ( Roles[Role] ),",
+      "            \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "            \"Date\", RELATED ( Dates[Date] ),",
+      "            \"PMI Transfer Rate\", 'Capacity'[TransferRate],",
+      "            \"Budget Rates Version\", BudgetRatesVersion",
+      "        ),",
+      "        [PMI Transfer Rate] <> BLANK ()",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "StaffUnit_Status",
+  "dataType": "string",
+  "sourceColumn": "StaffUnit_Status"
+}

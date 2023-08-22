@@ -1,0 +1,14 @@
+{
+  "name": "Products",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    //Source = Sql.Database(\"0411pmobidwh02\", \"olap_staging_dw\"),",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_SOL_BusinessProducts\"]}[Data]",
+      "in",
+      "    data"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Hyperion Plan Capex Actualizations",
+  "description": "Сумма плана из Hyperion где BI_BUDGET_TYPE = \"PAY Оплата\" и BI_DATA_TYPE = \"BudgetAct Актуализация\"",
+  "expression": [
+    "CALCULATE (",
+    "    [Hyperion Plan Capex Simple],",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BI_DATA_TYPE] = \"BudgetAct Актуализация\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Hyperion Plan Capex Simple] ),",
+      "    KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" ),",
+      "    KEEPFILTERS ( 'Hyperion Plan'[BI_DATA_TYPE] = \"BudgetAct Актуализация\" )",
+      ")"
+    ]
+  }
+}

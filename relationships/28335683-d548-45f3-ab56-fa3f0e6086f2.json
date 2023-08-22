@@ -1,0 +1,7 @@
+{
+  "name": "28335683-d548-45f3-ab56-fa3f0e6086f2",
+  "fromTable": "WIP_ProjectMetricsHistory",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

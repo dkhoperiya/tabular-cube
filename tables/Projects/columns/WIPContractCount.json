@@ -1,0 +1,5 @@
+{
+  "name": "WIPContractCount",
+  "dataType": "string",
+  "sourceColumn": "WIPContractCount"
+}

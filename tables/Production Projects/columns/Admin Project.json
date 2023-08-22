@@ -1,0 +1,6 @@
+{
+  "name": "Admin Project",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Admin Project"
+}

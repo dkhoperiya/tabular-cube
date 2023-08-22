@@ -1,0 +1,20 @@
+{
+  "name": "Fcst Tribe OIBDA by Act Sum %",
+  "expression": "DIVIDE ( [Fcst Tribe OIBDA by Act Sum], [Fcst Tribe Income by Act Sum] )",
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04.a Forecast 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fcst Tribe OIBDA by Act Sum] )",
+      "VAR y =",
+      "    CALCULATE ( [Fcst Tribe Income by Act Sum] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Tribe OIBDA by Act Sum\", x,",
+      "        \"Fcst Tribe Income by Act Sum\", y,",
+      "        \"Fcst Tribe OIBDA by Act Sum %\", DIVIDE ( x, y )",
+      "    )"
+    ]
+  }
+}

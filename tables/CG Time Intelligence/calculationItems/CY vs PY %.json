@@ -1,0 +1,10 @@
+{
+  "name": "CY vs PY %",
+  "expression": [
+    "DIVIDE (",
+    "    CALCULATE ( SELECTEDMEASURE (), 'CG Time Intelligence'[Time Calc] = \"CY vs PY\" ),",
+    "    CALCULATE ( SELECTEDMEASURE (), 'CG Time Intelligence'[Time Calc] = \"SPLY\" )",
+    ")"
+  ],
+  "ordinal": 3
+}

@@ -1,0 +1,6 @@
+{
+  "name": "INVESTMENT_TASK",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "INVESTMENT_TASK"
+}

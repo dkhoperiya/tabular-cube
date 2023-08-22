@@ -1,0 +1,6 @@
+{
+  "name": "CAPEX_MTS_ID",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "CAPEX_MTS_ID"
+}

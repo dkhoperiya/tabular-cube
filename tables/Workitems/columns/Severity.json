@@ -1,0 +1,5 @@
+{
+  "name": "Severity",
+  "dataType": "string",
+  "sourceColumn": "Severity"
+}

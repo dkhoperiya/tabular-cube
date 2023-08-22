@@ -1,0 +1,6 @@
+{
+  "name": "FactPrevActOverheadCosts",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FactPrevActOverheadCosts"
+}

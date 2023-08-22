@@ -1,0 +1,14 @@
+{
+  "name": "ImportantEmployee",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = DWH,",
+      "    dbo_viw_ImportantEmployee = Source{[Schema=\"dbo\",Item=\"viw_ImportantEmployee\"]}[Data]",
+      "in",
+      "    dbo_viw_ImportantEmployee"
+    ]
+  }
+}

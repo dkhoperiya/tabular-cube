@@ -1,0 +1,7 @@
+{
+  "name": "9c43b009-56fa-4f7c-b749-6a259481a84b",
+  "fromTable": "Assignments History",
+  "fromColumn": "ChapterCode",
+  "toTable": "Chapters",
+  "toColumn": "chapter_code"
+}

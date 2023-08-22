@@ -1,0 +1,5 @@
+{
+  "name": "YTD",
+  "expression": "CALCULATE ( SELECTEDMEASURE (), DATESYTD ( 'Dates'[Date] ) )",
+  "ordinal": 5
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Fact Costs Subcontracts MTS",
+  "description": "Факт по ставкам ФОТ из RMS по bu=4000 (MTS)",
+  "expression": [
+    "SUMX (",
+    "    FILTER (",
+    "        'FactHours_2lvl',",
+    "         ( 'FactHours_2lvl'[Fact Employee BuCode] = 4000",
+    "            && 'FactHours_2lvl'[Fact Employee Tribe] <> 'FactHours_2lvl'[project_tribe] )",
+    "    ),",
+    "    'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[FOT_rate]",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact\\01. Additional",
+  "detailRowsDefinition": {
+    "expression": [
+      " SELECTCOLUMNS (",
+      "        FILTER (",
+      "            'FactHours_2lvl',",
+      "            ( 'FactHours_2lvl'[Fact Employee BuCode] = 4000",
+      "                && 'FactHours_2lvl'[Fact Employee Tribe] <> 'FactHours_2lvl'[project_tribe] )",
+      "        ),",
+      "        \"Project\", RELATED ( 'Projects'[Project] ),",
+      "        \"Project Tribe\", 'FactHours_2lvl'[project_tribe],",
+      "        \"PM\", RELATED ( Projects[PM] ),",
+      "        \"PO\", RELATED ( Projects[PO] ),",
+      "        \"Employee Name\", RELATED ( 'Employees'[Employee Name] ),",
+      "        \"Employee Tribe\", 'FactHours_2lvl'[Fact Employee Tribe],",
+      "        \"BU\", 'FactHours_2lvl'[Fact Employee BuCode],",
+      "        \"Role\", RELATED ( 'Roles'[Role] ),",
+      "        \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "        \"Investment Project\", 'FactHours_2lvl'[InvestmentProject],",
+      "        \"Investment Task\", 'FactHours_2lvl'[InvestmentTask],",
+      "        \"Date\", Related(Dates[Date]),",
+      "        \"Fact Hours\", 'FactHours_2lvl'[fact_hours],",
+      "        \"FOT Rate\", 'FactHours_2lvl'[FOT_rate],",
+      "        \"Fact Fot Rub 2lvl\", 'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[FOT_rate]",
+      "    )"
+    ]
+  }
+}

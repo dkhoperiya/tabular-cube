@@ -1,0 +1,7 @@
+{
+  "name": "9016df4c-9b2e-494d-9713-009c148bb3c7",
+  "fromTable": "WIP_ProjectMetricsHistory",
+  "fromColumn": "MonthDate",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

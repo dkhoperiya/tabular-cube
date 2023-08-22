@@ -1,0 +1,6 @@
+{
+  "name": "FactRMSProjectCostsWithMargin",
+  "expression": "[FactRMSProjectCosts] +[FactMargin]",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Fact Tribe Income",
+  "description": "Фактические доходы трайба: чч * трансфертную ставку + перепродаваемые расходы + доходы от внутреннего субподряда сотрудников трайба",
+  "expression": "[Fact Tribe Income Own Projects] + [Fact Tribe Income Subcontracts] ",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fact Tribe Income Own Projects] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Fact Tribe Income Subcontracts] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Income Own Projects\", _X,",
+      "        \"Fact Tribe Income Subcontracts\", _Y,",
+      "        \"Fact Tribe Income\", _X + _Y",
+      "    )"
+    ]
+  }
+}

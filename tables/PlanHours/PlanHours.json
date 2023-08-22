@@ -1,0 +1,9 @@
+{
+  "name": "PlanHours",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"LAYOUT_ADD_TO_PERSPECTIVES\"]}"
+    }
+  ]
+}

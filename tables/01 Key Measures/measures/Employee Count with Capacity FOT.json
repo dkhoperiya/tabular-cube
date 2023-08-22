@@ -1,0 +1,47 @@
+{
+  "name": "Employee Count with Capacity FOT",
+  "description": "Количество сотрудников, у которых емоксть, выраженная в деньгах > 0",
+  "expression": [
+    "CALCULATE (",
+    "    DISTINCTCOUNT ( Capacity[EmployeeCode] ),",
+    "    KEEPFILTERS ( Capacity[IsVacancy] = FALSE () )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER (",
+      "            ADDCOLUMNS (",
+      "                SUMMARIZE (",
+      "                    FILTER (",
+      "                        Capacity,",
+      "                        'Capacity'[BudgetRates_Version] = BudgetRatesVersion",
+      "                            && Capacity[IsVacancy] = FALSE ()",
+      "                    ),",
+      "                    Capacity[employeeCode],",
+      "                    Employees[Employee],",
+      "                    Employees[Employee Role Current]",
+      "                ),",
+      "                \"Capacity Fot Rub\", CALCULATE ( [Tribe Capacity Fot Rates] ),",
+      "                \"FTE\", CALCULATE ( [FTE] )",
+      "            ),",
+      "            [FTE] > 0",
+      "        ),",
+      "        \"Employee Code\", Capacity[employeeCode],",
+      "        \"Employee\", Employees[Employee],",
+      "        \"Role\", Employees[Employee Role Current],",
+      "        \"Capacity Fot Rub\", [Capacity Fot Rub],",
+      "        \"FTE\", [FTE]",
+      "    )"
+    ]
+  }
+}

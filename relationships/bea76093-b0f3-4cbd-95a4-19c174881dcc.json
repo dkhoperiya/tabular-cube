@@ -1,0 +1,7 @@
+{
+  "name": "bea76093-b0f3-4cbd-95a4-19c174881dcc",
+  "fromTable": "PlanHours_2lvl",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

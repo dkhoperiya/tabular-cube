@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "Disabled",
+  "dataType": "boolean",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Disabled]"
+}

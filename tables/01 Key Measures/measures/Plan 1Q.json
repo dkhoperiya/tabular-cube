@@ -1,0 +1,19 @@
+{
+  "name": "Plan 1Q",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Hours for Work Items Hierarchy],",
+    "    KEEPFILTERS ( 'Dates'[Quarter Number] = 1 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Plan Hours] ),",
+      "    KEEPFILTERS ( 'Dates'[Quarter Number] = 1 )",
+      ")"
+    ]
+  }
+}

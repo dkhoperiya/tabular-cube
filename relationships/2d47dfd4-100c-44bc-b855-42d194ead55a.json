@@ -1,0 +1,7 @@
+{
+  "name": "2d47dfd4-100c-44bc-b855-42d194ead55a",
+  "fromTable": "FactHours",
+  "fromColumn": "CompetenceCode",
+  "toTable": "Competences",
+  "toColumn": "competence_code"
+}

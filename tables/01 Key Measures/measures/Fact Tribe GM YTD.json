@@ -1,0 +1,18 @@
+{
+  "name": "Fact Tribe GM YTD",
+  "expression": "[Fact Tribe Income YTD] - [Fact Tribe Expenses YTD]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Tribe Income YTD]",
+      "VAR _Y = [Fact Tribe Expenses YTD]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Income YTD\", _X,",
+      "        \"Fact Tribe Expenses YTD\", _Y,",
+      "        \"Fact Tribe GM YTD\", _X - _Y",
+      "    )"
+    ]
+  }
+}

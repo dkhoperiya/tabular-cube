@@ -1,0 +1,5 @@
+{
+  "name": "Confirmation Status",
+  "dataType": "string",
+  "sourceColumn": "Confirmation Status"
+}

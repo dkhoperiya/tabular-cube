@@ -1,0 +1,11 @@
+{
+  "type": "calculated",
+  "name": "Max Plan Date G6 MTSD 2 Years ago",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "IF(",
+    "    DATEDIFF('Projects'[Max Plan Date G6 MTSD], NOW(), DAY) > 730, \"Да\", \"Нет\"",
+    "  )"
+  ]
+}

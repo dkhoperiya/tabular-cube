@@ -1,0 +1,6 @@
+{
+  "name": "TaskTrackerUrl",
+  "dataType": "string",
+  "sourceColumn": "TaskTrackerUrl",
+  "dataCategory": "WebURL"
+}

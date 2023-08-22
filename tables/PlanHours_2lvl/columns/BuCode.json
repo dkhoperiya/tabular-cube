@@ -1,0 +1,7 @@
+{
+  "name": "BuCode",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "bu_code",
+  "sourceProviderType": "nchar"
+}

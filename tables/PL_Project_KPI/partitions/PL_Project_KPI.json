@@ -1,0 +1,15 @@
+{
+  "name": "PL_Project_KPI",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_PL_Project_KPI = Source{[Schema=\"dbo\",Item=\"PL_Project_KPI\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(dbo_PL_Project_KPI,{{\"Project_Code\", \"project_code\"}, {\"Project_Name\", \"KPI Project\"}, {\"Tribe_Name\", \"KPI Project Tribe\"}, {\"ProductOwner_Name\", \"KPI Project PO\"}, {\"KPI Date\", \"kpi_date\"}, {\"G2 Revenue\", \"kpi_g2_revenue\"}, {\"G6 Revenue\", \"kpi_g6_revenue\"}, {\"Gross Margin\", \"kpi_gm\"}})",
+      "in",
+      "    #\"Renamed Columns\""
+    ]
+  }
+}

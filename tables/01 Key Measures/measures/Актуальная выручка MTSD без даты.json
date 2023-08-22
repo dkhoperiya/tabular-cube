@@ -1,0 +1,5 @@
+{
+  "name": "Актуальная выручка MTSD без даты",
+  "expression": "CALCULATE([Актуальная выручка MTSD], ALL(Dates))",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\С фильтром по дате"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "57fd67f0-0da3-4c1f-84f9-b02a0213aafa",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "EmployeeCode",
+  "toTable": "Employees",
+  "toColumn": "Employee Code"
+}

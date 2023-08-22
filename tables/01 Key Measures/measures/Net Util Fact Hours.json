@@ -1,0 +1,32 @@
+{
+  "name": "Net Util Fact Hours",
+  "description": "Факт часов к утилизации. Не включает списания на \"АДМИН\" проекты и списания в роли \"OH Admin\"",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Hours],",
+    "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+    "    KEEPFILTERS ( 'FactHours'[EmploymentType] IN { 0, 1 } ),",
+    "    FILTER (",
+    "        Projects,",
+    "        Projects[Project Util Category] <> \"Административный\"",
+    "            && NOT Projects[Project Status] IN { \"Canceled\" }",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+      "    KEEPFILTERS ( 'FactHours'[EmploymentType] IN { 0, 1 } ),",
+      "    FILTER (",
+      "        Projects,",
+      "        Projects[Project Util Category] <> \"Административный\"",
+      "            && NOT Projects[Project Status] IN { \"Canceled\" }",
+      "    )",
+      ")"
+    ]
+  }
+}

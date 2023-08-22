@@ -1,0 +1,21 @@
+{
+  "name": "Fact Fot Rub Own Projects",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 ),",
+    "    KEEPFILTERS ( 'Projects'[incl_for_fin_fact] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactFotRub] ),",
+      "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 ),",
+      "    KEEPFILTERS ( 'Projects'[incl_for_fin_fact] )",
+      ")"
+    ]
+  }
+}

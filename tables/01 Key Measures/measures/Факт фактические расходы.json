@@ -1,0 +1,14 @@
+{
+  "name": "Факт фактические расходы",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS]",
+    "        IN { \"Субподряд CZ\", \"Субподряд\", \"Командировки\" } ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

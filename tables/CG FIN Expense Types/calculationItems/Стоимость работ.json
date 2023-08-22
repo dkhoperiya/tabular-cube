@@ -1,0 +1,5 @@
+{
+  "name": "Стоимость работ",
+  "expression": "[Fact Cost of Works] + [Fact Transfer Cost of Works]",
+  "ordinal": 0
+}

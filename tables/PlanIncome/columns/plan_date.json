@@ -1,0 +1,12 @@
+{
+  "name": "plan_date",
+  "dataType": "dateTime",
+  "sourceColumn": "plan_date",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

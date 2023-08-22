@@ -1,0 +1,9 @@
+{
+  "name": "WipActs Drafts Amount",
+  "expression": "SUM ( 'WIP_Acts_Drafts'[Amount] )",
+  "formatString": "#,0",
+  "displayFolder": "16. WIP",
+  "detailRowsDefinition": {
+    "expression": "'WIP_Acts_Drafts'"
+  }
+}

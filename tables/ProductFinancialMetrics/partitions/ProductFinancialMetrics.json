@@ -1,0 +1,13 @@
+{
+  "name": "ProductFinancialMetrics",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_GreenPlum_V_Product_Model\"]}[Data]",
+      "in",
+      "    data"
+    ]
+  }
+}

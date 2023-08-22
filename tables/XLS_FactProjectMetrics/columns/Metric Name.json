@@ -1,0 +1,5 @@
+{
+  "name": "Metric Name",
+  "dataType": "string",
+  "sourceColumn": "MeasureName"
+}

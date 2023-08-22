@@ -1,0 +1,6 @@
+{
+  "name": "StartDate",
+  "dataType": "dateTime",
+  "sourceColumn": "StartDate",
+  "formatString": "dd.MM.yyyy"
+}

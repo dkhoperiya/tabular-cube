@@ -1,0 +1,7 @@
+{
+  "name": "21ca59eb-14d8-404e-b141-1f31536dd525",
+  "fromTable": "FinInvestPlanFact",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Capex MTS",
+  "dataType": "string",
+  "sourceColumn": "CapexMTS_ID",
+  "sourceProviderType": "nvarchar"
+}

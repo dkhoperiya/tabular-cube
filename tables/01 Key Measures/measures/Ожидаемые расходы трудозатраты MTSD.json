@@ -1,0 +1,6 @@
+{
+  "name": "Ожидаемые расходы трудозатраты MTSD",
+  "expression": "CALCULATE([PlanFotRub] - [FactFotRub], BusinessUnits[Entity Code] <> \"3\")",
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

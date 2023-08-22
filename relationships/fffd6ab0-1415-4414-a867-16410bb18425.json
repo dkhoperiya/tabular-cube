@@ -1,0 +1,7 @@
+{
+  "name": "fffd6ab0-1415-4414-a867-16410bb18425",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "expense_date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

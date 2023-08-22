@@ -1,0 +1,9 @@
+{
+  "name": "Opex Budgeting Fact",
+  "expression": "SUM ('OpexBudgetingFact'[OpexBudgetingFact])",
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\06. Opex Budgeting",
+  "detailRowsDefinition": {
+    "expression": "'OpexBudgetingFact'"
+  }
+}

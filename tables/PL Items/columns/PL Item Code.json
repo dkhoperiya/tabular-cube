@@ -1,0 +1,8 @@
+{
+  "name": "PL Item Code",
+  "dataType": "string",
+  "isUnique": true,
+  "isKey": true,
+  "sourceColumn": "PL_ITEM_CODE",
+  "keepUniqueRows": true
+}

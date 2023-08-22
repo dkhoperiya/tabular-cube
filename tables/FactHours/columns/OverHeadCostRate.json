@@ -1,0 +1,6 @@
+{
+  "name": "OverHeadCostRate",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "OverHeadCostRate"
+}

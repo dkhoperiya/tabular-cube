@@ -1,0 +1,24 @@
+{
+  "name": "FactFot_MR27",
+  "description": "Списания сотрудников прочих юрлиц, кроме МТС, на БС",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ( NOT 'BusinessUnits'[Entity Code] IN { \"1\", \"3\", \"4\", \"24\", \"1073\" } )",
+    ")",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactFot_MR27\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Субподряд из Timesheets",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactFotRub] ),",
+      "    KEEPFILTERS ( NOT 'BusinessUnits'[Entity Code] IN { \"1\", \"3\", \"4\", 24 } )",
+      ")"
+    ]
+  }
+}

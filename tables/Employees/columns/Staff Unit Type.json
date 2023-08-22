@@ -1,0 +1,6 @@
+{
+  "name": "Staff Unit Type",
+  "dataType": "string",
+  "description": "Тип ШЕ - Штатное распсание, ДГПХ, Аутсорсинг",
+  "sourceColumn": "StaffUnit_Type"
+}

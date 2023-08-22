@@ -1,0 +1,5 @@
+{
+  "name": "ExpenseType_BK",
+  "dataType": "string",
+  "sourceColumn": "ExpenseType_BK"
+}

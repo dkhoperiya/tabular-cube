@@ -1,0 +1,10 @@
+{
+  "name": "Отчетный месяц",
+  "expression": [
+    "VAR curMonth =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    SWITCH ( MONTH ( curMonth ), 3, \"Да\", 6, \"Да\", 9, \"Да\", 12, \"Да\", \"Нет\" )"
+  ],
+  "displayFolder": "16. WIP"
+}

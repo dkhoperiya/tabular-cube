@@ -1,0 +1,8 @@
+{
+  "name": "Change Date",
+  "dataType": "dateTime",
+  "isUnique": true,
+  "isKey": true,
+  "sourceColumn": "Date",
+  "formatString": "yyyy-MM-dd"
+}

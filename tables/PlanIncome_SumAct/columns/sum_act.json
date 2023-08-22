@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "sum_act",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "isHidden": true,
+  "sourceColumn": "[sum_act]"
+}

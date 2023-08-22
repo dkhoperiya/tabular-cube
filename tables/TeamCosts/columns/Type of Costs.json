@@ -1,0 +1,5 @@
+{
+  "name": "Type of Costs",
+  "dataType": "string",
+  "sourceColumn": "TypeName"
+}

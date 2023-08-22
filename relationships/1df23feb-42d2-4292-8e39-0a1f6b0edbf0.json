@@ -1,0 +1,7 @@
+{
+  "name": "1df23feb-42d2-4292-8e39-0a1f6b0edbf0",
+  "fromTable": "FactProjectExpenses",
+  "fromColumn": "SEGMENT1",
+  "toTable": "BusinessUnits",
+  "toColumn": "oebs_code_2"
+}

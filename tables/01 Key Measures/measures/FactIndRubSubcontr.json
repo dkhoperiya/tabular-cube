@@ -1,0 +1,32 @@
+{
+  "name": "FactIndRubSubcontr",
+  "expression": [
+    "CALCULATE (",
+    "    [FactIndRubLab] + [FactRub_CZ_Margin_act] + [FactFot_MR27] + [FactOverheadCostsAndMargin_MR27],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactIndRubSubcontr\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Субподряд из Timesheets",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactIndRubLab]",
+      "VAR x2 = [FactRub_CZ_Margin_act]",
+      "VAR x3 = [FactFot_MR27]",
+      "VAR x4 = [FactOverheadCostsAndMargin_MR27]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactIndRubLab\", x1,",
+      "        \"FactRub_CZ_Margin_act\", x2,",
+      "        \"FactFot_MR27\", x3,",
+      "        \"FactOverheadCostsAndMargin_MR27\", x4,",
+      "        \"FactIndRubSubcontr\",",
+      "            x1 + x2 + x3 + x4",
+      "    )"
+    ]
+  }
+}

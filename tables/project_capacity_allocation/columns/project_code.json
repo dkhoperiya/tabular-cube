@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "project_code",
+  "dataType": "string",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[project_code]"
+}

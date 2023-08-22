@@ -1,0 +1,6 @@
+{
+  "name": "StageActsStartPeriodDate",
+  "dataType": "dateTime",
+  "sourceColumn": "StageActsStartPeriodDate",
+  "formatString": "dd.MM.yyyy"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Fact Subcontr Exp",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'FactProjectExpenses'[SUM_RUB] ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS] = \"Субподряд\" ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        FactProjectExpenses,",
+      "        KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS] = \"Субподряд\" ),",
+      "        KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+      "    ),",
+      "    \"Project RMS\", RELATED ( 'Projects'[Project] ),",
+      "    \"Инвест Проект\", 'FactProjectExpenses'[INVESTMENT_PROJECT],",
+      "    \"Инвест Задача\", 'FactProjectExpenses'[INVESTMENT_TASK],",
+      "    \"Capex MTS ID\", 'FactProjectExpenses'[CAPEX_MTS_ID],",
+      "    \"Трайб\", 'FactProjectExpenses'[TRIBE],",
+      "    \"Код ЦО OEBS\", 'FactProjectExpenses'[RESPONSIBILITY_CENTER],",
+      "    \"Центр Ответственности\", 'FactProjectExpenses'[BI_Центр ответственности],",
+      "    \"Юр лицо RMS\", RELATED ( 'BusinessUnits'[Entity Name] ),",
+      "    \"Бизнес Сегмент\", 'FactProjectExpenses'[SEGMENT1_DESCRIPTION],",
+      "    \"Accounting Date\", 'FactProjectExpenses'[ACCOUNTING_DATE],",
+      "    \"Ссылка 2\", 'FactProjectExpenses'[Ссылка 2],",
+      "    \"Контрагент\", 'FactProjectExpenses'[BI_Контрагент],",
+      "    \"Expenses Class\", 'FactProjectExpenses'[EXPENSE_CLASS],",
+      "    \"Expense Type RMS\", 'FactProjectExpenses'[Тип расходов RMS],",
+      "    \"Код статьи PL\", 'FactProjectExpenses'[BI_Код Статьи PL],",
+      "    \"Статья PL\", 'FactProjectExpenses'[BI_Название Статьи PL],",
+      "    \"Description\", 'FactProjectExpenses'[Описание проводки],",
+      "    \"Sum RUB\", 'FactProjectExpenses'[SUM_RUB]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Requirements",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    src_viw = Source{[Schema=\"dbo\",Item=\"viw_Requirements\"]}[Data]",
+      "in",
+      "    src_viw"
+    ]
+  }
+}

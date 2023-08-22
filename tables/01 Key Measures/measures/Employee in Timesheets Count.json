@@ -1,0 +1,13 @@
+{
+  "name": "Employee in Timesheets Count",
+  "expression": [
+    "COUNTROWS (",
+    "    FILTER ( VALUES ( 'FactHours'[PersonCode] ), [Total Hours] > 0 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "10. Timesheets",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

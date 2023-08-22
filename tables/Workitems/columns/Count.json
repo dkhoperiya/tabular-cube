@@ -1,0 +1,7 @@
+{
+  "name": "Count",
+  "dataType": "int64",
+  "sourceColumn": "Count",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

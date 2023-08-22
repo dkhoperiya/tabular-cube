@@ -1,0 +1,26 @@
+{
+  "name": "Min KPI Date G2",
+  "expression": [
+    "IF (",
+    "    HASONEVALUE ( 'Projects'[Project] ),",
+    "    CALCULATE (",
+    "        MIN ( Milestones[KPI Date] ),",
+    "        KEEPFILTERS ( Milestones[Milestone] = \"[G2]\" ),",
+    "        TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+    "    )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        VALUES ( Projects[Project] ),",
+      "        \"Min KPI Date G2\", [Min KPI Date G2]",
+      "    ),",
+      "    [Min KPI Date G2] <> BLANK ()",
+      ")"
+    ]
+  }
+}

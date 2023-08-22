@@ -1,0 +1,5 @@
+{
+  "name": "Описание проводки",
+  "dataType": "string",
+  "sourceColumn": "DESCRIPTION"
+}

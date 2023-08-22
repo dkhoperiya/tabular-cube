@@ -1,0 +1,6 @@
+{
+  "name": "Plan Project GM 19",
+  "expression": "[Plan Act Sum G6] - [Plan Project Expenses 19]",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\04. Fin KPI\\01a. Plan 19"
+}

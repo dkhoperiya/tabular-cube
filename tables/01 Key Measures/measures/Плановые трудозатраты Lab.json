@@ -1,0 +1,10 @@
+{
+  "name": "Плановые трудозатраты Lab",
+  "expression": [
+    "CALCULATE(",
+    "                    [PlanFotRub],",
+    "                    BusinessUnits[Entity Code] = \"24\"",
+    "                    )"
+  ],
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

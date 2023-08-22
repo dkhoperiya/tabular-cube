@@ -1,0 +1,7 @@
+{
+  "name": "22833285-aaa6-4849-a33c-277b29c55953",
+  "fromTable": "FactHours",
+  "fromColumn": "ProductionProjectCode",
+  "toTable": "Production Projects",
+  "toColumn": "Project Code"
+}

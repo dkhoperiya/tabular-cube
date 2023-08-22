@@ -1,0 +1,5 @@
+{
+  "name": "Direction",
+  "dataType": "string",
+  "sourceColumn": "Direction"
+}

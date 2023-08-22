@@ -1,0 +1,13 @@
+{
+  "name": "Полученная выручка SumFactIncome (G6) до даты",
+  "expression": [
+    "var maxDate = MAX(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [Полученная выручка SumFactIncome (G6)],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] <= maxDate )",
+    ")"
+  ],
+  "displayFolder": "16. WIP\\Фильтр по дате"
+}

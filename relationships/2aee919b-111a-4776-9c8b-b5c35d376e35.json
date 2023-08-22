@@ -1,0 +1,7 @@
+{
+  "name": "2aee919b-111a-4776-9c8b-b5c35d376e35",
+  "fromTable": "PlanHours_2lvl",
+  "fromColumn": "date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

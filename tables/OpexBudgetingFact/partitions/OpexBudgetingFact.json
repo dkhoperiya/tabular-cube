@@ -1,0 +1,14 @@
+{
+  "name": "OpexBudgetingFact",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_OPEXBUDGETING_OpexFact\"]}[Data]",
+      " in",
+      "    data"
+    ]
+  }
+}

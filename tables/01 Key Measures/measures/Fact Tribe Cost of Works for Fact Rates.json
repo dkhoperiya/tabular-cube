@@ -1,0 +1,20 @@
+{
+  "name": "Fact Tribe Cost of Works for Fact Rates",
+  "expression": "[Fact Tribe Costs Subcontracts MTSIT STS with K] + [Fact Cost of Works MTSIT STS with K]",
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fact Tribe Costs Subcontracts MTSIT STS with K] )",
+      "VAR y =",
+      "    CALCULATE ( [Fact Cost of Works MTSIT STS with K] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Costs Subcontracts MTSIT STS with K\", x,",
+      "        \"Fact Cost of Works MTSIT STS with K\", y,",
+      "        \"Fact Tribe Cost of Works for Fact Rates\", x + y",
+      "    )"
+    ]
+  }
+}

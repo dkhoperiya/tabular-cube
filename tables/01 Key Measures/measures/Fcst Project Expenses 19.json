@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Project Expenses 19",
+  "description": "Прогоноз расходов на проекте. Считается как факт расходов на проекте в прошлых периодах (есть данные о фактических затратах) + план расходов будущих периодов (ФОТ расчитывается по емкости)",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Project Expenses],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Project Expenses 19],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\03a. Forecast 19"
+}

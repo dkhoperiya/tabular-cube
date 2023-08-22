@@ -1,0 +1,6 @@
+{
+  "name": "DGPH Finish Date",
+  "dataType": "dateTime",
+  "sourceColumn": "DGPH Finish Date",
+  "formatString": "dd.MM.yyyy"
+}

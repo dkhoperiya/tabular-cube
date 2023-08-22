@@ -1,0 +1,13 @@
+{
+  "type": "calculated",
+  "name": "Min KPI Date G2",
+  "dataType": "dateTime",
+  "isDataTypeInferred": true,
+  "expression": [
+    "CALCULATE (",
+    "    MIN ( 'Milestones'[KPI Date] ),",
+    "    KEEPFILTERS ( 'Milestones'[Milestone] = \"[G2]\" )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy"
+}

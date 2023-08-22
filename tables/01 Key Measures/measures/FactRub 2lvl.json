@@ -1,0 +1,17 @@
+{
+  "name": "FactRub 2lvl",
+  "expression": [
+    "CALCULATE (",
+    "    SUMX (",
+    "        'FactHours_2lvl',",
+    "        'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[transfer_rate]",
+    "    ),",
+    "    KEEPFILTERS ( 'FactHours_2lvl'[is_subcontract] = 1 )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours 2lvl] )"
+  }
+}

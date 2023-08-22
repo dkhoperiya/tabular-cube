@@ -1,0 +1,9 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "milestone_code",
+  "dataType": "int64",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "sourceColumn": "[milestone_code]"
+}

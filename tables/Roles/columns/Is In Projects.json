@@ -1,0 +1,7 @@
+{
+  "name": "Is In Projects",
+  "dataType": "int64",
+  "sourceColumn": "Is In Projects",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

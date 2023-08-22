@@ -1,0 +1,7 @@
+{
+  "name": "Service Request Index",
+  "dataType": "string",
+  "sourceColumn": "Service Request Index",
+  "formatString": "###0",
+  "summarizeBy": "none"
+}

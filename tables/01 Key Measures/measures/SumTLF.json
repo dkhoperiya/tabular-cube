@@ -1,0 +1,5 @@
+{
+  "name": "SumTLF",
+  "expression": "SUM ( 'TargetLevelsOfFunding'[SumTLF] )",
+  "displayFolder": "20. Target Levels Of Funding"
+}

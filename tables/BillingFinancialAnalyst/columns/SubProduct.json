@@ -1,0 +1,5 @@
+{
+  "name": "SubProduct",
+  "dataType": "string",
+  "sourceColumn": "SubProduct"
+}

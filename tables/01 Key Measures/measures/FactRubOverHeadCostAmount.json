@@ -1,0 +1,12 @@
+{
+  "name": "FactRubOverHeadCostAmount",
+  "expression": [
+    "SUM(FactHours[OverHeadCostAmount])",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactRubOverHeadCostAmount\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "SumIncome Status",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Act Sum G6],",
+    "    KEEPFILTERS ( Projects[Project Status] = \"Presale\" )",
+    ")",
+    "    + CALCULATE (",
+    "        [KPI Revenue G6],",
+    "        KEEPFILTERS ( Projects[Project Status] <> \"Presale\" )",
+    "    )"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате"
+}

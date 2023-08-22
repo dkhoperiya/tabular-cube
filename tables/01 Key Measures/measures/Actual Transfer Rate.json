@@ -1,0 +1,36 @@
+{
+  "name": "Actual Transfer Rate",
+  "description": "Трансфертная ставка для ЮЛ-трайба-роли, действующая на дату отчета",
+  "expression": [
+    "VAR d =",
+    "    TODAY ()",
+    "RETURN",
+    "    IF (",
+    "        HASONEVALUE ( TribeRoleCosts[role_code] )",
+    "            && HASONEVALUE ( TribeRoleCosts[tribe_code] )",
+    "            && HASONEVALUE ( 'TribeRoleCosts'[BuCode] ),",
+    "        CALCULATE (",
+    "            SUM ( TribeRoleCosts[transfer_rate] ),",
+    "            ALL ( Dates ),",
+    "            TribeRoleCosts[Date] = d",
+    "        )",
+    "    )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "07. Budget Role Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        CALCULATETABLE ( TribeRoleCosts, ALL ( Dates ) ),",
+      "        TribeRoleCosts[Date] = TODAY ()",
+      "    ),",
+      "    \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Role\", RELATED ( Roles[Role] ),",
+      "    \"Date\", TribeRoleCosts[Date],",
+      "    \"Actual Transfer Rate\", TribeRoleCosts[transfer_rate],",
+      "    \"Actual FOT Rate\", TribeRoleCosts[fot_rate]",
+      ")"
+    ]
+  }
+}

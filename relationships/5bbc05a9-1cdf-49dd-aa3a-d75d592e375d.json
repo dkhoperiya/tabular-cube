@@ -1,0 +1,7 @@
+{
+  "name": "5bbc05a9-1cdf-49dd-aa3a-d75d592e375d",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "pl_code",
+  "toTable": "PL Items",
+  "toColumn": "PL Item Code"
+}

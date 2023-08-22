@@ -1,0 +1,11 @@
+{
+  "name": "TB_Digital_Lab_TS_CM",
+  "expression": [
+    "CALCULATE (",
+    "    [FactRub] - [FactFotRub],",
+    "    KEEPFILTERS ( BusinessUnits[Entity Code] IN { \"1\", \"24\" } ), ",
+    "    KEEPFILTERS ( FactHours[IsRenormEnabled] = 0 )",
+    ")"
+  ],
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact overhead costs and margin details"
+}

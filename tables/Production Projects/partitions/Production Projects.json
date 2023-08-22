@@ -1,0 +1,38 @@
+{
+  "name": "Production Projects",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    ProjectList = Source{[Schema=\"dbo\",Item=\"viw_Projects\"]}[Data],",
+      "    #\"Replaced Value\" = Table.ReplaceValue(ProjectList,null,\"0\",Replacer.ReplaceValue,{\"Contour_Code\"}),",
+      "    #\"Added Custom\" = Table.AddColumn(#\"Replaced Value\", \"ProductOwner Code\", each if [ProductOwnerCode] = null then \"UNDEFINED_\" & [Contour_Code] else [ProductOwnerCode],type text),",
+      "    AddProbability = Table.AddColumn(#\"Added Custom\", \"Probability1\", each let stat=Text.Upper([ProjectStatus_Name]) in if List.Contains({\"PRESALE\",\"CANCELED\",\"FROZEN\"},stat) then if [Probability] = null then 1 else [Probability] else 1, type number),",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(AddProbability,{\"Code\", \"Name\", \"Customer\", \"StartDate\", \"ClosedDate\", \"ProjectType_Code\", \"ProjectType_Name\", \"ProjectCategory_Code\", \"ProjectCategory_Name\", \"ProjectDirection_Name\", \"ProjectStatus_Name\", \"Manager_Name\", \"AdminProject\", \"Contour_Code\", \"Contour\", \"Product\", \"ProductClassificator\", \"BudgetStatus\", \"HyperionNSS_ID\", \"TaskOebsName\", \"SupitrId\", \"LinkToSupitr\", \"Itg\", \"NameLocal\", \"Description\", \"ProductOwnerName\", \"CapexMTS_ID\", \"CapexMTS_BO\", \"CapexMTS_BO_Name\", \"ReleaseProjectPlanKoef\", \"ProjectTypeMts\", \"ProductType\", \"CostSegment_Code\", \"CostSegment_Name\", \"Parent_CostSegment_Code\", \"Parent_CostSegment_Name\", \"InvestmentProject\", \"ProjectLink\", \"CodeSol\", \"Probability1\", \"TechOwnerName\"}),",
+      "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Other Columns\",{{\"Name\", \"Project Name\"}, {\"Code\", \"Project Code\"}, {\"ProjectType_Name\", \"Project Type\"}, {\"ProjectCategory_Name\", \"Project Category\"}, {\"ProjectDirection_Name\", \"Project Direction\"}, {\"ProjectStatus_Name\", \"Project Status\"}, {\"Manager_Name\", \"PM\"}, {\"AdminProject\", \"Admin Project\"}, {\"Contour_Code\", \"project_tribe_code\"}, {\"ProductOwnerName\", \"PO\"}, {\"BudgetStatus\", \"Budget Status\"}, {\"StartDate\", \"Project Start Date\"}, {\"ClosedDate\", \"Project Closed Date\"}, {\"Probability1\", \"Project Probability\"}, {\"Contour\", \"Project Tribe\"}, {\"CapexMTS_ID\", \"Capex MTS\"}, {\"ProjectCategory_Code\", \"project_category_code\"}, {\"ProjectType_Code\", \"project_type_code\"}, {\"Product\", \"Project Product\"}, {\"CapexMTS_BO\", \"CapexMTS BO\"}, {\"CapexMTS_BO_Name\", \"CapexMTS BO Name\"}, {\"ProductClassificator\", \"Product Classificator\"}, {\"ProjectTypeMts\", \"Project Type for MTS\"}, {\"ProductType\", \"Product Type\"}, {\"SupitrId\", \"Supitr Id\"}, {\"LinkToSupitr\", \"Link to Supitr\"}, {\"Description\", \"Project Description\"}, {\"NameLocal\", \"Project Name Local\"}, {\"CostSegment_Code\", \"CostSegment Code\"}, {\"CostSegment_Name\", \"CostSegment Name\"}, {\"Parent_CostSegment_Code\", \"Parent CostSegment Code\"}, {\"Parent_CostSegment_Name\", \"Parent CostSegment Name\"}, {\"ProjectLink\", \"Project Link RMS\"}, {\"CodeSol\", \"Product Code (SoL)\"}, {\"TechOwnerName\", \"TechOwner\"}}),",
+      "    #\"Added Custom1\" = Table.AddColumn(#\"Renamed Columns\", \"R\", each ",
+      "        [",
+      "            Has Revenue=not List.Contains({\"ВНУТРЕННИЙ\"},Text.Upper([Project Direction])) and not List.Contains({\"CANCELED\"},Text.Upper([Project Status])), ",
+      "            incl_for_fin_plan=  not List.Contains({\"ВНУТРЕННИЙ\",\"МТС ИТ - ОПЕКС\"},Text.Upper([Project Direction])) and not List.Contains({\"CANCELED\",\"WARRANTY\",\"NOTFORPO\"},Text.Upper([Project Status])),",
+      "            incl_for_fin_fact= not List.Contains({\"ВНУТРЕННИЙ\",\"МТС ИТ - ОПЕКС\"},Text.Upper([Project Direction])) and not List.Contains({\"CANCELED\",\"WARRANTY\",\"NOTFORPO\"},Text.Upper([Project Status])),",
+      "            Project Direction Short=Text.Start([Project Code],1),",
+      "            project_status_id = if Text.Upper([Project Status])=\"CANCELED\" then 1 ",
+      "                else if Text.Upper([Project Status])=\"NOTFORPO\" then 2 ",
+      "                else if Text.Upper([Project Status])=\"PRESALE\" then 3 ",
+      "                else if Text.Upper([Project Status])=\"FROZEN\" then 4 ",
+      "                else if Text.Upper([Project Status])=\"REALIZATION\" then 5              ",
+      "                else if Text.Upper([Project Status])=\"CLOSED\" then 6",
+      "                else if Text.Upper([Project Status])=\"WARRANTY\" then 7",
+      "                else 0,",
+      "            is_technical_tribe_project = if Text.Upper(Text.Start([Project Code],6))=\"UNDEF_\" then 1 else 0",
+      "        ]),",
+      "    #\"Expanded R\" = Table.ExpandRecordColumn(#\"Added Custom1\", \"R\", {\"Has Revenue\", \"incl_for_fin_plan\", \"incl_for_fin_fact\", \"Project Direction Short\", \"project_status_id\", \"is_technical_tribe_project\"}, {\"Has Revenue\", \"incl_for_fin_plan\", \"incl_for_fin_fact\", \"Project Direction Short\", \"project_status_id\", \"is_technical_tribe_project\"}),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded R\",{{\"Has Revenue\", type logical}, {\"incl_for_fin_plan\", type logical}, {\"incl_for_fin_fact\", type logical}, {\"project_tribe_code\", Int64.Type}, {\"Project Direction Short\", type text}, {\"project_status_id\", Int64.Type}, {\"is_technical_tribe_project\", type logical}}),",
+      "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Changed Type\",each [Project Code] & \"_\",\"\",Replacer.ReplaceText,{\"Project Name\"})",
+      "in",
+      "    #\"Replaced Value1\""
+    ]
+  }
+}

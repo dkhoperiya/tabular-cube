@@ -1,0 +1,6 @@
+{
+  "name": "FinishDate",
+  "dataType": "dateTime",
+  "sourceColumn": "FinishDate",
+  "formatString": "dd.MM.yyyy"
+}

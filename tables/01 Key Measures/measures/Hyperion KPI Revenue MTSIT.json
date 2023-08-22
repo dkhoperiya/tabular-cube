@@ -1,0 +1,30 @@
+{
+  "name": "Hyperion KPI Revenue MTSIT",
+  "description": "Сумма плана затарт из Hyperion, где BI_BUDGET_TYPE = \"PAY Оплата\", [BI_DATA_TYPE] = \"Budget Исходный план\", [EXPENCE_GROUP_CODE] IN { 301, 401 } и [BU_CODE] IN {1000}",
+  "expression": [
+    "SUMX (",
+    "    VALUES ( 'Project Capex MTS'[Capex_MTS_ID] ),",
+    "    VAR G2_DATE =",
+    "        CALCULATE (",
+    "            MAX ( Milestones[Plan Date] ),",
+    "            KEEPFILTERS ( Milestones[Milestone] = \"[G2]\" ),",
+    "            KEEPFILTERS ( Milestones[Works Status] = \"Выполнено\" ),",
+    "            FILTER (",
+    "                Projects,",
+    "                SEARCH ( Projects[Project Code], Projects[TaskOebsName], 1, 0 ) > 0",
+    "            )",
+    "        )",
+    "    RETURN",
+    "        CALCULATE (",
+    "            [Hyperion Plan Capex],",
+    "            KEEPFILTERS ( 'Hyperion Plan'[P_MONTH] <= G2_DATE ),",
+    "            KEEPFILTERS ( 'Hyperion Plan'[BI_DATA_TYPE] = \"Budget Исходный план\" ),",
+    "            KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" ),",
+    "            KEEPFILTERS ( 'Hyperion Plan'[EXPENCE_GROUP_CODE] IN { \"301\", \"401\" } ),",
+    "            KEEPFILTERS ( 'Hyperion Plan'[BU_CODE] IN {\"1000\"} )",
+    "        )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex"
+}

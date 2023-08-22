@@ -1,0 +1,6 @@
+{
+  "name": "TaskTrackerId",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "TaskTrackerId"
+}

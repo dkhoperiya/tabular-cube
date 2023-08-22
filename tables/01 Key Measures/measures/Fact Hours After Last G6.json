@@ -1,0 +1,23 @@
+{
+  "name": "Fact Hours After Last G6",
+  "description": "Сумма списания после прохождения максимальной точки G6",
+  "expression": [
+    "SUMX (",
+    "    FILTER (",
+    "        FactHours,",
+    "        VAR x =",
+    "            RELATED ( Projects[Max Plan Date G6] )",
+    "        RETURN",
+    "            x <> BLANK ()",
+    "                && (",
+    "                    YEAR ( x ) * 10000",
+    "                        + MONTH ( x ) * 100",
+    "                        + DAY ( x )",
+    "                ) < FactHours[DateKey]",
+    "    ),",
+    "    FactHours[NormSeconds]",
+    ") / 3600"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting"
+}

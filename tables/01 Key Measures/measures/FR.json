@@ -1,0 +1,5 @@
+{
+  "name": "FR",
+  "expression": "CALCULATE ( [FactRub], KEEPFILTERS ( BusinessUnits[Entity Code] = \"4\" ) )",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact ind FOT details"
+}

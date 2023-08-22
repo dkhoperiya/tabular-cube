@@ -1,0 +1,7 @@
+{
+  "name": "07ef734b-12af-465d-b0c8-5a1bb066674f",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "project_tribe",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

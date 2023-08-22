@@ -1,0 +1,5 @@
+{
+  "name": "Selected Expense Measure",
+  "expression": "SELECTEDMEASURE ()",
+  "displayFolder": "08. BIT Budget\\04. Factor Analysis"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "TribeYearCapacity",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[TribeYearCapacity]"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "da27b132-abad-44bd-9460-6de10c4d4821",
+  "fromTable": "XLS_FactProjectMetrics",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

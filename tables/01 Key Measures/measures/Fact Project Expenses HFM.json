@@ -1,0 +1,9 @@
+{
+  "name": "Fact Project Expenses HFM",
+  "expression": "SUM ('HFM_Adjustments_Fact'[DDATA])",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails",
+  "detailRowsDefinition": {
+    "expression": "'HFM_Adjustments_Fact'"
+  }
+}

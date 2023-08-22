@@ -1,0 +1,15 @@
+{
+  "name": "WIP_Acts_Drafts",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_WIP_WipActs\"]}[Data]",
+      "in",
+      "    data",
+      " "
+    ]
+  }
+}

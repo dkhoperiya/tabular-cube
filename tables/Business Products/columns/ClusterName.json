@@ -1,0 +1,5 @@
+{
+  "name": "ClusterName",
+  "dataType": "string",
+  "sourceColumn": "ClusterName"
+}

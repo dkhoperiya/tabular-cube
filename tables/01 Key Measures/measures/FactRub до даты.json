@@ -1,0 +1,14 @@
+{
+  "name": "FactRub до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [FactRub], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

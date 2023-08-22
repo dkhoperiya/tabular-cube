@@ -1,0 +1,7 @@
+{
+  "name": "Iteration",
+  "dataType": "int64",
+  "sourceColumn": "Iteration",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

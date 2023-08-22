@@ -1,0 +1,10 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "Resource Tribe Code",
+  "dataType": "int64",
+  "isNameInferred": false,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Resource Tribe Code]",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

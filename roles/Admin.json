@@ -1,0 +1,22 @@
+{
+  "name": "Admin",
+  "modelPermission": "administrator",
+  "members": [
+    {
+      "memberName": "ADMSK\\vnkosimo",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-802661"
+    },
+    {
+      "memberName": "S-1-5-21-2765186133-1143222848-3989964856-22629",
+      "memberId": "S-1-5-21-2765186133-1143222848-3989964856-22629"
+    },
+    {
+      "memberName": "ADMSK\\sa0700plspadmin",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-904077"
+    },
+    {
+      "memberName": "ADMSK\\0000 G MTSIT Planning",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-652593"
+    }
+  ]
+}

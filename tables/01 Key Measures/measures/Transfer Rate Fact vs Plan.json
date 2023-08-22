@@ -1,0 +1,20 @@
+{
+  "name": "Transfer Rate Fact vs Plan",
+  "expression": "DIVIDE ( [Fact Transfer Rate], [Historical WA Transfer Rate] )",
+  "formatString": "0%;-0%;0%",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR X =",
+      "    CALCULATE ( [Fact Transfer Rate] )",
+      "VAR Y =",
+      "    CALCULATE ( [Historical WA Transfer Rate] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Transfer Rate\", X,",
+      "        \"Historical WA Transfer Rate\", Y,",
+      "        \"Transfer Rate Fact vs Plan\", DIVIDE ( X, Y )",
+      "    )"
+    ]
+  }
+}

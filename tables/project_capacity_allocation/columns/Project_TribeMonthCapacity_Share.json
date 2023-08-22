@@ -1,0 +1,6 @@
+{
+  "type": "calculated",
+  "name": "Project_TribeMonthCapacity_Share",
+  "dataType": "decimal",
+  "expression": "'project_capacity_allocation'[ProjectGM_Share] * 'project_capacity_allocation'[TribeYearCapacity] / 12"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ExpensePlanType",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ExpensePlanType"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Projects_Donors",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_DimProjects_Donors\"]}[Data]",
+      "in",
+      "    data"
+    ]
+  }
+}

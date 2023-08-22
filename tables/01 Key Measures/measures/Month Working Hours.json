@@ -1,0 +1,25 @@
+{
+  "name": "Month Working Hours",
+  "description": "Количество рабочих дней в месяце",
+  "expression": [
+    "IF (",
+    "    HASONEVALUE ( 'IndustryCalendar'[IndustryMonthId] ),",
+    "    AVERAGE ( 'IndustryCalendar'[MonthWorkHours] )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "14. Industry Calendar",
+  "detailRowsDefinition": {
+    "expression": [
+      "ADDCOLUMNS (",
+      "    SUMMARIZE (",
+      "        'IndustryCalendar',",
+      "        Dates[Year],",
+      "        Dates[Month Name],",
+      "        'BusinessUnits'[BU Code]",
+      "    ),",
+      "    \"Month Work Hours\", CALCULATE ( AVERAGE ( 'IndustryCalendar'[MonthWorkHours] ) )",
+      ")"
+    ]
+  }
+}

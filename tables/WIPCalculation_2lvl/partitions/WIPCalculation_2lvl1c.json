@@ -1,0 +1,15 @@
+{
+  "name": "WIPCalculation_2lvl1c",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_ERP1CH_WIP_Calculation_2lvl\"]}[Data],",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(data,{\"Project_Code\", \"ProjectTribe_Code\", \"Tribe_Code\", \"pl_code\", \"month_date\", \"responsibility_center\", \"bu_code\", \"Fact FOT K\", \"Debet\", \"Source Sheet\", \"Source WB\", \"InvestProjectPairId\", \"ContractId\"}),",
+      "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Other Columns\", each [month_date] >= #date(2024, 1, 1))",
+      "in",
+      "    #\"Filtered Rows\""
+    ]
+  }
+}

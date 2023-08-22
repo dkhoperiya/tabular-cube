@@ -1,0 +1,5 @@
+{
+  "name": "ProductOwnerName",
+  "dataType": "string",
+  "sourceColumn": "ProductOwnerName"
+}

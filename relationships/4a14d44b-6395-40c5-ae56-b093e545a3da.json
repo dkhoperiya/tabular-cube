@@ -1,0 +1,7 @@
+{
+  "name": "4a14d44b-6395-40c5-ae56-b093e545a3da",
+  "fromTable": "PlanHours",
+  "fromColumn": "ProjectCode",
+  "toTable": "Production Projects",
+  "toColumn": "Project Code"
+}

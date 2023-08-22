@@ -1,0 +1,6 @@
+{
+  "name": "Manager_Email",
+  "dataType": "string",
+  "sourceColumn": "Manager_Email",
+  "sourceProviderType": "nvarchar"
+}

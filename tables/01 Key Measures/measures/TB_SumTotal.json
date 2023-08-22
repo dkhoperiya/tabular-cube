@@ -1,0 +1,9 @@
+{
+  "name": "TB_SumTotal",
+  "expression": "SUM ( 'TeamBudgeting_Hours_Calculation'[SumTotal] )",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации",
+  "detailRowsDefinition": {
+    "expression": "TeamBudgeting_Hours_Calculation"
+  }
+}

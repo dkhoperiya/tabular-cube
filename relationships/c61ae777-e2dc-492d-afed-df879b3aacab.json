@@ -1,0 +1,7 @@
+{
+  "name": "c61ae777-e2dc-492d-afed-df879b3aacab",
+  "fromTable": "OpexBudgetingFact",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Change Month Name",
+  "dataType": "string",
+  "sourceColumn": "Month Name",
+  "sortByColumn": "Change Month Number"
+}

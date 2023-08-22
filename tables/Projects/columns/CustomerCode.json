@@ -1,0 +1,7 @@
+{
+  "name": "CustomerCode",
+  "dataType": "int64",
+  "description": "Код закзачика из договора",
+  "isHidden": true,
+  "sourceColumn": "CustomerCode"
+}

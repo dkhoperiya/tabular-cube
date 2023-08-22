@@ -1,0 +1,6 @@
+{
+  "name": "StateChangeDate",
+  "dataType": "dateTime",
+  "sourceColumn": "StateChangeDate",
+  "formatString": "dd.MM.yyyy"
+}

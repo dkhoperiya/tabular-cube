@@ -1,0 +1,7 @@
+{
+  "name": "57f147e8-5fd8-41a9-acd0-9c48579357eb",
+  "fromTable": "FactHours",
+  "fromColumn": "ChangeDate",
+  "toTable": "Change Dates",
+  "toColumn": "Change Date"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "f48897d4-e737-4701-abf9-9d4c333d786d",
+  "fromTable": "Capacity",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

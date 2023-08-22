@@ -1,0 +1,7 @@
+{
+  "name": "Priority FinInvestPlan",
+  "dataType": "int64",
+  "sourceColumn": "FinInvestPlan_Priority",
+  "formatString": "###0",
+  "summarizeBy": "none"
+}

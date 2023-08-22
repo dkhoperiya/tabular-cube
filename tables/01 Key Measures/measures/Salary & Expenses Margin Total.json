@@ -1,0 +1,14 @@
+{
+  "name": "Salary & Expenses Margin Total",
+  "expression": "CALCULATE ( [Team Cost], KEEPFILTERS ( 'TeamCosts'[TypeId] IN { 2, 3 } ) )",
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan\\01. Team Costs",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Team Cost] ),",
+      "    KEEPFILTERS ( 'TeamCosts'[TypeId] IN { 2, 3 } )",
+      ")"
+    ]
+  }
+}

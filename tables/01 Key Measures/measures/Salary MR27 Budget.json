@@ -1,0 +1,21 @@
+{
+  "name": "Salary MR27 Budget",
+  "expression": [
+    "CALCULATE (",
+    "    [BudgetMR27],",
+    "    KEEPFILTERS ( 'Budget_MR27'[PL_code]",
+    "        IN { \"p5310\", \"p5320\", \"p5330\", \"p5340\", \"p5350\", \"p5360\" } )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [BudgetMR27] ),",
+      "    KEEPFILTERS ( 'Budget_MR27'[PL_code]",
+      "        IN { \"p5310\", \"p5320\", \"p5330\", \"p5340\", \"p5350\", \"p5360\" } )",
+      ")"
+    ]
+  }
+}

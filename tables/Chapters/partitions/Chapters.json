@@ -1,0 +1,15 @@
+{
+  "name": "Chapters",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_DimChapter = Source{[Schema=\"dbo\",Item=\"DimChapter\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(dbo_DimChapter,{{\"ChapterName\", \"Chapter\"}, {\"Tribe\", \"Chapter Tribe\"}, {\"ChapterOwner\", \"Chapter Owner\"}, {\"ChapterCode\", \"chapter_code\"}})",
+      "in",
+      "    #\"Renamed Columns\""
+    ]
+  }
+}

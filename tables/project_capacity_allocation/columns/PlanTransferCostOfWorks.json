@@ -1,0 +1,7 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "PlanTransferCostOfWorks",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "sourceColumn": "[PlanTransferCostOfWorks]"
+}

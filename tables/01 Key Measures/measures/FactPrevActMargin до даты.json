@@ -1,0 +1,13 @@
+{
+  "name": "FactPrevActMargin до даты",
+  "expression": [
+    "var maxDate = MAX(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [FactPrevActMargin],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] <= maxDate )",
+    ")"
+  ],
+  "displayFolder": "16. WIP\\Метрики актов предыдущих периодов"
+}

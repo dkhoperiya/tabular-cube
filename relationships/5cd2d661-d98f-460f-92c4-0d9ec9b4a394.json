@@ -1,0 +1,7 @@
+{
+  "name": "5cd2d661-d98f-460f-92c4-0d9ec9b4a394",
+  "fromTable": "Assignments History",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

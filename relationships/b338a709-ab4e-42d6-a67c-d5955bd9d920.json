@@ -1,0 +1,7 @@
+{
+  "name": "b338a709-ab4e-42d6-a67c-d5955bd9d920",
+  "fromTable": "Projects",
+  "fromColumn": "SolObjectId",
+  "toTable": "Products",
+  "toColumn": "ObjectId"
+}

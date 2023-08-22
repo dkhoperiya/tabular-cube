@@ -1,0 +1,7 @@
+{
+  "name": "f6faf7be-f7d0-4f03-aae6-ba939230b965",
+  "fromTable": "PL_Tribe_KPI",
+  "fromColumn": "tribe_code",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

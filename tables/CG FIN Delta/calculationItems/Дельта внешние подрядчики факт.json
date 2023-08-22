@@ -1,0 +1,5 @@
+{
+  "name": "Дельта внешние подрядчики факт",
+  "expression": "[Plan Subcontr Exp] - [Fact Subcontr Exp]",
+  "ordinal": 6
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Turnover % Static",
+  "expression": "DIVIDE ( [Отток], [Численность на дату], 0 )",
+  "formatString": "#,##0.00 %",
+  "isHidden": true,
+  "displayFolder": "09. HR\\02. HR - метрики"
+}

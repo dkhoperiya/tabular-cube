@@ -1,0 +1,14 @@
+{
+  "name": "01 Key Measures",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = Table.FromRecords({[id=0]}),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"id\", Int64.Type}})",
+      "in ",
+      "    #\"Changed Type\""
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Action",
+  "dataType": "string",
+  "sourceColumn": "Action"
+}

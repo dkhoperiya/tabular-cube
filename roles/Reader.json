@@ -1,0 +1,121 @@
+{
+  "name": "Reader",
+  "modelPermission": "read",
+  "members": [
+    {
+      "memberName": "ADMSK\\sa0700plspexcel",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-904081"
+    },
+    {
+      "memberName": "ADMSK\\0000 G OLAP Planning readers",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-823594"
+    },
+    {
+      "memberName": "ADMSK\\sa0700plspadmin",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-904077"
+    },
+    {
+      "memberName": "ADMSK\\sa0411pmopowerbi",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-1110778"
+    },
+    {
+      "memberName": "ADMSK\\yakrekova",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-1362677"
+    },
+    {
+      "memberName": "ADMSK\\0000 G RMS Readers",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-844903"
+    }
+  ],
+  "tablePermissions": [
+    {
+      "name": "Employees",
+      "columnPermissions": [
+        {
+          "name": "Age",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Phone",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Grade",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Age Range ID",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Employee DistWork",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Employee LeavReasCode",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Employee LeavReasDiscription",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Employee LeavReasName",
+          "metadataPermission": "none"
+        }
+      ]
+    },
+    {
+      "name": "EmployeeWorkTermRanges",
+      "metadataPermission": "none"
+    },
+    {
+      "name": "EmployeeAgeRanges",
+      "metadataPermission": "none"
+    },
+    {
+      "name": "ImportantEmployee",
+      "metadataPermission": "none"
+    },
+    {
+      "name": "Capacity",
+      "metadataPermission": "read",
+      "columnPermissions": [
+        {
+          "name": "AgeOnDate",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "AgeRangeID",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "EmployeeCategory",
+          "metadataPermission": "none"
+        }
+      ]
+    },
+    {
+      "name": "EmployeeMovements",
+      "metadataPermission": "read",
+      "columnPermissions": [
+        {
+          "name": "Age Range ID",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "AgeOnDate",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "Work Term Range ID",
+          "metadataPermission": "none"
+        },
+        {
+          "name": "EmployeeCategory",
+          "metadataPermission": "none"
+        }
+      ]
+    }
+  ]
+}

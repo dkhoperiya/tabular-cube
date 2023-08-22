@@ -1,0 +1,7 @@
+{
+  "name": "c1af1f19-d416-4ab2-b692-3c1dcf1da6fc",
+  "fromTable": "Hyperion Plan",
+  "fromColumn": "CUSTOMER",
+  "toTable": "Customers",
+  "toColumn": "Customer"
+}

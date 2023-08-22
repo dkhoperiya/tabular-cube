@@ -1,0 +1,7 @@
+{
+  "name": "82f0963e-2002-4a66-bbe7-f6a0ba936208",
+  "fromTable": "TribeRoleCosts",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

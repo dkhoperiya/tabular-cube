@@ -1,0 +1,7 @@
+{
+  "name": "cdfc93b7-23f3-40d6-9d55-cfc1463b86e2",
+  "fromTable": "WIP_Revenue_Correction",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

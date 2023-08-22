@@ -1,0 +1,7 @@
+{
+  "name": "f2164b8a-38d1-4812-8b81-a2d751b89ab1",
+  "fromTable": "PlanHours",
+  "fromColumn": "ServiceRequestId",
+  "toTable": "Service Requests",
+  "toColumn": "Service Request Id"
+}

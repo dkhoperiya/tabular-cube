@@ -1,0 +1,14 @@
+{
+  "name": "Important Util Flag",
+  "description": "Метрика, возвращающая 1, если средняя ставка ФОТ сотрудника выше средней ставки ФОТ по Трайбу за месяц, иначе возвращает 0",
+  "expression": [
+    "SIGN ( ",
+    "    ABS([Net Util Fact Hours] - [Net Util FTE]) -- Если 100% списано, то будет 0",
+    "    * ",
+    "    INT ( ",
+    "        DIVIDE ( [Average Fot Rate], [Average Tribe Fot Rate] ) ",
+    "    ) ",
+    ")"
+  ],
+  "displayFolder": "07. Budget Role Rates"
+}

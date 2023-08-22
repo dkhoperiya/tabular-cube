@@ -1,0 +1,20 @@
+{
+  "name": "Fact Hours Approved Projects",
+  "description": "Списание трудозатрат на защищенные проекты",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Hours],",
+    "    KEEPFILTERS ( Projects[Project Status Group] = \"Защищен\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( Projects[Project Status Group] = \"Защищен\" )",
+      ")"
+    ]
+  }
+}

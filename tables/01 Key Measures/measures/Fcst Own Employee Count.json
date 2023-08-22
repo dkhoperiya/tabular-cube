@@ -1,0 +1,16 @@
+{
+  "name": "Fcst Own Employee Count",
+  "description": "Прогноз FTE. Необходимая средняя численность по воронке RMS",
+  "expression": "DIVIDE ( [Fcst Own Work Hours], [One Person Work Hours in Period] )",
+  "formatString": "#,##0",
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses",
+  "detailRowsDefinition": {
+    "expression": [
+      "ROW (",
+      "    \"Fcst Own Work Hours\", [Fcst Own Work Hours],",
+      "    \"One Person Work Hours in Period\", [One Person Work Hours in Period],",
+      "    \"Fcst Own Employee Count\", DIVIDE ( [Fcst Own Work Hours], [One Person Work Hours in Period] )",
+      ")"
+    ]
+  }
+}

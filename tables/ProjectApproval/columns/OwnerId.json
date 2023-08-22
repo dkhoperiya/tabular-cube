@@ -1,0 +1,7 @@
+{
+  "name": "OwnerId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "OwnerId",
+  "sourceProviderType": "nvarchar"
+}

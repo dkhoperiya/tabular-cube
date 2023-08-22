@@ -1,0 +1,21 @@
+{
+  "name": "Fact Product Capex MTS D",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Product Metric Value],",
+    "    KEEPFILTERS ( 'ProductFinancialMetrics'[Metric] = \"capex\" ),",
+    "    KEEPFILTERS ( 'ProductFinancialMetrics'[Contractor] = \"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"\"МТС ДИДЖИТАЛ\"\"\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "19. Product",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Product Metric Value] ),",
+      "    KEEPFILTERS ( 'ProductFinancialMetrics'[Metric] = \"capex\" ),",
+      "    KEEPFILTERS ( 'ProductFinancialMetrics'[Contractor] = \"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"\"МТС ДИДЖИТАЛ\"\"\" )",
+      ")"
+    ]
+  }
+}

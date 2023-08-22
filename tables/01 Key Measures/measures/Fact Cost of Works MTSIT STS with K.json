@@ -1,0 +1,37 @@
+{
+  "name": "Fact Cost of Works MTSIT STS with K",
+  "description": "ЗП факт (wip calculation) где трайб проекта = трайбу-владельцу бюджета",
+  "expression": [
+    "SUMX (",
+    "    FILTER (",
+    "        WipCalculation,",
+    "        WipCalculation[tribe_code] = WIPCalculation[ProjectTribe_Code]",
+    "    ),",
+    "    WipCalculation[Debet] * ( 1 + WipCalculation[Fact FOT K] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact\\01. Additional",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        WipCalculation,",
+      "        WipCalculation[projecttribe_code] = WipCalculation[tribe_code]",
+      "    ),",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Budget Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Project Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "    \"Responcibility Center\", WipCalculation[responsibility_center],",
+      "    \"BusinessUnit\", 'WIPCalculation'[BuCode],",
+      "    \"Month Date\", WipCalculation[month_date],",
+      "    \"PL Code\", WipCalculation[pl_code],",
+      "    \"Source File\", WipCalculation[Source WB],",
+      "    \"Source Sheet\", WipCalculation[Source Sheet],",
+      "    \"Debet\", WipCalculation[Debet],",
+      "    \"FOT Koefficient\", WipCalculation[Fact FOT K],",
+      "    \"Fact Cost of Works MTSIT STS with K\", WipCalculation[Debet] * ( 1 + WipCalculation[Fact FOT K] )",
+      ")"
+    ]
+  }
+}

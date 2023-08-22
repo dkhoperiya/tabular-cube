@@ -1,0 +1,8 @@
+{
+  "name": "Customer_Code",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Customer_Code",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

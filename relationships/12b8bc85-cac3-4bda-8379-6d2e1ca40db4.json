@@ -1,0 +1,7 @@
+{
+  "name": "12b8bc85-cac3-4bda-8379-6d2e1ca40db4",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

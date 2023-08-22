@@ -1,0 +1,8 @@
+{
+  "name": "ФОТ факт",
+  "expression": [
+    "[Fact Cost of Works] + [Fact Transfer Cost of Works] + [Fact Subcontr CZ Exp]",
+    ""
+  ],
+  "ordinal": 1
+}

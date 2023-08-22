@@ -1,0 +1,7 @@
+{
+  "name": "Is Approved by Hr",
+  "dataType": "int64",
+  "sourceColumn": "IsApprovedByHr",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

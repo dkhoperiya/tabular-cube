@@ -1,0 +1,14 @@
+{
+  "name": "TeamCosts",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_RMS_TeamCosts_for_PMO_Finance\"]}[Data]",
+      "in",
+      "    data"
+    ]
+  }
+}

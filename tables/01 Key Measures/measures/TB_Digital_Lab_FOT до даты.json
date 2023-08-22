@@ -1,0 +1,10 @@
+{
+  "name": "TB_Digital_Lab_FOT до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [TB_Digital_Lab_FOT], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact ind FOT details"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "591b9bd9-437a-4659-b2b5-3d863db6f299",
+  "fromTable": "FactHours",
+  "fromColumn": "TaskTrackerId",
+  "toTable": "TaskTrackers",
+  "toColumn": "TaskTrackerId"
+}

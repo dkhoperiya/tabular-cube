@@ -1,0 +1,7 @@
+{
+  "name": "role_code",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "role_code",
+  "sourceProviderType": "int"
+}

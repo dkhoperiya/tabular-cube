@@ -1,0 +1,6 @@
+{
+  "name": "Max Node Depth",
+  "expression": "MAX ( WorkItems[HierarchyDepth] )",
+  "isHidden": true,
+  "displayFolder": "11. QBR Reporting"
+}

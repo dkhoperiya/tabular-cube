@@ -1,0 +1,5 @@
+{
+  "name": "FinancialPeriodIsClosed",
+  "dataType": "boolean",
+  "sourceColumn": "FinancialPeriodIsClosed"
+}

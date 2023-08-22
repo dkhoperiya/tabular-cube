@@ -1,0 +1,10 @@
+{
+  "name": "FFR_ALL",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ( NOT BusinessUnits[Entity Code] IN { \"1\", \"4\", \"24\" } )",
+    ")"
+  ],
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact ind FOT details"
+}

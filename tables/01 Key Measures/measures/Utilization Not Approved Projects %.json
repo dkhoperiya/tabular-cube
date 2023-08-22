@@ -1,0 +1,31 @@
+{
+  "name": "Utilization Not Approved Projects %",
+  "expression": [
+    "MIN(DIVIDE (",
+    "    CALCULATE (",
+    "        [Fact Hours],",
+    "        KEEPFILTERS ( Projects[Project Status Group] = \"Не защищен\" )",
+    "    ),",
+    "    [Net Util FTE]",
+    "),1)"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE (",
+      "        [Fact Hours],",
+      "        KEEPFILTERS ( Projects[Project Status Group] = \"Не защищен\" )",
+      "    )",
+      "VAR _Y =",
+      "    CALCULATE ( [Net Util FTE] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Hours\", _X,",
+      "        \"Net Util FTE\", _Y,",
+      "        \"Utilization Not Approved Projects %\", MIN ( DIVIDE ( _X, _Y ), 1 )",
+      "    )"
+    ]
+  }
+}

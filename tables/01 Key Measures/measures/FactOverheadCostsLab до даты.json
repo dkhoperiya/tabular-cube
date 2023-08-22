@@ -1,0 +1,15 @@
+{
+  "name": "FactOverheadCostsLab до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [FactOverheadCostsLab],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )",
+    ""
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

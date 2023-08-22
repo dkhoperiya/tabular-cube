@@ -1,0 +1,7 @@
+{
+  "name": "Contractor",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Contractor",
+  "sourceProviderType": "int"
+}

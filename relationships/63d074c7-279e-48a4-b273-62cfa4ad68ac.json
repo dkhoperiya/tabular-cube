@@ -1,0 +1,7 @@
+{
+  "name": "63d074c7-279e-48a4-b273-62cfa4ad68ac",
+  "fromTable": "WIPCalculation_2lvl",
+  "fromColumn": "Tribe_Code",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

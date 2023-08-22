@@ -1,0 +1,18 @@
+{
+  "name": "Fact Tribe OIBDA %",
+  "expression": "DIVIDE ( [Fact Tribe OIBDA], [Fact Tribe Income] )",
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Tribe OIBDA]",
+      "VAR _Y = [Fact Tribe Income]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe OIBDA\", _X,",
+      "        \"Fact Tribe Income\", _Y,",
+      "        \"Fact Tribe OIBDA %\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

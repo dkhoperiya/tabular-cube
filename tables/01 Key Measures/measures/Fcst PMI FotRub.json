@@ -1,0 +1,19 @@
+{
+  "name": "Fcst PMI FotRub",
+  "description": "Прогноз чч трайба PMI * средневзвешенная ставка трайб PMI.",
+  "expression": "[Fcst Work Hours PMI] * [Historical WA Fot Rate PMI]",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\02. PMI",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Work Hours PMI]",
+      "VAR _Y = [Historical WA Fot Rate PMI]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours PMI\", _X,",
+      "        \"Historical WA Fot Rate PMI\", _Y,",
+      "        \"Fcst PMI FotRub\", _X * _Y",
+      "    )"
+    ]
+  }
+}

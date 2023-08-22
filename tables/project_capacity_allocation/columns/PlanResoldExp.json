@@ -1,0 +1,7 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "PlanResoldExp",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "sourceColumn": "[PlanResoldExp]"
+}

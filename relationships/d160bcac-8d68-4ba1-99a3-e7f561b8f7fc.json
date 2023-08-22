@@ -1,0 +1,7 @@
+{
+  "name": "d160bcac-8d68-4ba1-99a3-e7f561b8f7fc",
+  "fromTable": "FactHours_Renormilized",
+  "fromColumn": "ResourceTribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

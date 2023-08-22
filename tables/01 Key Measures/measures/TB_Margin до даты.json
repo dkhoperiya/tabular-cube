@@ -1,0 +1,14 @@
+{
+  "name": "TB_Margin до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [TB_Margin], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации",
+  "detailRowsDefinition": {
+    "expression": "TeamBudgeting_Hours_Calculation"
+  }
+}

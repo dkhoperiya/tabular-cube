@@ -1,0 +1,40 @@
+{
+  "name": "PL_Tribe_KPI",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  dbo_PL_Tribe_KPI = Source{[Schema = \"dbo\", Item = \"viw_PL_Tribe_KPI\"]}[Data],",
+      "  #\"Added Custom\" = Table.AddColumn(",
+      "      dbo_PL_Tribe_KPI, ",
+      "      \"project_code\", ",
+      "      each \"UNDEF_\" & [Tribe], ",
+      "      type text",
+      "    ),",
+      "  #\"Removed Other Columns\" = Table.SelectColumns(",
+      "      #\"Added Custom\", ",
+      "      {",
+      "        \"TribeCode\", ",
+      "        \"Bu_Code\", ",
+      "        \"Date\", ",
+      "        \"OIBDA\", ",
+      "        \"G2_Revenue\", ",
+      "        \"G3_Revenue\", ",
+      "        \"G6_Revenue\", ",
+      "        \"GrossMargin\", ",
+      "        \"Utilization\", ",
+      "        \"project_code\"",
+      "      }",
+      "    ),",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "      #\"Removed Other Columns\", ",
+      "      {{\"Date\", \"kpi_date\"}, {\"TribeCode\", \"tribe_code\"}}",
+      "    ),",
+      "  #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"tribe_code\", Int64.Type}})",
+      "in",
+      "  #\"Changed Type\""
+    ]
+  }
+}

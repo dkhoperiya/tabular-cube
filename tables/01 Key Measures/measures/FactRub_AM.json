@@ -1,0 +1,21 @@
+{
+  "name": "FactRub_AM",
+  "expression": "[FactRub_MR27] + [FactRub_CZ_Margin] + [FactRub_Digital]",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactRub_MR27]",
+      "VAR x2 = [FactRub_CZ_Margin]",
+      "VAR x3 = [FactRub_Digital]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactRub_MR27\", x1,",
+      "        \"FactRub_CZ_Margin\", x2,",
+      "        \"FactRub_Digital\", x3,",
+      "        \"FactRub_AM\",",
+      "            x1 + x2 + x3",
+      "    )"
+    ]
+  }
+}

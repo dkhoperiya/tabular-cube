@@ -1,0 +1,45 @@
+{
+  "name": "Plan Project Expenses 19",
+  "description": "Плановые расходы на проекте. Включает плановую себестоимость по ФОТ, плановый субподряд из трудозатрат, расходы на командировки, внешний субподряд, прочие операционные расходы.",
+  "expression": [
+    "[Plan Cost of Works 19] ",
+    "+ [Plan Transfer Cost of Works] ",
+    "+ [Plan Resold Exp] ",
+    "+ [Plan Travel Exp] ",
+    "+ [Plan Subcontr CZ Exp] ",
+    "+ [Plan Subcontr Exp] ",
+    "+ [Plan Project Other Opex]"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01a. Plan 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 =",
+      "    CALCULATE ( [Plan Cost of Works 19] )",
+      "VAR x2 =",
+      "    CALCULATE ( [Plan Transfer Cost of Works] )",
+      "VAR x3 =",
+      "    CALCULATE ( [Plan Resold Exp] )",
+      "VAR x4 =",
+      "    CALCULATE ( [Plan Travel Exp] )",
+      "VAR x5 =",
+      "    CALCULATE ( [Plan Subcontr CZ Exp] )",
+      "VAR x6 =",
+      "    CALCULATE ( [Plan Subcontr Exp] )",
+      "VAR x7 =",
+      "    CALCULATE ( [Plan Project Other Opex] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Cost of Works 19\", x1,",
+      "        \"Plan Transfer Cost of Works\", x2,",
+      "        \"Plan Resold Exp\", x3,",
+      "        \"Plan Travel Exp\", x4,",
+      "        \"Plan Subcontr CZ Exp\", x5,",
+      "        \"Plan Subcontr Exp\", x6,",
+      "        \"Plan Project Other Opex\", x7,",
+      "        \"Plan Project Expenses 19\",",
+      "            x1 + x2 + x3 + x4 + x5 + x6 + x7",
+      "    )"
+    ]
+  }
+}

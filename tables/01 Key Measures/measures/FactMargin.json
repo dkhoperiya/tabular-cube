@@ -1,0 +1,28 @@
+{
+  "name": "FactMargin",
+  "description": "ФОТ бигбоссов, накладняк и маржа от списаний, маржа от судподряда, командировок, прочих.",
+  "expression": [
+    "CALCULATE (",
+    "    [FactOverheadCostsAndMarginWithLeaders] + [FactIndFotLeadersMTSD],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactMargin\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Метрики детализации актов",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactOverheadCostsAndMarginWithLeaders]",
+      "VAR x2 = [FactIndFotLeadersMTSD]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactOverheadCostsAndMarginWithLeaders\", x1,",
+      "        \"FactIndFotLeadersMTSD\", x2,",
+      "        \"FactMargin\", x1 + x2",
+      "    )"
+    ]
+  }
+}

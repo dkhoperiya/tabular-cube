@@ -1,0 +1,5 @@
+{
+  "name": "YearWorkDays",
+  "dataType": "int64",
+  "sourceColumn": "YearWorkDays"
+}

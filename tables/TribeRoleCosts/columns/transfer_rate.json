@@ -1,0 +1,5 @@
+{
+  "name": "transfer_rate",
+  "dataType": "decimal",
+  "sourceColumn": "transfer_rate"
+}

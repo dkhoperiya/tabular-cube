@@ -1,0 +1,22 @@
+{
+  "name": "Текущая численность",
+  "description": "Количество сотрудников, которые находятся в активном статусе либо в декретном отпуске",
+  "expression": [
+    "CALCULATE (",
+    "    [EmployeeCount],",
+    "    KEEPFILTERS ( Employees[Employee Status] <> \"Redundant\" ),",
+    "    KEEPFILTERS ( Employees[Is Vacancy] <> TRUE )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    KEEPFILTERS ( Employees[Employee Status] <> \"Redundant\" ),",
+      "    KEEPFILTERS ( Employees[Is Vacancy] <> TRUE )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Plan Project Income 19",
+  "expression": [
+    " /*[Plan Act Sum G6] [Plan Revenue G6]*/ [Forecast Revenue G6]",
+    ""
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\03. Income\\01a. Plan 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            PlanIncome_SumAct,",
+      "            \"Project\", RELATED ( projects[project] ),",
+      "            \"Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "            \"Milestone\", RELATED ( Milestones[Milestone] ),",
+      "            \"Milestone Name\", RELATED ( Milestones[Milestone Name] ),",
+      "            \"Works Status\", RELATED ( Milestones[Works Status] ),",
+      "            \"Fin Act Status\", RELATED ( Milestones[Fin Act Status] ),",
+      "            \"Works Complete\", RELATED ( Milestones[Works Complete] ),",
+      "            \"Plan Date\", RELATED ( Milestones[Plan Date] ),",
+      "            \"KPI Date\", RELATED ( Milestones[KPI date] ),",
+      "            \"Status of Realization\", RELATED ( Milestones[Status of Realization] ),",
+      "            \"Comment\", RELATED ( Milestones[Comment] )",
+      "        ),",
+      "        [Milestone] = \"[G6]\"",
+      "    ),",
+      "    \"Project\", [Project],",
+      "    \"Tribe\", [Tribe],",
+      "    \"BuCode\", [BuCode],",
+      "    \"Milestone\", [Milestone],",
+      "    \"Milestone Name\", [Milestone Name],",
+      "    \"Works Statsus\", [Works Status],",
+      "    \"Fin Act Status\", [Fin Act Status],",
+      "    \"Works Complete\", [Works Complete],",
+      "    \"Plan Date\", [Plan Date],",
+      "    \"KPI Date\", [KPI date],",
+      "    \"Status of Realization\", [Status of Realization],",
+      "    \"Comment\", [Comment],",
+      "    \"Sum Act Full\", [Sum_Act_Full],",
+      "    \"Sum Act w Project Prob\", [Sum_Act]",
+      ")"
+    ]
+  }
+}

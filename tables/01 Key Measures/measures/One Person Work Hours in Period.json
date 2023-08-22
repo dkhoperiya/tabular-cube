@@ -1,0 +1,32 @@
+{
+  "name": "One Person Work Hours in Period",
+  "description": "Количество часов в периоде на одного человека с учетом утилизации. Полное кол-во рабочих часов за период * Ставка утилизации за период (гранулярность - 1 месяц)",
+  "expression": [
+    "AVERAGEX (",
+    "    DISTINCT ( Tribes[Tribe Code] ),",
+    "    AVERAGEX (",
+    "        DISTINCT ( Dates[Year] ),",
+    "        SUMX (",
+    "            DISTINCT ( 'Dates'[MonthID] ),",
+    "            CALCULATE ( [Target Utilization %] * [Month Working Hours] )",
+    "        )",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        CROSSJOIN ( DISTINCT ( Tribes[Tribe] ), DISTINCT ( Dates[Year] ) ),",
+      "        \"WorkingHours\", SUMX (",
+      "            DISTINCT ( 'Dates'[MonthID] ),",
+      "            CALCULATE ( [Target Utilization %] * [Month Working Hours] )",
+      "        )",
+      "    ),",
+      "    [WorkingHours] <> BLANK ()",
+      ")"
+    ]
+  }
+}

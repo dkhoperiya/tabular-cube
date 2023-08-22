@@ -1,0 +1,7 @@
+{
+  "name": "21cfd20d-1ca0-4a26-ae29-3850d877e709",
+  "fromTable": "XLS_FactProjectMetrics",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

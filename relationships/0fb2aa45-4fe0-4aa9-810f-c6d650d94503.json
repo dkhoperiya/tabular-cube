@@ -1,0 +1,7 @@
+{
+  "name": "0fb2aa45-4fe0-4aa9-810f-c6d650d94503",
+  "fromTable": "Capacity",
+  "fromColumn": "OfficeId",
+  "toTable": "Offices",
+  "toColumn": "OfficeId"
+}

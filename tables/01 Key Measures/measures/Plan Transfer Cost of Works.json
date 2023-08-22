@@ -1,0 +1,26 @@
+{
+  "name": "Plan Transfer Cost of Works",
+  "description": "Плановая стоимость трудозатрат сотрудников прочих трайбов на проектах трайба в трансфертных ставках, не включает трайбы SUB_CZ и SUB_MINSK. ",
+  "expression": [
+    "CALCULATE (",
+    "    [PlanRub],",
+    "    KEEPFILTERS ( 'Resource Tribe'[IsExternalSubcontractTribe] = 0 ),",
+    "    KEEPFILTERS ( 'BusinessUnits'[Is Subcontractor] = FALSE () ),",
+    "    KEEPFILTERS ( 'PlanHours'[is_subcontract] = 1 ),",
+    "    FILTER ( Projects, Projects[incl_for_fin_plan] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Plan Hours] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[IsExternalSubcontractTribe] = 0 ),",
+      "    KEEPFILTERS ( 'BusinessUnits'[Is Subcontractor] = FALSE () ),",
+      "    KEEPFILTERS ( 'PlanHours'[is_subcontract] = 1 ),",
+      "    FILTER ( Projects, Projects[incl_for_fin_plan] )",
+      ")"
+    ]
+  }
+}

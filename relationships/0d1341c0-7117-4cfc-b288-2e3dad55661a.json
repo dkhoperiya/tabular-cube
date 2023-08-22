@@ -1,0 +1,7 @@
+{
+  "name": "0d1341c0-7117-4cfc-b288-2e3dad55661a",
+  "fromTable": "Requirements",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

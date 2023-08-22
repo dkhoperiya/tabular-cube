@@ -1,0 +1,7 @@
+{
+  "name": "ae5e94d2-e9bc-4073-8fb5-692c5ba0ef4f",
+  "fromTable": "FactHours",
+  "fromColumn": "PersonCode",
+  "toTable": "Employees",
+  "toColumn": "Employee Code"
+}

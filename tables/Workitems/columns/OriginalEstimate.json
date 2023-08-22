@@ -1,0 +1,7 @@
+{
+  "name": "OriginalEstimate",
+  "dataType": "decimal",
+  "sourceColumn": "OriginalEstimate",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

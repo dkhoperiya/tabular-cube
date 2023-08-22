@@ -1,0 +1,5 @@
+{
+  "name": "TimesheetsPeriodIsClosed",
+  "dataType": "boolean",
+  "sourceColumn": "TimesheetsPeriodIsClosed"
+}

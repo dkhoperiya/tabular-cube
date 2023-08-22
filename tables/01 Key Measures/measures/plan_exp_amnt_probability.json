@@ -1,0 +1,13 @@
+{
+  "name": "plan_exp_amnt_probability",
+  "expression": [
+    "SUMX (",
+    "    FILTER ( 'Projects', 'Projects'[incl_for_fin_plan] ),",
+    "    'Projects'[Project Probability]",
+    "        * CALCULATE ( SUM ( 'ProjectExpenses_RMS'[plan_expense_amount] ) )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan"
+}

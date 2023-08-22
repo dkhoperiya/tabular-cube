@@ -1,0 +1,6 @@
+{
+  "name": "ORDER_NUMBER",
+  "dataType": "string",
+  "sourceColumn": "ORDER_NUMBER",
+  "sourceProviderType": "nvarchar"
+}

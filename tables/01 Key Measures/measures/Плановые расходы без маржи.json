@@ -1,0 +1,12 @@
+{
+  "name": "Плановые расходы без маржи",
+  "expression": [
+    "CALCULATE (",
+    "    [plan_exp_amnt],",
+    "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"27\", \"38\", \"1\" } )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

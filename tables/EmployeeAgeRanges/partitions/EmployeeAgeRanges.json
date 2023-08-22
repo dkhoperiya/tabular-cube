@@ -1,0 +1,23 @@
+{
+  "name": "EmployeeAgeRanges",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = {",
+      "",
+      "[ID=1, AgeRange = \"< 25\"],",
+      "[ID=2, AgeRange = \"25 - 34\"],",
+      "[ID=3, AgeRange = \"35 - 44\"],",
+      "[ID=4, AgeRange = \"45 - 54\"],",
+      "[ID=5, AgeRange = \"> 54\"]",
+      "},",
+      "    #\"Converted to Table\" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+      "    #\"Expanded Column1\" = Table.ExpandRecordColumn(#\"Converted to Table\", \"Column1\", {\"ID\", \"AgeRange\"}, {\"ID\", \"AgeRange\"}),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded Column1\",{{\"ID\", Int64.Type}, {\"AgeRange\", type text}})",
+      "in",
+      "    #\"Changed Type\""
+    ]
+  }
+}

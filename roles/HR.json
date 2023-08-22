@@ -1,0 +1,38 @@
+{
+  "name": "HR",
+  "modelPermission": "read",
+  "members": [
+    {
+      "memberName": "ADMSK\\0000 G RMS HR",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-939497"
+    },
+    {
+      "memberName": "ADMSK\\0000 G RMS Project administrators",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-844902"
+    },
+    {
+      "memberName": "ADMSK\\vvkoste2",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-262207"
+    },
+    {
+      "memberName": "ADMSK\\0000 G RMS Resource owners",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-844901"
+    },
+    {
+      "memberName": "ADMSK\\0000 G RMS Tribe leaders",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-844905"
+    },
+    {
+      "memberName": "ADMSK\\0000 G RMS Cluster administrators",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-894172"
+    },
+    {
+      "memberName": "ADMSK\\sa0700plspexcel",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-904081"
+    },
+    {
+      "memberName": "ADMSK\\vskosti3",
+      "memberId": "S-1-5-21-685724207-866877060-2473498247-1135343"
+    }
+  ]
+}

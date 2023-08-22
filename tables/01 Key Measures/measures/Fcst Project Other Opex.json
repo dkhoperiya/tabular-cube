@@ -1,0 +1,18 @@
+{
+  "name": "Fcst Project Other Opex",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Project Other Opex],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Project Other Opex],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\03. Forecast"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Actual WA Fot Rate",
+  "description": [
+    "Средневзвешенная по количеству сотрудников ФОТ ",
+    "ставка для ЮЛ-трайба-роли, действующая на дату отчета"
+  ],
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "VAR d =",
+    "    TODAY ()",
+    "RETURN",
+    "    CALCULATE (",
+    "        AVERAGE ( 'Capacity'[FotRate] ),",
+    "        KEEPFILTERS ( 'Capacity'[FotRate] > 0 ),",
+    "        KEEPFILTERS ( Capacity[BudgetRates_Version] = BudgetRatesVersion ),",
+    "        KEEPFILTERS ( Capacity[IsVacancy] = FALSE () ),",
+    "        FILTER ( ALL ( Dates ), Dates[Date] = d )",
+    "    )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "07. Budget Role Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        ADDCOLUMNS (",
+      "            SUMMARIZE (",
+      "                Capacity,",
+      "                Capacity[BudgetRates_Version],",
+      "                BusinessUnits[Entity Name],",
+      "                Tribes[Tribe],",
+      "                Roles[Role]",
+      "            ),",
+      "            \"Employee Count\", CALCULATE ( COUNTA ( Capacity[EmployeeCode] ) ),",
+      "            \"Actual Fot Rate\", CALCULATE ( AVERAGE ( 'Capacity'[FotRate] ) )",
+      "        ),",
+      "        FILTER ( ALL ( Dates ), Dates[Date] = TODAY () ),",
+      "        KEEPFILTERS ( Capacity[BudgetRates_Version] = BudgetRatesVersion ),",
+      "        KEEPFILTERS ( Capacity[IsVacancy] = FALSE () ),",
+      "        KEEPFILTERS ( 'Capacity'[FotRate] > 0 )",
+      "    )"
+    ]
+  }
+}

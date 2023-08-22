@@ -1,0 +1,7 @@
+{
+  "name": "e08e9c51-0a06-4b7c-b49a-464d5af010f4",
+  "fromTable": "OpexBudgetingFact",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

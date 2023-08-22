@@ -1,0 +1,20 @@
+{
+  "name": "Суммарная занятость сотрудников",
+  "description": "Количество сотрудников, на данный момент находящихся в декретном отпуске",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'OrgStructOebs'[EMPLOYEMENTPERCENTAGE] ),",
+    "    KEEPFILTERS ( 'OrgStructOebs'[EmployeeStatus] = \"10\" )",
+    ")"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    OrgStructOebs,",
+      "    KEEPFILTERS ( 'OrgStructOebs'[EmployeeStatus] = \"10\" )",
+      ")"
+    ]
+  }
+}

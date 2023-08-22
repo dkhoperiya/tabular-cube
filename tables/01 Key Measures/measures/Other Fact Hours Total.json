@@ -1,0 +1,6 @@
+{
+  "name": "Other Fact Hours Total",
+  "expression": "[Fact Hours Total] - [Net Util Fact Hours Total] - [Fact Vacation Hours Total]",
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Нецелевая численность",
+  "description": "Количество сотрудников, на данный момент находящихся на нецелевых штатных позициях",
+  "expression": [
+    "CALCULATE (",
+    "    [EmployeeCount],",
+    "    KEEPFILTERS ( Employees[Employee Status] <> \"Redundant\" ),",
+    "    KEEPFILTERS ( Employees[Target Structure] = \"N\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Текущая численность] ),",
+      "    KEEPFILTERS ( Employees[Employee Status] <> \"Redundant\" ),",
+      "    KEEPFILTERS ( Employees[Target Structure] = \"N\" )",
+      ")"
+    ]
+  }
+}

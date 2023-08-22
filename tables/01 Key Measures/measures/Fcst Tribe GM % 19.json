@@ -1,0 +1,6 @@
+{
+  "name": "Fcst Tribe GM % 19",
+  "expression": "DIVIDE([Fcst Tribe GM 19],[Fcst Tribe Income 19])",
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04.a Forecast 19"
+}

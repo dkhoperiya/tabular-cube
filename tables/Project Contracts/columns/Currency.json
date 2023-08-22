@@ -1,0 +1,8 @@
+{
+  "name": "Currency",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Currency",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

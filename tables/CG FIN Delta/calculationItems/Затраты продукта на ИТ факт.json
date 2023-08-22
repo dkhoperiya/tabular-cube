@@ -1,0 +1,14 @@
+{
+  "name": "Затраты продукта на ИТ факт",
+  "expression": [
+    "[Fact Cost of Works] ",
+    "+ [Fact Transfer Cost of Works] ",
+    "+ [Fact Subcontr CZ Exp] ",
+    "+ [Fact Subcontr Exp] ",
+    "+ [Fact Project Other Opex] ",
+    "+ [Fact Travel Exp] ",
+    "+ [Fact NZP Exp]",
+    ""
+  ],
+  "ordinal": 12
+}

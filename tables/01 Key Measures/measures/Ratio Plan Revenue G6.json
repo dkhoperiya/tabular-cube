@@ -1,0 +1,34 @@
+{
+  "name": "Ratio Plan Revenue G6",
+  "description": "Квартальный рейтинг Plan Revenue G6. Сумма в первом квартале года умножается на 4, во втором на 3, в третьем на 2, в четвертом на 1",
+  "expression": [
+    "",
+    "SUMX (",
+    "    SUMMARIZE ( Dates, Dates[QuarterID], Dates[Quarter Number] ),",
+    "    CALCULATE ( [Plan Revenue G6] )",
+    "        * ( 5 - [Quarter Number] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\05. Ratio",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        SUMMARIZE (",
+      "            PlanIncome,",
+      "            projects[project],",
+      "            projects[Project Tribe],",
+      "            Dates[year],",
+      "            dates[Quarter Number]",
+      "        ),",
+      "        \"Plan Revenue G6\", CALCULATE ( [Plan Revenue G6] ),",
+      "        \"Quarter Koefficient\", 5 - [Quarter Number],",
+      "        \"Ratio Plan Revenue G6\", ( 5 - [Quarter Number] )",
+      "            * [Plan Revenue G6]",
+      "    ),",
+      "    [Plan Revenue G6] > 0",
+      ")"
+    ]
+  }
+}

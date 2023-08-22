@@ -1,0 +1,7 @@
+{
+  "name": "cff49379-8515-42d0-ac0e-0901ca961f49",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "ProjectTribe_Code",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PL Item Aggregated Code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "PL_ITEM_AGGREGATED_CODE"
+}

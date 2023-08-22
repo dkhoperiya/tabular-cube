@@ -1,0 +1,15 @@
+{
+  "name": "FactProjectExpenses_OPEX1C_2021-2023",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_ERP1CUH_PayFact_Opex\"]}[Data],",
+      "    #\"Filtered Rows\" = Table.SelectRows(data, each [ACCOUNTING_DATE] >= #date(2021, 1, 1) and [ACCOUNTING_DATE] < #date(2024, 1, 1) )",
+      "in",
+      "    #\"Filtered Rows\""
+    ]
+  }
+}

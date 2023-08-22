@@ -1,0 +1,7 @@
+{
+  "name": "UserId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "UserId",
+  "sourceProviderType": "nvarchar"
+}

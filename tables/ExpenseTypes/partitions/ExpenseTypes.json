@@ -1,0 +1,13 @@
+{
+  "name": "ExpenseTypes",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    ExpenseTypes = Source{[Schema=\"dbo\",Item=\"viw_RMS_ExpenseTypes\"]}[Data]",
+      "in",
+      "    ExpenseTypes"
+    ]
+  }
+}

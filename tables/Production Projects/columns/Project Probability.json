@@ -1,0 +1,7 @@
+{
+  "name": "Project Probability",
+  "dataType": "decimal",
+  "sourceColumn": "Project Probability",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

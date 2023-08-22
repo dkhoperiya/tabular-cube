@@ -1,0 +1,6 @@
+{
+  "name": "budget_tribe",
+  "dataType": "string",
+  "sourceColumn": "budget_tribe",
+  "sourceProviderType": "nvarchar"
+}

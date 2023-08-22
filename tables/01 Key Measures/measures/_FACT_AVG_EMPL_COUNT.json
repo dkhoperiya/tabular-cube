@@ -1,0 +1,24 @@
+{
+  "name": "_FACT_AVG_EMPL_COUNT",
+  "expression": [
+    "VAR _F_DATE =",
+    "    DATE ( YEAR ( TODAY () ), MONTH ( TODAY () ), 1 ) - 1",
+    "VAR _B_DATE =",
+    "    CALCULATE ( MIN ( Dates[Date] ), ALLSELECTED ( Dates ) )",
+    "VAR _MONTH_IN_PERIOD =",
+    "    (",
+    "        YEAR ( CALCULATE ( MAX ( Dates[Date] ), ALLSELECTED ( Dates[Date] ) ) )",
+    "            - YEAR ( TODAY () ) + 1",
+    "    ) * 12",
+    "",
+    "RETURN ",
+    "    CALCULATE (",
+    "        [Среднесписочная численность],",
+    "        ALL(Dates),",
+    "        KEEPFILTERS ( Dates[Date] >= DATE ( YEAR ( _B_DATE ), 1, 1 ) ),",
+    "        KEEPFILTERS ( Dates[Date] <= _F_DATE )",
+    "    ) "
+  ],
+  "isHidden": true,
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Fact Costs Subcontracts UA BEL TASHK",
+  "expression": [
+    "SUMX (",
+    "    FILTER (",
+    "        'FactHours_2lvl',",
+    "         ( 'FactHours_2lvl'[Fact Employee BuCode]IN { 1040, 1050, 2080 }",
+    "            && 'FactHours_2lvl'[Fact Employee Tribe] <> 'FactHours_2lvl'[project_tribe] )",
+    "    ),",
+    "    'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[FOT_rate]",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact\\01. Additional",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactFotRub] ),",
+      "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 1 ),",
+      "    KEEPFILTERS ( FactHours[Fact Employee BuCode] IN { 1040, 1050, 2080 } )",
+      ")"
+    ]
+  }
+}

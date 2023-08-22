@@ -1,0 +1,50 @@
+{
+  "name": "Hiring",
+  "description": "Количество нанятых сотрудников за отчетный период",
+  "expression": [
+    "/* Массив (таблица) выбранных дат */",
+    "VAR selectedDates =",
+    "    CALCULATETABLE (",
+    "        VALUES ( Dates[Date] )",
+    "    )",
+    "    ",
+    "/* Таблица движений сотрудников, отфильтрованная за период и тип движения */",
+    "VAR recruitmentsForSelectedDates =",
+    "    CALCULATETABLE (",
+    "        EmployeeMovements,",
+    "        selectedDates,",
+    "        KEEPFILTERS(EmployeeMovements[Action] = \"Recruitment\"),",
+    "        KEEPFILTERS ( Employees[Employee Status] = \"Active\" ), -- Не уволен, не мобилизован, не в декрете",
+    "        KEEPFILTERS ( Employees[Is Vacancy] = FALSE ), -- Не открытая вакансия",
+    "        KEEPFILTERS ( Employees[Trainee] = \"No\" ), -- Не стажер",
+    "        KEEPFILTERS ( Employees[AssigmentCombinationStatus] = \"Основное назначение\" ), -- Не совместитель",
+    "        KEEPFILTERS ( Employees[AssigmentTypeName] = \"STUFF\" ) -- Штатный сотрудник",
+    "    )",
+    "  ",
+    "/* Количество принятых сотрудников за отчетный период */",
+    "RETURN",
+    "    CALCULATE ( SUM ( EmployeeMovements[In_Out] ), recruitmentsForSelectedDates )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        EmployeeMovements,",
+      "        KEEPFILTERS ( 'EmployeeMovements'[Action] = \"Recruitment\" )",
+      "    ),",
+      "    \"Employee\", RELATED ( 'Employees'[Employee] ),",
+      "    \"Tribe\", RELATED ( 'Tribes'[Tribe] ),",
+      "    \"Role\", RELATED ( 'Roles'[Role] ),",
+      "    \"Legal Enity\", RELATED ( BusinessUnits[Entity Name] ),",
+      "    \"Age on Date\", RELATED ( EmployeeAgeRanges[AgeRange] ),",
+      "    \"Work Term on Date\", RELATED ( EmployeeWorkTermRanges[WorkTerm] ),",
+      "    \"Date\", EmployeeMovements[Date],",
+      "    \"Description\", 'EmployeeMovements'[Description],",
+      "    \"Action\", 'EmployeeMovements'[Action],",
+      "    \"ActionType\", 'EmployeeMovements'[ActionType]",
+      ")"
+    ]
+  }
+}

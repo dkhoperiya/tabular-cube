@@ -1,0 +1,21 @@
+{
+  "name": "Internal City Turnover",
+  "expression": [
+    "COUNTROWS (",
+    "    FILTER (",
+    "        ADDCOLUMNS (",
+    "            SUMMARIZE (",
+    "                EmployeeMovements,",
+    "                EmployeeMovements[EmployeeCode],",
+    "                Dates[Month Date],",
+    "                Cities[City]",
+    "            ),",
+    "            \"CM\", [Переводы между городами]",
+    "        ),",
+    "        [CM] < 0",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики\\01. Внутренние перемещения"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Team Cost",
+  "expression": "SUM ( 'TeamCosts'[Amount] )",
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan\\01. Team Costs",
+  "detailRowsDefinition": {
+    "expression": "'TeamCosts'"
+  }
+}

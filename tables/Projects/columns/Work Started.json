@@ -1,0 +1,13 @@
+{
+  "type": "calculated",
+  "name": "Work Started",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "IF (",
+    "    CALCULATE (SUM ( 'FactHours'[NormSeconds] ) ) > 0,",
+    "    \"Yes\",",
+    "    \"No\"",
+    ")"
+  ]
+}

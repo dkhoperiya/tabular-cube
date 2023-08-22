@@ -1,0 +1,12 @@
+{
+  "name": "План расходы прочие MTSD",
+  "expression": [
+    "CALCULATE (",
+    "    [plan_exp_amnt_full],",
+    "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"35\"} ),",
+    "    KEEPFILTERS ( BusinessUnits[Entity Code] = \"1\" )",
+    ")"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

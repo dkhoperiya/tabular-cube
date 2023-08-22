@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Own FotRub",
+  "description": "Прогноз собственных расходов ФОТ. Прогноз собственных человекочасов по проекту  * Средневзвешанная бюджетная ставка",
+  "expression": "[Fcst Own Work Hours] * [Historical WA Own Fot Rate]",
+  "formatString": "#,##0",
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Own Work Hours]",
+      "VAR _Y = [Historical WA Own Fot Rate]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Own Work Hours\", _X,",
+      "        \"Historical WA Fot Rate\", _Y,",
+      "        \"Fcst Own FotRub\", _X * _Y",
+      "    )"
+    ]
+  }
+}

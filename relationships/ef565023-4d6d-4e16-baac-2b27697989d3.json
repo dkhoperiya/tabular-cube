@@ -1,0 +1,7 @@
+{
+  "name": "ef565023-4d6d-4e16-baac-2b27697989d3",
+  "fromTable": "PlanHours_2lvl",
+  "fromColumn": "competence_code",
+  "toTable": "Competences",
+  "toColumn": "competence_code"
+}

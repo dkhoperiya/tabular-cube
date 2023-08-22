@@ -1,0 +1,7 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "PlanActSumG6",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "sourceColumn": "[PlanActSumG6]"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "FactIncomeMTSD",
+  "expression": [
+    "[SumXLS]",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactIncomeMTSD\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "'WIP_Acts_XLSX'"
+  }
+}

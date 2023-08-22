@@ -1,0 +1,6 @@
+{
+  "name": "TargetDate",
+  "dataType": "dateTime",
+  "sourceColumn": "TargetDate",
+  "formatString": "dd.MM.yyyy"
+}

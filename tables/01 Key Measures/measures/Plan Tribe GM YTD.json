@@ -1,0 +1,18 @@
+{
+  "name": "Plan Tribe GM YTD",
+  "expression": "[Plan Tribe Income YTD] - [Plan Tribe Expenses YTD]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Plan Tribe Income YTD]",
+      "VAR _Y = [Plan Tribe Expenses YTD]",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Tribe Income YTD\", _X,",
+      "        \"Plan Tribe Expenses YTD\", _Y,",
+      "        \"Plan Tribe GM YTD\", _X - _Y",
+      "    )"
+    ]
+  }
+}

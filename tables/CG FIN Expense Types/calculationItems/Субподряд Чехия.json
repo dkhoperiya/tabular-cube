@@ -1,0 +1,5 @@
+{
+  "name": "Субподряд Чехия",
+  "expression": "[Fact Subcontr CZ Exp]",
+  "ordinal": 1
+}

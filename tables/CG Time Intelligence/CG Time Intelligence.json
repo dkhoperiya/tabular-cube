@@ -1,0 +1,6 @@
+{
+  "name": "CG Time Intelligence",
+  "calculationGroup": {
+    "precedence": 2
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "WIPFrameworkId",
+  "dataType": "string",
+  "sourceColumn": "WIPFrameworkId",
+  "sourceProviderType": "uniqueidentifier"
+}

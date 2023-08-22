@@ -1,0 +1,6 @@
+{
+  "name": "MarginAndCostsPercent",
+  "expression": "DIVIDE([FactMargin],[FactRMSProjectCosts],0)",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Метрики детализации актов"
+}

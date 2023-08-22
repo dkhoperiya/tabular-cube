@@ -1,0 +1,49 @@
+{
+  "name": "Plan Act Sum G6",
+  "description": "Сумма акта по G6 в рублях без НДС. Связано с датой по полю Дата (План). По умолчанию отображает значения с учетом вероятности проектов.",
+  "expression": [
+    "VAR o =",
+    "    SELECTEDVALUE ( Options[Project Probability Mode] )",
+    "RETURN",
+    "    IF ( o = \"Full\", [sum_act_g6_full], [sum_act_g6_prob])"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            PlanIncome_SumAct,",
+      "            \"Project\", RELATED ( projects[project] ),",
+      "            \"Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "            \"Milestone\", RELATED ( Milestones[Milestone] ),",
+      "            \"Milestone Name\", RELATED ( Milestones[Milestone Name] ),",
+      "            \"Works Status\", RELATED ( Milestones[Works Status] ),",
+      "            \"Fin Act Status\", RELATED ( Milestones[Fin Act Status] ),",
+      "            \"Works Complete\", RELATED ( Milestones[Works Complete] ),",
+      "            \"Plan Date\", RELATED ( Milestones[Plan Date] ),",
+      "            \"KPI Date\", RELATED ( Milestones[KPI date] ),",
+      "            \"Status of Realization\", RELATED ( Milestones[Status of Realization] ),",
+      "            \"Comment\", RELATED ( Milestones[Comment] )",
+      "        ),",
+      "        [Milestone] = \"[G6]\"",
+      "    ),",
+      "    \"Project\", [Project],",
+      "    \"Tribe\", [Tribe],",
+      "    \"BuCode\", [BuCode],",
+      "    \"Milestone\", [Milestone],",
+      "    \"Milestone Name\", [Milestone Name],",
+      "    \"Works Statsus\", [Works Status],",
+      "    \"Fin Act Status\", [Fin Act Status],",
+      "    \"Works Complete\", [Works Complete],",
+      "    \"Plan Date\", [Plan Date],",
+      "    \"KPI Date\", [KPI date],",
+      "    \"Status of Realization\", [Status of Realization],",
+      "    \"Comment\", [Comment],",
+      "    \"Sum Act Full\", [Sum_Act_Full],",
+      "    \"Sum Act w Project Prob\", [Sum_Act]",
+      ")"
+    ]
+  }
+}

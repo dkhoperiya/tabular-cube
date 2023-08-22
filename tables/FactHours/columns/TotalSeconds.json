@@ -1,0 +1,6 @@
+{
+  "name": "TotalSeconds",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "TotalSeconds"
+}

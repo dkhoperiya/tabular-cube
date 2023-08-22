@@ -1,0 +1,7 @@
+{
+  "name": "60c26fda-63cb-46a8-98cd-963a84c1818b",
+  "fromTable": "PlanIncome",
+  "fromColumn": "milestone_code",
+  "toTable": "Milestones",
+  "toColumn": "milestone_code"
+}

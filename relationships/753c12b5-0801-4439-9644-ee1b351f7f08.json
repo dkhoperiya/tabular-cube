@@ -1,0 +1,7 @@
+{
+  "name": "753c12b5-0801-4439-9644-ee1b351f7f08",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "WorkTypeId",
+  "toTable": "Work Types",
+  "toColumn": "WorkTypeId"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "3cdfac74-3e8e-4575-b80a-182ea16f330b",
+  "fromTable": "Features",
+  "fromColumn": "WorkItemId",
+  "toTable": "Workitems",
+  "toColumn": "WorkItemId"
+}

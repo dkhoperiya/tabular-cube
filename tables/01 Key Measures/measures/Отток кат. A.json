@@ -1,0 +1,14 @@
+{
+  "name": "Отток кат. A",
+  "expression": "CALCULATE ( [Отток], KEEPFILTERS ( EmployeeMovements[EmployeeCategory] = \"A\" ) )",
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики\\02. По категорям персонала",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Отток] ),",
+      "    KEEPFILTERS ( EmployeeMovements[EmployeeCategory] = \"A\" )",
+      ")"
+    ]
+  }
+}

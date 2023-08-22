@@ -1,0 +1,7 @@
+{
+  "name": "1d4d615e-b518-4bfe-a146-e55c8ded40f1",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "month_date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

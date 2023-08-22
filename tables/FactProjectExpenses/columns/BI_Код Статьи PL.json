@@ -1,0 +1,5 @@
+{
+  "name": "BI_Код Статьи PL",
+  "dataType": "string",
+  "sourceColumn": "BI_PL_ITEM"
+}

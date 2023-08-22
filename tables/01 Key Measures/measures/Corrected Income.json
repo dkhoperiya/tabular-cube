@@ -1,0 +1,27 @@
+{
+  "name": "Corrected Income",
+  "description": "Скорректированный фин отделом показатель выручки",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'TribesFinKPICorrectedValues'[Value] ),",
+    "    KEEPFILTERS ( 'TribesFinKPICorrectedValues'[Attribute] IN { \"Выручка по G6\", \"Доходы 2-ого уровня (внутр. субподряд)\" } )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\05. Corrected",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        TribesFinKPICorrectedValues,",
+      "        KEEPFILTERS ( 'TribesFinKPICorrectedValues'[Attribute]",
+      "            IN { \"Выручка по G6\", \"Доходы 2-ого уровня (внутр. субподряд)\" } )",
+      "    ),",
+      "    \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Year\", TribesFinKPICorrectedValues[Date],",
+      "    \"Fin KPI Name\", TribesFinKPICorrectedValues[Attribute],",
+      "    \"Fin KPI Corrected Value\", TribesFinKPICorrectedValues[Value]",
+      ")"
+    ]
+  }
+}

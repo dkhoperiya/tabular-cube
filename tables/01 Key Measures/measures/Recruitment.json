@@ -1,0 +1,15 @@
+{
+  "name": "Recruitment",
+  "expression": [
+    "CALCULATE (",
+    "    DISTINCTCOUNT ( EmployeeMovements[EmployeeCode] ),",
+    "    FILTER (",
+    "        EmployeeMovements,",
+    "        EmployeeMovements[Action] = \"Recruitment\"",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "09. HR\\00. Back Up"
+}

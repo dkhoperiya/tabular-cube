@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "ProjectDateG6",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "CONCATENATE(CONCATENATE('Projects'[Project], \" \"), 'Projects'[Max KPI Date G6])"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Fact Project GM",
+  "expression": "[Fact Project Income] - [Fact Project Expenses]",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\04. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _INC =",
+      "    CALCULATE ( [Fact Project Income] )",
+      "VAR _EXP =",
+      "    CALCULATE ( [Fact Project Expenses] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Project Income\", _INC,",
+      "        \"Fact Project Expenses\", _EXP,",
+      "        \"Fact Project GM\", _INC - _Exp",
+      "    )"
+    ]
+  }
+}

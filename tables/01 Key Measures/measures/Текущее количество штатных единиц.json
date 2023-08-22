@@ -1,0 +1,38 @@
+{
+  "name": "Текущее количество штатных единиц",
+  "description": "Количество штатных единиц в целевой структре, без учета совместиельских и аутсорсинговых ШЕ",
+  "expression": [
+    "CALCULATE (",
+    "    DISTINCTCOUNT ( Employees[Position] ),",
+    "    KEEPFILTERS ( Employees[Target Structure] = \"Y\" ),",
+    "    KEEPFILTERS ( Employees[Outsourcer] <> \"Yes\" ),",
+    "    KEEPFILTERS ( Employees[Employee Status] <> \"Redundant\" ),",
+    "    KEEPFILTERS ( Employees[StaffUnit_Status] <> \"Совместительская\" ),",
+    "    TREATAS ( VALUES ( Tribes[Tribe] ), Employees[Employee Tribe Current] ),",
+    "    TREATAS (",
+    "        VALUES ( 'Resource Tribe'[Resource Tribe] ),",
+    "        Employees[Employee Tribe Current]",
+    "    ),",
+    "    TREATAS ( VALUES ( BusinessUnits[BU Code] ), Employees[Employee Bu Code] ),",
+    "    TREATAS ( VALUES ( 'EmployeeAgeRanges'[ID] ), 'Employees'[Age Range ID] ),",
+    "    TREATAS ( VALUES ( 'EmployeeWorkTermRanges'[ID] ), 'Employees'[Work Term ID] )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    'Employees',",
+      "    KEEPFILTERS ( Employees[Target Structure] = \"Y\" ),",
+      "    KEEPFILTERS ( Employees[Outsourcer] <> \"Yes\" ),",
+      "    KEEPFILTERS ( Employees[Employee Status] <> \"Redundant\" ),",
+      "    KEEPFILTERS ( Employees[StaffUnit_Status] <> \"Совместительская\" ),",
+      "    TREATAS ( VALUES ( Tribes[Tribe] ), Employees[Employee Tribe Current] ),",
+      "    TREATAS ( VALUES ( BusinessUnits[BU Code] ), Employees[Employee Bu Code] ),",
+      "    TREATAS ( VALUES ( 'EmployeeAgeRanges'[ID] ), 'Employees'[Age Range ID] ),",
+      "    TREATAS ( VALUES ( 'EmployeeWorkTermRanges'[ID] ), 'Employees'[Work Term ID] )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Corrected OIBDA %",
+  "description": "Скорректированный фин отделом показатель OIBDA %",
+  "expression": [
+    "VAR CorrectedOIBDA =",
+    "    CALCULATE ( [Corrected OIBDA] )",
+    "VAR CorrectedIncome =",
+    "    CALCULATE ( [Corrected Income] )",
+    "RETURN",
+    "    DIVIDE ( CorrectedOIBDA, CorrectedIncome )"
+  ],
+  "formatString": "#,##0.0 %",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\05. Corrected",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR CorrectedOIBDA =",
+      "    CALCULATE ( [Corrected OIBDA] )",
+      "VAR CorrectedIncome =",
+      "    CALCULATE ( [Corrected Income] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Corrected OIBDA\", CorrectedOIBDA,",
+      "        \"Corrected Income\", CorrectedIncome,",
+      "        \"Corrected OIBDA %\", DIVIDE ( CorrectedOIBDA, CorrectedIncome )",
+      "    )"
+    ]
+  }
+}

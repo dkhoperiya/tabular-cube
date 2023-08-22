@@ -1,0 +1,40 @@
+{
+  "name": "Fact Cost of Works",
+  "description": "Оплата сотрудников своего трайба. ЗП факт (wip calculation) где контур проекта = контур сотрудника + факт по ставкам ФОТ из RMS по bu=UA, BEL, Tashkent)",
+  "expression": [
+    "[Fact Cost of Works MTSIT STS with K]",
+    "    + CALCULATE (",
+    "        [FactFotRub],",
+    "        KEEPFILTERS ( FactHours[Fact Employee BuCode] IN { 1040, 1050, 2080, 4000 } ),",
+    "        KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fact Cost of Works MTSIT STS with K] )",
+      "VAR _Y =",
+      "    CALCULATE (",
+      "        [FactFotRub],",
+      "        KEEPFILTERS ( FactHours[Fact Employee BuCode] IN { 4000 } ),",
+      "        KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+      "    )",
+      "VAR _Z =",
+      "    CALCULATE (",
+      "        [FactFotRub],",
+      "        KEEPFILTERS ( FactHours[Fact Employee BuCode] IN { 1040, 1050, 2080 } ),",
+      "        KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+      "    )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Cost of Works MTSIT STS with K\", _X,",
+      "        \"Fact Own Fot Rub MTS\", _Y,",
+      "        \"Fact Own Fot Rub Tashk, Bel, Ukr\", _Z,",
+      "        \"Fact Cost of Works\",",
+      "            _X + _Y + _Z",
+      "    )"
+    ]
+  }
+}

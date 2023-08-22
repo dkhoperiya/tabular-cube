@@ -1,0 +1,10 @@
+{
+  "name": "Plan Tribe Costs Subcontracts YTD",
+  "description": "Плановая сумма расходов трайба на субподряд накопительным итогом по году. ",
+  "expression": "CALCULATE ( [Plan Tribe Costs Subcontracts], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Tribe Costs Subcontracts] )"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ICP",
+  "dataType": "string",
+  "sourceColumn": "ICP",
+  "sourceProviderType": "nvarchar"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "KPI Revenue G6",
+  "description": "Цель по  G6",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'PL_Project_KPI'[kpi_g6_revenue] ),",
+    "    ALL ( 'Projects'[Project Status], Projects[project_status_id] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\04. Goals",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    SELECTCOLUMNS (",
+      "        FILTER ( PL_Project_KPI, PL_Project_KPI[kpi_g6_revenue] <> BLANK () ),",
+      "        \"KPI Project\", PL_Project_KPI[KPI Project],",
+      "        \"KPI Project PO\", PL_Project_KPI[KPI Project PO],",
+      "        \"Project Status\", RELATED ( projects[Project Status] ),",
+      "        \"Project Type\", RELATED ( Projects[Project Type] ),",
+      "        \"KPI Project Tribe\", PL_Project_KPI[KPI Project Tribe],",
+      "        \"KPI Date\", PL_Project_KPI[kpi_date],",
+      "        \"KPI G6\", PL_Project_KPI[kpi_g6_revenue]",
+      "    ),",
+      "    ALL ( 'Projects'[Project Status], Projects[project_status_id] )",
+      ")"
+    ]
+  }
+}

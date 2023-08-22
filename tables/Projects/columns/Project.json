@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "Project",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "'Projects'[Project Code] & \"_\" & 'Projects'[Project Name] & \" [\" & Projects[Project Status] & \"]\""
+}

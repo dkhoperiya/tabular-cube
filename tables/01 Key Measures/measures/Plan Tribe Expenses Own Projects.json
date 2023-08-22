@@ -1,0 +1,10 @@
+{
+  "name": "Plan Tribe Expenses Own Projects",
+  "description": "Плановые расходы на проекте. Включает плановую себестоимость из трудозатрат, плановый субподряд из трудозатрат, расходы на командировки, внешний субподряд, прочие операционные расходы.",
+  "expression": "[Plan Project Expenses]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Project Expenses] )"
+  }
+}

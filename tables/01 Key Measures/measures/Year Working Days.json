@@ -1,0 +1,24 @@
+{
+  "name": "Year Working Days",
+  "description": "Количество рабочих дней в месяце",
+  "expression": [
+    "IF (",
+    "    HASONEVALUE ( 'IndustryCalendar'[IndustryYear] ),",
+    "    AVERAGE ( 'IndustryCalendar'[YearWorkDays] )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "14. Industry Calendar",
+  "detailRowsDefinition": {
+    "expression": [
+      "ADDCOLUMNS (",
+      "    SUMMARIZE (",
+      "        'IndustryCalendar',",
+      "        Dates[Year],",
+      "        'BusinessUnits'[BU Code]",
+      "    ),",
+      "    \"Year Work Days\", CALCULATE ( AVERAGE ( 'IndustryCalendar'[YearWorkDays] ) )",
+      ")"
+    ]
+  }
+}

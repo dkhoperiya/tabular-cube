@@ -1,0 +1,5 @@
+{
+  "name": "kpi_revenue",
+  "dataType": "decimal",
+  "sourceColumn": "kpi_revenue"
+}

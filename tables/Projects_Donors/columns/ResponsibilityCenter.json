@@ -1,0 +1,6 @@
+{
+  "name": "ResponsibilityCenter",
+  "dataType": "string",
+  "sourceColumn": "ResponsibilityCenter",
+  "sourceProviderType": "nvarchar"
+}

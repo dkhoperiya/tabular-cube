@@ -1,0 +1,7 @@
+{
+  "name": "51beecb6-e609-4c05-b42c-037f6356d343",
+  "fromTable": "PlanIncome_SumAct",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

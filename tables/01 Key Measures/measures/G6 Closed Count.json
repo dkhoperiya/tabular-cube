@@ -1,0 +1,34 @@
+{
+  "name": "G6 Closed Count",
+  "description": "Количество проектов (всех бех исключения)",
+  "expression": [
+    "CALCULATE (",
+    "    COUNTA ( Milestones[milestone_code] ),",
+    "    KEEPFILTERS ( 'Milestones'[Milestone] = \"[G6]\" ),",
+    "    KEEPFILTERS ( Milestones[Works Status] = \"Выполнено\" ),",
+    "    TREATAS ( VALUES ( Tribes[Tribe Code] ), 'Projects'[project_tribe_code] ),",
+    "    TREATAS (",
+    "        VALUES ( 'Resource Tribe'[Resource Tribe Code] ),",
+    "        'Projects'[project_tribe_code]",
+    "    ),",
+    "    TREATAS ( VALUES ( Dates[Date] ), 'Milestones'[Plan Date] )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    Milestones,",
+      "    KEEPFILTERS ( 'Milestones'[Milestone] = \"[G6]\" ),",
+      "    KEEPFILTERS ( Milestones[Works Status] = \"Выполнено\" ),",
+      "    TREATAS ( VALUES ( Tribes[Tribe Code] ), 'Projects'[project_tribe_code] ),",
+      "    TREATAS (",
+      "        VALUES ( 'Resource Tribe'[Resource Tribe Code] ),",
+      "        'Projects'[project_tribe_code]",
+      "    ),",
+      "    TREATAS ( VALUES ( Dates[Date] ), 'Milestones'[Plan Date] )",
+      ")"
+    ]
+  }
+}

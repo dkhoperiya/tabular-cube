@@ -1,0 +1,19 @@
+{
+  "name": "Fact Product Income",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Product Metric Value],",
+    "    KEEPFILTERS ( 'ProductFinancialMetrics'[Metric] = \"Доходы\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "19. Product",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Product Metric Value] ),",
+      "    KEEPFILTERS ( 'ProductFinancialMetrics'[Metric] = \"Доходы\" )",
+      ")"
+    ]
+  }
+}

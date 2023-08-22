@@ -1,0 +1,7 @@
+{
+  "name": "InvestmentTask",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "InvestmentTask",
+  "sourceProviderType": "nvarchar"
+}

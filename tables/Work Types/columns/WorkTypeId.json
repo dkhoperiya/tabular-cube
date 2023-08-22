@@ -1,0 +1,9 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "WorkTypeId",
+  "dataType": "int64",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "sourceColumn": "[WorkTypeId]"
+}

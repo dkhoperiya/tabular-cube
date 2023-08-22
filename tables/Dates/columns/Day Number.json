@@ -1,0 +1,7 @@
+{
+  "name": "Day Number",
+  "dataType": "int64",
+  "sourceColumn": "Day Number",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

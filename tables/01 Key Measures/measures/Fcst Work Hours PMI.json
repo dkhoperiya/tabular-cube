@@ -1,0 +1,26 @@
+{
+  "name": "Fcst Work Hours PMI",
+  "description": "Прогноз чч трайба PMI по средневзвешенной ставке.",
+  "expression": [
+    "DIVIDE (",
+    "    [Fcst Transfer Cost of Works PMI],",
+    "    [Historical WA Transfer Rate PMI]",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\02. PMI",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Transfer Cost of Works PMI] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Historical WA Transfer Rate PMI] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Transfer Cost of Works PMI\", _X,",
+      "        \"Historical WA Transfer Rate PMI\", _Y,",
+      "        \"Fcst Work Hours PMI\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

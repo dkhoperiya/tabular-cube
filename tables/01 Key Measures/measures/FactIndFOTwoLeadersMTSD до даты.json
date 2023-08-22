@@ -1,0 +1,11 @@
+{
+  "name": "FactIndFotWoLeadersMTSD до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [FactIndFotWoLeadersMTSD], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Списания Диджитал с маржой и ББ"
+}

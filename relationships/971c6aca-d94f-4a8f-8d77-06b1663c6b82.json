@@ -1,0 +1,7 @@
+{
+  "name": "971c6aca-d94f-4a8f-8d77-06b1663c6b82",
+  "fromTable": "Budget_MR27",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

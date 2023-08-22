@@ -1,0 +1,6 @@
+{
+  "name": "ActivatedDate",
+  "dataType": "dateTime",
+  "sourceColumn": "ActivatedDate",
+  "formatString": "dd.MM.yyyy"
+}

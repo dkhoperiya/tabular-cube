@@ -1,0 +1,30 @@
+{
+  "name": "PlanIncome",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",                  ",
+      "  //Source = Sql.Database(\"pmo-dwh01\", \"Olap_staging_dw\"),",
+      "  dbo_Income = Source{[Schema = \"dbo\", Item = \"viw_ProjectGates\"]}[Data],",
+      "  #\"Removed Other Columns\" = Table.SelectColumns(",
+      "    dbo_Income,",
+      "    {\"Id\", \"BuCode\", \"PlanDate\", \"KpiDate\", \"PlanActSum\", \"KpiSum\", \"InvestProjectPairId\", \"ContractId\"}",
+      "  ),",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "    #\"Removed Other Columns\",",
+      "    {",
+      "      {\"KpiDate\", \"kpi_date\"},",
+      "      {\"Id\", \"milestone_code\"},",
+      "      {\"KpiSum\", \"kpi_revenue\"},",
+      "      {\"PlanDate\", \"plan_date\"},",
+      "      {\"PlanActSum\", \"sum_act_full\"},",
+      "      {\"BuCode\", \"bu_code\"}",
+      "    }",
+      "  )",
+      "in",
+      "  #\"Renamed Columns\""
+    ]
+  }
+}

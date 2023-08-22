@@ -1,0 +1,31 @@
+{
+  "name": "FactIndRubMTSD",
+  "description": "Списания Диджитал с маржой плюс бигбоссы",
+  "expression": [
+    "CALCULATE (",
+    "    [FactIndFotWoLeadersMTSD] + [FactOverheadCostsAndMarginWoLeadersMTSD] + [FactIndLeadersMTSD],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactIndRubMTSD\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Списания Диджитал с маржой и ББ",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactIndFotWoLeadersMTSD]",
+      "VAR x2 = [FactOverheadCostsAndMarginWoLeadersMTSD]",
+      "VAR x3 = [FactIndLeadersMTSD]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactIndFotWoLeadersMTSD\", x1,",
+      "        \"FactOverheadCostsAndMarginWoLeadersMTSD\", x2,",
+      "        \"FactIndLeadersMTSD\", x3,",
+      "        \"FactIndRubMTSD\",",
+      "            x1 + x2 + x3",
+      "    )"
+    ]
+  }
+}

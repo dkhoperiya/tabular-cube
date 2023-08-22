@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "Milestone Revenue txt",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "FORMAT(CALCULATE([Forecast Revenue G2]+[Forecast Revenue G6])/1000000,\"#,#0.0 M\")"
+}

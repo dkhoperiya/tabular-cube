@@ -1,0 +1,5 @@
+{
+  "name": "Task Activity",
+  "dataType": "string",
+  "sourceColumn": "Activity"
+}

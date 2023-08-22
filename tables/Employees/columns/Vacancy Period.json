@@ -1,0 +1,21 @@
+{
+  "type": "calculated",
+  "name": "Vacancy Period",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "IF (",
+    "    ISBLANK ( Employees[VacantDate] ),",
+    "    BLANK (),",
+    "    IF (",
+    "        DATEDIFF ( Employees[VacantDate], TODAY (), DAY ) > 180,",
+    "        \"Более 6-ти месяцев\",",
+    "        IF (",
+    "        DATEDIFF ( Employees[VacantDate], TODAY (), DAY ) > 120,",
+    "        \"Более 4-х месяцев\",",
+    "        \" Менее 4-х месяцев\"",
+    "       )",
+    "    )",
+    ")"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SEGMENT1_DESCRIPTION",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "SEGMENT1_DESCRIPTION"
+}

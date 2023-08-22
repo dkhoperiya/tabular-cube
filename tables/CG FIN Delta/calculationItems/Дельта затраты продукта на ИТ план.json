@@ -1,0 +1,10 @@
+{
+  "name": "Дельта затраты продукта на ИТ план",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Cost of Works] + [Plan Transfer Cost of Works] + [Plan Subcontr CZ Exp] + [Plan Subcontr Exp] + [Plan Project Other Opex] + [Plan Travel Exp] + [Plan NZP Exp],",
+    "    'CG Time Intelligence'[Time Calc] = \"SPNY\"",
+    ") - ( [Fact Cost of Works] + [Fact Transfer Cost of Works] + [Fact Subcontr CZ Exp] + [Fact Subcontr Exp] + [Fact Project Other Opex] + [Fact Travel Exp] + [Fact NZP Exp] )"
+  ],
+  "ordinal": 15
+}

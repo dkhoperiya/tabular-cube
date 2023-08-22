@@ -1,0 +1,7 @@
+{
+  "name": "3cd13de5-c6b5-436b-b8d9-c326533615e5",
+  "fromTable": "PlanHours",
+  "fromColumn": "WorkTypeId",
+  "toTable": "Work Types",
+  "toColumn": "WorkTypeId"
+}

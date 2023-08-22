@@ -1,0 +1,6 @@
+{
+  "name": "G2_Revenue",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "G2_Revenue"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Ожидаемые расходы всего",
+  "expression": [
+    "CALCULATE (",
+    "    [plan_exp_amnt],",
+    "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"27\", \"38\", \"1\" } )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [plan_exp_amnt] ),",
+      "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"27\", \"38\", \"1\" } )",
+      ")"
+    ]
+  }
+}

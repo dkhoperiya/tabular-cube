@@ -1,0 +1,20 @@
+{
+  "name": "Tribe Fact Hours for Fact Rates",
+  "expression": "[Fact Hours Own Projects] + [Fact Hours 2lvl]",
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fact Hours Own Projects] )",
+      "VAR y =",
+      "    CALCULATE ( [Fact Hours 2lvl] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Hours Own Projects\", x,",
+      "        \"Fact Hours 2lvl\", y,",
+      "        \"Tribe Fact Hours for Fact Rates\", x + y",
+      "    )"
+    ]
+  }
+}

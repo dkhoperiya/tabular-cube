@@ -1,0 +1,6 @@
+{
+  "name": "STATUS_OEBS",
+  "dataType": "string",
+  "sourceColumn": "STATUS_OEBS",
+  "sourceProviderType": "nvarchar"
+}

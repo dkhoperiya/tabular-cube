@@ -1,0 +1,29 @@
+{
+  "name": "Fact Tribe OPEX",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'Budget_MR27'[Budget] ),",
+    "    KEEPFILTERS ( NOT 'PL Items'[PL Item FIB Category] IN { \"\", \"Прочая себестоимость\", \"-\" } ),",
+    "    KEEPFILTERS ( Budget_MR27[FactOrPlan] = \"FACT\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        'Budget_MR27',",
+      "        KEEPFILTERS ( NOT 'PL Items'[PL Item FIB Category] IN { \"\", \"Прочая себестоимость\", \"-\" } ),",
+      "        KEEPFILTERS ( Budget_MR27[FactOrPlan] = \"FACT\" )",
+      "    ),",
+      "    \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Business Unit\", RELATED ( 'BusinessUnits'[BU Name] ),",
+      "    \"PL Item\", RELATED ( 'PL Items'[PL Item] ),",
+      "    \"Opex Expense Category\", RELATED ( 'PL Items'[PL Item FIB Category] ),",
+      "    \"Date\", RELATED ( Dates[Date] ),",
+      "    \"Plan Tribe OPEX\", 'Budget_MR27'[Budget]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Max Plan Date G6 MTSD",
+  "dataType": "dateTime",
+  "sourceColumn": "Max Plan Date G6 MTSD",
+  "formatString": "dd.MM.yyyy"
+}

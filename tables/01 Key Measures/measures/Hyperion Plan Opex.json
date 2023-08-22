@@ -1,0 +1,14 @@
+{
+  "name": "Hyperion Plan Opex",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'Hyperion Plan'[PAYSUM] ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BUDGET_TYPE] = \"OPEX\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\02. Hyperion Plan Opex",
+  "detailRowsDefinition": {
+    "expression": "'Hyperion Plan'"
+  }
+}

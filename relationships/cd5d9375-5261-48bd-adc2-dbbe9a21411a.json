@@ -1,0 +1,7 @@
+{
+  "name": "cd5d9375-5261-48bd-adc2-dbbe9a21411a",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "Age Range ID",
+  "toTable": "EmployeeAgeRanges",
+  "toColumn": "ID"
+}

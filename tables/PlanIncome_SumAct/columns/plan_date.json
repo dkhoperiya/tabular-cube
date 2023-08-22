@@ -1,0 +1,9 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "plan_date",
+  "dataType": "dateTime",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "sourceColumn": "[plan_date]"
+}

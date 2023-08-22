@@ -1,0 +1,7 @@
+{
+  "name": "Effort",
+  "dataType": "decimal",
+  "sourceColumn": "Effort",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

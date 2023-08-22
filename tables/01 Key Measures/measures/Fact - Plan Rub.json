@@ -1,0 +1,14 @@
+{
+  "name": "Fact - Plan Rub",
+  "expression": "[FactRub] - [PlanRub]",
+  "formatString": "#,##0",
+  "displayFolder": "03. Hours\\04. Fact - Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _F = [FactRub]",
+      "VAR _P = [PlanRub]",
+      "RETURN",
+      "    ROW ( \"Fact Rub\", _F, \"Plan Rub\", _P, \"Fact - Plan Rub\", _F - _P )"
+    ]
+  }
+}

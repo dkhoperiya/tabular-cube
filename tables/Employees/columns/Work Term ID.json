@@ -1,0 +1,25 @@
+{
+  "type": "calculated",
+  "name": "Work Term ID",
+  "dataType": "int64",
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "expression": [
+    "VAR last_date =",
+    "    IF (",
+    "        Employees[Employee Status] = \"Redundant\",",
+    "        IF ( Employees[FireDate] <> DATE ( 1900, 1, 1 ), Employees[FireDate] , TODAY ()),",
+    "        TODAY ()",
+    "    )",
+    "VAR days =",
+    " IF(ISBLANK(Employees[HireDate]) = TRUE, -1,INT ( last_date - Employees[HireDate] ))",
+    "RETURN",
+    "    SWITCH (",
+    "        TRUE (),",
+    "        days >= 0 && days <= 90, 1,",
+    "        days > 90 && days <= 365, 2,",
+    "        days > 365 && days <= 1095, 3,",
+    "        days > 1095, 4",
+    "    )"
+  ]
+}

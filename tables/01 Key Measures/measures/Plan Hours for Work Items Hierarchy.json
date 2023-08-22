@@ -1,0 +1,18 @@
+{
+  "name": "Plan Hours for Work Items Hierarchy",
+  "expression": [
+    "IF (",
+    "    [Browse Depth] > [Max Node Depth],",
+    "    BLANK (),",
+    "    CALCULATE (",
+    "        [Plan Hours],",
+    "        KEEPFILTERS ( 'Projects'[Project Status] IN { \"Closed\", \"Frozen\", \"Presale\", \"Realization\" } )",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Hours] )"
+  }
+}

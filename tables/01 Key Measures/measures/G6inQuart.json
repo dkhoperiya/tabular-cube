@@ -1,0 +1,21 @@
+{
+  "name": "G6inQuart",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "VAR maxMonth =",
+    "    MONTH ( maxDate )",
+    "VAR maxYear =",
+    "    YEAR ( maxDate )",
+    "VAR minDate =",
+    "    DATE ( maxYear, maxMonth, 01 )",
+    "RETURN",
+    "    CALCULATE (",
+    "        IF ( DISTINCTCOUNT ( Projects[Project Code] ) = 1, 1, 0 ),",
+    "        FILTER ( Milestones, Milestones[Milestone] = \"[G6]\" ),",
+    "        FILTER ( Milestones, Milestones[Plan Date] >= minDate ),",
+    "        FILTER ( Milestones, Milestones[Plan Date] <= maxDate )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP"
+}

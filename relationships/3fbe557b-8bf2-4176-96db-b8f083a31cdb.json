@@ -1,0 +1,7 @@
+{
+  "name": "3fbe557b-8bf2-4176-96db-b8f083a31cdb",
+  "fromTable": "WIP_Acts_XLSX",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "City",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "City"
+}

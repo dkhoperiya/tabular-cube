@@ -1,0 +1,20 @@
+{
+  "name": "Tribe FactRub for Fact Rates",
+  "expression": "[FactRub Own Projects] + [FactRub 2lvl]",
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [FactRub Own Projects] )",
+      "VAR y =",
+      "    CALCULATE ( [FactRub 2lvl] )",
+      "RETURN",
+      "    ROW (",
+      "        \"FactRub Own Projects\", x,",
+      "        \"FactRub 2lvl\", y,",
+      "        \"Tribe FactRub for Fact Rates\", x + y",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "FactOverheadCostsAndMarginWithLeaders",
+  "description": "Маржа и накладняк от списаний, субподряда и прочих",
+  "expression": [
+    "CALCULATE (",
+    "    [FactMarginwoOHCostswoLeaders] + [FactOverheadCosts],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactOverheadCostsAndMarginWithLeaders\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Списания Диджитал с маржой и ББ",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactOverheadCostsAndMarginWoLeadersMTSD]",
+      "VAR x2 = [FactTotalMarginSubcontr]",
+      "VAR x3 = [FactMarginCommandOtherExp]",
+      "VAR x4 = [FactOverheadCostsAndMarginLeadersMTSD]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactOverheadCostsAndMarginwoLeadersMTSD\", x1,",
+      "        \"FactTotalMarginSubcontr\", x2,",
+      "        \"FactMarginCommandOtherExp\", x3,",
+      "        \"FactOverheadCostsAndMarginLeadersMTSD\", x4,",
+      "        \"FactOverheadCostsAndMarginwoLeaders\",",
+      "            x1 + x2 + x3 + x4",
+      "    )"
+    ]
+  }
+}

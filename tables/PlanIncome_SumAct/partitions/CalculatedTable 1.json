@@ -1,0 +1,20 @@
+{
+  "name": "CalculatedTable 1",
+  "source": {
+    "type": "calculated",
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    PlanIncome,",
+      "    \"milestone_code\", PlanIncome[milestone_code],",
+      "    \"bu_code\", 'PlanIncome'[BuCode],",
+      "    \"plan_date\", PlanIncome[plan_date],",
+      "    \"sum_act\", PlanIncome[sum_act],",
+      "    \"sum_act_full\", PlanIncome[sum_act_full],",
+      "    \"kpi_sum\", PlanIncome[kpi_revenue_probability],",
+      "    \"kpi_sum_full\", PlanIncome[kpi_revenue],",
+      "    \"InvestProjectPairId\", PlanIncome[InvestProjectPairId],",
+      "    \"ContractId\", PlanIncome[ContractId]",
+      ")"
+    ]
+  }
+}

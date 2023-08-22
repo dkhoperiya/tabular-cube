@@ -1,0 +1,21 @@
+{
+  "name": "Fcst PMI Employee Count",
+  "description": "Прогноз FTE. Необходимая средняя численность трайба PMI по воронке RMS",
+  "expression": "DIVIDE ( [Fcst Work Hours PMI], [One Person Work Hours in Period PMI] )",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\02. PMI",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Work Hours PMI] )",
+      "VAR _Y =",
+      "    CALCULATE ( [One Person Work Hours in Period PMI] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours PMI\", _X,",
+      "        \"One Person Work Hours in Period PMI\", _Y,",
+      "        \"Fcst PMI Employee Count\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

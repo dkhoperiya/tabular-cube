@@ -1,0 +1,7 @@
+{
+  "name": "94ec928c-d8cd-42ae-9e97-7b78d4b911ac",
+  "fromTable": "PlanHours",
+  "fromColumn": "RoleCode",
+  "toTable": "Roles",
+  "toColumn": "Role Code"
+}

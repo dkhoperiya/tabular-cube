@@ -1,0 +1,10 @@
+{
+  "name": "TaskTracker Hours",
+  "description": "Сумма нормализованных часов списанных на проектах",
+  "expression": "SUM ( 'FactHours'[TaskTrackerSeconds] ) / 3600",
+  "formatString": "#,0",
+  "displayFolder": "10. Timesheets",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

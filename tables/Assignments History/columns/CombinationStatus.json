@@ -1,0 +1,5 @@
+{
+  "name": "CombinationStatus",
+  "dataType": "string",
+  "sourceColumn": "CombinationStatus"
+}

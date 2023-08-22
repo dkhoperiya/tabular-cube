@@ -1,0 +1,13 @@
+{
+  "type": "calculated",
+  "name": "Max KPI Date G6",
+  "dataType": "dateTime",
+  "isDataTypeInferred": true,
+  "expression": [
+    "CALCULATE (",
+    "    MAX ( 'Milestones'[KPI Date] ),",
+    "    KEEPFILTERS ( 'Milestones'[Milestone] = \"[G6]\" )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy"
+}

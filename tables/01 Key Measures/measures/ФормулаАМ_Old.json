@@ -1,0 +1,7 @@
+{
+  "name": "ФормулаАМ_Old",
+  "expression": "([FactRub] + ([Факт фактические расходы] / 0.93)) - [G6 до 31.03.2022]",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

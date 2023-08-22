@@ -1,0 +1,6 @@
+{
+  "name": "StageActsCreationDate",
+  "dataType": "dateTime",
+  "sourceColumn": "StageActsCreationDate",
+  "formatString": "dd.MM.yyyy"
+}

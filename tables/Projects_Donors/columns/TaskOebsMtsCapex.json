@@ -1,0 +1,6 @@
+{
+  "name": "TaskOebsMtsCapex",
+  "dataType": "string",
+  "sourceColumn": "TaskOebsMtsCapex",
+  "sourceProviderType": "nvarchar"
+}

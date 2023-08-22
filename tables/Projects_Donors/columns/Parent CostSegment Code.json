@@ -1,0 +1,6 @@
+{
+  "name": "Parent CostSegment Code",
+  "dataType": "string",
+  "sourceColumn": "Parent_CostSegment_Code",
+  "sourceProviderType": "nvarchar"
+}

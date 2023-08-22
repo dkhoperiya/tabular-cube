@@ -1,0 +1,9 @@
+{
+  "name": "Requirement Estimate for Work Items Hierrarchy",
+  "expression": "IF ( [Browse Depth] > [Max Node Depth], BLANK (), [Requirement Estimate] )",
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Requirement Estimate] )"
+  }
+}

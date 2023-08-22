@@ -1,0 +1,7 @@
+{
+  "name": "31696235-5234-4fc2-a04c-478152e76c5d",
+  "fromTable": "OrgStructOebs",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

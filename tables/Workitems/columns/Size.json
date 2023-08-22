@@ -1,0 +1,7 @@
+{
+  "name": "Size",
+  "dataType": "decimal",
+  "sourceColumn": "Size",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

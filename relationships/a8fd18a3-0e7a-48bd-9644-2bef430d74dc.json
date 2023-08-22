@@ -1,0 +1,7 @@
+{
+  "name": "a8fd18a3-0e7a-48bd-9644-2bef430d74dc",
+  "fromTable": "Projects",
+  "fromColumn": "Donor",
+  "toTable": "Projects_Donors",
+  "toColumn": "Project Code"
+}

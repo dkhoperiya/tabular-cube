@@ -1,0 +1,7 @@
+{
+  "name": "2017ea9d-32dc-4875-b3c4-b1d1e2921ad2",
+  "fromTable": "HFM_Adjustments_Fact",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

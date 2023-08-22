@@ -1,0 +1,6 @@
+{
+  "name": "Sitronics_RND_OriginalFinishDate",
+  "dataType": "dateTime",
+  "sourceColumn": "Sitronics_RND_OriginalFinishDate",
+  "formatString": "dd.MM.yyyy"
+}

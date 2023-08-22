@@ -1,0 +1,20 @@
+{
+  "name": "Plan Tribe GM 19",
+  "expression": "[Plan Tribe Income 19] - [Plan Tribe Expenses 19]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\01a. Plan 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Plan Tribe Income 19] )",
+      "VAR y =",
+      "    CALCULATE ( [Plan Tribe Expenses 19] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Tribe Income 19\", x,",
+      "        \"Plan Tribe Expenses 19\", y,",
+      "        \"Plan Tribe GM 19\", x - y",
+      "    )"
+    ]
+  }
+}

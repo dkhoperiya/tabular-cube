@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "Sitronics_RND_StsProject_Code",
+  "dataType": "string",
+  "isHidden": true,
+  "expression": "LEFT ( 'Workitems'[Sitronics_RND_StsProject], 6 )"
+}

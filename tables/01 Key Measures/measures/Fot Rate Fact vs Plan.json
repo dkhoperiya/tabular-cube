@@ -1,0 +1,20 @@
+{
+  "name": "Fot Rate Fact vs Plan",
+  "expression": "DIVIDE ( [Fact Fot Rate], [Historical WA Fot Rate] )",
+  "formatString": "0%;-0%;0%",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fact Fot Rate] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Historical WA Fot Rate] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Fot Rate\", _X,",
+      "        \"Historical WA Fot Rate\", _Y,",
+      "        \"Fot Rate Fact vs Plan\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

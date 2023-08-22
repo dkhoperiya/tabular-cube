@@ -1,0 +1,7 @@
+{
+  "name": "Employee Capacity NF K",
+  "dataType": "decimal",
+  "sourceColumn": "Employee Capacity NF K",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

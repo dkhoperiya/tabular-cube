@@ -1,0 +1,7 @@
+{
+  "name": "b07ce3ac-6d9b-4e68-ad1d-1438d94566e9",
+  "fromTable": "TribesFinKPICorrectedValues",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

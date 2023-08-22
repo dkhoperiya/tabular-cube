@@ -1,0 +1,13 @@
+{
+  "name": "Assignments History",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_HRGate_AssignmentsHistory = Source{[Schema=\"dbo\",Item=\"viw_HRGate_AssignmentsHistory\"]}[Data]",
+      "in",
+      "    viw_HRGate_AssignmentsHistory"
+    ]
+  }
+}

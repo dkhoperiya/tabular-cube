@@ -1,0 +1,7 @@
+{
+  "name": "b0a2da4a-e41d-4367-aea5-af24fa2eead9",
+  "fromTable": "PlanHours",
+  "fromColumn": "ServiceProjectCode",
+  "toTable": "Service Projects",
+  "toColumn": "Service Project Code"
+}

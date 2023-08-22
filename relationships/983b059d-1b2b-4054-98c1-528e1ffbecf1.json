@@ -1,0 +1,7 @@
+{
+  "name": "983b059d-1b2b-4054-98c1-528e1ffbecf1",
+  "fromTable": "PlanHours",
+  "fromColumn": "BudgetRates_Version",
+  "toTable": "Budget Rates Versions",
+  "toColumn": "Budget Rates Version"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "calculated",
+  "name": "Work Term Range ID",
+  "dataType": "int64",
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "expression": [
+    "",
+    "VAR days = EmployeeMovements[WorkTermOnDate]",
+    "RETURN",
+    "",
+    "IF(NOT(ISBLANK(days)),",
+    "",
+    "SWITCH (",
+    "        TRUE (),",
+    "        days <= 90, 1,",
+    "        days <= 365, 2,",
+    "        days <= 1095, 3,",
+    "        days > 1095, 4",
+    "    ))"
+  ]
+}

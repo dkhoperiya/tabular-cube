@@ -1,0 +1,7 @@
+{
+  "name": "f7f10d64-b1e7-4d74-aed1-4510f96dc97b",
+  "fromTable": "Capex BIT",
+  "fromColumn": "DATE",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

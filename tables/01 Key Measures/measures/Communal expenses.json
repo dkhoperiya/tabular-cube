@@ -1,0 +1,9 @@
+{
+  "name": "Communal expenses",
+  "expression": "SUM ( 'BillingFinancialAnalyst'[PriceAfter] )",
+  "formatString": "#,##0",
+  "displayFolder": "17. Communal expenses",
+  "detailRowsDefinition": {
+    "expression": "'BillingFinancialAnalyst'"
+  }
+}

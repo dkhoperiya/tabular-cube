@@ -1,0 +1,7 @@
+{
+  "name": "9be53c19-f10e-4340-a157-23a754dfb476",
+  "fromTable": "FactHours_Renormilized",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

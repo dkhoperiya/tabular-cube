@@ -1,0 +1,6 @@
+{
+  "name": "EXCL_FOR_SUBCONTRACT",
+  "dataType": "boolean",
+  "isHidden": true,
+  "sourceColumn": "EXCL_FOR_SUBCONTRACT"
+}

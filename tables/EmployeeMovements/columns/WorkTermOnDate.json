@@ -1,0 +1,6 @@
+{
+  "name": "WorkTermOnDate",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "WorkTermOnDate"
+}

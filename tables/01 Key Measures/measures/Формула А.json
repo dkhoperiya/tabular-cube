@@ -1,0 +1,20 @@
+{
+  "name": "Формула А",
+  "expression": "[FactFotRub] + [Факт прочих расходов помимо фот]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR f1 =",
+      "    CALCULATE ( [FactFotRub] )",
+      "VAR f2 =",
+      "    CALCULATE ( [Факт прочих расходов помимо фот] )",
+      "RETURN",
+      "    ROW (",
+      "        \"FactFotRub\", f1,",
+      "        \"Факт прочих расходов помимо фот\", f2,",
+      "        \"Формула А\", f1 + f2",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Fcst MAP FotRub",
+  "description": "Прогноз чч трайба MAP * средневзвешенная ставка трайб MAP.",
+  "expression": "[Fcst Work Hours MAP] * [Historical WA Fot Rate MAP]",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\01. MAP",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Work Hours MAP]",
+      "VAR _Y = [Historical WA Fot Rate MAP]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours MAP\", _X,",
+      "        \"Historical WA Fot Rate MAP\", _Y,",
+      "        \"Fcst MAP FotRub\", _X * _Y",
+      "    )"
+    ]
+  }
+}

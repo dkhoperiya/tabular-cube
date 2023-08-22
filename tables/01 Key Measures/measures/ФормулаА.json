@@ -1,0 +1,7 @@
+{
+  "name": "ФормулаА",
+  "expression": "[FactRub] + [Факт фактические расходы]",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Hyperion MTSID in RMS",
+  "description": "При совпадении кода в RMS с кодом в Hyperion = '1', иначе = '0', если пустое значение 2",
+  "expression": [
+    "",
+    "IF (",
+    "    ISBLANK ( SELECTEDVALUE ( 'Projects'[Capex MTS] ) ) = TRUE,",
+    "    2,",
+    "    IF (",
+    "        SELECTEDVALUE ( 'Projects'[Capex MTS] )",
+    "            = LOOKUPVALUE (",
+    "                'Hyperion Plan'[PROJECTCODE],",
+    "                'Project Capex MTS'[Capex_MTS_ID], SELECTEDVALUE ( 'Projects'[Capex MTS] )",
+    "            ),",
+    "        1,",
+    "        0",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex"
+}

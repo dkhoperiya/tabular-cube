@@ -1,0 +1,31 @@
+{
+  "name": "FactRMSProjectCosts",
+  "description": "себестоимость списаний+себестоимость субподряда + чехи с одинарной маржой+прочий субподряд, командировки, прочие расходы",
+  "expression": [
+    "CALCULATE (",
+    "    [FactIndFotWoLeadersMTSD] + [FactSubcontrCosts] + [Прочие и командировки],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactRMSProjectCosts\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Метрики детализации актов",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactIndFotWoLeadersMTSD]",
+      "VAR x2 = [FactSubcontrCosts]",
+      "VAR x3 = [Прочие и командировки]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactIndFotWoLeadersMTSD\", x1,",
+      "        \"FactSubcontrCosts\", x2,",
+      "        \"Прочие и командировки\", x3,",
+      "        \"FactRMSProjectCosts\",",
+      "            x1 + x2 + x3",
+      "    )"
+    ]
+  }
+}

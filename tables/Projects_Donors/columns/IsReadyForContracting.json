@@ -1,0 +1,5 @@
+{
+  "name": "IsReadyForContracting",
+  "dataType": "boolean",
+  "sourceColumn": "IsReadyForContracting"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "SumXLS до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [SumXLS], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\С фильтом по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR maxDate =",
+      "    MAX ( Dates[Date] )",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        DETAILROWS ( [SumXLS] ),",
+      "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+      "    )"
+    ]
+  }
+}

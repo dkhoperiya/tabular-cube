@@ -1,0 +1,7 @@
+{
+  "name": "433b1114-60fa-40ac-9f61-087b0ffac276",
+  "fromTable": "Projects",
+  "fromColumn": "Business Product Object Id (SoL)",
+  "toTable": "Business Products",
+  "toColumn": "BusinessProductObjectId"
+}

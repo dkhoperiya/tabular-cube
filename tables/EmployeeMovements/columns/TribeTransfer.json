@@ -1,0 +1,7 @@
+{
+  "name": "TribeTransfer",
+  "dataType": "int64",
+  "sourceColumn": "TribeTransfer",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

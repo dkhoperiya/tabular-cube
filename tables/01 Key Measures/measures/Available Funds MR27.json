@@ -1,0 +1,21 @@
+{
+  "name": "Available Funds MR27",
+  "expression": "[Budget MR27] - [Fact MR27] - [Liabilities MR27]",
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\03. Budget MR27",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _A = [Budget MR27]",
+      "VAR _B = [Fact MR27]",
+      "VAR _C = [Liabilities MR27]",
+      "RETURN",
+      "    ROW (",
+      "        \"Budget MR27\", _A,",
+      "        \"Fact MR27\", _B,",
+      "        \"Liabilities MR27\", _C,",
+      "        \"Available Funds MR27\",",
+      "            _A - _B - _C",
+      "    )"
+    ]
+  }
+}

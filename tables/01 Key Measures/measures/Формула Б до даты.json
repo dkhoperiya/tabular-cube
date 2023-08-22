@@ -1,0 +1,20 @@
+{
+  "name": "Формула Б до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        (",
+    "            DIVIDE (",
+    "                [Количество дней с начала проекта],",
+    "                [количество дней в проекте всего],",
+    "                0",
+    "            )",
+    "        ) * [Полная стоимость проекта без МТС],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP"
+}

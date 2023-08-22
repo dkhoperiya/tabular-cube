@@ -1,0 +1,18 @@
+{
+  "name": "Plan Tribe OIBDA YTD",
+  "expression": "[Plan Tribe GM YTD] - [Plan Tribe OPEX YTD]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Plan Tribe GM YTD]",
+      "VAR _Y = [Plan Tribe OPEX YTD]",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Tribe GM YTD\", _X,",
+      "        \"Plan Tribe OPEX YTD\", _Y,",
+      "        \"Plan Tribe OIBDA YTD\", _X - _Y",
+      "    )"
+    ]
+  }
+}

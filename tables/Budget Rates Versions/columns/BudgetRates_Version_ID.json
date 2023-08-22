@@ -1,0 +1,7 @@
+{
+  "name": "BudgetRates_Version_ID",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "BudgetRates_Version_ID",
+  "formatString": "0"
+}

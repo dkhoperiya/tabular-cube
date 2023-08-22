@@ -1,0 +1,6 @@
+{
+  "name": "TribeCode",
+  "dataType": "int64",
+  "sourceColumn": "TribeCode",
+  "sourceProviderType": "int"
+}

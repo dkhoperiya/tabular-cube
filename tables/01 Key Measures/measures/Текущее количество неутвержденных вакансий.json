@@ -1,0 +1,24 @@
+{
+  "name": "Текущее количество неутвержденных вакансий",
+  "description": "Количество вакансий без учета незамещенных декретных позиций",
+  "expression": [
+    "CALCULATE (",
+    "    [EmployeeCount],",
+    "    KEEPFILTERS ( Employees[Maternity Vacancy] = \"No\" ),",
+    "    KEEPFILTERS ( Employees[Confirmation Status] = \"Not Confirmed\" ),",
+    "    KEEPFILTERS ( Employees[Is Vacancy] = TRUE )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    KEEPFILTERS ( Employees[Maternity Vacancy] = \"No\" ),",
+      "    KEEPFILTERS ( Employees[Is Vacancy] = TRUE ),",
+      "    KEEPFILTERS ( Employees[Confirmation Status] = \"Not Confirmed\" )",
+      ")"
+    ]
+  }
+}

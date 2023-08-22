@@ -1,0 +1,6 @@
+{
+  "name": "ActivityFrom",
+  "dataType": "dateTime",
+  "sourceColumn": "ActivityFrom",
+  "formatString": "dd.MM.yyyy"
+}

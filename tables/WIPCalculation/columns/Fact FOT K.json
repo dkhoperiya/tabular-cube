@@ -1,0 +1,6 @@
+{
+  "name": "Fact FOT K",
+  "dataType": "decimal",
+  "sourceColumn": "Fact FOT K",
+  "summarizeBy": "none"
+}

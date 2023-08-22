@@ -1,0 +1,7 @@
+{
+  "name": "60e8229e-e439-4173-a3f8-a93ab126f729",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "TribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

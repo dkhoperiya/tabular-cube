@@ -1,0 +1,6 @@
+{
+  "name": "Debet",
+  "dataType": "decimal",
+  "sourceColumn": "Debet",
+  "sourceProviderType": "decimal"
+}

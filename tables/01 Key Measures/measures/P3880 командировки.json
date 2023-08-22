@@ -1,0 +1,25 @@
+{
+  "name": "P3880 командировки",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[BI_Код Статьи PL]",
+    "        IN { \"P3880\"} ) ,",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+    ")",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"P3880 командировки\" )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Project Expenses OEBS] ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[BI_Код Статьи PL] IN { \"P3880\" } ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+      ")"
+    ]
+  }
+}

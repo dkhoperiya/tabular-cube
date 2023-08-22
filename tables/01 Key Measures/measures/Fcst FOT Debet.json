@@ -1,0 +1,12 @@
+{
+  "name": "Fcst FOT Debet",
+  "expression": [
+    "VAR MaxWIPDate =",
+    "    MAX ( WIPCalculation[month_date] )",
+    "RETURN",
+    "    [Sum of Debet with K]",
+    "        + CALCULATE ( [PlanFotRub], KEEPFILTERS ( Dates[Date] > MaxWIPDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\01. Plan"
+}

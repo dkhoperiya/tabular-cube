@@ -1,0 +1,5 @@
+{
+  "name": "WIP_Calculation_On_Triggers",
+  "expression": "IF ( ISBLANK ( [WIP_Calculation_Trigger] ), 0, [WIP_Calculation_Trigger] )",
+  "displayFolder": "16. WIP"
+}

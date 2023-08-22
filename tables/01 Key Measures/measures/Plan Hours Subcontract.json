@@ -1,0 +1,24 @@
+{
+  "name": "Plan Hours Subcontract",
+  "description": "План трудозатрат сотрудников прочих трайбов на проектах трайба в трансфертных ставках, не включает трайбы SUB_CZ и SUB_MINSK.Не включает ОРЗ ",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Hours],",
+    "    KEEPFILTERS ( PlanHours[is_subcontract] = 1 ),",
+    "    KEEPFILTERS ( 'BusinessUnits'[Is Subcontractor] = FALSE () ),",
+    "    KEEPFILTERS ( 'Resource Tribe'[IsExternalSubcontractTribe] = 0 )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Plan Hours] ),",
+      "    KEEPFILTERS ( PlanHours[is_subcontract] = 1 ),",
+      "    KEEPFILTERS ( 'BusinessUnits'[Is Subcontractor] = FALSE () ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[IsExternalSubcontractTribe] = 0 )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "HierarchyDepth",
+  "dataType": "int64",
+  "sourceColumn": "HierarchyDepth",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

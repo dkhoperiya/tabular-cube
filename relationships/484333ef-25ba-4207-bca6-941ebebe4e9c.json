@@ -1,0 +1,7 @@
+{
+  "name": "484333ef-25ba-4207-bca6-941ebebe4e9c",
+  "fromTable": "TargetLevelsOfFunding",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

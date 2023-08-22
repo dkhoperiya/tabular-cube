@@ -1,0 +1,19 @@
+{
+  "name": "CAPEX Переходящие следующего года",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'FinIvestPlan'[Value] ),",
+    "    KEEPFILTERS ( 'FinIvestPlan'[Type] = \"CAPEX_CO\" )",
+    ")"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "13. Fin Invest Plans",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    'FinIvestPlan',",
+      "    KEEPFILTERS ( 'FinIvestPlan'[Type] = \"CAPEX_CO\" )",
+      ")"
+    ]
+  }
+}

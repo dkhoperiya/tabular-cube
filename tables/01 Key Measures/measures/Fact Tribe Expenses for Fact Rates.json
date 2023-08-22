@@ -1,0 +1,30 @@
+{
+  "name": "Fact Tribe Expenses for Fact Rates",
+  "expression": "[Fact Tribe Cost of Works for Fact Rates] + [Fact Project Other Opex] + [Fact Subcontr CZ Exp] + [Fact Subcontr Exp] + [Fact Travel Exp]",
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 =",
+      "    CALCULATE ( [Fact Tribe Cost of Works for Fact Rates] )",
+      "VAR x2 =",
+      "    CALCULATE ( [Fact Project Other Opex] )",
+      "VAR x3 =",
+      "    CALCULATE ( [Fact Subcontr CZ Exp] )",
+      "VAR x4 =",
+      "    CALCULATE ( [Fact Subcontr Exp] )",
+      "VAR x5 =",
+      "    CALCULATE ( [Fact Travel Exp] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Cost of Works for Fact Rates\", x1,",
+      "        \"Fact Project Other Opex\", x2,",
+      "        \"Fact Subcontr CZ Exp\", x3,",
+      "        \"Fact Subcontr Exp\", x4,",
+      "        \"Fact Travel Exp\", x5,",
+      "        \"Fact Tribe Expenses for Fact Rates\",",
+      "            x1 + x2 + x3 + x4 + x5",
+      "    )"
+    ]
+  }
+}

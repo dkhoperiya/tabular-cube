@@ -1,0 +1,14 @@
+{
+  "name": "Затраты продукта на ИТ план",
+  "expression": [
+    "[Plan Cost of Works] ",
+    "+ [Plan Transfer Cost of Works] ",
+    "+ [Plan Subcontr CZ Exp] ",
+    "+ [Plan Subcontr Exp] ",
+    "+ [Plan Project Other Opex] ",
+    "+ [Plan Travel Exp] ",
+    "+ [Plan NZP Exp]",
+    ""
+  ],
+  "ordinal": 13
+}

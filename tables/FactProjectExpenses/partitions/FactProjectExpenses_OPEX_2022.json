@@ -1,0 +1,15 @@
+{
+  "name": "FactProjectExpenses_OPEX_2022",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    fin_viw_FactProjectExpenses_OPEX = Source{[Schema=\"fin\",Item=\"viw_FactProjectExpenses_OPEX2\"]}[Data],",
+      "    #\"Filtered Rows\" = Table.SelectRows(fin_viw_FactProjectExpenses_OPEX, each [ACCOUNTING_DATE] >= #date(2022, 1, 1) and [ACCOUNTING_DATE] <= #date(2022, 12, 31) )",
+      "in",
+      "    #\"Filtered Rows\""
+    ]
+  }
+}

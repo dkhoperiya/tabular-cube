@@ -1,0 +1,24 @@
+{
+  "name": "One Person Work Hours in Period SUPPORT",
+  "description": "Количество часов в периоде на одного человека с учетом утилизации трайба SUPPORT. Полное кол-во рабочих часов за период * Ставка утилизации за период (гранулярность - 1 месяц)",
+  "expression": [
+    "CALCULATE (",
+    "    [One Person Work Hours in Period],",
+    "    ALL ( 'PL_Tribe_KPI' ),",
+    "    VALUES ( 'PL_Tribe_KPI'[kpi_date] ),",
+    "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 26 ) ",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\02. Support Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [One Person Work Hours in Period] ),",
+      "    ALL ( 'PL_Tribe_KPI' ),",
+      "    VALUES ( 'PL_Tribe_KPI'[kpi_date] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 26 )",
+      ")"
+    ]
+  }
+}

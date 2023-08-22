@@ -1,0 +1,7 @@
+{
+  "name": "6f69bf7e-4d03-4b83-9a06-bc37c34fc8bc",
+  "fromTable": "Capex BIT",
+  "fromColumn": "PROJECT_CODE_RMS",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

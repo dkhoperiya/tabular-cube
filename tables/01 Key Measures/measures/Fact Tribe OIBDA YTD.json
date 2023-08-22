@@ -1,0 +1,18 @@
+{
+  "name": "Fact Tribe OIBDA YTD",
+  "expression": "[Fact Tribe GM YTD] - [Fact Tribe OPEX YTD]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Tribe GM YTD]",
+      "VAR _Y = [Fact Tribe OPEX YTD]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe GM YTD\", _X,",
+      "        \"Fact Tribe OPEX YTD\", _Y,",
+      "        \"Fact Tribe OIBDA YTD\", _X - _Y",
+      "    )"
+    ]
+  }
+}

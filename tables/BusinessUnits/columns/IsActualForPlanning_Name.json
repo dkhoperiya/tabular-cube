@@ -1,0 +1,6 @@
+{
+  "name": "IsActualForPlanning_Name",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "IsActualForPlanning_Name"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "RoleCode",
+  "dataType": "int64",
+  "sourceColumn": "RoleCode",
+  "summarizeBy": "none"
+}

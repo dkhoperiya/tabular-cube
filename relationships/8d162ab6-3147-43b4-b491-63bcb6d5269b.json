@@ -1,0 +1,7 @@
+{
+  "name": "8d162ab6-3147-43b4-b491-63bcb6d5269b",
+  "fromTable": "Capacity",
+  "fromColumn": "RoleCode",
+  "toTable": "Roles",
+  "toColumn": "Role Code"
+}

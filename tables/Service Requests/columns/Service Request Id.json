@@ -1,0 +1,6 @@
+{
+  "name": "Service Request Id",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Service Request Id"
+}

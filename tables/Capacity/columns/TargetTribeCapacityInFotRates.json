@@ -1,0 +1,6 @@
+{
+  "name": "TargetTribeCapacityInFotRates",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "TargetTribeCapacityInFotRates2"
+}

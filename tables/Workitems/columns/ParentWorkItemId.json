@@ -1,0 +1,5 @@
+{
+  "name": "ParentWorkItemId",
+  "dataType": "string",
+  "sourceColumn": "ParentWorkItemId"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Historical WA Own Fot Rate",
+  "expression": [
+    "VAR _SELECTED_PROJECT_TRIBE =",
+    "    SELECTEDVALUE ( 'Projects'[project_tribe_code] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Historical WA Fot Rate],",
+    "        FILTER (",
+    "            ALLEXCEPT ( Capacity, Dates, Roles, 'Competences' ),",
+    "            Capacity[TribeCode] = _SELECTED_PROJECT_TRIBE",
+    "        )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "VAR _SELECTED_PROJECT_TRIBE =",
+      "    SELECTEDVALUE ( 'Projects'[project_tribe_code] )",
+      "RETURN",
+      "    FILTER (",
+      "        SELECTCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                Capacity,",
+      "                ALLEXCEPT ( Capacity, Dates, Roles, 'Competences' ),",
+      "                Capacity[TribeCode] = _SELECTED_PROJECT_TRIBE,",
+      "                Capacity[BudgetRates_Version] = BudgetRatesVersion",
+      "            ),",
+      "            \"Employee\", RELATED ( Employees[Employee] ),",
+      "            \"BusinessUnit\", 'Capacity'[BuCode],",
+      "            \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "            \"Role\", RELATED ( Roles[Role] ),",
+      "            \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "            \"Date\", RELATED ( Dates[Date] ),",
+      "            \"Own Fot Rate\", 'Capacity'[FotRate],",
+      "            \"Budget Rates Version\", BudgetRatesVersion",
+      "        ),",
+      "        [Own Fot Rate] <> BLANK ()",
+      "    )"
+    ]
+  }
+}

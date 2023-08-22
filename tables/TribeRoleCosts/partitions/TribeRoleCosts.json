@@ -1,0 +1,17 @@
+{
+  "name": "TribeRoleCosts",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_RoleCosts = Source{[Schema=\"dbo\",Item=\"viw_RoleBudgetRates\"]}[Data],",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(dbo_RoleCosts,{\"RoleCode\", \"ContourCode\", \"BuCode\", \"Date\", \"Weight\", \"TransferRate\"}),",
+      "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Other Columns\", each [Date] > #date(2016, 1, 1)),",
+      "    #\"Renamed Columns\" = Table.RenameColumns(#\"Filtered Rows\",{{\"RoleCode\", \"role_code\"}, {\"ContourCode\", \"tribe_code\"}, {\"Weight\", \"fot_rate\"}, {\"TransferRate\", \"transfer_rate\"}, {\"BuCode\", \"bu_code\"}})",
+      "in",
+      "    #\"Renamed Columns\""
+    ]
+  }
+}

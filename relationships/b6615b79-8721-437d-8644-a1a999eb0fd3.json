@@ -1,0 +1,7 @@
+{
+  "name": "b6615b79-8721-437d-8644-a1a999eb0fd3",
+  "fromTable": "FactIncome",
+  "fromColumn": "milestone_code",
+  "toTable": "Milestones",
+  "toColumn": "milestone_code"
+}

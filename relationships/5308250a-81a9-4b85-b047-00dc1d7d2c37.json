@@ -1,0 +1,7 @@
+{
+  "name": "5308250a-81a9-4b85-b047-00dc1d7d2c37",
+  "fromTable": "Capacity",
+  "fromColumn": "BudgetRates_Version",
+  "toTable": "Budget Rates Versions",
+  "toColumn": "Budget Rates Version"
+}

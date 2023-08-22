@@ -1,0 +1,12 @@
+{
+  "name": "milestone_code",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "milestone_code",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"DISABLE_ATTRIBUTE_HIERACHIES\"]}"
+    }
+  ]
+}

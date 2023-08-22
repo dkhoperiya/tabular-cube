@@ -1,0 +1,7 @@
+{
+  "name": "G6 Plan Date",
+  "dataType": "dateTime",
+  "sourceColumn": "G6 Plan Date",
+  "formatString": "dd.MM.yyyy",
+  "sourceProviderType": "date"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "cdbfb24c-02d2-4736-b8ec-1d3533baa9c0",
+  "fromTable": "PlanHours",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

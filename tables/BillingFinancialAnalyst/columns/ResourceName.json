@@ -1,0 +1,5 @@
+{
+  "name": "ResourceName",
+  "dataType": "string",
+  "sourceColumn": "ResourceName"
+}

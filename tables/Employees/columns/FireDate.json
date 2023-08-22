@@ -1,0 +1,12 @@
+{
+  "name": "FireDate",
+  "dataType": "dateTime",
+  "sourceColumn": "FireDate",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

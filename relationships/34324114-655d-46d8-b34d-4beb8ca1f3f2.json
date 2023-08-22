@@ -1,0 +1,7 @@
+{
+  "name": "34324114-655d-46d8-b34d-4beb8ca1f3f2",
+  "fromTable": "WIP_Acts_XLSX",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

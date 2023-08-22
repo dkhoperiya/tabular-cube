@@ -1,0 +1,44 @@
+{
+  "name": "Browse Work Item URL",
+  "expression": [
+    "VAR _ANY_FACT = [Fact Hours] || [Feature Estimate]",
+    "RETURN",
+    "    IF (",
+    "        _ANY_FACT,",
+    "        VAR _BD = [Browse Depth]",
+    "        VAR _WI_ID =",
+    "            SWITCH (",
+    "                _BD,",
+    "                1, MAX ( 'Workitems'[Epic Url] ),",
+    "                2, MAX ( 'Workitems'[Feature Url] ),",
+    "                3, MAX ( 'Workitems'[UserStory Url] ),",
+    "                4, MAX ( 'Workitems'[Task Url] )",
+    "            )",
+    "        RETURN",
+    "            _WI_ID",
+    "    )"
+  ],
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _ANY_FACT = [Fact Hours] || [Feature Estimate]",
+      "RETURN",
+      "    ROW (",
+      "        \"Url\", IF (",
+      "            _ANY_FACT,",
+      "            VAR _BD = [Browse Depth]",
+      "            VAR _WI_ID =",
+      "                SWITCH (",
+      "                    _BD,",
+      "                    1, MAX ( 'Workitems'[Epic Url] ),",
+      "                    2, MAX ( 'Workitems'[Feature Url] ),",
+      "                    3, MAX ( 'Workitems'[UserStory Url] ),",
+      "                    4, MAX ( 'Workitems'[Task Url] )",
+      "                )",
+      "            RETURN",
+      "                _WI_ID",
+      "        )",
+      "    )"
+    ]
+  }
+}

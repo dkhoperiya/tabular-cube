@@ -1,0 +1,10 @@
+{
+  "name": "Дельта прочие план",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Project Other Opex] + [Plan Travel Exp] + [Plan NZP Exp],",
+    "    'CG Time Intelligence'[Time Calc] = \"SPNY\") ",
+    "   - ( [Fact Project Other Opex] + [Fact Travel Exp] + [Fact NZP Exp] )"
+  ],
+  "ordinal": 11
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PROJECT_CODE_RMS",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "PROJECT_CODE_RMS",
+  "sourceProviderType": "nvarchar"
+}

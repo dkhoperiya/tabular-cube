@@ -1,0 +1,23 @@
+{
+  "name": "Факт расходов всего",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS]",
+    "        IN { \"Субподряд CZ\", \"Субподряд\", \"Командировки\" } ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Project Expenses OEBS] ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS]",
+      "        IN { \"Субподряд CZ\", \"Субподряд\", \"Командировки\" } ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+      ")"
+    ]
+  }
+}

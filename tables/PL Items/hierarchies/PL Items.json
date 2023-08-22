@@ -1,0 +1,20 @@
+{
+  "name": "PL Items",
+  "levels": [
+    {
+      "name": "PL Item",
+      "ordinal": 2,
+      "column": "PL Item"
+    },
+    {
+      "name": "PL Item Aggregated",
+      "ordinal": 1,
+      "column": "PL Item Aggregated"
+    },
+    {
+      "name": "PL Item Category",
+      "ordinal": 0,
+      "column": "PL Item Category"
+    }
+  ]
+}

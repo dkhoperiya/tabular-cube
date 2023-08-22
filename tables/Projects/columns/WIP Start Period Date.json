@@ -1,0 +1,20 @@
+{
+  "type": "calculated",
+  "name": "WIP Start Period Date",
+  "dataType": "dateTime",
+  "expression": [
+    "VAR March =",
+    "    DATE ( 2022, 03, 31 )",
+    "VAR January =",
+    "    DATE ( 2022, 01, 01 )",
+    "VAR lastG6 =",
+    "    CALCULATE (",
+    "        MAX ( 'Milestones'[Plan Date] ),",
+    "        KEEPFILTERS ( 'Milestones'[Milestone] = \"[G6]\" ),",
+    "        KEEPFILTERS ( Milestones[Plan Date] <= March )",
+    "    )",
+    "RETURN",
+    "    IF ( ISBLANK ( lastG6 ) || lastG6 < January, DATE ( 2022, 01, 01 ), lastG6 + 1 )"
+  ],
+  "formatString": "dd.MM.yyyy"
+}

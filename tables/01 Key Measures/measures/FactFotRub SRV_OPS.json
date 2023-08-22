@@ -1,0 +1,19 @@
+{
+  "name": "FactFotRub SRV_OPS",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ('Resource Tribe'[Resource Tribe Code]  = 35 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\03. SRV_OPS",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactFotRub] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 35 )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Формула АМ",
+  "expression": "[FactRub] + [Факт прочих расходов помимо фот]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR f1 =",
+      "    CALCULATE ( [FactRub] )",
+      "VAR f2 =",
+      "    CALCULATE ( [Факт прочих расходов помимо фот] )",
+      "RETURN",
+      "    ROW (",
+      "        \"FactRub\", f1,",
+      "        \"Факт прочих расходов помимо фот\", f2,",
+      "        \"Формула АМ\", f1 + f2",
+      "    )"
+    ]
+  }
+}

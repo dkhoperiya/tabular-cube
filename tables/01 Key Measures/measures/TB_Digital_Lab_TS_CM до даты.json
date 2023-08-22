@@ -1,0 +1,10 @@
+{
+  "name": "TB_Digital_Lab_TS_CM до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [TB_Digital_Lab_TS_CM], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact overhead costs and margin details"
+}

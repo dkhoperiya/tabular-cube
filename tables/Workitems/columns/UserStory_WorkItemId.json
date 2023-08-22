@@ -1,0 +1,6 @@
+{
+  "name": "UserStory_WorkItemId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "UserStory_WorkItemId"
+}

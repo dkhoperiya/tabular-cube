@@ -1,0 +1,20 @@
+{
+  "name": "Plan Project GM",
+  "expression": "[Plan Project Income] - [Plan Project Expenses]",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\04. Fin KPI\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _INC =",
+      "    CALCULATE ( [Plan Project Income] )",
+      "VAR _EXP =",
+      "    CALCULATE ( [Plan Project Expenses] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Project Income\", _INC,",
+      "        \"Plan Project Expenses\", _EXP,",
+      "        \"Plan Project GM\", _INC - _Exp",
+      "    )"
+    ]
+  }
+}

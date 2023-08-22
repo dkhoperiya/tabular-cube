@@ -1,0 +1,37 @@
+{
+  "name": "Forecast MTS Project Expenses",
+  "description": "Прогноз дохода по G6 (то же самое что плн доходов по G6 только по плановой дате а не по дате KPI)",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Subcontr Exp] + [Plan Resold Exp] + [Plan Material Costs],",
+    "    FILTER ( ALL ( BusinessUnits ), BusinessUnits[Parent Entity Name] = \"МТС\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR pm =",
+      "    CALCULATE ( SELECTEDVALUE ( Options[Project Probability Mode] ) )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER (",
+      "            ProjectExpenses_RMS,",
+      "            ProjectExpenses_RMS[Expense Type]",
+      "                IN { \"38\", \"105\", \"15\", \"35\", \"112\" }",
+      "                    && RELATED ( BusinessUnits[Parent Entity Name] ) = \"МТС\"",
+      "                    && RELATED ( Projects[Has Revenue] )",
+      "                    && ProjectExpenses_RMS[plan_expense_amount] > 0",
+      "        ),",
+      "        \"Project\", RELATED ( Projects[project] ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Expense Type\", RELATED ( ExpenseTypes[ExpenseType_Name] ),",
+      "        \"Customer\", RELATED ( BusinessUnits[Parent Entity Name] ),",
+      "        \"Expense Date\", ProjectExpenses_RMS[expense_date],",
+      "        \"Expenses\", IF ( ProjectExpenses_RMS[Expense Type] = \"105\", 1.07, 1 )",
+      "            * IF ( pm = \"Full\", 1, RELATED ( Projects[Project Probability] ) ) * ProjectExpenses_RMS[plan_expense_amount],",
+      "        \"Plan or Fact\", \"Plan\"",
+      "    )"
+    ]
+  }
+}

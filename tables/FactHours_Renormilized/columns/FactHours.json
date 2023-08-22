@@ -1,0 +1,6 @@
+{
+  "name": "FactHours",
+  "dataType": "decimal",
+  "sourceColumn": "FactHours",
+  "summarizeBy": "none"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "calculated",
+  "name": "TribeYearProjectGM",
+  "dataType": "decimal",
+  "expression": [
+    "",
+    "CALCULATE (",
+    "    SUM ( project_capacity_allocation[ProjectGM] ),",
+    "    FILTER (",
+    "        project_capacity_allocation,",
+    "        project_capacity_allocation[Year]",
+    "            = EARLIER ( project_capacity_allocation[Year] )",
+    "            && project_capacity_allocation[project_tribe_code]",
+    "                = EARLIER ( project_capacity_allocation[project_tribe_code] )",
+    "            && project_capacity_allocation[Budget Rates Version]",
+    "                = EARLIER ( project_capacity_allocation[Budget Rates Version] )",
+    "    )",
+    ")"
+  ]
+}

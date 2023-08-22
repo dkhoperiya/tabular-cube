@@ -1,0 +1,10 @@
+{
+  "name": "Дельта ФОТ план",
+  "expression": [
+    "CALCULATE (",
+    "    [Plan Cost of Works] + [Plan Transfer Cost of Works] + [Plan Subcontr CZ Exp],",
+    "    'CG Time Intelligence'[Time Calc] = \"SPNY\"",
+    ") - ( [Fact Cost of Works] + [Fact Transfer Cost of Works] + [Fact Subcontr CZ Exp] )"
+  ],
+  "ordinal": 3
+}

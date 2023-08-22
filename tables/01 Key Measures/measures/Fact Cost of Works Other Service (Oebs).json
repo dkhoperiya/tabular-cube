@@ -1,0 +1,41 @@
+{
+  "name": "Fact Cost of Works Other Service (Oebs)",
+  "expression": [
+    "CALCULATE (",
+    "    SUMX (",
+    "        FILTER (",
+    "            'WIPCalculation',",
+    "            'WIPCalculation'[Tribe_Code] <> 'WIPCalculation'[ProjectTribe_Code]",
+    "        ),",
+    "        'WIPCalculation'[Debet] * ( 1 + 'WIPCalculation'[Fact FOT K] )",
+    "    ),",
+    "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] IN { 60, 38, 35 } )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        WipCalculation,",
+      "        NOT WipCalculation[projecttribe_code]",
+      "            IN { 60, 38, 35 }",
+      "            && WipCalculation[tribe_code] IN { 60, 38, 35 }",
+      "    ),",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Resource Tribe\", RELATED ( 'Resource Tribe'[Resource Tribe] ),",
+      "    \"Project Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "    \"Responcibility Center\", WipCalculation[responsibility_center],",
+      "    \"BusinessUnit\", 'WIPCalculation'[BuCode],",
+      "    \"Month Date\", WipCalculation[month_date],",
+      "    \"PL Code\", WipCalculation[pl_code],",
+      "    \"Source File\", WipCalculation[Source WB],",
+      "    \"Source Sheet\", WipCalculation[Source Sheet],",
+      "    \"Debet\", WipCalculation[Debet],",
+      "    \"FOT Koefficient\", WipCalculation[Fact FOT K],",
+      "    \"Fact Cost of Works QA\", WipCalculation[Debet] * ( 1 + WipCalculation[Fact FOT K] )",
+      ")"
+    ]
+  }
+}

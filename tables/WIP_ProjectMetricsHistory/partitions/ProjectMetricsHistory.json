@@ -1,0 +1,14 @@
+{
+  "name": "ProjectMetricsHistory",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    //Source = Sql.Database(\"0411pmobidwh02\", \"olap_staging_dw\"),",
+      "    Source = #\"DWH\",",
+      "    src_view = Source{[Schema=\"dbo\",Item=\"viw_PMO_Finance_ProjectMetrics_History\"]}[Data]",
+      "in",
+      "    src_view"
+    ]
+  }
+}

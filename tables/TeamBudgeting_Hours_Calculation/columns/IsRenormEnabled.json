@@ -1,0 +1,7 @@
+{
+  "name": "IsRenormEnabled",
+  "dataType": "int64",
+  "sourceColumn": "IsRenormEnabled",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

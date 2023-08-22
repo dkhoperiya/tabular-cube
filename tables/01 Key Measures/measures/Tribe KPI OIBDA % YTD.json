@@ -1,0 +1,28 @@
+{
+  "name": "Tribe KPI OIBDA % YTD",
+  "description": "Цель трайба по OIBDA. Привзяна к трайбу через проект UNDEF_...",
+  "expression": [
+    "",
+    "VAR cur_date =",
+    "    CALCULATE ( MAX ( Dates[Date] ) )",
+    "VAR closest_oibda_date =",
+    "    CALCULATE (",
+    "        MIN ( PL_Tribe_KPI[kpi_date] ),",
+    "        FILTER (",
+    "            CALCULATETABLE ( PL_Tribe_KPI, ALL ( Dates ) ),",
+    "            NOT ( ISBLANK ( PL_Tribe_KPI[OIBDA] ) )",
+    "                && PL_Tribe_KPI[kpi_date] >= cur_date",
+    "        )",
+    "    )",
+    "RETURN",
+    "    IF (",
+    "        HASONEVALUE ( Tribes[Tribe Code] ),",
+    "        CALCULATE (",
+    "            SUM ( PL_Tribe_KPI[OIBDA] ),",
+    "            FILTER ( ALL ( Dates ), Dates[Date] = closest_oibda_date )",
+    "        )",
+    "    )"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\03. Goal"
+}

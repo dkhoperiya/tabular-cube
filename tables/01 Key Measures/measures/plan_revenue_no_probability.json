@@ -1,0 +1,15 @@
+{
+  "name": "plan_revenue_no_probability",
+  "description": "Плановое значение доходов без учета вероятности релизации проектов",
+  "expression": [
+    "",
+    "CALCULATE (",
+    "    SUM ( PlanIncome[kpi_revenue] ),",
+    "    FILTER ( 'Projects','Projects'[Has Revenue]),",
+    "    TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\01. Revenue\\01. Plan"
+}

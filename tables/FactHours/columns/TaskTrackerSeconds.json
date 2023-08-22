@@ -1,0 +1,6 @@
+{
+  "name": "TaskTrackerSeconds",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "TaskTrackerSeconds"
+}

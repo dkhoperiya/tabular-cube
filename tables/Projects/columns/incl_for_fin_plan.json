@@ -1,0 +1,6 @@
+{
+  "name": "incl_for_fin_plan",
+  "dataType": "boolean",
+  "isHidden": true,
+  "sourceColumn": "incl_for_fin_plan"
+}

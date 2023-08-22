@@ -1,0 +1,13 @@
+{
+  "name": "XLS_CAPEX_BIT",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    XLS_CAPEX_BIT = Source{[Schema=\"dbo\",Item=\"XLS_CAPEX_BIT\"]}[Data]",
+      "in",
+      "    XLS_CAPEX_BIT"
+    ]
+  }
+}

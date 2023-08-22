@@ -1,0 +1,16 @@
+{
+  "name": "Cities",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_viw_Employee = Source{[Schema=\"dbo\",Item=\"viw_Employee\"]}[Data],",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(dbo_viw_Employee,{\"City\"}),",
+      "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Other Columns\")",
+      "in",
+      "    #\"Removed Duplicates\""
+    ]
+  }
+}

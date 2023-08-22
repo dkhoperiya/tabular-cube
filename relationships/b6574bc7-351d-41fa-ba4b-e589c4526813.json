@@ -1,0 +1,7 @@
+{
+  "name": "b6574bc7-351d-41fa-ba4b-e589c4526813",
+  "fromTable": "PL_Project_KPI",
+  "fromColumn": "KPI Project Tribe",
+  "toTable": "Tribes",
+  "toColumn": "Tribe"
+}

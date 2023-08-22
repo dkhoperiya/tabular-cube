@@ -1,0 +1,6 @@
+{
+  "name": "Turnover % by Workterm",
+  "expression": "DIVIDE ( [Отток], CALCULATE ( [Отток], ALL ( EmployeeWorkTermRanges ) ) ) ",
+  "formatString": "#,##0.00 %",
+  "displayFolder": "09. HR\\02. HR - метрики"
+}

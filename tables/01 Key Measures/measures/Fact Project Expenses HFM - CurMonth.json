@@ -1,0 +1,24 @@
+{
+  "name": "Fact Project Expenses HFM - CurMonth",
+  "expression": [
+    "VAR CurMonth =",
+    "    CALCULATETABLE ( VALUES ( Dates[MonthID] ), Dates[Date] = TODAY () )",
+    "RETURN",
+    "    CALCULATE (",
+    "        SUM ( HFM_Adjustments_Fact[DDATA] ),",
+    "        KEEPFILTERS ( Dates[MonthID] < CurMonth )",
+    "    )"
+  ],
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR CurMonth =",
+      "    CALCULATETABLE ( VALUES ( Dates[MonthID] ), Dates[Date] = TODAY () )",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        HFM_Adjustments_Fact,",
+      "        KEEPFILTERS ( Dates[MonthID] < CurMonth )",
+      "    )"
+    ]
+  }
+}

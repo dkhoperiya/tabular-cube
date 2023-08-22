@@ -1,0 +1,6 @@
+{
+  "name": "HyperionSTS_ID",
+  "dataType": "string",
+  "sourceColumn": "HyperionSTS_ID",
+  "sourceProviderType": "nvarchar"
+}

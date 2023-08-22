@@ -1,0 +1,6 @@
+{
+  "name": "PlanSeconds",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "PlanSeconds"
+}

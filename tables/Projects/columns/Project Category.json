@@ -1,0 +1,6 @@
+{
+  "name": "Project Category",
+  "dataType": "string",
+  "sourceColumn": "Project Category",
+  "displayFolder": "02. Info"
+}

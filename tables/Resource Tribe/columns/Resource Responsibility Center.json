@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "Resource Responsibility Center",
+  "dataType": "string",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Resource Responsibility Center]"
+}

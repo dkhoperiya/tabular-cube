@@ -1,0 +1,7 @@
+{
+  "name": "PAYSUM",
+  "dataType": "decimal",
+  "sourceColumn": "PAYSUM",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

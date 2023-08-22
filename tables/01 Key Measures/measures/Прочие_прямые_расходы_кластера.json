@@ -1,0 +1,20 @@
+{
+  "name": "Прочие_прямые_расходы_кластера",
+  "description": "Сума ручных корректировок по проектам, загружаемых из Excel (\\\\0411pmobidwh02\\XLSX\\FactAccruals)[https://jira.mts.ru/browse/MONOBS2-1238]",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Metric Value],",
+    "    KEEPFILTERS ( 'XLS_FactProjectMetrics'[Metric Name] = \"Прочие_прямые_расходы_кластера\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\05. Accruals",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Project Metric Value] ),",
+      "    KEEPFILTERS ( 'XLS_FactProjectMetrics'[Metric Name] = \"Прочие_прямые_расходы_кластера\" )",
+      ")"
+    ]
+  }
+}

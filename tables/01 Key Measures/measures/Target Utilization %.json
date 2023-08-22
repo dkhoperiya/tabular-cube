@@ -1,0 +1,35 @@
+{
+  "name": "Target Utilization %",
+  "description": "Целевая утилизация трайбов",
+  "expression": [
+    "CALCULATE (",
+    "    AVERAGEX (",
+    "        SUMMARIZE ( PL_Tribe_KPI, PL_Tribe_KPI[tribe_code], Dates[Year] ),",
+    "        CALCULATE ( AVERAGE ( PL_Tribe_KPI[Utilization] ) )",
+    "    ),",
+    "    TREATAS ( VALUES ( 'Resource Tribe'[Resource Tribe Code] ), Tribes[Tribe Code] ),",
+    "    ALL ( Dates ),",
+    "    VALUES ( Dates[Year] )",
+    ")"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        CALCULATETABLE (",
+      "            ADDCOLUMNS ( PL_Tribe_KPI, \"tribe_\", RELATED ( Tribes[Tribe] ) ),",
+      "            TREATAS ( VALUES ( 'Resource Tribe'[Resource Tribe Code] ), Tribes[Tribe Code] ),",
+      "            ALL ( Dates ),",
+      "            VALUES ( Dates[Year] )",
+      "        ),",
+      "        [Utilization] > 0",
+      "    ),",
+      "    \"Tribe\", [tribe_],",
+      "    \"Period\", [kpi_date],",
+      "    \"Target Utilization\", [Utilization]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Change Quarter Number",
+  "dataType": "int64",
+  "sourceColumn": "Quarter Number",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

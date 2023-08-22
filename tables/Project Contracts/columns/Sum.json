@@ -1,0 +1,7 @@
+{
+  "name": "Sum",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "Sum",
+  "sourceProviderType": "float"
+}

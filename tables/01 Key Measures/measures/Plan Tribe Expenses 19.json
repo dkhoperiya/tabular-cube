@@ -1,0 +1,9 @@
+{
+  "name": "Plan Tribe Expenses 19",
+  "expression": "[Plan Tribe Expenses Own Projects 19]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01a. Plan 19",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Tribe Expenses Own Projects 19] )"
+  }
+}

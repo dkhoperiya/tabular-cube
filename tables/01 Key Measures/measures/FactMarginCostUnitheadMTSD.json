@@ -1,0 +1,31 @@
+{
+  "name": "FactMarginCostUnitheadMTSD",
+  "expression": [
+    "VAR DateForUnitHead =",
+    "    DATE ( 2023, 01, 01 )",
+    "   ",
+    "/*Маржа от списаний юнитхэдов по ФОТ*/",
+    "VAR x1 =",
+    "    CALCULATE (",
+    "        [TB_Margin],",
+    "        KEEPFILTERS ( TeamBudgeting_Hours_Calculation[Calculation_TypeCode] IN { 5, 6 } ),",
+    "        KEEPFILTERS ( TeamBudgeting_Hours_Calculation[IsRenormEnabled] = 1 ),",
+    "        KEEPFILTERS ( BusinessUnits[Entity Code] = \"1\" )",
+    "    ) ",
+    "    ",
+    "/*Маржа от списаний юнитхэдов по ТС*/   ",
+    "VAR x2 =",
+    "    CALCULATE (",
+    "        [FactRubMargin],",
+    "        KEEPFILTERS ( BusinessUnits[Entity Code] IN { \"1\" } ),",
+    "        KEEPFILTERS ( FactHours[IsRenormEnabled] = 0 ),",
+    "        KEEPFILTERS ( Roles[RoleWorkAreaId] = 3 ),",
+    "        KEEPFILTERS ( Dates[Date] >= DateForUnitHead)",
+    "    )",
+    "    ",
+    "RETURN",
+    "    x1 + x2"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

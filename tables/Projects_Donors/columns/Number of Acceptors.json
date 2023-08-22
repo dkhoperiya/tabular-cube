@@ -1,0 +1,8 @@
+{
+  "name": "Number of Acceptors",
+  "dataType": "int64",
+  "sourceColumn": "Number of Acceptors",
+  "formatString": "#,##0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

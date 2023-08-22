@@ -1,0 +1,14 @@
+{
+  "name": "Fact Hours Own Projects",
+  "expression": "CALCULATE ( [Fact Hours], KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 ) )",
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+      ")"
+    ]
+  }
+}

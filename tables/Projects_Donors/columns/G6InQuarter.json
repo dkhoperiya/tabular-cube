@@ -1,0 +1,8 @@
+{
+  "name": "G6InQuarter",
+  "dataType": "int64",
+  "sourceColumn": "G6InQuarter",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

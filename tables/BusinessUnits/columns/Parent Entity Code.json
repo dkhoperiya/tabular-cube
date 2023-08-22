@@ -1,0 +1,6 @@
+{
+  "name": "Parent Entity Code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Parent Entity Code"
+}

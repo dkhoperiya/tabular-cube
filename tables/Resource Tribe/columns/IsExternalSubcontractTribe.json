@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "IsExternalSubcontractTribe",
+  "dataType": "int64",
+  "isNameInferred": false,
+  "isHidden": true,
+  "sourceColumn": "[IsExternalSubcontractTribe]"
+}

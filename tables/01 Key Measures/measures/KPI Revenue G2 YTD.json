@@ -1,0 +1,10 @@
+{
+  "name": "KPI Revenue G2 YTD",
+  "description": "Цель по G2 накопительным итогом по году",
+  "expression": "CALCULATE ( [KPI Revenue G2], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\04. Goals",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [KPI Revenue G2] )"
+  }
+}

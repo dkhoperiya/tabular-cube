@@ -1,0 +1,13 @@
+{
+  "name": "Формула А СебестомостьПроекта до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Формула А СебестомостьПроекта],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

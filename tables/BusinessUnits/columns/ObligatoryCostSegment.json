@@ -1,0 +1,5 @@
+{
+  "name": "ObligatoryCostSegment",
+  "dataType": "boolean",
+  "sourceColumn": "ObligatoryCostSegment"
+}

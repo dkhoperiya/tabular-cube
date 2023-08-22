@@ -1,0 +1,5 @@
+{
+  "name": "Прочие расходы",
+  "expression": "[Fact Project Other Opex] + [Fact Travel Exp] + [Fact NZP Exp]",
+  "ordinal": 2
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Dates",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    //Source = Sql.Database(\"0411pmobidwh02\", \"olap_staging_dw\"),",
+      "    Source = #\"DWH\",",
+      "    dbo_DimDates = Source{[Schema=\"dbo\",Item=\"Dates\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(dbo_DimDates,{{\"date_key\", \"DateKey\"}, {\"Week Day Name\", \"Day Name\"}, {\"Month Num\", \"Month Number\"}, {\"Quarter Num\", \"Quarter Number\"}, {\"Month_ID\", \"MonthID\"}, {\"Quarter_ID\", \"QuarterID\"}, {\"Month Day Num\", \"Day Number\"}}),",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Renamed Columns\",{\"DateKey\", \"Date\", \"Month Number\", \"Month Name\", \"Month Date\", \"MonthID\", \"Quarter Number\", \"QuarterID\", \"Year\", \"Day Name\", \"Week Day Num\", \"Day Number\", \"IsWorkingDate\", \"Quarter\", \"TimesheetsPeriodIsClosed\",\"FinancialPeriodIsClosed\"})",
+      "in",
+      "    #\"Removed Other Columns\""
+    ]
+  }
+}

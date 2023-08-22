@@ -1,0 +1,37 @@
+{
+  "name": "Plan Tribe OIBDA % Norm 19",
+  "description": "% OIBDA по нормативу на 2019 год. (OPEX + Расходы на собственные проекты 19)*7% / (Доходы трайба 19)",
+  "expression": [
+    "",
+    "DIVIDE (",
+    "    ( [Plan Tribe OPEX] + [Plan Tribe Expenses Own Projects 19] )",
+    "        * 0.07,",
+    "    [Plan Tribe Income 19]",
+    ")"
+  ],
+  "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        ADDCOLUMNS (",
+      "            VALUES ( Tribes[Tribe] ),",
+      "            \"Plan Tribe OPEX\", [Plan Tribe OPEX],",
+      "            \"Plan Tribe Expenses Own Projects\", [Plan Tribe Expenses Own Projects 19],",
+      "            \"Plan Tribe Income\", [Plan Tribe Income 19]",
+      "        ),",
+      "        \"Norm OIBDA %\", ROUND (",
+      "            DIVIDE (",
+      "                ( [Plan Tribe OPEX] + [Plan Tribe Expenses Own Projects] )",
+      "                    * 0.07,",
+      "                [Plan Tribe Income]",
+      "            ),",
+      "            3",
+      "        )",
+      "    ),",
+      "    NOT ( ISBLANK ( [Norm OIBDA %] ) )",
+      ")"
+    ]
+  }
+}

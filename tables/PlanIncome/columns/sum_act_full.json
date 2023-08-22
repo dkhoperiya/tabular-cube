@@ -1,0 +1,5 @@
+{
+  "name": "sum_act_full",
+  "dataType": "decimal",
+  "sourceColumn": "sum_act_full"
+}

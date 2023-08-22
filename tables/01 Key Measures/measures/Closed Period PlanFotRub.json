@@ -1,0 +1,25 @@
+{
+  "name": "Closed Period PlanFotRub",
+  "expression": [
+    "VAR _CLOSED_PERIOD_LAST_DATE =",
+    "    CALCULATE ( MAX ( 'DatesPlanFact'[PF Date] ) )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [PlanFotRub],",
+    "        KEEPFILTERS ( Dates[Date] <= _CLOSED_PERIOD_LAST_DATE )",
+    "    )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _CLOSED_PERIOD_LAST_DATE =",
+      "    CALCULATE ( MAX ( 'DatesPlanFact'[PF Date] ) )",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        DETAILROWS ( [PlanFotRub] ),",
+      "        KEEPFILTERS ( Dates[Date] <= _CLOSED_PERIOD_LAST_DATE )",
+      "    )"
+    ]
+  }
+}

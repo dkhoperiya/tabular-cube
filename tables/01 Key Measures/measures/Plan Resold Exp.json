@@ -1,0 +1,19 @@
+{
+  "name": "Plan Resold Exp",
+  "expression": [
+    "CALCULATE (",
+    "    [plan_exp_amnt],",
+    "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"105\"} )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [plan_exp_amnt] ),",
+      "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"105\" } )",
+      ")"
+    ]
+  }
+}

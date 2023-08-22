@@ -1,0 +1,49 @@
+{
+  "name": "Fact/Fcst Salary Costs Current Staff",
+  "expression": [
+    "VAR _LAST_FACT_DATE =",
+    "   EOMONTH(MAX ('DatesPlanFact'[PF Month Date]),0)+1",
+    "VAR _FACT_SALARY =",
+    "    CALCULATE (",
+    "        [Sum of Debet with K],",
+    "        KEEPFILTERS ( WIPCalculation[month_date] < _LAST_FACT_DATE )",
+    "    )",
+    "VAR _FCST_SALARY_BY_CAPACITY =",
+    "    CALCULATE (",
+    "        [Capacity Fot Rates],",
+    "        KEEPFILTERS ( Capacity[Date] >= _LAST_FACT_DATE ),",
+    "        KEEPFILTERS ('CG HR Groups of Employee'[Name] = \"ЭАЧ\" )",
+    "    )",
+    "RETURN",
+    "    _FACT_SALARY + _FCST_SALARY_BY_CAPACITY"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _LAST_FACT_DATE =",
+      "    EOMONTH ( MAX ( 'DatesPlanFact'[PF Month Date] ), 0 ) + 1",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        ADDCOLUMNS (",
+      "            ADDCOLUMNS (",
+      "                VALUES ( dates[Month Date] ),",
+      "                \"Sum of Debet with K\",",
+      "                    CALCULATE (",
+      "                        [Sum of Debet with K],",
+      "                        KEEPFILTERS ( WIPCalculation[month_date] < _LAST_FACT_DATE )",
+      "                    ),",
+      "                \"Capacity Fot Rates\",",
+      "                    CALCULATE (",
+      "                        [Capacity Fot Rates],",
+      "                        KEEPFILTERS ( Capacity[Date] >= _LAST_FACT_DATE ),",
+      "                        KEEPFILTERS ( 'CG HR Groups of Employee'[Name] = \"ЭАЧ\" )",
+      "                    )",
+      "            ),",
+      "            \"Fcst Salary Cost Current Staff\", [Sum of Debet with K] + [Capacity Fot Rates]",
+      "        ),",
+      "        dates[Year] = 2021",
+      "    )"
+    ]
+  }
+}

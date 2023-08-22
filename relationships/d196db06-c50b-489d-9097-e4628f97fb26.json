@@ -1,0 +1,7 @@
+{
+  "name": "d196db06-c50b-489d-9097-e4628f97fb26",
+  "fromTable": "TeamBudgeting_Hours_Calculation",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

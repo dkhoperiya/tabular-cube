@@ -1,0 +1,30 @@
+{
+  "name": "Sum of Debet with K",
+  "expression": [
+    "SUMX (",
+    "    WipCalculation,",
+    "    WipCalculation[Debet] * ( 1 + WipCalculation[Fact FOT K] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    WipCalculation,",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Budget Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Project Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "    \"Responcibility Center\", WipCalculation[responsibility_center],",
+      "    \"BusinessUnit\", 'WIPCalculation'[BuCode],",
+      "    \"Month Date\", WipCalculation[month_date],",
+      "    \"PL Code\", WipCalculation[pl_code],",
+      "    \"Source File\", WipCalculation[Source WB],",
+      "    \"Source Sheet\", WipCalculation[Source Sheet],",
+      "    \"Debet\", WipCalculation[Debet],",
+      "    \"FOT Koefficient\", WipCalculation[Fact FOT K],",
+      "    \"Fact Cost of Works MTSIT STS with K\", WipCalculation[Debet] * ( 1 + WipCalculation[Fact FOT K] )",
+      ")"
+    ]
+  }
+}

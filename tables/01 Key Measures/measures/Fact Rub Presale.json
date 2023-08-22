@@ -1,0 +1,15 @@
+{
+  "name": "Fact Rub Presale",
+  "description": "Сумма нормализованных часов списанных на проектах",
+  "expression": "CALCULATE ( [FactRub], KEEPFILTERS ( FactHours[ProjectStageId] <= 2 ) )",
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact\\01. Presale",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( FactHours[ProjectStageId] <= 2 )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "План расходы субподряд без CZ Lab с даты",
+  "expression": [
+    "var minDate = MIN(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [План расходы субподряд без CZ Lab],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] > minDate )",
+    ")"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\С фильтром по дате"
+}

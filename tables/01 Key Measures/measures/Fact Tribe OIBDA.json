@@ -1,0 +1,14 @@
+{
+  "name": "Fact Tribe OIBDA",
+  "expression": "[Fact Tribe GM] - [Fact Tribe OPEX]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Tribe GM]",
+      "VAR _Y = [Fact Tribe OPEX]",
+      "RETURN",
+      "    ROW ( \"Fact Tribe GM\", _X, \"Fact Tribe OPEX\", _Y, \"Fact Tribe OIBDA\", _X - _Y )"
+    ]
+  }
+}

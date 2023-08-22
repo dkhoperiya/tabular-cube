@@ -1,0 +1,11 @@
+{
+  "name": "Fin Utilization %",
+  "expression": [
+    "VAR x =",
+    "    DIVIDE ( [Fin Utilization Fact Fot], [Fin Utilization FTE] )",
+    "RETURN",
+    "    IF ( x > 1, 1, x )"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "04. Capacity\\01. Utilization\\Fin Utilization"
+}

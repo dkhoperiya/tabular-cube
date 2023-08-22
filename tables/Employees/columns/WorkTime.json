@@ -1,0 +1,6 @@
+{
+  "name": "WorkTime",
+  "dataType": "double",
+  "sourceColumn": "WorkDurationYears",
+  "formatString": "#,##0.00"
+}

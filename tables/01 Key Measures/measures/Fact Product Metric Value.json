@@ -1,0 +1,9 @@
+{
+  "name": "Fact Product Metric Value",
+  "expression": "SUM ( 'ProductFinancialMetrics'[Amount] )",
+  "formatString": "#,##0",
+  "displayFolder": "19. Product",
+  "detailRowsDefinition": {
+    "expression": "'ProductFinancialMetrics'"
+  }
+}

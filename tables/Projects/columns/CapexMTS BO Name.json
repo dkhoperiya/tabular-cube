@@ -1,0 +1,6 @@
+{
+  "name": "CapexMTS BO Name",
+  "dataType": "string",
+  "sourceColumn": "CapexMTS BO Name",
+  "displayFolder": "03. Capex MTS"
+}

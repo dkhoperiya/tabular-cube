@@ -1,0 +1,5 @@
+{
+  "name": "Формула А Лаб",
+  "expression": "[FactIndFot_Lab] + [FactOverheadCostsLab]",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

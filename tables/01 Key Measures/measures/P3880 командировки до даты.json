@@ -1,0 +1,10 @@
+{
+  "name": "P3880 командировки до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [P3880 командировки], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\С фильтом по дате"
+}

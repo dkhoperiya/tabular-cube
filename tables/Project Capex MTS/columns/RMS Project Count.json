@@ -1,0 +1,12 @@
+{
+  "type": "calculated",
+  "name": "RMS Project Count",
+  "dataType": "int64",
+  "isHidden": true,
+  "expression": [
+    "CALCULATE (",
+    "    COUNTA ( 'Projects'[Project Code] ),",
+    "    KEEPFILTERS ( NOT 'Projects'[Project Status] IN { \"Canceled\" } )",
+    ")"
+  ]
+}

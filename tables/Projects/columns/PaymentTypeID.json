@@ -1,0 +1,7 @@
+{
+  "name": "PaymentTypeID",
+  "dataType": "int64",
+  "sourceColumn": "PaymentTypeID",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

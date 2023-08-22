@@ -1,0 +1,20 @@
+{
+  "name": "Tribe Fact Fot Rub for Fact Rates",
+  "expression": "[Fact Fot Rub Own Projects] + [Fact Fot Rub 2lvl]",
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fact Fot Rub Own Projects] )",
+      "VAR y =",
+      "    CALCULATE ( [Fact Fot Rub 2lvl] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Fot Rub Own Projects\", x,",
+      "        \"Fact Fot Rub 2lvl\", y,",
+      "        \"Tribe Fact Fot Rub for Fact Rates\", x + y",
+      "    )"
+    ]
+  }
+}

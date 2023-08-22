@@ -1,0 +1,7 @@
+{
+  "name": "f6242245-1650-4f4b-9214-fcbc4eea4c71",
+  "fromTable": "FactIncome",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

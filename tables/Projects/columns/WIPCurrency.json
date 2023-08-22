@@ -1,0 +1,5 @@
+{
+  "name": "WIPCurrency",
+  "dataType": "string",
+  "sourceColumn": "WIPCurrency"
+}

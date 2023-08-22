@@ -1,0 +1,6 @@
+{
+  "name": "StatusChangeReason",
+  "dataType": "string",
+  "sourceColumn": "StatusChangeReason",
+  "sourceProviderType": "nvarchar"
+}

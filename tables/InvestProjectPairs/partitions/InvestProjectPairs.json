@@ -1,0 +1,14 @@
+{
+  "name": "InvestProjectPairs",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_PMO_Finance_ProjectInvestProjectMapping = Source{[Schema=\"dbo\",Item=\"viw_PMO_Finance_ProjectInvestProjectMapping\"]}[Data]",
+      "in",
+      "    viw_PMO_Finance_ProjectInvestProjectMapping"
+    ]
+  }
+}

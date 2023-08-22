@@ -1,0 +1,14 @@
+{
+  "name": "FactMarginwoLeadersMTSD %",
+  "description": "Коэффициент маржи от списаний без учета списаний биг боссов",
+  "expression": [
+    "VAR x = ( [FactIndFotWoLeadersMTSD] + [FactOverheadCostswoLeadersMTSD] )",
+    "VAR y = ( [FactIndFotWoLeadersMTSD] + [FactOverheadCostswoLeadersMTSD] + [FactMarginwoLeadersMTSD] )",
+    "VAR z =",
+    "    DIVIDE ( x, y )",
+    "RETURN",
+    "    IF ( NOT ( ISBLANK ( z ) ), 1 - z )"
+  ],
+  "formatString": "#,##0.0 %",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

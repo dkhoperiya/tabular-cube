@@ -1,0 +1,7 @@
+{
+  "name": "adee762a-05f6-4599-b0d6-7c46062ce02a",
+  "fromTable": "PlanHours",
+  "fromColumn": "WorkItemId",
+  "toTable": "Workitems",
+  "toColumn": "WorkItemId"
+}

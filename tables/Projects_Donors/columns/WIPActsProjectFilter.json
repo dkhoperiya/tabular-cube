@@ -1,0 +1,11 @@
+{
+  "type": "calculated",
+  "name": "WIPActsProjectFilter",
+  "dataType": "boolean",
+  "isDataTypeInferred": true,
+  "expression": [
+    "( 'Projects_Donors'[Project Type for MTS] = \"капекс\"",
+    "    || ( 'Projects_Donors'[Project Type for MTS] = \"опекс\"",
+    "    && Projects_Donors[PaymentTypeID] = 1 ) )"
+  ]
+}

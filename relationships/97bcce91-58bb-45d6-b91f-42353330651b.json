@@ -1,0 +1,7 @@
+{
+  "name": "97bcce91-58bb-45d6-b91f-42353330651b",
+  "fromTable": "PlanHours",
+  "fromColumn": "Project_TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

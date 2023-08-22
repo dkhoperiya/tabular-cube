@@ -1,0 +1,8 @@
+{
+  "name": "ContractCount",
+  "expression": "DISTINCTCOUNT('Project Contracts'[ContractId])",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": "'Project Contracts'"
+  }
+}

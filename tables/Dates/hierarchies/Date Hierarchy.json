@@ -1,0 +1,25 @@
+{
+  "name": "Date Hierarchy",
+  "levels": [
+    {
+      "name": "Year",
+      "ordinal": 0,
+      "column": "Year"
+    },
+    {
+      "name": "Quarter",
+      "ordinal": 1,
+      "column": "Quarter Number"
+    },
+    {
+      "name": "Day",
+      "ordinal": 3,
+      "column": "Day Number"
+    },
+    {
+      "name": "Month Name",
+      "ordinal": 2,
+      "column": "Month Name"
+    }
+  ]
+}

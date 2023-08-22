@@ -1,0 +1,9 @@
+{
+  "name": "Fact Hours for Work Items Hierarchy",
+  "expression": "IF ( [Browse Depth] > [Max Node Depth], BLANK (), [Fact Hours] )",
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

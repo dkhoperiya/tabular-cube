@@ -1,0 +1,14 @@
+{
+  "name": "Прочие и командировки до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Прочие и командировки],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\С фильтом по дате"
+}

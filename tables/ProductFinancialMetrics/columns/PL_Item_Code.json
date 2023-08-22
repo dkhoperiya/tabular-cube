@@ -1,0 +1,6 @@
+{
+  "name": "PL_Item_Code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "PL_Item_Code"
+}

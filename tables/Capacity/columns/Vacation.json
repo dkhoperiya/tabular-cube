@@ -1,0 +1,6 @@
+{
+  "name": "Vacation",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "Vacation"
+}

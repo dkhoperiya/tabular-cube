@@ -1,0 +1,7 @@
+{
+  "name": "PriceBefore",
+  "dataType": "decimal",
+  "sourceColumn": "PriceBefore",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

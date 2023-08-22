@@ -1,0 +1,35 @@
+{
+  "name": "Fcst Tribe Income Own Projects",
+  "description": "Прогнозная (факт/план) сумма доходов от собственных проектов трайба.",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Project Income],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Project Income],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _LAST_FACT_DATE =",
+      "    MAX ( DatesPlanFact[PF Date] )",
+      "VAR _FACT =",
+      "    CALCULATE ( [Fact Tribe Income Own Projects], KEEPFILTERS ( 'Dates'[Date] <= _LAST_FACT_DATE ) )",
+      "VAR _PLAN =",
+      "    CALCULATE ( [Plan Tribe Income Own Projects], KEEPFILTERS ( 'Dates'[Date] > _LAST_FACT_DATE ) )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact to Date\", _LAST_FACT_DATE,",
+      "        \"Fact Tribe Income Own Projects\", _FACT,",
+      "        \"Plan Tribe Income Own Projects\", _PLAN",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SumRub",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "SumRub"
+}

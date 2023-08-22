@@ -1,0 +1,45 @@
+{
+  "name": "Fact Resource FTE",
+  "description": "Количество сотрудников, рассчитанное исходя плана трудозатрт деленное на количество чч одного сотрудника в месяце с учетом целевой утилизации трайба",
+  "expression": [
+    "VAR CLOSED_PERIODS =",
+    "    CALCULATETABLE ( Dates, KEEPFILTERS ( Dates[TimesheetsPeriodIsClosed] ) )",
+    "RETURN",
+    "    DIVIDE (",
+    "        CALCULATE ( [Fact Hours], CLOSED_PERIODS ),",
+    "        CALCULATE (",
+    "            [One Person Work Hours in Period],",
+    "            CLOSED_PERIODS,",
+    "            FILTER (",
+    "                VALUES ( BusinessUnits[BU Code] ),",
+    "                CALCULATE ( [Fact Hours], CLOSED_PERIODS ) > 0",
+    "            )",
+    "        )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity\\02. Resource Planning",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR CLOSED_PERIODS =",
+      "    CALCULATETABLE ( Dates, KEEPFILTERS ( Dates[TimesheetsPeriodIsClosed] ) )",
+      "VAR _X =",
+      "    CALCULATE ( [Fact Hours], CLOSED_PERIODS )",
+      "VAR _Y =",
+      "    CALCULATE (",
+      "        [One Person Work Hours in Period],",
+      "        CLOSED_PERIODS,",
+      "        FILTER (",
+      "            VALUES ( BusinessUnits[BU Code] ),",
+      "            CALCULATE ( [Fact Hours], CLOSED_PERIODS ) > 0",
+      "        )",
+      "    )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Hours\", _X,",
+      "        \"One Person Work Hours in Period\", _Y,",
+      "        \"Fact Resource FTE\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

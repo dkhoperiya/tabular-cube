@@ -1,0 +1,12 @@
+{
+  "name": "План расходы субподряд без CZ Lab",
+  "expression": [
+    "CALCULATE (",
+    "    [plan_exp_amnt_full],",
+    "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"38\"} ),",
+    "    KEEPFILTERS ( BusinessUnits[Entity Code] = \"24\" )",
+    ")"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

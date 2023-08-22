@@ -1,0 +1,12 @@
+{
+  "name": "Works Complete",
+  "dataType": "boolean",
+  "isHidden": true,
+  "sourceColumn": "Works Complete",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"DISABLE_ATTRIBUTE_HIERACHIES\"]}"
+    }
+  ]
+}

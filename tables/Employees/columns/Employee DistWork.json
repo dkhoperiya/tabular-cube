@@ -1,0 +1,5 @@
+{
+  "name": "Employee DistWork",
+  "dataType": "string",
+  "sourceColumn": "DIST_WORK"
+}

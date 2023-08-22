@@ -1,0 +1,6 @@
+{
+  "name": "PL Item Category",
+  "dataType": "string",
+  "sourceColumn": "CATEGORY_NAME",
+  "sortByColumn": "PL Item Category Code"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "HasGuaranteeLetter",
+  "dataType": "int64",
+  "sourceColumn": "HasGuaranteeLetter",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

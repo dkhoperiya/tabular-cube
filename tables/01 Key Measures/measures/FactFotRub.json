@@ -1,0 +1,10 @@
+{
+  "name": "FactFotRub",
+  "description": "Сумма нормализованных часов списанных на проектах в ставках ФОТ",
+  "expression": "SUM ( 'FactHours'[FactInFotRates] )",
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

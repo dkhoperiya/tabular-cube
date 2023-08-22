@@ -1,0 +1,6 @@
+{
+  "name": "ServiceProjectCode",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ServiceProjectCode"
+}

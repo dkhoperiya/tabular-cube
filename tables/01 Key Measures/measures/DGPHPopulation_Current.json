@@ -1,0 +1,14 @@
+{
+  "name": "DGPHPopulation_Current",
+  "expression": [
+    "CALCULATE(",
+    "    COUNTROWS('Assignments History'),",
+    "    KEEPFILTERS('Assignments History'[HireDate] <= TODAY()), ",
+    "    KEEPFILTERS('Assignments History'[ActualTerminationDate] >= TODAY()),",
+    "    KEEPFILTERS('Assignments History'[AssignmentType] = \"DGPH\"),",
+    "    KEEPFILTERS('Assignments History'[AssignmentStatus] = \"Акт. назначение\")",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR"
+}

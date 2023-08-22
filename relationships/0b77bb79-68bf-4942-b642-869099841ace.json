@@ -1,0 +1,7 @@
+{
+  "name": "0b77bb79-68bf-4942-b642-869099841ace",
+  "fromTable": "TribeRoleCosts",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "calculated",
+  "name": "ProjectCode",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "expression": "\"UNDEF_\" & RELATED ( Tribes[Tribe] )"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ЭАЧ",
+  "description": "Экономически активная численность - текущее количество сотрудников за юсключением совместителей, стажеров, уволенных, декретниц и мобилизованных",
+  "expression": [
+    "CALCULATE (",
+    "    [EmployeeCount],",
+    "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ), -- Не уволен, не мобилизован, не в декрете",
+    "    KEEPFILTERS ( Employees[Is Vacancy] = FALSE ), -- Не открытая вакансия",
+    "    KEEPFILTERS ( Employees[Trainee] = \"No\" ), -- Не стажер",
+    "    KEEPFILTERS ( Employees[AssigmentCombinationStatus] = \"Основное назначение\" ), -- Не совместитель",
+    "    KEEPFILTERS ( Employees[AssigmentTypeName] = \"STUFF\" ) -- Штатный сотрудник",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ),",
+      "    KEEPFILTERS ( Employees[Is Vacancy] <> TRUE )",
+      ")"
+    ]
+  }
+}

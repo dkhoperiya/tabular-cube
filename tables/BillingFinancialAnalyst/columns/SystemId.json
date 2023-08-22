@@ -1,0 +1,5 @@
+{
+  "name": "SystemId",
+  "dataType": "string",
+  "sourceColumn": "SystemId"
+}

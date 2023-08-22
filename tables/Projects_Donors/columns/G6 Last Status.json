@@ -1,0 +1,6 @@
+{
+  "name": "G6 Last Status",
+  "dataType": "string",
+  "sourceColumn": "G6 Last Status",
+  "sourceProviderType": "nvarchar"
+}

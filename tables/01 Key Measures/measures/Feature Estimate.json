@@ -1,0 +1,17 @@
+{
+  "name": "Feature Estimate",
+  "expression": "SUM ( 'Features'[Estimate] )",
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER ( Features, Features[Estimate] > 0 ),",
+      "    \"Feature\", RELATED ( Workitems[Feature] ),",
+      "    \"Feature Project\", RELATED ( Projects[Project] ),",
+      "    \"Feature Tribe\", RELATED ( tribes[Tribe] ),",
+      "    \"Estimate\", Features[Estimate]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Fact Hours First Date",
+  "expression": [
+    "CALCULATE (",
+    "    CALCULATE (",
+    "        MIN ( Dates[Date] ),",
+    "        FILTER ( VALUES ( Dates[DateKey] ), [Fact Hours] > 0 )",
+    "    ),",
+    "    ALL ( Dates )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _FIRST_FACT_DATE =",
+      "    CALCULATE (",
+      "        CALCULATE (",
+      "            MIN ( Dates[Date] ),",
+      "            FILTER ( VALUES ( Dates[DateKey] ), [Fact Hours] > 0 )",
+      "        ),",
+      "        ALL ( Dates )",
+      "    )",
+      "RETURN",
+      "    ROW ( \"First Fact Date\", _FIRST_FACT_DATE )"
+    ]
+  }
+}

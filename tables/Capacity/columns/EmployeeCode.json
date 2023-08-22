@@ -1,0 +1,6 @@
+{
+  "name": "EmployeeCode",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "EmployeeCode"
+}

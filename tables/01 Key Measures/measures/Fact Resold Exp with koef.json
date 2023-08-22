@@ -1,0 +1,31 @@
+{
+  "name": "Fact Resold Exp with koef",
+  "description": "Фактическая сумма перепродаваемых расходов + 7%. Является составной частью фактических ДОХОДОВ на проекте. Пока сумма берется из РМС",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( ProjectExpenses_RMS[plan_expense_amount] ),",
+    "    KEEPFILTERS ( ProjectExpenses_RMS[fact_expense_amount] <> 0 ),",
+    "    KEEPFILTERS ( ProjectExpenses_RMS[Expense Type] = \"105\" )",
+    ") * ( 1.07 )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        'ProjectExpenses_RMS',",
+      "        ProjectExpenses_RMS[Expense Type] = \"105\"",
+      "    ),",
+      "    \"Project\", RELATED ( 'Projects'[Project] ),",
+      "    \"Project Tribe\", RELATED ( 'Tribes'[Tribe] ),",
+      "    \"Date\", 'ProjectExpenses_RMS'[expense_date],",
+      "    \"Contractor Name\", 'ProjectExpenses_RMS'[ContractorBuCode],",
+      "    \"Expense Type\", 'ProjectExpenses_RMS'[Expense Type],",
+      "    \"Plan Expense Amount\", 'ProjectExpenses_RMS'[plan_expense_amount],",
+      "    \"Fact Expense Amount\", 'ProjectExpenses_RMS'[fact_expense_amount],",
+      "    \"Plan with Koef\", 'ProjectExpenses_RMS'[plan_expense_amount] * 1.07",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "d3525d20-cf66-4a70-9ee8-e0cfb1d68bfa",
+  "fromTable": "FactHours",
+  "fromColumn": "ServiceServiceRequestId",
+  "toTable": "Service Requests",
+  "toColumn": "Service Request Id"
+}

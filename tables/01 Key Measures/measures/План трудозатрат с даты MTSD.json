@@ -1,0 +1,14 @@
+{
+  "name": "План трудозатрат с даты MTSD",
+  "expression": [
+    "var minDate = MIN(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [PlanFotRub],",
+    "    KEEPFILTERS ( BusinessUnits[Entity Code] = \"1\" ),",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] > minDate )",
+    "        )"
+  ],
+  "displayFolder": "16. WIP"
+}

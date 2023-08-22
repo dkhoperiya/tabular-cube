@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "PositionStatus",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "IF('Employees'[Is Vacancy]=TRUE(), \"Вакансия\", \"Сотрудник\")"
+}

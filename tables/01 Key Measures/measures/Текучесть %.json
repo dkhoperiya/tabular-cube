@@ -1,0 +1,20 @@
+{
+  "name": "Текучесть %",
+  "expression": "DIVIDE ( [Отток], [Среднесписочная численность], 0 )",
+  "formatString": "#,##0.00 %",
+  "displayFolder": "09. HR\\02. HR - метрики",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Отток] )",
+      "VAR y =",
+      "    CALCULATE ( [Среднесписочная численность] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Отток\", x,",
+      "        \"Среднесписочная численность\", y,",
+      "        \"Текучесть %\", DIVIDE ( x, y, 0 )",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Customer_Code",
+  "dataType": "int64",
+  "description": "Код закзачика из настроек проекта рмс (использование нежелательно)",
+  "isHidden": true,
+  "sourceColumn": "Customer_Code"
+}

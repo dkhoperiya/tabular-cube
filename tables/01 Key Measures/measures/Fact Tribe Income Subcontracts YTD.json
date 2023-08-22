@@ -1,0 +1,13 @@
+{
+  "name": "Fact Tribe Income Subcontracts YTD",
+  "description": "Фактические доходы от привлечения сотрудников на проекты прочих трайбов накопительным итогом по году.",
+  "expression": [
+    "CALCULATE([Fact Tribe Income Subcontracts],DATESYTD('Dates'[Date]))",
+    ""
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Tribe Income Subcontracts] )"
+  }
+}

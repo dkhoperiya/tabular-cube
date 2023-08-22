@@ -1,0 +1,5 @@
+{
+  "name": "BI_Центр ответственности",
+  "dataType": "string",
+  "sourceColumn": "BI_RESP_CENTER"
+}

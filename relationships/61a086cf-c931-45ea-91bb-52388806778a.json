@@ -1,0 +1,7 @@
+{
+  "name": "61a086cf-c931-45ea-91bb-52388806778a",
+  "fromTable": "PlanHours",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

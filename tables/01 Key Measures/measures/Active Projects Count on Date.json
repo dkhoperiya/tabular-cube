@@ -1,0 +1,23 @@
+{
+  "name": "Active Projects Count on Date",
+  "description": "Проект попадает в количество на дату, если на проекте есть либо факт трудозатрат для прошлых периодов либо план для будущих",
+  "expression": [
+    "CALCULATE (",
+    "    COUNTA ( Projects[Project Code] ),",
+    "    FILTER (",
+    "        VALUES ( Projects[Project Code] ),",
+    "        [FactPlan Hours] > 0",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS ( VALUES ( Projects[Project] ), \"FactPlan Hours\", [FactPlan Hours] ),",
+      "    [FactPlan Hours] > 0",
+      ")"
+    ]
+  }
+}

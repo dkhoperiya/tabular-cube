@@ -1,0 +1,7 @@
+{
+  "name": "f54f41e6-d228-4bb4-8203-750f20ec1a14",
+  "fromTable": "Assignments History",
+  "fromColumn": "BusinessUnitCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "calculated",
+  "name": "Project Status Group",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "IF (",
+    "    Projects[Project Util Category] = \"Административный\",",
+    "    \"Admin\",",
+    "    IF (",
+    "        Projects[Project Status] IN { \"Closed\", \"Realization\", \"Frozen\" },",
+    "        \"Защищен\",",
+    "        \"Не защищен\"",
+    "    )",
+    ")"
+  ]
+}

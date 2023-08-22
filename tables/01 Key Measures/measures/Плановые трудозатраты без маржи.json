@@ -1,0 +1,7 @@
+{
+  "name": "Плановые трудозатраты без маржи",
+  "expression": "[PlanFotRub]",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

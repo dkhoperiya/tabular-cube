@@ -1,0 +1,7 @@
+{
+  "name": "a0a271f2-28ea-4ff2-9e10-2f80283a3932",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

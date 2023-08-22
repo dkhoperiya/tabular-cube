@@ -1,0 +1,12 @@
+{
+  "name": "Dismissal Cat C",
+  "expression": [
+    "CALCULATE (",
+    "    [Dismissal],",
+    "    KEEPFILTERS ( EmployeeMovements[EmployeeCategory] = \"C\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "09. HR\\00. Back Up"
+}

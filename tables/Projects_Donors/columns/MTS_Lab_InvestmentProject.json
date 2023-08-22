@@ -1,0 +1,6 @@
+{
+  "name": "MTS_Lab_InvestmentProject",
+  "dataType": "string",
+  "sourceColumn": "MTS_Lab_InvestmentProject",
+  "sourceProviderType": "nvarchar"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "ЭАЧ",
+  "expression": [
+    "CALCULATE (",
+    "    SELECTEDMEASURE (),",
+    "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ),",
+    "    KEEPFILTERS ( Employees[Is Vacancy] <> TRUE )",
+    ")"
+  ]
+}

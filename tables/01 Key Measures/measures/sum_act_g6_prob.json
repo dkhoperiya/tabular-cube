@@ -1,0 +1,16 @@
+{
+  "name": "sum_act_g6_prob",
+  "description": "Факт дохода по G2",
+  "expression": [
+    "",
+    "CALCULATE (",
+    "    SUM ( PlanIncome_SumAct[sum_act] ),",
+    "    FILTER ( Milestones, Milestones[Milestone] = \"[G6]\" ),",
+    "    FILTER ( 'Projects', 'Projects'[Has Revenue] ),",
+    "    TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\01. Revenue\\01. Plan"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Fcst Project GM by Act Sum",
+  "expression": "[Fcst Act Sum G6] - [Fcst Project Expenses 19]",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\04. Fin KPI\\03a. Forecast 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fcst Act Sum G6] )",
+      "VAR y =",
+      "    CALCULATE ( [Fcst Project Expenses 19] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Act Sum G6\", x,",
+      "        \"Fcst Project Expenses 19\", y,",
+      "        \"Fcst Project GM by Act Sum\", x - y",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "G6 до 31.03.2022",
+  "expression": [
+    "var mart = DATE(2022,03,31)",
+    "return",
+    "CALCULATE (",
+    "    [2. Актуальная сумма],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] <= mart )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ObjectId",
+  "dataType": "string",
+  "isUnique": true,
+  "isKey": true,
+  "isNullable": false,
+  "sourceColumn": "ObjectId"
+}

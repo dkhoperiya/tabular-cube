@@ -1,0 +1,13 @@
+{
+  "name": "Project Probability",
+  "dataType": "double",
+  "sourceColumn": "Project Probability",
+  "formatString": "0.00%",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"META_AVOID_FLOAT\"]}"
+    }
+  ]
+}

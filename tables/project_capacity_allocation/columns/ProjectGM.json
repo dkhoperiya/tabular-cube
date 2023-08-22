@@ -1,0 +1,6 @@
+{
+  "type": "calculated",
+  "name": "ProjectGM",
+  "dataType": "decimal",
+  "expression": "project_capacity_allocation[PlanActSumG6] - project_capacity_allocation[PlanResoldExp] - project_capacity_allocation[PlanSubcontrExp] - project_capacity_allocation[PlanTransferCostOfWorks]"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "FactIncome",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  dbo_Income = Source{[Schema = \"dbo\", Item = \"viw_ProjectGates\"]}[Data],",
+      "  #\"Removed Other Columns\" = Table.SelectColumns(",
+      "    dbo_Income,",
+      "    {\"Id\", \"BuCode\", \"PlanDate\", \"PlanActSum\", \"KpiSum\", \"WorkStatus\",\"InvestProjectPairId\", \"ContractId\"}",
+      "  ),",
+      "  #\"Added Custom\" = Table.AddColumn(",
+      "    #\"Removed Other Columns\",",
+      "    \"Works Complete\",",
+      "    each [WorkStatus] = 1,",
+      "    type logical",
+      "  ),",
+      "  #\"Filtered Rows\" = Table.SelectRows(#\"Added Custom\", each ([Works Complete] = true)),",
+      "  #\"Removed Other Columns1\" = Table.SelectColumns(",
+      "    #\"Filtered Rows\",",
+      "    {\"Id\", \"BuCode\", \"PlanDate\", \"PlanActSum\", \"KpiSum\", \"InvestProjectPairId\", \"ContractId\"}",
+      "  ),",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "    #\"Removed Other Columns1\",",
+      "    {",
+      "      {\"Id\", \"milestone_code\"},",
+      "      {\"PlanDate\", \"fact_date\"},",
+      "      {\"KpiSum\", \"kpi_revenue\"},",
+      "      {\"PlanActSum\", \"sum_act_full\"},",
+      "      {\"BuCode\", \"bu_code\"}",
+      "    }",
+      "  )",
+      "in",
+      "  #\"Renamed Columns\""
+    ]
+  }
+}

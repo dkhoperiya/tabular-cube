@@ -1,0 +1,7 @@
+{
+  "name": "ef86cd16-7c68-46b7-9424-f4ea47d7a788",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "project_code",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

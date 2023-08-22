@@ -1,0 +1,26 @@
+{
+  "name": "PlanRub Service",
+  "description": "План трудозатрат в чч из РМС с учетом вероятности проекта в трансфертных ставках",
+  "expression": [
+    "VAR _BUDGET_VERSION =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "VAR _USE_PROJECT_PROBABILITY =",
+    "    IF ( SELECTEDVALUE ( Options[Project Probability Mode] ) = \"Full\", 0, 1 )",
+    "RETURN",
+    "    CALCULATE (",
+    "        SUM ( 'PlanHours'[PlanHoursInTransferRates] ),",
+    "        KEEPFILTERS ( 'Projects'[Project Category Code] = \"10\" ),",
+    "        KEEPFILTERS ( 'PlanHours'[BudgetRates_Version] = _BUDGET_VERSION ),",
+    "        KEEPFILTERS ( 'PlanHours'[UseProjectProbability] = _USE_PROJECT_PROBABILITY )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS([Plan Hours Service])"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "FactPrevActOverheadCosts",
+  "expression": [
+    "SUM('WIP_Acts_XLSX'[FactPrevActOverheadCosts])",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactPrevActOverheadCosts\" )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Метрики актов предыдущих периодов"
+}

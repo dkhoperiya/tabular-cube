@@ -1,0 +1,6 @@
+{
+  "name": "ContractId",
+  "dataType": "string",
+  "sourceColumn": "ContractId",
+  "sourceProviderType": "uniqueidentifier"
+}

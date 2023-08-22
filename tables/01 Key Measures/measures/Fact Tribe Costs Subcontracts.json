@@ -1,0 +1,24 @@
+{
+  "name": "Fact Tribe Costs Subcontracts",
+  "description": "Фактическая сумма расходов на субподряд. ",
+  "expression": "[Fact Tribe Costs Subcontracts MTSIT STS with K] + [Fact Costs Subcontracts UA BEL TASHK] + [Fact Costs Subcontracts MTS]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Tribe Costs Subcontracts MTSIT STS with K]",
+      "VAR _Y =",
+      "    CALCULATE (",
+      "        [FactFotRub],",
+      "        KEEPFILTERS ( FactHours[Fact Employee BuCode] IN { 1040, 1050, 2080, 4000 } ),",
+      "        KEEPFILTERS ( 'FactHours'[IsSubcontract] = 1 )",
+      "    )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Costs Subcontracts MTSIT STS with K\", _X,",
+      "        \"FactFotRub_Other\", _Y,",
+      "        \"Fact Tribe Costs Subcontracts\", _X + _Y",
+      "    )"
+    ]
+  }
+}

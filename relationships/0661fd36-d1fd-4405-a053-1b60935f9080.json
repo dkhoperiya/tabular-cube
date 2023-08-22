@@ -1,0 +1,7 @@
+{
+  "name": "0661fd36-d1fd-4405-a053-1b60935f9080",
+  "fromTable": "OpexBudgetingFact",
+  "fromColumn": "MonthDate",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

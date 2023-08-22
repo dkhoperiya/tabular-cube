@@ -1,0 +1,6 @@
+{
+  "name": "ActType",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ActType"
+}

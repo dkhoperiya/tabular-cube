@@ -1,0 +1,6 @@
+{
+  "name": "PaymentTypeName",
+  "dataType": "string",
+  "sourceColumn": "PaymentTypeName",
+  "sourceProviderType": "varchar"
+}

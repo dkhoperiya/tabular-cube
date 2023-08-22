@@ -1,0 +1,25 @@
+{
+  "name": "Second_Margin_CZ_act",
+  "description": "Вторая маржа от чехов",
+  "expression": [
+    "VAR LogicDate =",
+    "    DATE ( 2023, 01, 01 )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [FactRub_CZ_act] * ( 1 / 0.93 - 1 ),",
+    "        'Options'[Wip History Mode] = \"As Is\",",
+    "        KEEPFILTERS ( Dates[Date] < LogicDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [FactRub_CZ_act] * ( 1 / 0.88 - 1 ),",
+    "            'Options'[Wip History Mode] = \"As Is\",",
+    "            KEEPFILTERS ( Dates[Date] >= LogicDate )",
+    "        )",
+    "        + CALCULATE (",
+    "            [WIP Project Value Open Period],",
+    "            KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"Second_Margin_CZ_act\" )",
+    "        )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Субподряд из Timesheets"
+}

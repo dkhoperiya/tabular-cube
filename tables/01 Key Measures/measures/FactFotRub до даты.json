@@ -1,0 +1,15 @@
+{
+  "name": "FactFotRub до даты",
+  "description": "Сумма нормализованных часов списанных на проектах в ставках ФОТ",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [FactFotRub], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "EmployeeTribeCode",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "EmployeeTribe_Code",
+  "summarizeBy": "none"
+}

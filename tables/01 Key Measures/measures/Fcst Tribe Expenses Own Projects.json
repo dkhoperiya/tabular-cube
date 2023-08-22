@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Tribe Expenses Own Projects",
+  "description": "Прогнозная (факт/план) сумма расходов на собственные проекты трайба.",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Project Expenses],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Project Expenses],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03. Forecast"
+}

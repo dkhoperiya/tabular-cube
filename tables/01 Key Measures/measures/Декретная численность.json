@@ -1,0 +1,20 @@
+{
+  "name": "Декретная численность",
+  "description": "Количество сотрудников, на данный момент находящихся в декретном отпуске",
+  "expression": [
+    "CALCULATE (",
+    "    [Текущая численность],",
+    "    KEEPFILTERS ( 'Employees'[Employee Status] = \"Maternity\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Текущая численность] ),",
+      "    KEEPFILTERS ( 'Employees'[Employee Status] = \"Maternity\" )",
+      ")"
+    ]
+  }
+}

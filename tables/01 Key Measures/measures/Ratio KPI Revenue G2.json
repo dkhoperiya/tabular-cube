@@ -1,0 +1,31 @@
+{
+  "name": "Ratio KPI Revenue G2",
+  "description": "Квартальный рейтинг KPI Revenue G2. Сумма в первом квартале года умножается на 4, во втором на 3, в третьем на 2, в четвертом на 1",
+  "expression": [
+    "",
+    "SUMX (",
+    "    SUMMARIZE ( Dates, Dates[QuarterID], Dates[Quarter Number] ),",
+    "    CALCULATE ( [KPI Revenue G2] )",
+    "        * ( 5 - [Quarter Number] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\05. Ratio",
+  "detailRowsDefinition": {
+    "expression": [
+      "ADDCOLUMNS (",
+      "    SUMMARIZE (",
+      "        PL_Project_KPI,",
+      "        projects[project],",
+      "        projects[Project Tribe],",
+      "        Dates[year],",
+      "        dates[Quarter Number]",
+      "    ),",
+      "    \"KPI Revenue G2\", CALCULATE ( [KPI Revenue G2] ),",
+      "    \"Quarter Koefficient\", 5 - [Quarter Number],",
+      "    \"Ratio KPI Revenue G2\", ( 5 - [Quarter Number] )",
+      "        * [KPI Revenue G2]",
+      ")"
+    ]
+  }
+}

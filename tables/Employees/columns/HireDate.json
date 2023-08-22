@@ -1,0 +1,12 @@
+{
+  "name": "HireDate",
+  "dataType": "dateTime",
+  "sourceColumn": "HireDate",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

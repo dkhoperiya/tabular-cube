@@ -1,0 +1,5 @@
+{
+  "name": "Внешние подрядчики факт",
+  "expression": "[Fact Subcontr Exp]",
+  "ordinal": 4
+}

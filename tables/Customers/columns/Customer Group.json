@@ -1,0 +1,6 @@
+{
+  "name": "Customer Group",
+  "dataType": "string",
+  "sourceColumn": "Customer Group",
+  "sortByColumn": "Customer Group Id"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "calculated",
+  "name": "kpi_revenue_probability",
+  "dataType": "decimal",
+  "expression": [
+    "VAR prob =",
+    "    RELATED ( 'Projects'[Project Probability] )",
+    "RETURN",
+    "    IF ( ISBLANK ( prob ), 1, prob ) * 'PlanIncome'[kpi_revenue]"
+  ]
+}

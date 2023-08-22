@@ -1,0 +1,350 @@
+# stages:
+  # - build
+  # - test
+  # - deploy1
+  # - deploy2
+
+variables:
+    PREFIX: "_old"
+    PREFIX2: "_old2"
+    PROD: "_prod"
+    SSAS_Server: $SSAS_Server_Test
+    SSAS_Model: $SSAS_Model_Test        
+    Vault_Address: $Vault_Address
+    VAULT_MOUNT_POINT: $VAULT_MOUNT_POINT
+    VAULT_ROLE_ID: $VAULT_ROLE_ID
+    VAULT_SECRET_ID: $VAULT_SECRET_ID    
+    
+.rules_before_merge_request:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never      
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push" 
+      when: never
+    # - when: always
+
+build_test_server:
+  stage: build
+  tags:
+    - bi-ssas-test 
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server_Test
+    SSAS_Model: $SSAS_Model_Test       
+  script:
+    - $SSAS_Server = $SSAS_Server_Test
+    - $SSAS_Model = $SSAS_Model_Test
+    - Write-Output "SSAS_Server = $SSAS_Server"
+    - Write-Output "SSAS_Model = $SSAS_Model"
+    - echo "Задание на изменени (таблицы, связи)"
+    - cd build
+    - echo "CI_COMMIT_BRANCH $CI_COMMIT_BRANCH" 
+    - echo "CI_COMMIT_REF_NAME $CI_COMMIT_REF_NAME"
+    - echo "CI_MERGE_REQUEST_TARGET_BRANCH_NAME $CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
+    - echo "CI_COMMIT_SHA $CI_COMMIT_SHA"
+    - | 
+      $FolderName = ".\artifacts"
+      if (Test-Path $FolderName) {
+        Remove-Item $FolderName -Recurse -Force
+      }        
+      New-Item -ItemType "directory" -Path $FolderName
+    - Write-Output "Проверка доступности сервера"
+    - .\Ping_Server.ps1 $SSAS_Server
+    - Write-Output "Проверка существование базы"
+    - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+    - |
+      Write-Output "Модель существует? $IfExists"
+      .\Build_Model.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model #-Credential
+      .\Build_CreateOrReplaceDataSource 			`
+        -Server	$SSAS_Server				`
+        -CubeDatabase $SSAS_Model 			`
+        -Vault_Address $Vault_Address			`
+        -VAULT_MOUNT_POINT $VAULT_MOUNT_POINT	`
+        -VAULT_ROLE_ID $VAULT_ROLE_ID			`
+        -VAULT_SECRET_ID $VAULT_SECRET_ID
+      Write-Output "Расчет модели $SSAS_Model"
+      if ($IfExists -eq $true){
+        .\Build_ProcessTable.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model -RefreshType "automatic"
+      }
+      else {
+        .\Build_ProcessTable.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model -RefreshType "Full"
+      }
+  rules:
+    - !reference [.rules_before_merge_request, rules]
+    - changes:
+      - tables/**/*
+      - relationships/*
+      - database.json
+
+# Full
+
+build_role_server:
+  stage: build
+  tags:
+    - bi-ssas-test 
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server_Test
+    SSAS_Model: $SSAS_Model_Test       
+  script:
+    - $SSAS_Server = $SSAS_Server_Test
+    - $SSAS_Model = $SSAS_Model_Test
+    - Write-Output "SSAS_Server = $SSAS_Server"
+    - Write-Output "SSAS_Model = $SSAS_Model"
+    - cd build
+    - Write-Output "Создаем Роли"
+    - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+    - |
+      .\Build_CreateOrReplaceRole.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model #-Credential	
+  rules:
+    - !reference [.rules_before_merge_request, rules]
+    - changes:
+      - roles/*
+
+build_dataSources_server:
+  stage: build
+  tags:
+    - bi-ssas-test 
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server_Test
+    SSAS_Model: $SSAS_Model_Test       
+  script:
+    - $SSAS_Server = $SSAS_Server_Test
+    - $SSAS_Model = $SSAS_Model_Test
+    - Write-Output "SSAS_Server = $SSAS_Server"
+    - Write-Output "SSAS_Model = $SSAS_Model"
+    - cd build
+    - Write-Output "Создаем DataSource"
+    - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+    - |
+      .\Build_CreateOrReplaceDataSource 			`
+        -Server	$SSAS_Server				`
+        -CubeDatabase $SSAS_Model 			`
+        -Vault_Address $Vault_Address			`
+        -VAULT_MOUNT_POINT $VAULT_MOUNT_POINT	`
+        -VAULT_ROLE_ID $VAULT_ROLE_ID			`
+        -VAULT_SECRET_ID $VAULT_SECRET_ID
+  rules:
+    - !reference [.rules_before_merge_request, rules]
+    - changes:
+      - dataSources/*
+
+
+
+test_countrow_table:
+    stage: test
+    tags:
+        - bi-ssas-test 
+    script:
+      - $SSAS_Server = $SSAS_Server_Test
+      - $SSAS_Model = $SSAS_Model_Test
+      - cd build
+      - | 
+        $FolderName = ".\artifacts"
+        if (Test-Path $FolderName) {
+          Remove-Item $FolderName -Recurse -Force
+        }        
+        New-Item -ItemType "directory" -Path $FolderName      
+      - Write-Output "Проверка доступности тестового сервера"
+      - .\Ping_Server.ps1 $SSAS_Server
+      - Write-Output "Проверка тестовой модели"
+      - .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+      - Write-Output "Получаем кол-во строк в таблицах"
+      - .\Test_CheckCountRow.ps1 $SSAS_Server $SSAS_Model
+    rules:      
+      - !reference [.rules_before_merge_request, rules]
+      - when: always
+    artifacts:
+      paths:
+        - build/artifacts/CountRow.csv
+
+merge_request_test:
+    stage: test
+    tags:
+        - bi-ssas-prod  
+    rules:            
+        - if: $CI_PIPELINE_SOURCE == "merge_request_event" 
+    script:
+        - $SSAS_Server = $SSAS_Server
+        - $SSAS_Model = $SSAS_Model
+        - cd build
+        - Write-Output "Проверка доступности промышленного сервера"
+        - .\Ping_Server.ps1 $SSAS_Server
+        - Write-Output "Проверка боевой модели"
+        - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+        - |
+          if (-not ($IfExists -eq $true)){
+            Write-Warning "Базы данных не существует"
+          }
+
+#bi-ssas-prod           
+BackupModel:     
+  stage: deploy
+  tags:
+      - bi-ssas-prod   
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server
+    SSAS_Model: $SSAS_Model                 
+  script:      
+      - $SSAS_Server = $SSAS_Server
+      - $SSAS_Model = $SSAS_Model
+      - Write-Output "COMMIT_BRANCH $CI_COMMIT_BRANCH"
+      - Write-Output "PIPELINE_SOURCE $CI_PIPELINE_SOURCE"  
+      - Write-Output "CI_COMMIT_SHA $CI_COMMIT_SHA"  
+      - cd build  
+      - Write-Output "Бэкап модели $SSAS_Model"
+      - $commitid = $CI_COMMIT_SHA.substring(0, 7)
+      - Write-Output $commitid
+      - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+      - |
+        if ($IfExists -eq $true){
+          .\BackupModel.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model -commitid $commitid
+        }
+        else {
+          Write-Warning "Базы данных не существует"
+        }
+  rules:   
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push"          
+      changes:
+        - tables/**/*
+        - relationships/*
+        - roles/*
+        - dataSources/*      
+        - database.json
+
+deploy_prod_server:
+  stage: deploy
+  tags:
+      - bi-ssas-prod 
+  needs: [BackupModel]
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server
+    SSAS_Model: $SSAS_Model                  
+  script:     
+    - $SSAS_Server = $SSAS_Server
+    - $SSAS_Model = $SSAS_Model  
+    - Write-Output "COMMIT_BRANCH $CI_COMMIT_BRANCH"
+    - Write-Output "PIPELINE_SOURCE $CI_PIPELINE_SOURCE"  
+    - Write-Output "CI_COMMIT_SHA $CI_COMMIT_SHA"     
+    - cd build
+    - | 
+      $FolderName = ".\artifacts"
+      if (Test-Path $FolderName) {
+        Remove-Item $FolderName -Recurse -Force
+      }        
+      New-Item -ItemType "directory" -Path $FolderName
+    - Write-Output "Проверка доступности сервера"
+    - .\Ping_Server.ps1 $SSAS_Server
+    - Write-Output "Проверка существование базы"
+    - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+    - |
+      Write-Output "Модель существует? $IfExists"
+      .\Build_Model.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model #-Credential
+      .\Build_CreateOrReplaceDataSource 			`
+        -Server	$SSAS_Server				`
+        -CubeDatabase $SSAS_Model 			`
+        -Vault_Address $Vault_Address			`
+        -VAULT_MOUNT_POINT $VAULT_MOUNT_POINT	`
+        -VAULT_ROLE_ID $VAULT_ROLE_ID			`
+        -VAULT_SECRET_ID $VAULT_SECRET_ID
+      Write-Output "Расчет модели $SSAS_Model"
+      if ($IfExists -eq $true){
+        .\Build_ProcessTable.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model -RefreshType "automatic"
+      }
+      else {
+        .\Build_ProcessTable.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model -RefreshType "Full"
+      }  
+  rules:   
+      - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push" 
+        changes:
+          - tables/**/*
+          - relationships/*
+          - database.json
+
+deploy_prod_role_server:
+  stage: deploy
+  tags:
+    - bi-ssas-prod  
+  needs: [BackupModel]
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server
+    SSAS_Model: $SSAS_Model
+  script:
+    - $SSAS_Server = $SSAS_Server
+    - $SSAS_Model = $SSAS_Model
+    - Write-Output "SSAS_Server = $SSAS_Server"
+    - Write-Output "SSAS_Model = $SSAS_Model"
+    - cd build
+    - Write-Output "Создаем Роли"
+    - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+    - |
+      .\Build_CreateOrReplaceRole.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model #-Credential	
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push" 
+      changes:
+        - roles/*
+
+deploy_dataSources_server:
+  stage: deploy
+  tags:
+    - bi-ssas-prod  
+  needs: [BackupModel]
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server
+    SSAS_Model: $SSAS_Model      
+  script:
+    - $SSAS_Server = $SSAS_Server
+    - $SSAS_Model = $SSAS_Model
+    - Write-Output "SSAS_Server = $SSAS_Server"
+    - Write-Output "SSAS_Model = $SSAS_Model"
+    - cd build
+    - Write-Output "Создаем DataSource"
+    - $IfExists = .\Ping_Database.ps1 $SSAS_Server $SSAS_Model
+    - |
+      .\Build_CreateOrReplaceDataSource 			`
+        -Server	$SSAS_Server				`
+        -CubeDatabase $SSAS_Model 			`
+        -Vault_Address $Vault_Address			`
+        -VAULT_MOUNT_POINT $VAULT_MOUNT_POINT	`
+        -VAULT_ROLE_ID $VAULT_ROLE_ID			`
+        -VAULT_SECRET_ID $VAULT_SECRET_ID
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push" 
+      changes:
+        - dataSources/*
+
+RestoreModel:     
+  stage: deploy  
+  tags:
+      - bi-ssas-prod  
+  needs: [BackupModel]
+  variables: 
+    GIT_STRATEGY: fetch 
+    SSAS_Server: $SSAS_Server
+    SSAS_Model: $SSAS_Model             
+  script:     
+      - $SSAS_Server = $SSAS_Server
+      - $SSAS_Model = $SSAS_Model
+      - Write-Output "SSAS_Server = $SSAS_Server"
+      - Write-Output "SSAS_Model = $SSAS_Model"    
+      - cd build  
+      - Write-Output "Восстановление из бэкапа $SSAS_Model"
+      - $commitid = $CI_COMMIT_SHA.substring(0, 7)
+      - Write-Output $commitid
+      - .\RestoreModel.ps1 -Server $SSAS_Server -CubeDatabase $SSAS_Model -commitid $commitid     
+  rules:   
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push"          
+      changes:
+        - tables/**/*
+        - relationships/*
+        - roles/*
+        - dataSources/*      
+        - database.json
+      when: manual      

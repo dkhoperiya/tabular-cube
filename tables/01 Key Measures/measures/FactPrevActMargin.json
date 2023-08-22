@@ -1,0 +1,11 @@
+{
+  "name": "FactPrevActMargin",
+  "expression": [
+    "SUM('WIP_Acts_XLSX'[FactPrevActMargin])",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactPrevActMargin\" )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Метрики актов предыдущих периодов"
+}

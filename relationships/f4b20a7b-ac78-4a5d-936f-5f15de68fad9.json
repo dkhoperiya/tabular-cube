@@ -1,0 +1,7 @@
+{
+  "name": "f4b20a7b-ac78-4a5d-936f-5f15de68fad9",
+  "fromTable": "project_capacity_allocation",
+  "fromColumn": "project_code",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

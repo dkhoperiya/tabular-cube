@@ -1,0 +1,25 @@
+{
+  "name": "Fact Fot Rate",
+  "expression": [
+    "DIVIDE (",
+    "    [Fact Tribe Cost of Works for Fact Rates Shared By Roles],",
+    "    [Tribe Fact Hours for Fact Rates]",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fact Tribe Cost of Works for Fact Rates Shared By Roles] )",
+      "VAR y =",
+      "    CALCULATE ( [Tribe Fact Hours for Fact Rates] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Cost of Works for Fact Rates Shared By Roles\", x,",
+      "        \"Tribe Fact Hours for Fact Rates\", y,",
+      "        \"Fact Transfer Rate\", DIVIDE ( x, y )",
+      "    )"
+    ]
+  }
+}

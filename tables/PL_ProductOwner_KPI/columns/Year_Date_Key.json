@@ -1,0 +1,6 @@
+{
+  "name": "Year_Date_Key",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Year_Date_Key"
+}

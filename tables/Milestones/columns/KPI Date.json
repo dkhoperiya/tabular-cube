@@ -1,0 +1,12 @@
+{
+  "name": "KPI Date",
+  "dataType": "dateTime",
+  "sourceColumn": "KPI Date",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

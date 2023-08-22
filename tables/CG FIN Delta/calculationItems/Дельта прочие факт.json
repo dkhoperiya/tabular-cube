@@ -1,0 +1,5 @@
+{
+  "name": "Дельта прочие факт",
+  "expression": "[Plan Project Other Opex] + [Plan Travel Exp] + [Plan NZP Exp] - ( [Fact Project Other Opex] + [Fact Travel Exp] + [Fact NZP Exp] )",
+  "ordinal": 10
+}

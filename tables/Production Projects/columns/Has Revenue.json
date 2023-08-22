@@ -1,0 +1,6 @@
+{
+  "name": "Has Revenue",
+  "dataType": "boolean",
+  "isHidden": true,
+  "sourceColumn": "Has Revenue"
+}

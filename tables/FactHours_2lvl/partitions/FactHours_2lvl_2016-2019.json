@@ -1,0 +1,33 @@
+{
+  "name": "FactHours_2lvl_2016-2019",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  dbo_FactHours = Source{[Schema = \"dbo\", Item = \"viw_FactHours_2lvl\"]}[Data],",
+      "  FilterPeriod = Table.SelectRows(",
+      "    dbo_FactHours, ",
+      "    each [Date] >= #date(2016, 1, 1) and [Date] <= #date(2019, 12, 31) ",
+      "    ),",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "        FilterPeriod, ",
+      "        {",
+      "          {\"CompetenceCode\", \"competence_code\"},",
+      "          {\"Date\", \"date\"},",
+      "",
+      "          ",
+      "          {\"PersonCode\", \"employee_code\"},",
+      "          {\"FotRate\", \"FOT_rate\"},",
+      "          {\"IsSubcontract\", \"is_subcontract\"}, ",
+      "          {\"ProjectCode\", \"project_code\"},",
+      "          {\"Project_TribeCode\", \"project_tribe\"},",
+      "          {\"RoleCode\", \"role_code\"},",
+      "          {\"TransferRate\", \"transfer_rate\"}",
+      "        }",
+      "  )",
+      "in",
+      "  #\"Renamed Columns\""
+    ]
+  }
+}

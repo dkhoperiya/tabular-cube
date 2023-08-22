@@ -1,0 +1,6 @@
+{
+  "name": "Max KPI Date G6 MTSD",
+  "dataType": "dateTime",
+  "sourceColumn": "Max KPI Date G6 MTSD",
+  "formatString": "dd.MM.yyyy"
+}

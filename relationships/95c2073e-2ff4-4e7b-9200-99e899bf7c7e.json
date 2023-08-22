@@ -1,0 +1,7 @@
+{
+  "name": "95c2073e-2ff4-4e7b-9200-99e899bf7c7e",
+  "fromTable": "XLS_FactProjectMetrics",
+  "fromColumn": "MonthDate",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

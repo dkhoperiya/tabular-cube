@@ -1,0 +1,6 @@
+{
+  "name": "DueDate",
+  "dataType": "dateTime",
+  "sourceColumn": "DueDate",
+  "formatString": "dd.MM.yyyy"
+}

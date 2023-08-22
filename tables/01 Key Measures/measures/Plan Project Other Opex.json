@@ -1,0 +1,30 @@
+{
+  "name": "Plan Project Other Opex",
+  "description": "Прочая себестомиость - ПЛАН. Сумма расходов из таблицы MDM STS_Prj_OPEX_PlanFact, где IsTribeExpenses=\"No\" и тип расходов = \"Прочая себестоимость\"",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'Budget_MR27'[Budget] ),",
+    "    KEEPFILTERS ( 'PL Items'[PL Item FIB Category] IN { \"Прочая себестоимость\" } ),",
+    "    KEEPFILTERS ( Budget_MR27[FactOrPlan] = \"PLAN\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        'Budget_MR27',",
+      "        KEEPFILTERS ( 'PL Items'[PL Item FIB Category] IN { \"Прочая себестоимость\" } ),",
+      "        KEEPFILTERS ( Budget_MR27[FactOrPlan] = \"PLAN\" )",
+      "    ),",
+      "    \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Business Unit\", RELATED ( 'BusinessUnits'[BU Name] ),",
+      "    \"PL Item\", RELATED ( 'PL Items'[PL Item] ),",
+      "    \"Opex Expense Category\", RELATED ( 'PL Items'[PL Item FIB Category] ),",
+      "    \"Date\", RELATED ( Dates[Date] ),",
+      "    \"Plan Tribe OPEX\", 'Budget_MR27'[Budget]",
+      ")"
+    ]
+  }
+}

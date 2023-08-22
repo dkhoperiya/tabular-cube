@@ -1,0 +1,6 @@
+{
+  "name": "fact_expense_amount",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "fact_expense_amount"
+}

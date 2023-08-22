@@ -1,0 +1,28 @@
+{
+  "name": "FactIndRubLab",
+  "description": "Списания с маржой Лабы",
+  "expression": [
+    "CALCULATE (",
+    "    [FactIndFot_Lab] + [FactOverheadCostsAndMargin_Lab],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactIndRubLab\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Субподряд из Timesheets",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactIndFot_Lab]",
+      "VAR x2 = [FactOverheadCostsAndMargin_Lab]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactIndFot_Lab\", x1,",
+      "        \"FactOverheadCostsAndMargin_Lab\", x2,",
+      "        \"FactIndRubLab\", x1 + x2",
+      "    )"
+    ]
+  }
+}

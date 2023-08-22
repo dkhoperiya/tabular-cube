@@ -1,0 +1,25 @@
+{
+  "name": "Internal Flow",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( EmployeeMovements[In_Out] ),",
+    "    KEEPFILTERS ( EmployeeMovements[Action] = \"Internal Transfer\" )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "09. HR\\00. Back Up",
+  "detailRowsDefinition": {
+    "expression": [
+      "ADDCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        EmployeeMovements,",
+      "        KEEPFILTERS ( EmployeeMovements[Action] = \"Internal Transfer\" )",
+      "    ),",
+      "    \"Employee\", LOOKUPVALUE (",
+      "        Employees[Employee],",
+      "        Employees[Employee Code], EmployeeMovements[EmployeeCode]",
+      "    )",
+      ")"
+    ]
+  }
+}

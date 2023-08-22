@@ -1,0 +1,47 @@
+{
+  "name": "Численность на дату",
+  "expression": [
+    "VAR _MAX_DATE =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        DISTINCTCOUNT ( Capacity[EmployeeCode] ),",
+    "        KEEPFILTERS ( Dates[Date] = _MAX_DATE ),",
+    "        KEEPFILTERS ( Capacity[StatusCode] = 10 ),",
+    "        KEEPFILTERS ( Capacity[IsVacancy] = FALSE() )",
+    "    )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "VAR _MAX_DATE =",
+      "    MAX ( Dates[Date] )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        CALCULATETABLE (",
+      "            Capacity,",
+      "            KEEPFILTERS ( Dates[Date] = _MAX_DATE ),",
+      "            KEEPFILTERS ( Capacity[StatusCode] = 10 ),",
+      "            KEEPFILTERS ( Capacity[IsVacancy] = FALSE () ),",
+      "            KEEPFILTERS ( 'Capacity'[BudgetRates_Version] = BudgetRatesVersion )",
+      "        ),",
+      "        \"Employee\", RELATED ( 'Employees'[Employee] ),",
+      "        \"Hire Date\", RELATED ( 'Employees'[HireDate] ),",
+      "        \"Tribe\", RELATED ( 'Tribes'[Tribe] ),",
+      "        \"Role\", RELATED ( 'Roles'[Role] ),",
+      "        \"Business Unit\", 'Capacity'[BuCode],",
+      "        \"Legal Entity\", RELATED ( BusinessUnits[Entity Name] ),",
+      "        \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "        \"Date\", 'Capacity'[Date],",
+      "        \"Status Code\", 'Capacity'[StatusCode]",
+      "    )"
+    ]
+  }
+}

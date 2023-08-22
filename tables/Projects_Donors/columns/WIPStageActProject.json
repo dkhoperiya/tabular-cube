@@ -1,0 +1,8 @@
+{
+  "name": "WIPStageActProject",
+  "dataType": "int64",
+  "sourceColumn": "WIPStageActProject",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

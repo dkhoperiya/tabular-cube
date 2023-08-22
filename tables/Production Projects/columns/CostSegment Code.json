@@ -1,0 +1,6 @@
+{
+  "name": "CostSegment Code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "CostSegment Code"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Latitude",
+  "dataType": "decimal",
+  "sourceColumn": "Latitude",
+  "formatString": "0.00",
+  "dataCategory": "Latitude",
+  "summarizeBy": "none"
+}

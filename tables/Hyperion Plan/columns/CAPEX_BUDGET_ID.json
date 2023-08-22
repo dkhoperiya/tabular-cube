@@ -1,0 +1,5 @@
+{
+  "name": "CAPEX_BUDGET_ID",
+  "dataType": "string",
+  "sourceColumn": "CAPEX_BUDGET_ID"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "chapter_code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "chapter_code"
+}

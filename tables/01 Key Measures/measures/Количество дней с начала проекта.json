@@ -1,0 +1,6 @@
+{
+  "name": "Количество дней с начала проекта",
+  "expression": "DATEDIFF ( MAX ( Projects[Project Start Date] ), TODAY (), DAY )",
+  "formatString": "#,0",
+  "displayFolder": "16. WIP"
+}

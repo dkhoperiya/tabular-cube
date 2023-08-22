@@ -1,0 +1,20 @@
+{
+  "name": "Hyperion Plan Capex",
+  "description": "Сумма плана из Hyperion где BI_BUDGET_TYPE = \"PAY Оплата\"",
+  "expression": [
+    "CALCULATE (",
+    "    [Hyperion Plan Capex Simple],",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Hyperion Plan Capex Simple] ),",
+      "    KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" )",
+      ")"
+    ]
+  }
+}

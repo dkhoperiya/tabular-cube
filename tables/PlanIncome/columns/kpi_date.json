@@ -1,0 +1,5 @@
+{
+  "name": "kpi_date",
+  "dataType": "dateTime",
+  "sourceColumn": "kpi_date"
+}

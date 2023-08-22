@@ -1,0 +1,7 @@
+{
+  "name": "Employee Code",
+  "dataType": "string",
+  "isUnique": true,
+  "isNullable": false,
+  "sourceColumn": "Employee Code"
+}

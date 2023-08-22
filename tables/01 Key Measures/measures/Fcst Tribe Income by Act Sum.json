@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Tribe Income by Act Sum",
+  "description": "Прогнозная (факт/план) сумма доходов трайба.",
+  "expression": "[Fcst Tribe Income Subcontracts] + [Fcst Act Sum G6]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\03a. Forecast 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Tribe Income Subcontracts]",
+      "VAR _Y = [Fcst Act Sum G6]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Tribe Income Subcontracts\", _X,",
+      "        \"Fcst Act Sum G6\", _Y,",
+      "        \"Fcst Tribe Income by Act Sum\", _X + _Y",
+      "    )"
+    ]
+  }
+}

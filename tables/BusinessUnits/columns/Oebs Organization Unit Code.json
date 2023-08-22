@@ -1,0 +1,5 @@
+{
+  "name": "Oebs Organization Unit Code",
+  "dataType": "string",
+  "sourceColumn": "OEBS_Code"
+}

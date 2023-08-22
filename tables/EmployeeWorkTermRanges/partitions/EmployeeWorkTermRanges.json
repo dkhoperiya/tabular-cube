@@ -1,0 +1,22 @@
+{
+  "name": "EmployeeWorkTermRanges",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = ",
+      "{",
+      "[ID=1, WorkTerm = \"До 3-х мес.\"],",
+      "[ID=2, WorkTerm = \"До 1 года\"],",
+      "[ID=3, WorkTerm = \"От 1 до 3-х лет\"],",
+      "[ID=4, WorkTerm = \"Более 3-х лет\"]",
+      "},",
+      "    #\"Converted to Table\" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+      "    #\"Expanded Column1\" = Table.ExpandRecordColumn(#\"Converted to Table\", \"Column1\", {\"ID\", \"WorkTerm\"}, {\"ID\", \"WorkTerm\"}),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded Column1\",{{\"ID\", Int64.Type}, {\"WorkTerm\", type text}})",
+      "in",
+      "    #\"Changed Type\""
+    ]
+  }
+}

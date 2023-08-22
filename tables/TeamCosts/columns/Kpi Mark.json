@@ -1,0 +1,7 @@
+{
+  "name": "Kpi Mark",
+  "dataType": "int64",
+  "sourceColumn": "KpiMark",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

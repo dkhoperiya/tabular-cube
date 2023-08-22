@@ -1,0 +1,11 @@
+{
+  "name": "FactOverheadCostsAndMarginLeadersMTSD до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [FactOverheadCostsAndMarginLeadersMTSD], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\ФОТ ББ МТС Диджитал"
+}

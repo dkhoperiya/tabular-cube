@@ -1,0 +1,24 @@
+{
+  "name": "Plan Resold Exp with koef",
+  "description": "Плановая сумма перепродаваемых расходов + 7%. Является составной частью плановых ДОХОДОВ на проекте. Пока сумма берется из РМС",
+  "expression": "[Plan Resold Exp]  * ( 1.07 )",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR pm =",
+      "    CALCULATE ( SELECTEDVALUE ( Options[Project Probability Mode] ) )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER ( ProjectExpenses_RMS, ProjectExpenses_RMS[Expense Type] = \"105\" ),",
+      "        \"Project\", RELATED ( Projects[project] ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Expense Type\", RELATED ( ExpenseTypes[ExpenseType_Name] ),",
+      "        \"Customer\", 'ProjectExpenses_RMS'[CustomerBuCode] & \" - \"",
+      "            & RELATED ( BusinessUnits[BU Name] ),",
+      "        \"Expense Date\", ProjectExpenses_RMS[expense_date],",
+      "        \"Plan Resold Exp\", IF ( pm = \"Full\", 1, RELATED ( Projects[Project Probability] ) ) * [plan_expense_amount] * 1.07",
+      "    )"
+    ]
+  }
+}

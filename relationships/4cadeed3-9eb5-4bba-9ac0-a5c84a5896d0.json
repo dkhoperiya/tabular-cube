@@ -1,0 +1,7 @@
+{
+  "name": "4cadeed3-9eb5-4bba-9ac0-a5c84a5896d0",
+  "fromTable": "Capacity",
+  "fromColumn": "AgeRangeID",
+  "toTable": "EmployeeAgeRanges",
+  "toColumn": "ID"
+}

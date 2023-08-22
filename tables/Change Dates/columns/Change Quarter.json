@@ -1,0 +1,5 @@
+{
+  "name": "Change Quarter",
+  "dataType": "string",
+  "sourceColumn": "Quarter"
+}

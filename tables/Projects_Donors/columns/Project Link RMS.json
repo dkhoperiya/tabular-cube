@@ -1,0 +1,7 @@
+{
+  "name": "Project Link RMS",
+  "dataType": "string",
+  "sourceColumn": "ProjectLink",
+  "sourceProviderType": "nvarchar",
+  "dataCategory": "WebURL"
+}

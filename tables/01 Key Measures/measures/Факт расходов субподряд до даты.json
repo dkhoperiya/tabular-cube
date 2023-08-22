@@ -1,0 +1,13 @@
+{
+  "name": "Факт расходов субподряд до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Факт расходов субподряд],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= maxDate )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Фильтр по дате"
+}

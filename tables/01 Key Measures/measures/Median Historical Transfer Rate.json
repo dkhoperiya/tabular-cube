@@ -1,0 +1,44 @@
+{
+  "name": "Median Historical Transfer Rate",
+  "description": "Медианная историчная трансфертная ставка по ролям выбранных трайбов. Нулевые ставки не учитываются.",
+  "expression": [
+    "VAR d =",
+    "    CALCULATE ( MAX ( TribeRoleCosts[Date] ) )",
+    "RETURN",
+    "    MEDIANX (",
+    "        SUMMARIZE (",
+    "            FILTER ( TribeRoleCosts, TribeRoleCosts[fot_rate] > 0 ),",
+    "            TribeRoleCosts[tribe_code],",
+    "            TribeRoleCosts[role_code],",
+    "            'TribeRoleCosts'[BuCode]",
+    "        ),",
+    "        CALCULATE (",
+    "            SUM ( TribeRoleCosts[transfer_rate] ),",
+    "            FILTER ( Dates, Dates[Date] = d )",
+    "        )",
+    "    )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "07. Budget Role Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR d =",
+      "    CALCULATE ( MAX ( TribeRoleCosts[Date] ) )",
+      "RETURN",
+      "    FILTER (",
+      "        CALCULATETABLE (",
+      "            SELECTCOLUMNS (",
+      "                FILTER ( TribeRoleCosts, TribeRoleCosts[Date] = d ),",
+      "                \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "                \"Role\", RELATED ( Roles[Role] ),",
+      "                \"Date\", TribeRoleCosts[Date],",
+      "                \"Historical Transfer Rate\", TribeRoleCosts[transfer_rate]",
+      "            ),",
+      "            VALUES ( Tribes[Tribe Code] ),",
+      "            VALUES ( 'Roles'[Role Code] )",
+      "        ),",
+      "        [Historical Transfer Rate] > 0",
+      "    )"
+    ]
+  }
+}

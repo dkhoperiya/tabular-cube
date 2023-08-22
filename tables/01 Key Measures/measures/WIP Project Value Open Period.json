@@ -1,0 +1,11 @@
+{
+  "name": "WIP Project Value Open Period",
+  "expression": [
+    "VAR _open_period =",
+    "    IF ( SELECTEDVALUE ( Options[Wip History Mode] ) = \"Open Period\", 1 )",
+    "RETURN",
+    "    SUM ( 'WIP_ProjectMetricsHistory'[MeasureValue] ) * _open_period"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "16. WIP\\Окрытый период"
+}

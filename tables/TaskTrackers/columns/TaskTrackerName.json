@@ -1,0 +1,5 @@
+{
+  "name": "TaskTrackerName",
+  "dataType": "string",
+  "sourceColumn": "TaskTrackerName"
+}

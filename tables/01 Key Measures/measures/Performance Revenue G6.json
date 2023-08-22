@@ -1,0 +1,35 @@
+{
+  "name": "Performance Revenue G6",
+  "expression": " DIVIDE( [Ratio Fact Revenue G6], [Ratio Plan Revenue G6] )",
+  "formatString": "0%;-0%;0%",
+  "displayFolder": "01. Project\\01. Revenue\\05. Ratio",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            CROSSJOIN (",
+      "                SUMMARIZE ( dates, dates[Year], Dates[Quarter Number] ),",
+      "                SUMMARIZE ( projects, projects[project], projects[Project Tribe] )",
+      "            ),",
+      "            \"Plan Revenue G6 \", [Plan Revenue G6],",
+      "            \"Fact Revenue G6 \", [Fact Revenue G6],",
+      "            \"Quarter Koefficient\", 5 - [Quarter Number]",
+      "        ),",
+      "        [Plan Revenue G6 ] > 0",
+      "            || [Fact Revenue G6 ] > 0",
+      "    ),",
+      "    \"Project\", [Project],",
+      "    \"Project Tribe\", [Project Tribe],",
+      "    \"Year\", [Year],",
+      "    \"Quarter\", [Quarter Number],",
+      "    \"Plan Revenue G6\", [Plan Revenue G6 ],",
+      "    \"Fact Revenue G6\", [Fact Revenue G6 ],",
+      "    \"Quarter Koefficient\", [Quarter Koefficient],",
+      "    \"Ratio Plan Revenue G6\", [Quarter Koefficient] * [Plan Revenue G6 ],",
+      "    \"Ratio Fact Revenue G6\", [Quarter Koefficient] * [Fact Revenue G6 ],",
+      "    \"Performance Revenue G6\", DIVIDE ( [Fact Revenue G6 ], [Plan Revenue G6 ] )",
+      ")"
+    ]
+  }
+}

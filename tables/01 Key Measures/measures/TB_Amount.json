@@ -1,0 +1,15 @@
+{
+  "name": "TB_Amount",
+  "expression": [
+    "SUM ( 'TeamBudgeting_Hours_Calculation'[Amount] )",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"TB_Amount\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации",
+  "detailRowsDefinition": {
+    "expression": "TeamBudgeting_Hours_Calculation"
+  }
+}

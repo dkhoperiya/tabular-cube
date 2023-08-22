@@ -1,0 +1,24 @@
+{
+  "name": "FactToday",
+  "expression": [
+    "VAR curDate =",
+    "    TODAY ()",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Факт расходов всего],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= curDate )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Фильтр по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR curDate =",
+      "    TODAY ()",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        DETAILROWS ( [Факт расходов всего] ),",
+      "        FILTER ( ALL ( Dates ), Dates[Date] <= curDate )",
+      "    )"
+    ]
+  }
+}

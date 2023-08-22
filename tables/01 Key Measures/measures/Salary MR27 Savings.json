@@ -1,0 +1,24 @@
+{
+  "name": "Salary MR27 Savings",
+  "expression": "[Salary MR27 Budget] - [Fact/Fcst Salary Costs Current Staff] - [Fcst Salary Costs Vacancies Only]",
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Salary MR27 Budget] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Fact/Fcst Salary Costs Current Staff] )",
+      "VAR _Z =",
+      "    CALCULATE ( [Fcst Salary Costs Vacancies Only] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Salary Costs Budget MR27\", _X,",
+      "        \"Fact/Fcst Salary Costs Current Staff\", _Y,",
+      "        \"Fcst Salary Costs Vacancies Only\", _Z,",
+      "        \"Salary MR 27 Savings\",",
+      "            _X - _Y - _Z",
+      "    )"
+    ]
+  }
+}

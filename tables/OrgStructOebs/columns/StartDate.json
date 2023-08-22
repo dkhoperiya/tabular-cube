@@ -1,0 +1,22 @@
+{
+  "name": "StartDate",
+  "dataType": "dateTime",
+  "isHidden": true,
+  "sourceColumn": "StartDate",
+  "formatString": "Long Date",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    },
+    {
+      "name": "UnderlyingDateTimeDataType",
+      "value": "Date"
+    },
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeGeneralPattern\"><DateTimes><DateTime LCID=\"1049\" Group=\"LongDate\" FormatString=\"D\" /></DateTimes></Format>"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TargetLevel",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "TargetLevel"
+}

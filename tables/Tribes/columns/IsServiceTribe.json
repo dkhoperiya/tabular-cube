@@ -1,0 +1,6 @@
+{
+  "name": "IsServiceTribe",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "IsServiceTribe"
+}

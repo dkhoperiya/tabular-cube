@@ -1,0 +1,13 @@
+{
+  "name": "Average Fot Rate",
+  "description": "Средняя ставка ФОТ за исключением ваканстных должностей, непроектных ролей и должностей со ставкой вот меньше 0",
+  "expression": [
+    "CALCULATE (",
+    "    AVERAGE ( 'Capacity'[FotRate] ),",
+    "    KEEPFILTERS ( 'Capacity'[IsVacancy] = FALSE ),",
+    "    KEEPFILTERS ( 'Capacity'[FotRate] > 0 ),",
+    "    KEEPFILTERS ( 'Roles'[Is In Projects] = 1)",
+    ")"
+  ],
+  "displayFolder": "07. Budget Role Rates"
+}

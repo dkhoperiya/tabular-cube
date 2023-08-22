@@ -1,0 +1,6 @@
+{
+  "name": "Estimate",
+  "dataType": "decimal",
+  "sourceColumn": "Estimate",
+  "formatString": "#,##0"
+}

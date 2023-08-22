@@ -1,0 +1,7 @@
+{
+  "name": "project_tribe",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "project_tribe",
+  "sourceProviderType": "int"
+}

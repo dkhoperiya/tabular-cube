@@ -1,0 +1,20 @@
+{
+  "type": "calculated",
+  "name": "WorkTermRangeId",
+  "dataType": "int64",
+  "isHidden": true,
+  "expression": [
+    "VAR days = Capacity[WorkTermOnDate]",
+    "RETURN",
+    "    IF (",
+    "        NOT ( ISBLANK ( days ) ),",
+    "        SWITCH (",
+    "            TRUE (),",
+    "            days <= 90, 1,",
+    "            days <= 365, 2,",
+    "            days <= 1095, 3,",
+    "            days > 1095, 4",
+    "        )",
+    "    )"
+  ]
+}

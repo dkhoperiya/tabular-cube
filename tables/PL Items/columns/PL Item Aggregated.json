@@ -1,0 +1,6 @@
+{
+  "name": "PL Item Aggregated",
+  "dataType": "string",
+  "sourceColumn": "PL_ITEM_AGGREGATED_NAME",
+  "sortByColumn": "PL Item Aggregated Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TribeCode",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "TribeCode"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Fact Tribe Expenses for Fact Rates Shared By Roles",
+  "expression": [
+    "DIVIDE (",
+    "    [Tribe FactRub for Fact Rates],",
+    "    CALCULATE ( [Tribe FactRub for Fact Rates], ALL ( Roles ) )",
+    ") * [Fact Tribe Expenses for Fact Rates]"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "07. Budget Role Rates\\01. Fact Rates"
+}

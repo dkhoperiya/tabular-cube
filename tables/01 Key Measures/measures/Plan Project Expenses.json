@@ -1,0 +1,46 @@
+{
+  "name": "Plan Project Expenses",
+  "description": "Плановые расходы на проекте. Включает плановую себестоимость из трудозатрат, плановый субподряд из трудозатрат, расходы на командировки, внешний субподряд, прочие операционные расходы.",
+  "expression": [
+    "[Plan Cost of Works] ",
+    "+ [Plan Transfer Cost of Works] ",
+    "/*+ [Plan MTS Exp]*/",
+    "+ [Plan Resold Exp] ",
+    "+ [Plan Travel Exp] ",
+    "+ [Plan Subcontr CZ Exp] ",
+    "+ [Plan Subcontr Exp] ",
+    "+ [Plan Project Other Opex]"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X1 =",
+      "    CALCULATE ( [Plan Cost of Works] )",
+      "VAR _X2 =",
+      "    CALCULATE ( [Plan Transfer Cost of Works] )",
+      "VAR _X3 =",
+      "    CALCULATE ( [Plan Resold Exp] )",
+      "VAR _X4 =",
+      "    CALCULATE ( [Plan Travel Exp] )",
+      "VAR _X5 =",
+      "    CALCULATE ( [Plan Subcontr CZ Exp] )",
+      "VAR _X6 =",
+      "    CALCULATE ( [Plan Subcontr Exp] )",
+      "VAR _X7 =",
+      "    CALCULATE ( [Plan Project Other Opex] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Cost of Works\", _X1,",
+      "        \"Plan Transfer Cost of Works\", _X2,",
+      "        \"Plan Resold Exp\", _X3,",
+      "        \"Plan Travel Exp\", _X4,",
+      "        \"Plan Subcontr CZ Exp\", _X5,",
+      "        \"Plan Subcontr Exp\", _X6,",
+      "        \"Plan Project Other Opex\", _X7,",
+      "        \"Plan Project Expenses\",",
+      "            _X1 + _X2 + _X3 + _X4 + _X5 + _X6 + _X7",
+      "    )"
+    ]
+  }
+}

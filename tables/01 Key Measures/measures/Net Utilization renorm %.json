@@ -1,0 +1,42 @@
+{
+  "name": "Net Utilization renorm %",
+  "expression": [
+    "VAR norm_hours =",
+    "    CALCULATE (",
+    "        [Net Util Fact Hours],",
+    "        KEEPFILTERS ( Projects[ProjectCalculationTypeName] = \"ТС\" )",
+    "    )",
+    "VAR renorm_hours =",
+    "    CALCULATE (",
+    "        [FactHours renorm],",
+    "        KEEPFILTERS ( Projects[ProjectCalculationTypeName] = \"ФОТ\" )",
+    "    )",
+    "RETURN",
+    "    DIVIDE ( norm_hours + renorm_hours, [Net Util FTE] )"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR norm_hours =",
+      "    CALCULATE (",
+      "        [Net Util Fact Hours],",
+      "        KEEPFILTERS ( Projects[ProjectCalculationTypeName] = \"ТС\" )",
+      "    )",
+      "VAR renorm_hours =",
+      "    CALCULATE (",
+      "        [Net Util Fact Hours renorm],",
+      "        KEEPFILTERS ( Projects[ProjectCalculationTypeName] = \"ФОТ\" )",
+      "    )",
+      "VAR fte = [Net Util FTE]",
+      "RETURN",
+      "    ROW (",
+      "        \"Net Util Fact Hours\", norm_hours,",
+      "        \"Net Util Fact Hours renorm\", renorm_hours,",
+      "        \"Net Util Fact Hours renorm Norm plus Renorm\", norm_hours + renorm_hours,",
+      "        \"Net Util FTE\", fte,",
+      "        \"Net Utilization renorm %\", DIVIDE ( norm_hours + renorm_hours, fte )",
+      "    )"
+    ]
+  }
+}

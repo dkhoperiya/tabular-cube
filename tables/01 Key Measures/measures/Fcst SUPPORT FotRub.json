@@ -1,0 +1,19 @@
+{
+  "name": "Fcst SUPPORT FotRub",
+  "description": "Прогноз чч трайба SUPPORT * средневзвешенная ставка трайб SUPPORT.",
+  "expression": "[Fcst Work Hours SUPPORT] * [Historical WA Fot Rate SUPPORT]",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\02. Support Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Work Hours SUPPORT]",
+      "VAR _Y = [Historical WA Fot Rate SUPPORT]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours SUPPORT\", _X,",
+      "        \"Historical WA Fot Rate SUPPORT\", _Y,",
+      "        \"Fcst SUPPORT FotRub\", _X * _Y",
+      "    )"
+    ]
+  }
+}

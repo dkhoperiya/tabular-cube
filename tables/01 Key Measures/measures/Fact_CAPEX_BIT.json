@@ -1,0 +1,21 @@
+{
+  "name": "Fact_CAPEX_BIT",
+  "expression": "SUM ( 'Capex BIT'[SUM_RUB] )",
+  "formatString": "#,0",
+  "displayFolder": "18. Capex BIT",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    'Capex BIT',",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Date\", RELATED ( Dates[Date] ),",
+      "    \"SEGMENT5\", 'Capex BIT'[SEGMENT5],",
+      "    \"ORDER_NUMBER\", 'Capex BIT'[ORDER_NUMBER],",
+      "    \"BI_CONTRACTOR\", 'Capex BIT'[BI_CONTRACTOR],",
+      "    \"PRODUCT\", 'Capex BIT'[PRODUCT],",
+      "    \"STATUS_OEBS\", 'Capex BIT'[STATUS_OEBS],",
+      "    \"Fact_CAPEX_BIT\", 'Capex BIT'[SUM_RUB]",
+      ")"
+    ]
+  }
+}

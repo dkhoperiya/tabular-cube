@@ -1,0 +1,5 @@
+{
+  "name": "Fin Act Status",
+  "dataType": "string",
+  "sourceColumn": "Fin Act Status"
+}

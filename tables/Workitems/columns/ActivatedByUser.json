@@ -1,0 +1,5 @@
+{
+  "name": "ActivatedByUser",
+  "dataType": "string",
+  "sourceColumn": "ActivatedByUser"
+}

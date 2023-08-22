@@ -1,0 +1,6 @@
+{
+  "name": "ProductOwner_Code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ProductOwner_Code"
+}

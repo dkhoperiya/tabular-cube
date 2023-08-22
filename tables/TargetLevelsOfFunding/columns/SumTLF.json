@@ -1,0 +1,7 @@
+{
+  "name": "SumTLF",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "SumTLF",
+  "sourceProviderType": "decimal"
+}

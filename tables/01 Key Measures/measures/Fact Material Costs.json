@@ -1,0 +1,23 @@
+{
+  "name": "Fact Material Costs",
+  "description": "Фактическая сумма перепродаваемых расходов. Является составной частью фактических расходов на проекте. Пока сумма берется из РМС",
+  "expression": "BLANK()",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "    /*SELECTCOLUMNS (",
+      "        FILTER ( ProjectExpenses_RMS, ProjectExpenses_RMS[expense_group_code] = \"101\" ),",
+      "        \"Project\", RELATED ( Projects[project] ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Expense Type\", RELATED ( ExpenseGroups[Expense Group] ),",
+      "        \"Customer\", ProjectExpenses_RMS[customer_bu] & \" - \"",
+      "            & RELATED ( BusinessUnits[BU Name] ),",
+      "        \"Investment Project\", ProjectExpenses_RMS[investment_project],",
+      "        \"Investment Task\", ProjectExpenses_RMS[investment_task],",
+      "        \"Expense Date\", ProjectExpenses_RMS[expense_date],",
+      "        \"Fact Material Costs\",[fact_expense_amount]",
+      "    )*/"
+    ]
+  }
+}

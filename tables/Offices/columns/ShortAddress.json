@@ -1,0 +1,5 @@
+{
+  "name": "ShortAddress",
+  "dataType": "string",
+  "sourceColumn": "ShortAddress"
+}

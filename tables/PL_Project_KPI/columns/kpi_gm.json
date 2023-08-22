@@ -1,0 +1,6 @@
+{
+  "name": "kpi_gm",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "kpi_gm"
+}

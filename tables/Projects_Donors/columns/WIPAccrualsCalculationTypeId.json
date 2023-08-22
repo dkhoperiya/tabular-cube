@@ -1,0 +1,8 @@
+{
+  "name": "WIPAccrualsCalculationTypeId",
+  "dataType": "int64",
+  "sourceColumn": "WIPAccrualsCalculationTypeId",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

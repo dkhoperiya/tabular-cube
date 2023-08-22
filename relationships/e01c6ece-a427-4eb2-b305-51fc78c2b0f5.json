@@ -1,0 +1,7 @@
+{
+  "name": "e01c6ece-a427-4eb2-b305-51fc78c2b0f5",
+  "fromTable": "HFM_Adjustments_Fact",
+  "fromColumn": "DATE",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

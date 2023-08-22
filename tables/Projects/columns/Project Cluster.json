@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "Project Cluster",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "LOOKUPVALUE('Tribes'[Cluster],'Tribes'[Tribe Code],'Projects'[project_tribe_code])"
+}

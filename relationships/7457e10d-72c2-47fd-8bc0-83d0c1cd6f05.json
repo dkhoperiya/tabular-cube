@@ -1,0 +1,7 @@
+{
+  "name": "7457e10d-72c2-47fd-8bc0-83d0c1cd6f05",
+  "fromTable": "ImportantEmployee",
+  "fromColumn": "Employee Code",
+  "toTable": "Employees",
+  "toColumn": "Employee Code"
+}

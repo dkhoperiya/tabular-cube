@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Cost of Works 19",
+  "description": "Если загружен факт ЗП, то ЗП факт (wip calculation) где контур проекта = контур сотрудника + факт по ставкам ФОТ из RMS по bu=UA, BEL, Tashkent). Если факта нет, используется ФОТ по емкости",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Cost of Works],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Cost of Works 19],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\03a. Forecast 19"
+}

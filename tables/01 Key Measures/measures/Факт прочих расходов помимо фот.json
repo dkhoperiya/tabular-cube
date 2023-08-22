@@ -1,0 +1,21 @@
+{
+  "name": "Факт прочих расходов помимо фот",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" ),",
+    "    KEEPFILTERS ( 'PL Items'[PL Item Code] IN { \"P3850\", \"P3880\", \"P3890\" } )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Project Expenses OEBS] ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" ),",
+      "    KEEPFILTERS ( 'PL Items'[PL Item Code] IN { \"P3850\", \"P3880\", \"P3890\" } )",
+      ")"
+    ]
+  }
+}

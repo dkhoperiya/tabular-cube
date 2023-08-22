@@ -1,0 +1,6 @@
+{
+  "name": "Task_WorkItemId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Task_WorkItemId"
+}

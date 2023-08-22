@@ -1,0 +1,6 @@
+{
+  "name": "Change Month Date",
+  "dataType": "dateTime",
+  "sourceColumn": "Month Date",
+  "formatString": "dd.MM.yyyy"
+}

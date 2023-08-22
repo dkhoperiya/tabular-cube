@@ -1,0 +1,6 @@
+{
+  "name": "FactPrevActMargin",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FactPrevActMargin"
+}

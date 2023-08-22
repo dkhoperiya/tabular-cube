@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "WIP Start Period Date",
+  "dataType": "dateTime",
+  "expression": "CALCULATE ( MAX ( 'WIP_Acts_XLSX'[Date] ) ) + 1",
+  "formatString": "dd.MM.yyyy"
+}

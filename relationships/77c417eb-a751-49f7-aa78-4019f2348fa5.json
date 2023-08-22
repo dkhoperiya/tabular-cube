@@ -1,0 +1,7 @@
+{
+  "name": "77c417eb-a751-49f7-aa78-4019f2348fa5",
+  "fromTable": "FactIncome",
+  "fromColumn": "fact_date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Dates",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_DimDates = Source{[Schema=\"dbo\",Item=\"DimDates\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(dbo_DimDates,{{\"date_fulldate\", \"Date\"}, {\"day_name\", \"Day Name\"}, {\"month_name\", \"Month Name\"}, {\"month_number_of_year\", \"Month Number\"}, {\"month_date\", \"Month Date\"}, {\"calendar_quarter\", \"Quarter Number\"}, {\"calendar_year\", \"Year\"}, {\"date_key\", \"DateKey\"}, {\"day_number_of_month\", \"Day Number\"}}),",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Renamed Columns\",{\"DateKey\", \"Date\", \"Day Number\", \"Month Name\", \"Month Number\", \"Month Date\", \"Quarter Number\", \"Year\"}),",
+      "    #\"Added Custom\" = Table.AddColumn(#\"Removed Other Columns\", \"r\", ",
+      "        each [",
+      "                MonthID = [Year]*100+[Month Number],",
+      "                QuarterID = [Year]*10+[Quarter Number],",
+      "                Quarter = Text.From([Year]) & \" Q\" &Text.From([Quarter Number])",
+      "",
+      "            ]),",
+      "    #\"Expanded r\" = Table.ExpandRecordColumn(#\"Added Custom\", \"r\", {\"MonthID\", \"QuarterID\", \"Quarter\"}, {\"MonthID\", \"QuarterID\", \"Quarter\"}),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded r\",{{\"QuarterID\", Int64.Type}, {\"MonthID\", Int64.Type}, {\"Quarter\", type text}}),",
+      "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type\",{\"DateKey\", \"Date\", \"Year\", \"QuarterID\", \"Quarter\", \"Quarter Number\", \"MonthID\", \"Month Name\", \"Month Number\", \"Day Number\", \"Month Date\"})",
+      "in",
+      "    #\"Reordered Columns\""
+    ]
+  }
+}

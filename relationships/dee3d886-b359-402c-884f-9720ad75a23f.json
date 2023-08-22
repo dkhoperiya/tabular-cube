@@ -1,0 +1,7 @@
+{
+  "name": "dee3d886-b359-402c-884f-9720ad75a23f",
+  "fromTable": "IndustryCalendar",
+  "fromColumn": "DateKey",
+  "toTable": "Dates",
+  "toColumn": "DateKey"
+}

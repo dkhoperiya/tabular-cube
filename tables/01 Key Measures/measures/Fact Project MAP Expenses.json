@@ -1,0 +1,20 @@
+{
+  "name": "Fact Project MAP Expenses",
+  "description": "Фактические расходы на субподряд трайба MAP по трансфертным ставкам.",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Transfer Cost of Works],",
+    "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 38 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\01. MAP",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Transfer Cost of Works] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 38 )",
+      ")"
+    ]
+  }
+}

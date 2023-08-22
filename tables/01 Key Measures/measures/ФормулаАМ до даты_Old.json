@@ -1,0 +1,15 @@
+{
+  "name": "ФормулаАМ до даты_Old",
+  "expression": [
+    "var maxDate = MAX(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [ФормулаАМ_Old],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] <= maxDate )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Max WI Closed Date",
+  "description": "Максимальная дата закрытия рабочего элемента",
+  "expression": "CALCULATE ( MAX ( Workitems[ClosedDate] ), FactHours )",
+  "formatString": "dd.MM.yyyy",
+  "displayFolder": "11. QBR Reporting"
+}

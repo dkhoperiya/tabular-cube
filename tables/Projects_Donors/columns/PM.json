@@ -1,0 +1,6 @@
+{
+  "name": "PM",
+  "dataType": "string",
+  "sourceColumn": "Manager_Name",
+  "sourceProviderType": "nvarchar"
+}

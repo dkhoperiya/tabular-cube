@@ -1,0 +1,20 @@
+{
+  "name": "Forecast Project GM",
+  "expression": "[Fcst Tribe Income] - [Fcst Tribe Expenses Own Projects]",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\04. Fin KPI\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _INC =",
+      "    CALCULATE ( [Fcst Tribe Income] )",
+      "VAR _EXP =",
+      "    CALCULATE ( [Fcst Tribe Expenses Own Projects] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Tribe Income\", _INC,",
+      "        \"Fcst Tribe Expenses Own Projects\", _EXP,",
+      "        \"Forecast Project GM\", _INC - _Exp",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Days Left G2",
+  "description": "Осталось дней до ближайшей даты G2",
+  "expression": [
+    "VAR d = [Closest Date G2]",
+    "RETURN",
+    "    IF ( NOT ( ISBLANK ( d ) ), INT ( d - TODAY () ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _CLOSEST_G2 =",
+      "    CALCULATE ( [Closest Date G2] )",
+      "VAR _TODAY =",
+      "    TODAY ()",
+      "RETURN",
+      "    ROW (",
+      "        \"Closest date G2\", _CLOSEST_G2,",
+      "        \"Today is\", _TODAY,",
+      "        \"Days Left G2\", IF ( NOT ( ISBLANK ( _CLOSEST_G2 ) ), INT ( _CLOSEST_G2 - _TODAY ) )",
+      "    )"
+    ]
+  }
+}

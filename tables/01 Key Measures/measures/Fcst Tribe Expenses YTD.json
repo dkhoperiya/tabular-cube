@@ -1,0 +1,6 @@
+{
+  "name": "Fcst Tribe Expenses YTD",
+  "expression": "CALCULATE([Fcst Tribe Expenses],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03. Forecast"
+}

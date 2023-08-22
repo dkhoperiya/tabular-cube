@@ -1,0 +1,14 @@
+{
+  "name": "Полная стоимость проекта без МТС",
+  "expression": [
+    "VAR LegalEntityFilter =",
+    "    FILTER (",
+    "        KEEPFILTERS ( VALUES ( 'BusinessUnits'[Entity Code] ) ),",
+    "        NOT ( 'BusinessUnits'[Entity Code] IN { \"3\" } )",
+    "    )",
+    "RETURN",
+    "    CALCULATE ( [Plan Revenue G6], LegalEntityFilter )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "16. WIP"
+}

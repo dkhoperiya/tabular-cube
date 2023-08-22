@@ -1,0 +1,16 @@
+{
+  "name": "HyperionPlanCapex_RMS_Project_Allocated",
+  "expression": [
+    "BLANK()",
+    "/*SUMX (",
+    "    FILTER ( Projects, NOT Projects[Project Status] IN { \"Canceled\" } ),",
+    "    DIVIDE (",
+    "        CALCULATE ( [Hyperion Plan Capex Simple] ),",
+    "        RELATED ( 'Project Capex MTS'[RMS Project Count] )",
+    "    )",
+    ")*/"
+  ],
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex"
+}

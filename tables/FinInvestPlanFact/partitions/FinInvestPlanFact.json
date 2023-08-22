@@ -1,0 +1,13 @@
+{
+  "name": "FinInvestPlanFact",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_FinInvestPlan_OpexCapex_Fact\"]}[Data]",
+      "in",
+      "    data"
+    ]
+  }
+}

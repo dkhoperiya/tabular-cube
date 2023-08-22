@@ -1,0 +1,39 @@
+{
+  "name": "Fcst Salary Costs Vacancies Only",
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "VAR _NEXT_MONTH_DATE =",
+    "    EOMONTH ( TODAY (), 0 ) + 1",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Tribe Capacity Fot Rates Include Vacancies],",
+    "        KEEPFILTERS ( 'CG HR Groups of Employee'[Name] = \"Вакансии\" ),",
+    "        KEEPFILTERS ( Capacity[Date] >= _NEXT_MONTH_DATE )",
+    "    )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "VAR _NEXT_MONTH_DATE =",
+      "    EOMONTH ( TODAY (), 0 ) + 1",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        DETAILROWS ( [Tribe Capacity Fot Rates Include Vacancies] ),",
+      "        KEEPFILTERS ( 'CG HR Groups of Employee'[Name] = \"Вакансии\" ),",
+      "        KEEPFILTERS ( Capacity[Date] >= _NEXT_MONTH_DATE )",
+      "    )"
+    ]
+  }
+}

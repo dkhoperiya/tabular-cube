@@ -1,0 +1,5 @@
+{
+  "name": "Прочие план",
+  "expression": "[Plan Project Other Opex] + [Plan Travel Exp] + [Plan NZP Exp]",
+  "ordinal": 9
+}

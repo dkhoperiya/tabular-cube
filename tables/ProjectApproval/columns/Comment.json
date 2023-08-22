@@ -1,0 +1,6 @@
+{
+  "name": "Comment",
+  "dataType": "string",
+  "sourceColumn": "Comment",
+  "sourceProviderType": "nvarchar"
+}

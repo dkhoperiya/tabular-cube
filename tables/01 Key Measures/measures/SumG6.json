@@ -1,0 +1,17 @@
+{
+  "name": "SumG6",
+  "expression": [
+    "VAR mart =",
+    "    DATE ( 2022, 03, 31 )",
+    "VAR startYear =",
+    "    DATE ( 2022, 01, 01 )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [2. Актуальная сумма],",
+    "        FILTER ( ALL ( Dates ), Dates[Date] <= mart && Dates[Date] >= startYear )",
+    "    )",
+    "/*!!!! Непраильная логика*/"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате"
+}

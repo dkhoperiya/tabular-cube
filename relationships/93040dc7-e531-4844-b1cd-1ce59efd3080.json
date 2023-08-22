@@ -1,0 +1,7 @@
+{
+  "name": "93040dc7-e531-4844-b1cd-1ce59efd3080",
+  "fromTable": "FactHours",
+  "fromColumn": "Fact Employee TribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Feature_WorkItemId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Feature_WorkItemId"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Tribe Code",
+  "dataType": "int64",
+  "sourceColumn": "Tribe Code",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

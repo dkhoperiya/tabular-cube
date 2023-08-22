@@ -1,0 +1,6 @@
+{
+  "name": "resource_tribe",
+  "dataType": "int64",
+  "sourceColumn": "resource_tribe",
+  "sourceProviderType": "int"
+}

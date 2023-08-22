@@ -1,0 +1,6 @@
+{
+  "name": "Plan Tribe OIBDA 19",
+  "expression": "[Plan Tribe GM 19]-[Plan Tribe OPEX]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\01a. Plan 19"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "DateKey",
+  "dataType": "int64",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "sourceColumn": "[DateKey]"
+}

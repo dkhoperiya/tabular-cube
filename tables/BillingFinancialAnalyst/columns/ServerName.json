@@ -1,0 +1,5 @@
+{
+  "name": "ServerName",
+  "dataType": "string",
+  "sourceColumn": "ServerName"
+}

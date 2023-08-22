@@ -1,0 +1,6 @@
+{
+  "name": "Priority",
+  "dataType": "decimal",
+  "sourceColumn": "Priority",
+  "formatString": "#,##0"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "HireDate",
+  "dataType": "dateTime",
+  "sourceColumn": "HireDate",
+  "formatString": "dd.MM.yyyy"
+}

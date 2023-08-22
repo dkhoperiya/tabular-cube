@@ -1,0 +1,6 @@
+{
+  "name": "ENTITY",
+  "dataType": "string",
+  "sourceColumn": "ENTITY",
+  "sourceProviderType": "nvarchar"
+}

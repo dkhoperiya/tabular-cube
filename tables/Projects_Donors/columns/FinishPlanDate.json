@@ -1,0 +1,7 @@
+{
+  "name": "FinishPlanDate",
+  "dataType": "dateTime",
+  "sourceColumn": "FinishPlanDate",
+  "formatString": "dd.MM.yyyy",
+  "sourceProviderType": "date"
+}

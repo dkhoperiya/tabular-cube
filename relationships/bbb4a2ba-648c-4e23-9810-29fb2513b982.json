@@ -1,0 +1,7 @@
+{
+  "name": "bbb4a2ba-648c-4e23-9810-29fb2513b982",
+  "fromTable": "FactProjectExpenses",
+  "fromColumn": "TRIBE_CODE",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

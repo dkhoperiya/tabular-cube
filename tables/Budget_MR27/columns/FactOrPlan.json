@@ -1,0 +1,6 @@
+{
+  "name": "FactOrPlan",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "FactOrPlan"
+}

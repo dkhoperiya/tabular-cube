@@ -1,0 +1,8 @@
+{
+  "name": "Fact_current_year",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "Fact_current_year",
+  "sourceProviderType": "decimal",
+  "summarizeBy": "none"
+}

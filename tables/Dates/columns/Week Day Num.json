@@ -1,0 +1,7 @@
+{
+  "name": "Week Day Num",
+  "dataType": "int64",
+  "sourceColumn": "Week Day Num",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

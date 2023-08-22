@@ -1,0 +1,27 @@
+{
+  "name": "BudgetMR27",
+  "expression": "SUM(Budget_MR27[Budget])",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    SELECTCOLUMNS (",
+      "        ADDCOLUMNS (",
+      "            'Budget_MR27',",
+      "            \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "            \"BudgetDate\", 'Budget_MR27'[Date],",
+      "            \"Legal Entity\", RELATED ( 'BusinessUnits'[Entity Name] ),",
+      "            \"PL Item\", 'Budget_MR27'[PL_code],",
+      "            \"Budget Amount\", 'Budget_MR27'[Budget]",
+      "        ),",
+      "        \"Tribe\", [Tribe],",
+      "        \"Date\", [BudgetDate],",
+      "        \"Legal Entity\", [Legal Entity],",
+      "        \"PL Item\", [PL Item],",
+      "        \"Budget Amount\", [Budget Amount]",
+      "    )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "BudgetRates_Version",
+  "dataType": "string",
+  "sourceColumn": "BudgetRates_Version",
+  "sourceProviderType": "nvarchar"
+}

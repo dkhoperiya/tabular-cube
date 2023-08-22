@@ -1,0 +1,7 @@
+{
+  "name": "Customer",
+  "dataType": "string",
+  "description": "Поле \"Заказчик\" в РМС",
+  "sourceColumn": "Customer",
+  "displayFolder": "02. Info"
+}

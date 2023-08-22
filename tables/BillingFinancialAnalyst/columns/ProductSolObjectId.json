@@ -1,0 +1,5 @@
+{
+  "name": "ProductSolObjectId",
+  "dataType": "string",
+  "sourceColumn": "ProductSolObjectId"
+}

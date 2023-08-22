@@ -1,0 +1,7 @@
+{
+  "name": "ea17df1d-469f-4dd0-8d0a-ec89adb9bd93",
+  "fromTable": "PlanIncome",
+  "fromColumn": "kpi_date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

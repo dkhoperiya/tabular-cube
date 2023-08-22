@@ -1,0 +1,32 @@
+{
+  "name": "Required Own Employee Count End Of Year",
+  "expression": [
+    "VAR _REQ_EMPL = [Fcst Own Employee Count]",
+    "VAR _B_DATE =",
+    "    CALCULATE ( MIN ( Dates[Date] ), ALLSELECTED ( Dates ) )",
+    "VAR _F_DATE =",
+    "    DATE ( YEAR ( TODAY () ), MONTH ( TODAY () ), 1 ) - 1",
+    "VAR _MONTH_IN_PERIOD = [_MONTH_IN_PERIOD] //(",
+    "//    YEAR ( CALCULATE ( MAX ( Dates[Date] ), ALLSELECTED ( Dates[Date] ) ) )",
+    "//        - YEAR ( TODAY () ) + 1",
+    "//) * 12",
+    "VAR _FACT_EMPL_COUNT_ON_PERIOD_END = [_FACT_AVG_EMPL_COUNT] //CALCULATE (",
+    "//    [Численность на конец периода],",
+    "//    KEEPFILTERS ( Dates[Date] = _F_DATE )",
+    "//)",
+    "VAR _FACT_AVG_EMPL_COUNT = [_FACT_AVG_EMPL_COUNT] //CALCULATE (",
+    "//    [Среднесписочная численность],",
+    "//    KEEPFILTERS ( Dates[Date] >= DATE ( YEAR ( _F_DATE ), 1, 1 ) ),",
+    "//    KEEPFILTERS ( Dates[Date] <= _F_DATE )",
+    "//)",
+    "VAR _FACT_MONTH_COUNT =",
+    "    DATEDIFF ( _B_DATE, TODAY (), MONTH )",
+    "RETURN",
+    "    DIVIDE (",
+    "        ( _REQ_EMPL * _MONTH_IN_PERIOD - _FACT_AVG_EMPL_COUNT * _FACT_MONTH_COUNT - _FACT_EMPL_COUNT_ON_PERIOD_END * ( _MONTH_IN_PERIOD - _FACT_MONTH_COUNT ) ),",
+    "        ( _MONTH_IN_PERIOD - _FACT_MONTH_COUNT )",
+    "    ) + _FACT_EMPL_COUNT_ON_PERIOD_END"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses"
+}

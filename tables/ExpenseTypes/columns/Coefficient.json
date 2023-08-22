@@ -1,0 +1,7 @@
+{
+  "name": "Coefficient",
+  "dataType": "decimal",
+  "sourceColumn": "Coefficient",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

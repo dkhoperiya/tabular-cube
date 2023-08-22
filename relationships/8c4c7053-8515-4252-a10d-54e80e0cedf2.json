@@ -1,0 +1,7 @@
+{
+  "name": "8c4c7053-8515-4252-a10d-54e80e0cedf2",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

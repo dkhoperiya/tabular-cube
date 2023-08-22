@@ -1,0 +1,13 @@
+{
+  "name": "WIP_Revenue_Correction",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    WIP_Revenue_Correction = Source{[Schema=\"dbo\",Item=\"viw_WIP_Revenue_Correction\"]}[Data]",
+      "in",
+      "    WIP_Revenue_Correction"
+    ]
+  }
+}

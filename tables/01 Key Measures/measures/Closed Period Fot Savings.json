@@ -1,0 +1,44 @@
+{
+  "name": "Closed Period Fot Savings",
+  "description": "Экономию фот по закрытому периоду",
+  "expression": [
+    "VAR _CLOSED_PERIOD_LAST_DATE =",
+    "    CALCULATE ( MAX ( 'DatesPlanFact'[PF Date] ) )",
+    "VAR _REAL_FOT =",
+    "    CALCULATE (",
+    "        [Sum of Debet With K],",
+    "        KEEPFILTERS ( 'WIPCalculation'[month_date] <= _CLOSED_PERIOD_LAST_DATE )",
+    "    )",
+    "VAR _PLAN_FOT_RUB =",
+    "    CALCULATE (",
+    "        [PlanFotRub],",
+    "        KEEPFILTERS ( Dates[Date] <= _CLOSED_PERIOD_LAST_DATE )",
+    "    )",
+    "RETURN",
+    "    _PLAN_FOT_RUB - _REAL_FOT"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "15. Resource Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _CLOSED_PERIOD_LAST_DATE =",
+      "    CALCULATE ( MAX ( 'DatesPlanFact'[PF Date] ) )",
+      "VAR _REAL_FOT =",
+      "    CALCULATE (",
+      "        [Sum of Debet With K],",
+      "        KEEPFILTERS ( 'WIPCalculation'[month_date] <= _CLOSED_PERIOD_LAST_DATE )",
+      "    )",
+      "VAR _PLAN_FOT_RUB =",
+      "    CALCULATE (",
+      "        [PlanFotRub],",
+      "        KEEPFILTERS ( Dates[Date] <= _CLOSED_PERIOD_LAST_DATE )",
+      "    )",
+      "RETURN",
+      "    ROW (",
+      "        \"PlanFotRub\", _PLAN_FOT_RUB,",
+      "        \"Sum of Debet With K\", _REAL_FOT,",
+      "        \"Closed Period Fot Savings\", _PLAN_FOT_RUB - _REAL_FOT",
+      "    )"
+    ]
+  }
+}

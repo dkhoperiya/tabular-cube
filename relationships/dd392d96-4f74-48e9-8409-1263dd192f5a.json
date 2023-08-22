@@ -1,0 +1,7 @@
+{
+  "name": "dd392d96-4f74-48e9-8409-1263dd192f5a",
+  "fromTable": "FactHours_Renormilized",
+  "fromColumn": "RoleCode",
+  "toTable": "Roles",
+  "toColumn": "Role Code"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Hyperion Plan Capex Simple",
+  "description": "Сумма плана из Hyperion",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'Hyperion Plan'[PAYSUM] ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BUDGET_TYPE] = \"CAPEX\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex",
+  "detailRowsDefinition": {
+    "expression": "'Hyperion Plan'"
+  }
+}

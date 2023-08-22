@@ -1,0 +1,5 @@
+{
+  "name": "AssignmentCostCenter",
+  "dataType": "string",
+  "sourceColumn": "AssignmentCostCenter"
+}

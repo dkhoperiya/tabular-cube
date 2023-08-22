@@ -1,0 +1,14 @@
+{
+  "name": "Fact Expenses (HFM)",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ('HFM_Adjustments_Fact'[DDATA]),",
+    "    FILTER (",
+    "        'PL Items',",
+    "        'PL Items'[PL Item Category] = \"Доходы\"",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails"
+}

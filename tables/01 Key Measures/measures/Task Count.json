@@ -1,0 +1,9 @@
+{
+  "name": "Task Count",
+  "expression": "DISTINCTCOUNT ( 'FactHours'[TaskId] )",
+  "formatString": "#,##0",
+  "displayFolder": "10. Timesheets",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "244b0ac2-e91d-45e7-8934-e9fe460037a5",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "Fact Employee BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

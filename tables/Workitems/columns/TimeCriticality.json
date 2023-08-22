@@ -1,0 +1,7 @@
+{
+  "name": "TimeCriticality",
+  "dataType": "decimal",
+  "sourceColumn": "TimeCriticality",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

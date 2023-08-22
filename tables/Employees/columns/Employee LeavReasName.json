@@ -1,0 +1,5 @@
+{
+  "name": "Employee LeavReasName",
+  "dataType": "string",
+  "sourceColumn": "LEAV_REAS_NAME"
+}

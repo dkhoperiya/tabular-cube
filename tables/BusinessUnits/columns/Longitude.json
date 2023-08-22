@@ -1,0 +1,8 @@
+{
+  "name": "Longitude",
+  "dataType": "decimal",
+  "sourceColumn": "Longitude",
+  "formatString": "0.00",
+  "dataCategory": "Longitude",
+  "summarizeBy": "none"
+}

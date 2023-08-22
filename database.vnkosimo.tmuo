@@ -1,0 +1,11 @@
+{
+  "Deployment": {
+    "TargetConnectionString": "pmo-powerbi-01.ural.mts.ru",
+    "TargetDatabase": "PMO_Finance",
+    "DeployDataSources": false,
+    "DeployPartitions": true,
+    "DeployRefreshPolicyPartitions": false,
+    "DeployModelRoles": true,
+    "DeployModelRoleMembers": true
+  }
+}

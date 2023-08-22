@@ -1,0 +1,47 @@
+{
+  "name": "Utilization Not Approved Projects %_by Fact Hours",
+  "expression": [
+    "DIVIDE (",
+    "    CALCULATE (",
+    "        [Fact Hours],",
+    "        KEEPFILTERS ( Projects[Project Status Group] = \"Не защищен\" )",
+    "    ),",
+    "    CALCULATE (",
+    "        [Fact Hours],",
+    "        KEEPFILTERS ( Projects[Project Status Group] IN { \"Защищен\", \"Не защищен\" } )",
+    "    )",
+    ")"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "isHidden": true,
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "ADDCOLUMNS (",
+      "    ADDCOLUMNS (",
+      "        SUMMARIZE (",
+      "            FactHours,",
+      "            Employees[Employee],",
+      "            Projects[project],",
+      "            Dates[Month Date],",
+      "            Tribes[Tribe],",
+      "            'Resource Tribe'[Resource Tribe],",
+      "            Roles[Role],",
+      "            BusinessUnits[BU Code]",
+      "        ),",
+      "        \"Fact Hours\", [Fact Hours],",
+      "        \"Fact Hours Appovable Projects\", CALCULATE (",
+      "            [Fact Hours],",
+      "            KEEPFILTERS ( Projects[Project Status Group] IN { \"Approved\", \"Not Approved\" } )",
+      "        ),",
+      "        \"Fact Hours Approved Project Status\", CALCULATE ( [Fact Hours Approved Projects] ),",
+      "        \"Fact Hours Not Approved Project Status\", CALCULATE ( [Fact Hours Not Approved Projects] )",
+      "    ),",
+      "    \"Utilization Not Approved Projects %\", FORMAT (",
+      "        DIVIDE ( [Fact Hours Not Approved Project Status], [Fact Hours Appovable Projects] ),",
+      "        \"0.0%\"",
+      "    )",
+      ")"
+    ]
+  }
+}

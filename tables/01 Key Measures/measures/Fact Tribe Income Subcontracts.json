@@ -1,0 +1,34 @@
+{
+  "name": "Fact Tribe Income Subcontracts",
+  "description": "Доходы от привлечения сотрудников на проекты прочих трайбов.",
+  "expression": [
+    "SUMX (",
+    "    FILTER ( 'FactHours_2lvl', RELATED ( 'Projects'[incl_for_fin_fact] ) ),",
+    "    'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[transfer_rate]",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "        FILTER ( 'FactHours_2lvl', RELATED ( 'Projects'[incl_for_fin_fact] ) ),",
+      "        \"Project\", RELATED ( 'Projects'[Project] ),",
+      "        \"Project Tribe\", 'FactHours_2lvl'[project_tribe],",
+      "        \"PM\", RELATED ( Projects[PM] ),",
+      "        \"PO\", RELATED ( Projects[PO] ),",
+      "        \"Employee Name\", RELATED ( 'Employees'[Employee Name] ),",
+      "        \"Employee Tribe\", 'FactHours_2lvl'[Fact Employee Tribe],",
+      "        \"BU\", 'FactHours_2lvl'[Fact Employee BuCode],",
+      "        \"Role\", RELATED ( 'Roles'[Role] ),",
+      "        \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "        \"Investment Project\", 'FactHours_2lvl'[InvestmentProject],",
+      "        \"Investment Task\", 'FactHours_2lvl'[InvestmentTask],",
+      "        \"Date\", RELATED(Dates[Date]),",
+      "        \"Fact Hours\", 'FactHours_2lvl'[fact_hours],",
+      "        \"FOT Rate\", 'FactHours_2lvl'[FOT_rate],",
+      "        \"Transfer Rate\", 'FactHours_2lvl'[transfer_rate]",
+      "    )"
+    ]
+  }
+}

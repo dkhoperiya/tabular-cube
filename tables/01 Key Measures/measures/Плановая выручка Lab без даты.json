@@ -1,0 +1,25 @@
+{
+  "name": "Плановая выручка Lab без даты",
+  "expression": [
+    "var g6Sum = CALCULATE( ",
+    "                    SUM(PlanIncome[sum_act_full]),",
+    "                    Milestones[Milestone] = \"[G6]\",",
+    "                    BusinessUnits[Entity Code] = \"24\"",
+    "                    )",
+    "var labContract = CALCULATE(",
+    "                    SUM(Projects[WIPContractSumLab])",
+    "                    )",
+    "var planFactLab =  CALCULATE( ",
+    "                    [FactPlan Rub],",
+    "                    BusinessUnits[Entity Code] = \"24\"",
+    "                    )",
+    "var planLab =  CALCULATE( ",
+    "                    [PlanRub],",
+    "                    BusinessUnits[Entity Code] = \"24\"",
+    "                    )                                      ",
+    "var biggestValue = IF(planFactLab > planLab, planFactLab, planLab)",
+    "RETURN",
+    "IF(ISBLANK(g6Sum), IF(ISBLANK(labContract), biggestValue, labContract), g6Sum)"
+  ],
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

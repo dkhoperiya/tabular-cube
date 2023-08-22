@@ -1,0 +1,14 @@
+{
+  "name": "Features",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    src_viw = Source{[Schema=\"dbo\",Item=\"viw_Features\"]}[Data]",
+      "in",
+      "    src_viw"
+    ]
+  }
+}

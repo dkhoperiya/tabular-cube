@@ -1,0 +1,11 @@
+{
+  "name": "Fact Resold Exp with koef old",
+  "description": "Фактическая сумма перепродаваемых расходов + 7%. Является составной частью фактических ДОХОДОВ на проекте. Пока сумма берется из РМС",
+  "expression": [
+    "",
+    "[Fact Resold Exp] / 0.93"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact"
+}

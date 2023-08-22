@@ -1,0 +1,19 @@
+{
+  "name": "Liabilities MR27",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"LIABILITIES\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\03. Budget MR27",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    FactProjectExpenses,",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"LIABILITIES\" )",
+      ")"
+    ]
+  }
+}

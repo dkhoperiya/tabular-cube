@@ -1,0 +1,7 @@
+{
+  "name": "d57f0c1b-a8f8-4336-a83a-c87881a7a5c0",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "DateKey",
+  "toTable": "Dates",
+  "toColumn": "DateKey"
+}

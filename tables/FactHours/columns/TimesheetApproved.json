@@ -1,0 +1,5 @@
+{
+  "name": "TimesheetApproved",
+  "dataType": "string",
+  "sourceColumn": "TimesheetApproved"
+}

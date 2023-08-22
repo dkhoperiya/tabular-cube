@@ -1,0 +1,5 @@
+{
+  "name": "MeasureName",
+  "dataType": "string",
+  "sourceColumn": "MeasureName"
+}

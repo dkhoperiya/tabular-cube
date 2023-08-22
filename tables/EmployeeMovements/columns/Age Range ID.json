@@ -1,0 +1,15 @@
+{
+  "type": "calculated",
+  "name": "Age Range ID",
+  "dataType": "int64",
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "expression": [
+    "VAR ag = EmployeeMovements[AgeOnDate]",
+    "RETURN",
+    "    IF (",
+    "        NOT ( ISBLANK ( ag ) ),",
+    "        SWITCH ( TRUE (), ag < 25, 1, ag < 35, 2, ag < 45, 3, ag < 55, 4, 5 )",
+    "    )"
+  ]
+}

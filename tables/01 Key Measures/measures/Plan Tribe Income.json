@@ -1,0 +1,20 @@
+{
+  "name": "Plan Tribe Income",
+  "expression": "[Plan Tribe Income Own Projects] + [Plan Tribe Income Subcontracts] ",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Plan Tribe Income Own Projects] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Plan Tribe Income Subcontracts] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Tribe Income Own Projects\", _X,",
+      "        \"Plan Tribe Income Subcontracts\", _Y,",
+      "        \"Plan Tribe Income\", _X + _Y",
+      "    )"
+    ]
+  }
+}

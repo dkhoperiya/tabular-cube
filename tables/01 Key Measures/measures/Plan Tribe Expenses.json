@@ -1,0 +1,18 @@
+{
+  "name": "Plan Tribe Expenses",
+  "expression": "[Plan Tribe Expenses Own Projects] + [Plan Tribe Costs Subcontracts]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = CALCULATE ( [Plan Tribe Expenses Own Projects] )",
+      "VAR _Y = CALCULATE ( [Plan Tribe Costs Subcontracts] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Tribe Expenses Own Projects\", _X,",
+      "        \"Plan Tribe Costs Subcontracts\", _Y,",
+      "        \"Plan Tribe Expenses\", _X + _Y",
+      "    )"
+    ]
+  }
+}

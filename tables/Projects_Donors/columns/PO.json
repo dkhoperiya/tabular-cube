@@ -1,0 +1,6 @@
+{
+  "name": "PO",
+  "dataType": "string",
+  "sourceColumn": "ProductOwnerName",
+  "sourceProviderType": "nvarchar"
+}

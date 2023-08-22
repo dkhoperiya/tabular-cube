@@ -1,0 +1,7 @@
+{
+  "name": "In_Out",
+  "dataType": "int64",
+  "sourceColumn": "In_Out",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

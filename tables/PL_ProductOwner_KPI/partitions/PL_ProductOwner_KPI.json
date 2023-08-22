@@ -1,0 +1,14 @@
+{
+  "name": "PL_ProductOwner_KPI",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_viw_PL_ProductOwner_KPI = Source{[Schema=\"dbo\",Item=\"viw_PL_ProductOwner_KPI\"]}[Data]",
+      "in",
+      "    dbo_viw_PL_ProductOwner_KPI"
+    ]
+  }
+}

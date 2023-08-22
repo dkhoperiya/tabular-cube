@@ -1,0 +1,32 @@
+{
+  "name": "FactTotalMarginSubcontr",
+  "expression": [
+    "CALCULATE (",
+    "    [Second_Margin_CZ_act] + [FactMarginExtrSubcontr],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactTotalMarginSubcontr\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Метрики детализации актов",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactOverheadCostsAndMargin_Lab]",
+      "VAR x2 = [Second_Margin_CZ_act]",
+      "VAR x3 = [FactOverheadCostsAndMargin_MR27]",
+      "VAR x4 = [FactMarginExtrSubcontr]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactOverheadCostsAndMargin_Lab\", x1,",
+      "        \"Second_Margin_CZ_act\", x2,",
+      "        \"FactOverheadCostsAndMargin_MR27\", x3,",
+      "        \"FactMarginExtrSubcontr\", x4,",
+      "        \"FactTotalMarginSubcontr\",",
+      "            x1 + x2 + x3 + x4",
+      "    )"
+    ]
+  }
+}

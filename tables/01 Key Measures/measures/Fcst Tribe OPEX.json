@@ -1,0 +1,28 @@
+{
+  "name": "Fcst Tribe OPEX",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE ( [Fact Tribe OPEX], KEEPFILTERS ( 'Dates'[Date] <= LastFactDate ) )",
+    "        + CALCULATE ( [Plan Tribe OPEX], KEEPFILTERS ( 'Dates'[Date] > LastFactDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR LastFactDate =",
+      "    MAX ( DatesPlanFact[PF Date] )",
+      "VAR _FACT_TRIBE_OPEX =",
+      "    CALCULATE ( [Fact Tribe OPEX], KEEPFILTERS ( 'Dates'[Date] <= LastFactDate ) )",
+      "VAR _PLAN_TRIBE_OPEX =",
+      "    CALCULATE ( [Plan Tribe OPEX], KEEPFILTERS ( 'Dates'[Date] > LastFactDate ) )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe OPEX\", _FACT_TRIBE_OPEX,",
+      "        \"Plan Tribe OPEX\", _PLAN_TRIBE_OPEX,",
+      "        \"Fcst Tribe OPEX\", _FACT_TRIBE_OPEX + _PLAN_TRIBE_OPEX",
+      "    )"
+    ]
+  }
+}

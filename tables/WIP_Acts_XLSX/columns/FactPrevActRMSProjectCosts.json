@@ -1,0 +1,6 @@
+{
+  "name": "FactPrevActRMSProjectCosts",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FactPrevActRMSProjectCosts"
+}

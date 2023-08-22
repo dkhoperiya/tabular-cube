@@ -1,0 +1,7 @@
+{
+  "name": "2. Актуальная сумма",
+  "expression": "[sum_act_g6_full]",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

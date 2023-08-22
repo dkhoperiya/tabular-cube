@@ -1,0 +1,6 @@
+{
+  "name": "CreatedDate",
+  "dataType": "string",
+  "sourceColumn": "CreatedDate",
+  "sourceProviderType": "nvarchar"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "ClosedByUser",
+  "dataType": "string",
+  "sourceColumn": "ClosedByUser"
+}

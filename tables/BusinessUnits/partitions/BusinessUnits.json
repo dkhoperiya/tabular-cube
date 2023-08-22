@@ -1,0 +1,16 @@
+{
+  "name": "BusinessUnits",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_DimBusinessUnit = Source{[Schema=\"dbo\",Item=\"viw_BusinessUnits\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(dbo_DimBusinessUnit,{{\"BuName\", \"BU Name\"}, {\"BuCountry\", \"BU Country\"}, {\"Город\", \"City\"}, {\"Широта\", \"Latitude\"}, {\"Долгота\", \"Longitude\"}, {\"BuCode\", \"bu_code\"}, {\"ParentCode\", \"Parent BU Code\"}, {\"ParentName\", \"Parent BU Name\"}, {\"EntityCode\", \"Entity Code\"}, {\"EntityName\", \"Entity Name\"}, {\"ParentEntityCode\", \"Parent Entity Code\"}, {\"ParentEntityName\", \"Parent Entity Name\"}}),",
+      "    #\"Added Custom\" = Table.AddColumn(#\"Renamed Columns\", \"oebs_code_2\", each if [OEBS_Code] = \"0\" then Text.From([bu_code]) else [OEBS_Code],type text)",
+      "in",
+      "    #\"Added Custom\""
+    ]
+  }
+}

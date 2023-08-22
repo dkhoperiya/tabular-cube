@@ -1,0 +1,7 @@
+{
+  "name": "7050a805-377c-4361-90c6-38a0a92fd4b7",
+  "fromTable": "Capacity",
+  "fromColumn": "City",
+  "toTable": "Cities",
+  "toColumn": "City"
+}

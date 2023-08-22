@@ -1,0 +1,14 @@
+{
+  "name": "Partition",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = DWH,",
+      "    dbo_viw_Budget_MR27 = Source{[Schema=\"dbo\",Item=\"viw_Budget_MR27\"]}[Data]",
+      "in",
+      "    dbo_viw_Budget_MR27"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "WIP-акт в предыдущем месяце",
+  "expression": [
+    "var prevYear = YEAR(DATE(YEAR(MAX(Dates[Date])), MONTH(MAX(Dates[Date])), 1) - 1)",
+    "var prevMonth = MONTH(DATE(YEAR(MAX(Dates[Date])), MONTH(MAX(Dates[Date])), 1) - 1)",
+    "return",
+    "CALCULATE(",
+    "        [SumXLS],",
+    "        WIP_Acts_XLSX[ActType] = \"WIP\",",
+    "         FILTER ( ALL(Dates),",
+    "        YEAR(Dates[Date]) = prevYear",
+    "         ),",
+    "         FILTER ( ALL(Dates),",
+    "            MONTH(Dates[Date]) = prevMonth",
+    "         )",
+    "        )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP"
+}

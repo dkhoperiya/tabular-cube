@@ -1,0 +1,25 @@
+{
+  "name": "WorkItem Hierarchy",
+  "levels": [
+    {
+      "name": "Epic",
+      "ordinal": 0,
+      "column": "Epic"
+    },
+    {
+      "name": "Feature",
+      "ordinal": 1,
+      "column": "Feature"
+    },
+    {
+      "name": "Task",
+      "ordinal": 3,
+      "column": "Task"
+    },
+    {
+      "name": "UserStory",
+      "ordinal": 2,
+      "column": "UserStory"
+    }
+  ]
+}

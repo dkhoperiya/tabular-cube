@@ -1,0 +1,14 @@
+{
+  "name": "plan_revenue_probability",
+  "description": "Плановое значение доходов с учетом вероятности реализации проектов",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( PlanIncome[kpi_revenue_probability] ),",
+    "    FILTER ( 'Projects','Projects'[Has Revenue]),",
+    "    TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\01. Revenue\\01. Plan"
+}

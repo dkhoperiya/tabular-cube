@@ -1,0 +1,22 @@
+{
+  "name": "Avg Duration G2 -> G6",
+  "description": "Средняя по проектам продолжительность в днях между минимальной датой G2 и максимальной датой G6",
+  "expression": [
+    "AVERAGEX (",
+    "    DISTINCT ( Projects[Project Code] ),",
+    "    VAR _MIN_DATE =",
+    "        CALCULATE ( [Min KPI Date G2] )",
+    "    VAR _MAX_DATE =",
+    "        CALCULATE ( [Max KPI Date G6] )",
+    "    RETURN",
+    "        IF (",
+    "            NOT ( ISBLANK ( _MIN_DATE ) ) && NOT ( ISBLANK ( _MAX_DATE ) )",
+    "                && _MAX_DATE >= _MIN_DATE,",
+    "            DATEDIFF ( _MIN_DATE, _MAX_DATE, DAY ),",
+    "            BLANK ()",
+    "        )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting"
+}

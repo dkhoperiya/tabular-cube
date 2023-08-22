@@ -1,0 +1,26 @@
+{
+  "name": "Fcst Work Hours SRV_OPS",
+  "description": "Прогноз чч трайба SRV_OPS по средневзвешенной ставке.",
+  "expression": [
+    "DIVIDE (",
+    "    [Fcst Transfer Cost of Works SRV_OPS],",
+    "    [Historical WA Transfer Rate SRV_OPS]",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\03. SRV_OPS",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Transfer Cost of Works SRV_OPS] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Historical WA Transfer Rate SRV_OPS] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Transfer Cost of Works SRV_OPS\", _X,",
+      "        \"Historical WA Transfer Rate SRV_OPS\", _Y,",
+      "        \"Fcst Work Hours SRV_OPS\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

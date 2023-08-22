@@ -1,0 +1,7 @@
+{
+  "name": "a10ea2cc-0492-4a0a-94ee-3eb50b842240",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "Fact Employee Tribe",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

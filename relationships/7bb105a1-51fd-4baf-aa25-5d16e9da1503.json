@@ -1,0 +1,7 @@
+{
+  "name": "7bb105a1-51fd-4baf-aa25-5d16e9da1503",
+  "fromTable": "TeamCosts",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

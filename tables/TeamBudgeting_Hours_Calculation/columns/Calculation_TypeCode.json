@@ -1,0 +1,7 @@
+{
+  "name": "Calculation_TypeCode",
+  "dataType": "int64",
+  "sourceColumn": "Calculation_TypeCode",
+  "formatString": "###0",
+  "summarizeBy": "none"
+}

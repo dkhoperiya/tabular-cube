@@ -1,0 +1,8 @@
+{
+  "name": "Дельта ФОТ факт",
+  "expression": [
+    "[Plan Cost of Works] + [Plan Transfer Cost of Works] + [Plan Subcontr CZ Exp] ",
+    "- ( [Fact Cost of Works] + [Fact Transfer Cost of Works] + [Fact Subcontr CZ Exp] )"
+  ],
+  "ordinal": 2
+}

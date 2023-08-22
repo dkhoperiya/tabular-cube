@@ -1,0 +1,7 @@
+{
+  "name": "f225d6e7-68f9-474e-bf18-464a88146ce8",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

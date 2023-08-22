@@ -1,0 +1,6 @@
+{
+  "name": "G6InQuarter",
+  "dataType": "boolean",
+  "isHidden": true,
+  "sourceColumn": "G6InQuarter"
+}

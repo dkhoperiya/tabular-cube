@@ -1,0 +1,11 @@
+{
+  "name": "_MONTH_IN_PERIOD",
+  "expression": [
+    "(",
+    "    YEAR ( CALCULATE ( MAX ( Dates[Date] ), ALLSELECTED ( Dates[Date] ) ) )",
+    "        - YEAR ( TODAY () ) + 1",
+    ") * 12"
+  ],
+  "isHidden": true,
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses"
+}

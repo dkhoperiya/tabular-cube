@@ -1,0 +1,6 @@
+{
+  "name": "Ожидаемые расходы (командировки)",
+  "expression": "[Plan Travel Exp] - [Fact Travel Exp]",
+  "formatString": "#,0",
+  "displayFolder": "16. WIP"
+}

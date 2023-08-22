@@ -1,0 +1,5 @@
+{
+  "name": "IsLeaf",
+  "dataType": "boolean",
+  "sourceColumn": "IsLeaf"
+}

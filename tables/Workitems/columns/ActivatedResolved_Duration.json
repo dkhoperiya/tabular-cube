@@ -1,0 +1,7 @@
+{
+  "name": "ActivatedResolved_Duration",
+  "dataType": "int64",
+  "sourceColumn": "ActivatedResolved_Duration",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

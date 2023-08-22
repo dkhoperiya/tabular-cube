@@ -1,0 +1,12 @@
+{
+  "name": "plan_exp_amnt_full",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'ProjectExpenses_RMS'[plan_expense_amount] ),",
+    "    FILTER ( 'Projects', 'Projects'[incl_for_fin_plan] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "55fda3f2-f0a6-4c4c-a36c-28d63d922fd1",
+  "fromCardinality": "one",
+  "fromTable": "ProjectApproval",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code",
+  "crossFilteringBehavior": "bothDirections",
+  "relyOnReferentialIntegrity": true,
+  "securityFilteringBehavior": "bothDirections"
+}

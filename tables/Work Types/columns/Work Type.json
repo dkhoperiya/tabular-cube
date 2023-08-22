@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "Work Type",
+  "dataType": "string",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Work Type]"
+}

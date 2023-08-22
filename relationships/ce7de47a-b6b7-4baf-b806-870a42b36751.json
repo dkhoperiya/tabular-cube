@@ -1,0 +1,7 @@
+{
+  "name": "ce7de47a-b6b7-4baf-b806-870a42b36751",
+  "fromTable": "DatesPlanFact",
+  "fromColumn": "DateKey",
+  "toTable": "Dates",
+  "toColumn": "DateKey"
+}

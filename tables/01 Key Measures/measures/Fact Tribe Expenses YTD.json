@@ -1,0 +1,20 @@
+{
+  "name": "Fact Tribe Expenses YTD",
+  "expression": "CALCULATE ( [Fact Tribe Expenses], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fact Tribe Expenses Own Projects], DATESYTD ( Dates[Date] ) )",
+      "VAR _Y =",
+      "    CALCULATE ( [Fact Tribe Costs Subcontracts], DATESYTD ( Dates[Date] ) )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe Expenses Own Projects\", _X,",
+      "        \"Fact Tribe Costs Subcontracts\", _Y,",
+      "        \"Fact Tribe Expenses\", _X + _Y",
+      "    )"
+    ]
+  }
+}

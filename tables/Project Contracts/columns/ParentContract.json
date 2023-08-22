@@ -1,0 +1,7 @@
+{
+  "name": "ParentContract",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ParentContract",
+  "sourceProviderType": "uniqueidentifier"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Net Utilization %",
+  "description": "Отношение утилизированного на проектах времени к емкости",
+  "expression": [
+    "VAR x =",
+    "    DIVIDE ( [Net Util Fact Hours], [Net Util FTE] )",
+    "RETURN",
+    "    IF ( x > 1, 1, x )"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        ADDCOLUMNS (",
+      "            VALUES ( Employees[Employee] ),",
+      "            \"NET Util Fact Hours \", CALCULATE ( [Net Util Fact Hours] ),",
+      "            \"NET Utilization \", CALCULATE ( [Net Util FTE] )",
+      "        ),",
+      "        \"NET Utilization %\", IF (",
+      "            [NET Utilization ] < [NET Util Fact Hours ],",
+      "            1,",
+      "            DIVIDE ( [NET Util Fact Hours ], [NET Utilization ] )",
+      "        )",
+      "    ),",
+      "    [NET Util Fact Hours ] > 0",
+      "        || [NET Utilization ] > 0",
+      ")"
+    ]
+  }
+}

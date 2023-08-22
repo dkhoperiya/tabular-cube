@@ -1,0 +1,6 @@
+{
+  "name": "NormSeconds",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "NormSeconds"
+}

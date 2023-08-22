@@ -1,0 +1,26 @@
+{
+  "name": "Прочие и командировки",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Project Expenses OEBS],",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[BI_Код Статьи PL]",
+    "        IN { \"P3880\", \"P3890\" } ) ,",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+    ")",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"Прочие и командировки\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Project Expenses OEBS] ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[BI_Код Статьи PL] IN { \"P3880\", \"P3890\" } ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" )",
+      ")"
+    ]
+  }
+}

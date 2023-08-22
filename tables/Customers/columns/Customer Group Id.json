@@ -1,0 +1,12 @@
+{
+  "name": "Customer Group Id",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Customer Group Id",
+  "annotations": [
+    {
+      "name": "BestPracticeAnalyzer_IgnoreRules",
+      "value": "{\"RuleIDs\":[\"DISABLE_ATTRIBUTE_HIERACHIES\"]}"
+    }
+  ]
+}

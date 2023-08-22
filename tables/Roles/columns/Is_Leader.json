@@ -1,0 +1,7 @@
+{
+  "name": "Is_Leader",
+  "dataType": "int64",
+  "sourceColumn": "Is_Leader",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

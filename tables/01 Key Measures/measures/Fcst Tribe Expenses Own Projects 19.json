@@ -1,0 +1,20 @@
+{
+  "name": "Fcst Tribe Expenses Own Projects 19",
+  "expression": "[Fcst Tribe Expenses 19] - [Fcst Tribe Costs Subcontracts]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03a. Forecast 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x =",
+      "    CALCULATE ( [Fcst Tribe Expenses 19] )",
+      "VAR y =",
+      "    CALCULATE ( [Fcst Tribe Costs Subcontracts] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Tribe Expenses 19\", x,",
+      "        \"Fcst Tribe Costs Subcontract\", y,",
+      "        \"Fcst Tribe Expenses Own Projects 19\", x - y",
+      "    )"
+    ]
+  }
+}

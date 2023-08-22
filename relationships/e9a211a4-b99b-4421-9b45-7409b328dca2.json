@@ -1,0 +1,7 @@
+{
+  "name": "e9a211a4-b99b-4421-9b45-7409b328dca2",
+  "fromTable": "WIP_Acts_Drafts",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

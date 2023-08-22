@@ -1,0 +1,11 @@
+{
+  "name": "Fact Fot Rub 2lvl",
+  "expression": [
+    "CALCULATE (",
+    "    SUMX ( 'FactHours_2lvl', 'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[FOT_rate] ),",
+    "    KEEPFILTERS ( 'FactHours_2lvl'[is_subcontract] = 1 )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact"
+}

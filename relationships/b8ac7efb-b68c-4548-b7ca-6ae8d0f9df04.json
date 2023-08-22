@@ -1,0 +1,7 @@
+{
+  "name": "b8ac7efb-b68c-4548-b7ca-6ae8d0f9df04",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

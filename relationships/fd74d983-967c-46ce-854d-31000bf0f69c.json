@@ -1,0 +1,7 @@
+{
+  "name": "fd74d983-967c-46ce-854d-31000bf0f69c",
+  "fromTable": "FactProjectExpenses",
+  "fromColumn": "PROJECT_CODE",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

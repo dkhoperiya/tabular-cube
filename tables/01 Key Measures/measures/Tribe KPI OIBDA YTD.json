@@ -1,0 +1,8 @@
+{
+  "name": "Tribe KPI OIBDA YTD",
+  "description": "Цель трайба по OIBDA накопительным итогом.",
+  "expression": "CALCULATE([Tribe KPI OIBDA % YTD],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "02. Tribe\\03. Fin KPI\\03. Goal"
+}

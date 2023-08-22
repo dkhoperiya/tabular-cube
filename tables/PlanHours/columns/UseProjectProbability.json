@@ -1,0 +1,6 @@
+{
+  "name": "UseProjectProbability",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "UseProjectProbability"
+}

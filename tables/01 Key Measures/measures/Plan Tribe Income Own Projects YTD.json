@@ -1,0 +1,10 @@
+{
+  "name": "Plan Tribe Income Own Projects YTD",
+  "description": "Плановые доходы трайба от собственных проектов накопительным итогом по году",
+  "expression": "CALCULATE ( [Plan Project Income], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Tribe Income Own Projects] )"
+  }
+}

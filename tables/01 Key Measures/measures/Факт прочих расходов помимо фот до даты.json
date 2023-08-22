@@ -1,0 +1,13 @@
+{
+  "name": "Факт прочих расходов помимо фот до даты",
+  "expression": [
+    "var maxDate = MAX(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [Факт прочих расходов помимо фот],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] <= maxDate )",
+    ")"
+  ],
+  "displayFolder": "16. WIP\\Фильтр по дате"
+}

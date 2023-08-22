@@ -1,0 +1,37 @@
+{
+  "name": "Остальной субподряд",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'FactProjectExpenses'[SUM_RUB] ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS] = \"Субподряд\" ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" ),",
+    "    KEEPFILTERS ( NOT 'FactProjectExpenses'[Ссылка 2]",
+    "        IN {",
+    "        \"NVision Czech Republic a.s.\",",
+    "        \"Nvision Czech Republic ICT a.s.\",",
+    "        \"МТС ЛАБ ООО\"",
+    "    } )",
+    ")",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"Остальной субподряд\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Project Expenses OEBS] ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS] = \"Субподряд\" ),",
+      "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" ),",
+      "    KEEPFILTERS ( NOT 'FactProjectExpenses'[Ссылка 2]",
+      "        IN {",
+      "        \"NVision Czech Republic a.s.\",",
+      "        \"Nvision Czech Republic ICT a.s.\",",
+      "        \"МТС ЛАБ ООО\"",
+      "    } )",
+      ")"
+    ]
+  }
+}

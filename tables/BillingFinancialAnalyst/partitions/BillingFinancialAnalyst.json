@@ -1,0 +1,13 @@
+{
+  "name": "BillingFinancialAnalyst",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_POSTGREE_VwBillingFinancialAnalyst = Source{[Schema=\"dbo\",Item=\"viw_POSTGREE_VwBillingFinancialAnalyst\"]}[Data]",
+      "in",
+      "    viw_POSTGREE_VwBillingFinancialAnalyst"
+    ]
+  }
+}

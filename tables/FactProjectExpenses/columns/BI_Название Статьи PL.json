@@ -1,0 +1,6 @@
+{
+  "name": "BI_Название Статьи PL",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "BI_PL_NAME"
+}

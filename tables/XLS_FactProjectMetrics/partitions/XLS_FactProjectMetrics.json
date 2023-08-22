@@ -1,0 +1,14 @@
+{
+  "name": "XLS_FactProjectMetrics",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    data = Source{[Schema=\"dbo\",Item=\"viw_XLS_FactProjectMetrics\"]}[Data]",
+      "in",
+      "    data"
+    ]
+  }
+}

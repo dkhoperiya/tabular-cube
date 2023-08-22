@@ -1,0 +1,7 @@
+{
+  "name": "cfdeea12-b971-466f-a2ca-aed1613ed5e2",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "CustomerBuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Value",
+  "dataType": "decimal",
+  "sourceColumn": "Value",
+  "formatString": "#,##0.00"
+}

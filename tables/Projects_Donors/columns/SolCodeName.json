@@ -1,0 +1,6 @@
+{
+  "name": "SolCodeName",
+  "dataType": "string",
+  "sourceColumn": "SolCodeName",
+  "sourceProviderType": "nvarchar"
+}

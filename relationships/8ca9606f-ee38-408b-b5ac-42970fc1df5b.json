@@ -1,0 +1,7 @@
+{
+  "name": "8ca9606f-ee38-408b-b5ac-42970fc1df5b",
+  "fromTable": "PlanIncome",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

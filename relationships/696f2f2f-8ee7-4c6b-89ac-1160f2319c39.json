@@ -1,0 +1,7 @@
+{
+  "name": "696f2f2f-8ee7-4c6b-89ac-1160f2319c39",
+  "fromTable": "PL_Project_KPI",
+  "fromColumn": "project_code",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

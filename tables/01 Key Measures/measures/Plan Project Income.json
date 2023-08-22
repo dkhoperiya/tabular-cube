@@ -1,0 +1,20 @@
+{
+  "name": "Plan Project Income",
+  "expression": " [Plan Project Income no ORZ] + [Plan Resold Exp with koef]",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\03. Income\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Plan Project Income no ORZ] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Plan Resold Exp with koef] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Project Income no ORZ\", _X,",
+      "        \"Plan Resold Exp with koef\", _Y,",
+      "        \"Plan Project Income\", _X + _Y",
+      "    )"
+    ]
+  }
+}

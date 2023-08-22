@@ -1,0 +1,6 @@
+{
+  "name": "SCENARIO",
+  "dataType": "string",
+  "sourceColumn": "SCENARIO",
+  "sourceProviderType": "nchar"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Task Url",
+  "dataType": "string",
+  "sourceColumn": "TaskUrl",
+  "dataCategory": "WebURL"
+}

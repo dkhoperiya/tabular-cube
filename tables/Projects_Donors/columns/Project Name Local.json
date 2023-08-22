@@ -1,0 +1,6 @@
+{
+  "name": "Project Name Local",
+  "dataType": "string",
+  "sourceColumn": "NameLocal",
+  "sourceProviderType": "nvarchar"
+}

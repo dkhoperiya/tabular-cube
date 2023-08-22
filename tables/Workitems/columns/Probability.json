@@ -1,0 +1,7 @@
+{
+  "name": "Probability",
+  "dataType": "int64",
+  "sourceColumn": "Probability",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

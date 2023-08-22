@@ -1,0 +1,7 @@
+{
+  "name": "IsVoluntarily",
+  "dataType": "int64",
+  "sourceColumn": "IsVoluntarily",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

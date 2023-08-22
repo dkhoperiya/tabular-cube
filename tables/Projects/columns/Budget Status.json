@@ -1,0 +1,5 @@
+{
+  "name": "Budget Status",
+  "dataType": "string",
+  "sourceColumn": "Budget Status"
+}

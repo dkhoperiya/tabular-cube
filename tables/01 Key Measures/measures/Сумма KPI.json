@@ -1,0 +1,7 @@
+{
+  "name": "Сумма KPI",
+  "expression": "[Plan Revenue G6]",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

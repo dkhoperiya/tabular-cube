@@ -1,0 +1,14 @@
+{
+  "name": "UniqueContract",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_UniqueContract = Source{[Schema=\"dbo\",Item=\"viw_UniqueContract\"]}[Data]",
+      "in",
+      "    viw_UniqueContract"
+    ]
+  }
+}

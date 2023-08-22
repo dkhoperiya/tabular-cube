@@ -1,0 +1,6 @@
+{
+  "name": "WIPContractAddName",
+  "dataType": "string",
+  "sourceColumn": "WIPContractAddName",
+  "sourceProviderType": "nvarchar"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AssignmentLeavingReason",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "AssignmentLeavingReason"
+}

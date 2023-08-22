@@ -1,0 +1,6 @@
+{
+  "name": "MarginRate",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "MarginRate"
+}

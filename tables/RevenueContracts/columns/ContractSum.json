@@ -1,0 +1,7 @@
+{
+  "name": "ContractSum",
+  "dataType": "decimal",
+  "sourceColumn": "ContractSum",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

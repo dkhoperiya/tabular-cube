@@ -1,0 +1,15 @@
+{
+  "name": "Fact Project Income Own Projects",
+  "description": "Факт часов * на трансфертную ставку",
+  "expression": "CALCULATE ( [FactRub], KEEPFILTERS ( 'Projects'[incl_for_fin_fact] ) )",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\03. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactRub] ),",
+      "    KEEPFILTERS ( 'Projects'[incl_for_fin_fact] )",
+      ")"
+    ]
+  }
+}

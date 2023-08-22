@@ -1,0 +1,29 @@
+{
+  "name": "Net Util Fact Hours renorm",
+  "expression": [
+    "CALCULATE (",
+    "    [FactHours renorm],",
+    "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+    "    FILTER (",
+    "        Projects,",
+    "        Projects[Project Util Category] <> \"Административный\"",
+    "            && NOT Projects[Project Status] IN { \"Canceled\" }",
+    "    )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactHours renorm] ),",
+      "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+      "    FILTER (",
+      "        Projects,",
+      "        Projects[Project Util Category] <> \"Административный\"",
+      "            && NOT Projects[Project Status] IN { \"Canceled\" }",
+      "    )",
+      ")"
+    ]
+  }
+}

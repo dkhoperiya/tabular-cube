@@ -1,0 +1,29 @@
+{
+  "name": "Plan Material Costs",
+  "description": "План расходов из РМС с типом \"МатРасх\"",
+  "expression": [
+    "CALCULATE (",
+    "    [plan_exp_amnt],",
+    "    KEEPFILTERS ( 'ProjectExpenses_RMS'[Expense Type] IN { \"15\", \"35\", \"112\"} )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR pm =",
+      "    CALCULATE ( SELECTEDVALUE ( Options[Project Probability Mode] ) )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER ( ProjectExpenses_RMS, ProjectExpenses_RMS[Expense Type] IN { \"15\", \"35\", \"112\"} ),",
+      "        \"Project\", RELATED ( Projects[project] ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Expense Type\", RELATED ( ExpenseTypes[ExpenseType_Name] ),",
+      "        \"Customer\", 'ProjectExpenses_RMS'[CustomerBuCode] & \" - \"",
+      "            & RELATED ( BusinessUnits[BU Name] ),",
+      "        \"Expense Date\", ProjectExpenses_RMS[expense_date],",
+      "        \"Plan Material Costs\", IF ( pm = \"Full\", 1, RELATED ( Projects[Project Probability] ) ) * [plan_expense_amount]",
+      "    )"
+    ]
+  }
+}

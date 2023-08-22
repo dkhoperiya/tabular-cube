@@ -1,0 +1,5 @@
+{
+  "name": "Contractor Name",
+  "dataType": "string",
+  "sourceColumn": "ContractorName"
+}

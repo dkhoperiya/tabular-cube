@@ -1,0 +1,7 @@
+{
+  "name": "ac3e2cf7-aaca-4d99-9465-dd67ef5be652",
+  "fromTable": "Features",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Fcst Tribe Costs Subcontracts YTD",
+  "description": "Прогнозная (факт/план) сумма расходов трайба на субподряд накопительным итогом по году. ",
+  "expression": "CALCULATE([Fcst Tribe Costs Subcontracts],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03. Forecast"
+}

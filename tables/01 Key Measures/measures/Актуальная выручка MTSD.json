@@ -1,0 +1,5 @@
+{
+  "name": "Актуальная выручка MTSD",
+  "expression": "CALCULATE([Plan Act Sum G6], 'BusinessUnits'[Entity Code] = \"1\")",
+  "displayFolder": "16. WIP\\Метрики WIP начисления\\Без фильтра по дате"
+}

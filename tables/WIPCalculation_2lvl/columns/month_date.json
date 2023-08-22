@@ -1,0 +1,6 @@
+{
+  "name": "month_date",
+  "dataType": "dateTime",
+  "sourceColumn": "month_date",
+  "sourceProviderType": "date"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "One Person Work Hours in Period SRV_OPS",
+  "description": "Количество часов в периоде на одного человека с учетом утилизации трайба SRV_OPS. Полное кол-во рабочих часов за период * Ставка утилизации за период (гранулярность - 1 месяц)",
+  "expression": [
+    "CALCULATE (",
+    "    [One Person Work Hours in Period],",
+    "    ALL ( 'PL_Tribe_KPI' ),",
+    "    VALUES ( 'PL_Tribe_KPI'[kpi_date] ),",
+    "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 35 ) ",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\03. SRV_OPS",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [One Person Work Hours in Period] ),",
+      "    ALL ( 'PL_Tribe_KPI' ),",
+      "    VALUES ( 'PL_Tribe_KPI'[kpi_date] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 35 )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Hyperion Plan Act Revenue MTSIT",
+  "description": "Сумма плана затарт из Hyperion, где BI_BUDGET_TYPE = \"PAY Оплата\", [EXPENCE_GROUP_CODE] IN { 301, 401 } и [BU_CODE] IN {1000}",
+  "expression": [
+    "CALCULATE (",
+    "    [Hyperion Plan Capex Simple],",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[EXPENCE_GROUP_CODE] IN { \"301\", \"401\" } ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BU_CODE] IN {\"1000\"} )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex"
+}

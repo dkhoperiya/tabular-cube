@@ -1,0 +1,10 @@
+{
+  "name": "Browse Depth",
+  "expression": [
+    "ISFILTERED ( WorkItems[Epic] ) + ISFILTERED ( WorkItems[Feature] )",
+    "    + ISFILTERED ( WorkItems[UserStory] )",
+    "    + ISFILTERED ( WorkItems[Task] )"
+  ],
+  "isHidden": true,
+  "displayFolder": "11. QBR Reporting"
+}

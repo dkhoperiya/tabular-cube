@@ -1,0 +1,7 @@
+{
+  "name": "CityTransfer",
+  "dataType": "int64",
+  "sourceColumn": "CityTransfer",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

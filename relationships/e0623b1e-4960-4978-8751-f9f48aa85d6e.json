@@ -1,0 +1,7 @@
+{
+  "name": "e0623b1e-4960-4978-8751-f9f48aa85d6e",
+  "fromTable": "OrgStructOebs",
+  "fromColumn": "TribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "PF Date",
+  "dataType": "dateTime",
+  "isNameInferred": false,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Date]",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

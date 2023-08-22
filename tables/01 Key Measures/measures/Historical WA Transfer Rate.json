@@ -1,0 +1,51 @@
+{
+  "name": "Historical WA Transfer Rate",
+  "description": [
+    "Средневзвешенная по количеству сотрудников ФОТ ставка для ЮЛ-трайба-роли",
+    ""
+  ],
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "RETURN",
+    "    CALCULATE (",
+    "        AVERAGE ( Capacity[TransferRate] ),",
+    "        KEEPFILTERS ( Capacity[TransferRate] > 0 ),",
+    "        KEEPFILTERS ( Capacity[IsVacancy] = FALSE () ),",
+    "        KEEPFILTERS ( Capacity[BudgetRates_Version] = BudgetRatesVersion )",
+    "    )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "07. Budget Role Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        ADDCOLUMNS (",
+      "            SUMMARIZE (",
+      "                Capacity,",
+      "                BusinessUnits[Entity Name],",
+      "                tribes[Tribe],",
+      "                roles[Role],",
+      "                Dates[Date]",
+      "            ),",
+      "            \"Employee Count\", CALCULATE ( COUNTA ( Capacity[EmployeeCode] ) ),",
+      "            \"Fot Rate\", CALCULATE ( AVERAGE ( Capacity[TransferRate] ) )",
+      "        ),",
+      "        KEEPFILTERS ( Capacity[TransferRate] > 0 ),",
+      "        KEEPFILTERS ( Capacity[IsVacancy] = FALSE () ),",
+      "        KEEPFILTERS ( Capacity[BudgetRates_Version] = BudgetRatesVersion )",
+      "    )"
+    ]
+  }
+}

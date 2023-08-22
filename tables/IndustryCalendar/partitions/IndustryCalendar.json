@@ -1,0 +1,29 @@
+{
+  "name": "IndustryCalendar",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  data = Source{[Schema = \"dbo\", Item = \"viw_IndustryCalendar\"]}[Data],",
+      "  SelectCols = Table.SelectColumns(",
+      "      data, ",
+      "      {",
+      "        \"DateKey\", ",
+      "        \"BusinessUnit\", ",
+      "        \"IndustryYear\", ",
+      "        \"IndustryMonthId\",",
+      "        \"DayTypeCode\", ",
+      "        \"MonthWorkDays\",",
+      "        \"MonthWorkHours\",",
+      "        \"YearWorkDays\", ",
+      "        \"YearWorkHours\", ",
+      "        \"WorkHours\"",
+      "      }",
+      "    )",
+      "in",
+      "  SelectCols"
+    ]
+  }
+}

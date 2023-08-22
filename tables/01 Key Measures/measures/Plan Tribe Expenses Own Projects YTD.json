@@ -1,0 +1,10 @@
+{
+  "name": "Plan Tribe Expenses Own Projects YTD",
+  "description": "Накопительный итог по плановым расходам на собственные проекты трайба.",
+  "expression": "CALCULATE ( [Plan Project Expenses], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Project Expenses] )"
+  }
+}

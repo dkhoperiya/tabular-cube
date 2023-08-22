@@ -1,0 +1,16 @@
+{
+  "name": "FactFotRub Wip",
+  "description": "Сумма нормализованных часов списанных на проектах в ставках ФОТ",
+  "expression": [
+    "SUM ( 'FactHours'[FactInFotRates] )",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactFotRub Wip\" )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

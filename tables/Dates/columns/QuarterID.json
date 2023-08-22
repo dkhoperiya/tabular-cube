@@ -1,0 +1,6 @@
+{
+  "name": "QuarterID",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "QuarterID"
+}

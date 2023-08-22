@@ -1,0 +1,9 @@
+{
+  "name": "Fact Tribe OPEX YTD",
+  "expression": "CALCULATE ( [Fact Tribe OPEX], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Tribe OPEX] )"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "FOT_rate",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FOT_rate",
+  "sourceProviderType": "float"
+}

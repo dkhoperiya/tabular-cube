@@ -1,0 +1,5 @@
+{
+  "name": "MeasureValue",
+  "dataType": "decimal",
+  "sourceColumn": "MeasureValue"
+}

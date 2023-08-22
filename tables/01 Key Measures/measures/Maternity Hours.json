@@ -1,0 +1,48 @@
+{
+  "name": "Maternity Hours",
+  "description": "FTE в статусе MATERNITY",
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "RETURN",
+    "    CALCULATE (",
+    "        SUM ( 'Capacity'[WorkingHours] ),",
+    "        KEEPFILTERS ( Capacity[StatusCode] = 30 ),",
+    "        KEEPFILTERS ( 'Capacity'[BudgetRates_Version] = BudgetRatesVersion )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "   IF (",
+      "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER (",
+      "            Capacity,",
+      "            Capacity[StatusCode] = 30",
+      "                && 'Capacity'[BudgetRates_Version] = BudgetRatesVersion",
+      "        ),",
+      "        \"Employee\", RELATED ( Employees[Employee] ),",
+      "        \"Employee BU\", Capacity[BuCode],",
+      "        \"Employee Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Employee Status\", Capacity[StatusCode],",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Chapter\", RELATED ( 'Chapters'[Chapter] ),",
+      "        \"Competence\", RELATED ( Competences[Competence] ),",
+      "        \"Date\", Capacity[date],",
+      "        \"BudgetRatesVersion\", BudgetRatesVersion,",
+      "        \"Maternity FTE\", 'Capacity'[WorkingHours]",
+      "    )"
+    ]
+  }
+}

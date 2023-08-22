@@ -1,0 +1,7 @@
+{
+  "name": "d3d42008-12ca-4bdc-821a-21aefd2bd599",
+  "fromTable": "PlanIncome_SumAct",
+  "fromColumn": "milestone_code",
+  "toTable": "Milestones",
+  "toColumn": "milestone_code"
+}

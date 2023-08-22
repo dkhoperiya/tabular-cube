@@ -1,0 +1,7 @@
+{
+  "name": "IsRemote",
+  "dataType": "int64",
+  "sourceColumn": "IsRemote",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

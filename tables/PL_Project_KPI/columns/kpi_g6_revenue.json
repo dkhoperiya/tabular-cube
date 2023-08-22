@@ -1,0 +1,6 @@
+{
+  "name": "kpi_g6_revenue",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "kpi_g6_revenue"
+}

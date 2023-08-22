@@ -1,0 +1,7 @@
+{
+  "name": "2c5a98a1-b5a9-4bd9-9c90-e79f7159427b",
+  "fromTable": "PlanIncome_SumAct",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

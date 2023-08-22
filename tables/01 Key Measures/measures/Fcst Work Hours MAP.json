@@ -1,0 +1,26 @@
+{
+  "name": "Fcst Work Hours MAP",
+  "description": "Прогноз чч трайба MAP по средневзвешенной ставке.",
+  "expression": [
+    "DIVIDE (",
+    "    [Fcst Transfer Cost of Works MAP],",
+    "    [Historical WA Transfer Rate MAP]",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\01. MAP",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Transfer Cost of Works MAP] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Historical WA Transfer Rate MAP] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Transfer Cost of Works MAP\", _X,",
+      "        \"Historical WA Transfer Rate MAP\", _Y,",
+      "        \"Fcst Work Hours MAP\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

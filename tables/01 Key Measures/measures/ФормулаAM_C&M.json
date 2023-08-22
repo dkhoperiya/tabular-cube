@@ -1,0 +1,30 @@
+{
+  "name": "ФормулаAM_C&M",
+  "expression": [
+    "CALCULATE (",
+    "    [FactRMSProjectCosts] + [FactMargin] - [FactIncomeMTSD],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"ФормулаAM_C&M\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Метрики детализации актов",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactRMSProjectCosts]",
+      "VAR x2 = [FactMargin]",
+      "VAR x3 = -[FactIncomeMTSD до даты]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactRMSProjectCosts\", x1,",
+      "        \"FactMargin\", x2,",
+      "        \"FactIncomeMTSD до даты\", x3,",
+      "        \"ФормулаAM_C&M\",",
+      "            x1 + x2 + x3",
+      "    )"
+    ]
+  }
+}

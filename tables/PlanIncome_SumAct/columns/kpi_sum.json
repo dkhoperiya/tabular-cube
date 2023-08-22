@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "kpi_sum",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "isHidden": true,
+  "sourceColumn": "[kpi_sum]"
+}

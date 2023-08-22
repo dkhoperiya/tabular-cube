@@ -1,0 +1,5 @@
+{
+  "name": "LoadedAt",
+  "dataType": "dateTime",
+  "sourceColumn": "LoadedAt"
+}

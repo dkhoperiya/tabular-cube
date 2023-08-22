@@ -1,0 +1,5 @@
+{
+  "name": "role_code",
+  "dataType": "int64",
+  "sourceColumn": "role_code"
+}

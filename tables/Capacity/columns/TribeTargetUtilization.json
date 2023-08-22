@@ -1,0 +1,7 @@
+{
+  "name": "TribeTargetUtilization",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "TribeTargetUtilization2",
+  "formatString": "#,##0.00 %"
+}

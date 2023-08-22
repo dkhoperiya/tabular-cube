@@ -1,0 +1,28 @@
+{
+  "name": "Tribes",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  dbo_viw_Tribes = Source{[Schema = \"dbo\", Item = \"viw_Tribes\"]}[Data],",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "    dbo_viw_Tribes, ",
+      "    {",
+      "      {\"Code\", \"Tribe Code\"}, ",
+      "      {\"Name\", \"Tribe\"}, ",
+      "      {\"Icon_URL\", \"Tribe Icon\"}, ",
+      "      {\"TribeOwner\", \"Tribe Owner\"}, ",
+      "      {\"Description\", \"Tribe Description\"}, ",
+      "      {\"Cluster_Code\", \"Cluster Code\"}, ",
+      "      {\"ClusterLeader_Name\", \"Cluster Leader\"}, ",
+      "      {\"Cluster_Description\", \"Cluster Description\"}, ",
+      "      {\"ResponsibilityCenter\", \"Responsibility Center\"}",
+      "    }",
+      "  )",
+      "in",
+      "  #\"Renamed Columns\""
+    ]
+  }
+}

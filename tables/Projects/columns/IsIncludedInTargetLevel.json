@@ -1,0 +1,5 @@
+{
+  "name": "IsIncludedInTargetLevel",
+  "dataType": "boolean",
+  "sourceColumn": "IsIncludedInTargetLevel"
+}

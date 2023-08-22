@@ -1,0 +1,6 @@
+{
+  "name": "plan_expense_amount",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "plan_expense_amount"
+}

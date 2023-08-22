@@ -1,0 +1,9 @@
+{
+  "name": "Факт расходов командировки",
+  "expression": "[Fact Travel Exp]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( DETAILROWS ( [Fact Travel Exp] ) )"
+  }
+}

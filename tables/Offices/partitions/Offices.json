@@ -1,0 +1,14 @@
+{
+  "name": "Offices",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_AD_Offices = Source{[Schema=\"dbo\",Item=\"viw_AD_Offices\"]}[Data]",
+      "in",
+      "    viw_AD_Offices"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "EmploymentType",
+  "dataType": "string",
+  "sourceColumn": "EmploymentType"
+}

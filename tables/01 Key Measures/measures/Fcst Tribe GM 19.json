@@ -1,0 +1,6 @@
+{
+  "name": "Fcst Tribe GM 19",
+  "expression": "[Fcst Tribe Income 19] - [Fcst Tribe Expenses 19]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04.a Forecast 19"
+}

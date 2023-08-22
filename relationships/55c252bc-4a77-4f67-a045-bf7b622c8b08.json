@@ -1,0 +1,7 @@
+{
+  "name": "55c252bc-4a77-4f67-a045-bf7b622c8b08",
+  "fromTable": "Requirements",
+  "fromColumn": "WorkItemId",
+  "toTable": "Workitems",
+  "toColumn": "WorkItemId"
+}

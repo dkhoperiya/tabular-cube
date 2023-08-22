@@ -1,0 +1,6 @@
+{
+  "name": "IS_VGR_SUBCONTRACTOR",
+  "dataType": "boolean",
+  "isHidden": true,
+  "sourceColumn": "IS_VGR_SUBCONTRACTOR"
+}

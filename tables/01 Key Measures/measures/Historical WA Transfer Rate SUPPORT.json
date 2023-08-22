@@ -1,0 +1,45 @@
+{
+  "name": "Historical WA Transfer Rate SUPPORT",
+  "description": "Средневзвешенная трансфертная ставка трайба SUPPORT.",
+  "expression": [
+    "CALCULATE (",
+    "    [Historical WA Transfer Rate],",
+    "    FILTER (",
+    "        ALLEXCEPT ( Capacity, Dates, Roles,'Competences' ),",
+    "        Capacity[TribeCode] = 26",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\02. Support Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    FILTER (",
+      "        SELECTCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                Capacity,",
+      "                ALLEXCEPT ( Capacity, Dates, Roles, 'Competences' ),",
+      "                Capacity[TribeCode] = 26,",
+      "                Capacity[BudgetRates_Version] = BudgetRatesVersion",
+      "            ),",
+      "            \"Employee\", RELATED ( Employees[Employee] ),",
+      "            \"BusinessUnit\", 'Capacity'[BuCode],",
+      "            \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "            \"Role\", RELATED ( Roles[Role] ),",
+      "            \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "            \"Date\", RELATED ( Dates[Date] ),",
+      "            \"SUPPORT Transfer Rate\", 'Capacity'[TransferRate],",
+      "            \"Budget Rates Version\", BudgetRatesVersion",
+      "        ),",
+      "        [SUPPORT Transfer Rate] <> BLANK ()",
+      "    )"
+    ]
+  }
+}

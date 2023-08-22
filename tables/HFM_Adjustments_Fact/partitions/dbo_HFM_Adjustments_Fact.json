@@ -1,0 +1,13 @@
+{
+  "name": "dbo_HFM_Adjustments_Fact",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  dbo_HFM_Adjustments_Fact = Source{[Schema = \"dbo\", Item = \"viw_HFM_Adjustments_Fact_MR27\"]}[Data]",
+      "in",
+      "  dbo_HFM_Adjustments_Fact"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "FactInTransferRates",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FactInTransferRates"
+}

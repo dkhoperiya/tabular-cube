@@ -1,0 +1,7 @@
+{
+  "name": "8c2b8788-1bc0-4126-92ba-d845cf3f99f4",
+  "fromTable": "Budget_MR27",
+  "fromColumn": "PL_code",
+  "toTable": "PL Items",
+  "toColumn": "PL Item Code"
+}

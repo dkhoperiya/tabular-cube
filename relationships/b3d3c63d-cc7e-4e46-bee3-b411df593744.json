@@ -1,0 +1,7 @@
+{
+  "name": "b3d3c63d-cc7e-4e46-bee3-b411df593744",
+  "fromTable": "WIPCalculation_2lvl",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

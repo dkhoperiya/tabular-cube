@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "Milestone_NameStatus",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "Milestones[Milestone] &\" - \"& Milestones[Works Status]"
+}

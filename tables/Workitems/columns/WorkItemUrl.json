@@ -1,0 +1,6 @@
+{
+  "name": "WorkItemUrl",
+  "dataType": "string",
+  "sourceColumn": "WorkItemUrl",
+  "dataCategory": "WebURL"
+}

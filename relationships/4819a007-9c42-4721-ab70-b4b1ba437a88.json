@@ -1,0 +1,7 @@
+{
+  "name": "4819a007-9c42-4721-ab70-b4b1ba437a88",
+  "fromTable": "PlanHours",
+  "fromColumn": "Resource_TribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

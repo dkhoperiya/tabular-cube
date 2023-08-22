@@ -1,0 +1,7 @@
+{
+  "name": "WIPContractSumLab",
+  "dataType": "decimal",
+  "sourceColumn": "WIPContractSumLab",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

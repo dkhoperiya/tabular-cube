@@ -1,0 +1,10 @@
+{
+  "name": "Role Code",
+  "dataType": "int64",
+  "isKey": true,
+  "isNullable": false,
+  "sourceColumn": "role_code",
+  "formatString": "###0",
+  "keepUniqueRows": true,
+  "summarizeBy": "none"
+}

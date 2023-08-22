@@ -1,0 +1,17 @@
+{
+  "name": "Competences",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_DimCompetence = Source{[Schema=\"dbo\",Item=\"DimCompetence\"]}[Data],",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(dbo_DimCompetence,{{\"Code\", Int64.Type}}),",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Code\", \"Компетенция\"}),",
+      "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Other Columns\",{{\"Code\", \"competence_code\"}, {\"Компетенция\", \"Competence\"}})",
+      "in",
+      "    #\"Renamed Columns\""
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "MonthWorkHours",
+  "dataType": "int64",
+  "sourceColumn": "MonthWorkHours"
+}

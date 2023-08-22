@@ -1,0 +1,6 @@
+{
+  "name": "SEGMENT5",
+  "dataType": "string",
+  "sourceColumn": "SEGMENT5",
+  "sourceProviderType": "nvarchar"
+}

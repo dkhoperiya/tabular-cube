@@ -1,0 +1,6 @@
+{
+  "name": "WorkingHoursWithCapacityK",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "Capacity"
+}

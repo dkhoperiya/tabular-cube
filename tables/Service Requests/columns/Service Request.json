@@ -1,0 +1,5 @@
+{
+  "name": "Service Request",
+  "dataType": "string",
+  "sourceColumn": "Service Request"
+}

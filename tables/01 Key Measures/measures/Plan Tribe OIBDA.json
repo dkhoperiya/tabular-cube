@@ -1,0 +1,14 @@
+{
+  "name": "Plan Tribe OIBDA",
+  "expression": "[Plan Tribe GM] - [Plan Tribe OPEX]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Plan Tribe GM]",
+      "VAR _Y = [Plan Tribe OPEX]",
+      "RETURN",
+      "    ROW ( \"Plan Tribe GM\", _X, \"Plan Tribe OPEX\", _Y, \"Plan Tribe OIBDA\", _X - _Y )"
+    ]
+  }
+}

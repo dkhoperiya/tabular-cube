@@ -1,0 +1,15 @@
+{
+  "name": "Budget Rates Versions",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    stg_viw_BudgetRates_Version = Source{[Schema=\"dbo\",Item=\"viw_BudgetRates_Version\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(stg_viw_BudgetRates_Version,{{\"BudgetRates_Version\", \"Budget Rates Version\"}})",
+      "in",
+      "    #\"Renamed Columns\""
+    ]
+  }
+}

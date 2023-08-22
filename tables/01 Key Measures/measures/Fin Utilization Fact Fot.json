@@ -1,0 +1,16 @@
+{
+  "name": "Fin Utilization Fact Fot",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+    "    KEEPFILTERS ( 'FactHours'[EmploymentType] IN { 0, 1 } ),",
+    "    FILTER (",
+    "        Projects,",
+    "        Projects[Project Util Category] <> \"Административный\"",
+    "            && NOT Projects[Project Status] IN { \"Canceled\" }",
+    "    )",
+    ")"
+  ],
+  "displayFolder": "04. Capacity\\01. Utilization\\Fin Utilization"
+}

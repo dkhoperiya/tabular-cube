@@ -1,0 +1,5 @@
+{
+  "name": "Metric",
+  "dataType": "string",
+  "sourceColumn": "Metric"
+}

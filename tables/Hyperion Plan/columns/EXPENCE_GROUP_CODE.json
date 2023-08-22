@@ -1,0 +1,15 @@
+{
+  "type": "calculated",
+  "name": "EXPENCE_GROUP_CODE",
+  "dataType": "string",
+  "expression": [
+    "SWITCH (",
+    "    'Hyperion Plan'[BI_BUDGET_ITEM_CODE],",
+    "    \"B40020507\", 301,",
+    "    \"B40020508\", 401,",
+    "    \"B40020504\", 401,",
+    "    \"B40020401\", 401,",
+    "    103",
+    ")"
+  ]
+}

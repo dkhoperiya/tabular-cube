@@ -1,0 +1,8 @@
+{
+  "name": "SolObjectId",
+  "dataType": "int64",
+  "sourceColumn": "SolObjectId",
+  "formatString": "###0",
+  "sourceProviderType": "int",
+  "summarizeBy": "none"
+}

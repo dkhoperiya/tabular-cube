@@ -1,0 +1,7 @@
+{
+  "name": "cab5357d-3ab8-4b28-8370-c78d7233df09",
+  "fromTable": "PL_ProductOwner_KPI",
+  "fromColumn": "Tribe_Code",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

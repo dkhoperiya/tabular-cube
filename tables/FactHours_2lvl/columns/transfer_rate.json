@@ -1,0 +1,7 @@
+{
+  "name": "transfer_rate",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "transfer_rate",
+  "sourceProviderType": "float"
+}

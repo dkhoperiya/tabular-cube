@@ -1,0 +1,18 @@
+{
+  "name": "Requirement Estimate",
+  "expression": "SUM ( 'Requirements'[Estimate] )",
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER ( Requirements, Requirements[Estimate] > 0 ),",
+      "    \"Requirement\", RELATED ( Workitems[WorkItemOriginalId] ) & \"_\"",
+      "        & RELATED ( Workitems[Title] ),",
+      "    \"Requirement Project\", RELATED ( Projects[Project] ),",
+      "    \"Requirement Tribe\", RELATED ( tribes[Tribe] ),",
+      "    \"Requirement Estimate\", Requirements[Estimate]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "d3728a16-6aa7-40ba-a2cf-9455f643ae44",
+  "fromTable": "Hyperion Plan",
+  "fromColumn": "PROJECTCODE",
+  "toTable": "Project Capex MTS",
+  "toColumn": "Capex_MTS_ID"
+}

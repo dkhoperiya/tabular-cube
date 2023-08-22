@@ -1,0 +1,9 @@
+{
+  "name": "Ожидаемые расходы субподряд CZ",
+  "expression": "[Plan Subcontr CZ Exp]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( DETAILROWS ( [Plan Subcontr CZ Exp] ) )"
+  }
+}

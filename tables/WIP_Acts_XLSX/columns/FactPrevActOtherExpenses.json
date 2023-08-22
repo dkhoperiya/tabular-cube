@@ -1,0 +1,6 @@
+{
+  "name": "FactPrevActOtherExpenses",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FactPrevActOtherExpenses"
+}

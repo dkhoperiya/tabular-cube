@@ -1,0 +1,7 @@
+{
+  "name": "27c32d81-d15d-401d-9cca-4fdf5ecf305c",
+  "fromTable": "HFM_Adjustments_Fact",
+  "fromColumn": "PL_CODE",
+  "toTable": "PL Items",
+  "toColumn": "PL Item Code"
+}

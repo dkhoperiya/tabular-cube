@@ -1,0 +1,5 @@
+{
+  "name": "LegalEntity",
+  "dataType": "string",
+  "sourceColumn": "LegalEntity"
+}

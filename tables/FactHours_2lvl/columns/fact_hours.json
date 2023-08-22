@@ -1,0 +1,7 @@
+{
+  "name": "fact_hours",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "fact_hours",
+  "sourceProviderType": "decimal"
+}

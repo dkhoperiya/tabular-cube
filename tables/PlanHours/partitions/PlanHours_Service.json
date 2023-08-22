@@ -1,0 +1,43 @@
+{
+  "name": "PlanHours_Service",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  plan = Source{[Schema = \"dbo\", Item = \"viw_PlanHours_Service\"]}[Data],",
+      "  #\"Removed Other Columns\" = Table.SelectColumns(",
+      "      plan, ",
+      "      {",
+      "        \"ProjectCode\", ",
+      "        \"ServiceProjectCode\",",
+      "        \"ExpensePlanType\", ",
+      "        \"Resource_TribeCode\", ",
+      "        \"Project_TribeCode\", ",
+      "        \"BusinessUnitCode\", ",
+      "        \"RoleCode\", ",
+      "        \"CompetenceCode\", ",
+      "        \"DateKey\", ",
+      "        \"WorkItemId\", ",
+      "        \"PlanSeconds\", ",
+      "        \"PlanHoursInFotRates\", ",
+      "        \"PlanHoursInTransferRates\", ",
+      "        \"FotRate\", ",
+      "        \"TransferRate\", ",
+      "        \"BudgetRates_Version\", ",
+      "        \"UseProjectProbability\", ",
+      "        \"is_subcontract\",",
+      "        \"ServiceRequestId\",",
+      "        \"ChangeDate\",",
+      "        \"ChangeDateTime\",",
+      "        \"WorkTypeId\",",
+      "        \"InvestProjectPairId\",",
+      "        \"ContractId\"",
+      "      }",
+      "    )",
+      "in",
+      "  #\"Removed Other Columns\""
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Plan Tribe Expenses 19 YTD",
+  "expression": "CALCULATE ( [Plan Tribe Expenses 19], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01a. Plan 19"
+}

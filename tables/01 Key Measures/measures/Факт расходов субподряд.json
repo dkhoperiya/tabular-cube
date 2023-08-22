@@ -1,0 +1,9 @@
+{
+  "name": "Факт расходов субподряд",
+  "expression": "[Fact Subcontr Exp]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( DETAILROWS ( [Fact Subcontr Exp] ) )"
+  }
+}

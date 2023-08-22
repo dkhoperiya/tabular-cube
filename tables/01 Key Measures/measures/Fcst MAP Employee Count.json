@@ -1,0 +1,21 @@
+{
+  "name": "Fcst MAP Employee Count",
+  "description": "Прогноз FTE. Необходимая средняя численность трайба MAP по воронке RMS",
+  "expression": "DIVIDE ( [Fcst Work Hours MAP], [One Person Work Hours in Period MAP] )",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\01. MAP",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Work Hours MAP] )",
+      "VAR _Y =",
+      "    CALCULATE ( [One Person Work Hours in Period MAP] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours MAP\", _X,",
+      "        \"One Person Work Hours in Period MAP\", _Y,",
+      "        \"Fcst MAP Employee Count\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

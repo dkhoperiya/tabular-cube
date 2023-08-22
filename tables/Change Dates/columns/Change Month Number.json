@@ -1,0 +1,7 @@
+{
+  "name": "Change Month Number",
+  "dataType": "int64",
+  "sourceColumn": "Month Number",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

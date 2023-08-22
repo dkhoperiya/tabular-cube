@@ -1,0 +1,17 @@
+{
+  "name": "FactPlan Fot Rub",
+  "description": "Факт план трудозатрат в ставках ФОТ. Факт берется до конца предыдущего месяца, план - начиная с текущего месяца",
+  "expression": [
+    "VAR d2 =",
+    "    YEAR ( TODAY () ) * 10000",
+    "        + MONTH ( TODAY () ) * 100 + 1",
+    "RETURN",
+    "    CALCULATE ( [FactFotRub], KEEPFILTERS ( 'FactHours'[DateKey] < d2 ) )",
+    "        + CALCULATE ( [PlanFotRub], KEEPFILTERS ( 'PlanHours'[DateKey] >= d2 ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [FactPlan Hours] )"
+  }
+}

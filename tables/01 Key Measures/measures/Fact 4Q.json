@@ -1,0 +1,20 @@
+{
+  "name": "Fact 4Q",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Hours for Work Items Hierarchy],",
+    "    KEEPFILTERS ( 'Dates'[Quarter Number] = 4",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "11. QBR Reporting",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( 'Dates'[Quarter Number] = 4 )",
+      ")"
+    ]
+  }
+}

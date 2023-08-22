@@ -1,0 +1,35 @@
+{
+  "name": "Historical Transfer Rate",
+  "description": "Трансфертная ставка для трайба-роли, действующая на конец выбранного периода",
+  "expression": [
+    "VAR d =",
+    "    CALCULATE ( MAX ( TribeRoleCosts[Date] ) )",
+    "RETURN",
+    "    IF (",
+    "        HASONEVALUE ( TribeRoleCosts[role_code] )",
+    "            && HASONEVALUE ( TribeRoleCosts[tribe_code] )",
+    "            && HASONEVALUE ( 'TribeRoleCosts'[BuCode] ),",
+    "        CALCULATE (",
+    "            SUM ( TribeRoleCosts[transfer_rate] ),",
+    "            FILTER ( Dates, Dates[Date] = d )",
+    "        )",
+    "    )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "07. Budget Role Rates",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR d =",
+      "    CALCULATE ( MAX ( TribeRoleCosts[Date] ) )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER ( TribeRoleCosts, TribeRoleCosts[Date] = d ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Date\", TribeRoleCosts[Date],",
+      "        \"Historical Transfer Rate\", TribeRoleCosts[transfer_rate],",
+      "        \"Historical FOT Rate\", TribeRoleCosts[fot_rate]",
+      "    )"
+    ]
+  }
+}

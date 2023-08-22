@@ -1,0 +1,33 @@
+{
+  "name": "PlanHours_2lvl_2022-2035",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  dbo_PlanHours = Source{[Schema = \"dbo\", Item = \"viw_PlanHours_2lvl\"]}[Data],",
+      "  FilterPeriod = Table.SelectRows(",
+      "    dbo_PlanHours, ",
+      "    each [Date] >= #date(2022, 1, 1)",
+      " and  [Date] < #date(2036, 1, 1)   ),    ",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "        FilterPeriod, ",
+      "        {",
+      "          {\"BusinessUnitCode\", \"bu_code\"},",
+      "          {\"Project_TribeCode\", \"budget_tribe\"},",
+      "          {\"CompetenceCode\", \"competence_code\"},",
+      "          {\"Date\", \"date\"},",
+      "          {\"InvestmentProject\", \"investment_project\"},",
+      "          {\"InvestmentTask\", \"investment_task\"},",
+      "          ",
+      "          {\"ProjectCode\", \"project_code\"},",
+      "          {\"Resource_TribeCode\", \"resource_tribe\"},",
+      "          {\"RoleCode\", \"role_code\"}",
+      "        }",
+      "  )",
+      "in",
+      "  #\"Renamed Columns\""
+    ]
+  }
+}

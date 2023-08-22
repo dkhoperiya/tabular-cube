@@ -1,0 +1,7 @@
+{
+  "name": "Plan Tribe Income 19 YTD",
+  "description": "Плановые доходы трайба накопительным итогом по году",
+  "expression": "CALCULATE([Plan Tribe Income 19],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\01a. Plan 19"
+}

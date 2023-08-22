@@ -1,0 +1,23 @@
+{
+  "type": "structured",
+  "name": "DWH",
+  "connectionDetails": {
+    "protocol": "tds",
+    "address": {
+      "server": "0411pmobidwh02.pv.mts.ru",
+      "database": "OLAP_Staging_DW"
+    },
+    "authentication": null,
+    "query": null
+  },
+  "options": {
+    "commandTimeout": "PT30M"
+  },
+  "credential": {
+    "AuthenticationKind": "Windows",
+    "EncryptConnection": false,
+    "kind": "SQL",
+    "path": "0411pmobidwh02.pv.mts.ru;OLAP_Staging_DW",
+    "Username": "Admsk\\sa0700plspexcel"
+  }
+}

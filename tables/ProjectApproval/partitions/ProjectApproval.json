@@ -1,0 +1,14 @@
+{
+  "name": "ProjectApproval",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_ProjectApproval = Source{[Schema=\"dbo\",Item=\"viw_ProjectApproval\"]}[Data]",
+      "in",
+      "    viw_ProjectApproval"
+    ]
+  }
+}

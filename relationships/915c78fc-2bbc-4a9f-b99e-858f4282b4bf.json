@@ -1,0 +1,7 @@
+{
+  "name": "915c78fc-2bbc-4a9f-b99e-858f4282b4bf",
+  "fromTable": "OrgStructOebs",
+  "fromColumn": "BusinessUnitCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

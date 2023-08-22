@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "Budget Rates Version",
+  "dataType": "string",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Budget Rates Version]"
+}

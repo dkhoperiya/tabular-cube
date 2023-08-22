@@ -1,0 +1,7 @@
+{
+  "name": "8c7914bb-6853-4e41-9beb-e80480b44e5c",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

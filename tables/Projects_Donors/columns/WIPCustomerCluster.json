@@ -1,0 +1,6 @@
+{
+  "name": "WIPCustomerCluster",
+  "dataType": "string",
+  "sourceColumn": "WIPCustomerCluster",
+  "sourceProviderType": "nvarchar"
+}

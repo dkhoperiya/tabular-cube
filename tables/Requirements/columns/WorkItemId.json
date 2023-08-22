@@ -1,0 +1,5 @@
+{
+  "name": "WorkItemId",
+  "dataType": "string",
+  "sourceColumn": "WorkItemId"
+}

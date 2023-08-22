@@ -1,0 +1,20 @@
+{
+  "name": "Количество сотрудников включая совместительские",
+  "description": "Количество сотрудников, на данный момент находящихся в декретном отпуске",
+  "expression": [
+    "CALCULATE (",
+    "    COUNT ( 'OrgStructOebs'[PositionId] ),",
+    "    KEEPFILTERS ( 'OrgStructOebs'[EmployeeStatus] <> \"\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    OrgStructOebs,",
+      "    KEEPFILTERS ( 'OrgStructOebs'[EmployeeStatus] <> \"\" )",
+      ")"
+    ]
+  }
+}

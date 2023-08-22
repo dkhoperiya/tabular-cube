@@ -1,0 +1,10 @@
+{
+  "name": "Текущая численность мобилизованных",
+  "expression": [
+    "CALCULATE (",
+    "    [Текущая численность],",
+    "    KEEPFILTERS ( 'Employees'[Employee Status] = \"Mobilized\" )",
+    ")"
+  ],
+  "displayFolder": "09. HR\\01. Текущая численность"
+}

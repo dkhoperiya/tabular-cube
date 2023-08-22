@@ -1,0 +1,20 @@
+{
+  "name": "WIP-акт в выбранном месяце",
+  "expression": [
+    "var currentYear = YEAR(MAX(Dates[Date]))",
+    "var currentMonth = MONTH(MAX(Dates[Date]))",
+    "return",
+    "CALCULATE(",
+    "        [SumXLS],",
+    "        WIP_Acts_XLSX[ActType] = \"WIP\",",
+    "         FILTER ( ALL(Dates),",
+    "        YEAR(Dates[Date]) = currentYear",
+    "         ),",
+    "         FILTER ( ALL(Dates),",
+    "            MONTH(Dates[Date]) = currentMonth",
+    "         )",
+    "        )"
+  ],
+  "formatString": "#,0.00",
+  "displayFolder": "16. WIP"
+}

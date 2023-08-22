@@ -1,0 +1,15 @@
+{
+  "name": "OrgStructOebs",
+  "mode": "import",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    //Source = Sql.Database(\"0411pmobidwh02\", \"olap_staging_dw\"),",
+      "    Source = #\"DWH\",",
+      "    dbo_viw_PMO_Finance_PL_Items = Source{[Schema=\"dbo\",Item=\"viw_OebsOrgStruct\"]}[Data]",
+      "in",
+      "    dbo_viw_PMO_Finance_PL_Items"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PersonUtilK",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "PersonUtilK",
+  "formatString": "#,##0.00 %"
+}

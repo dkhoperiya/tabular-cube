@@ -1,0 +1,7 @@
+{
+  "name": "Employment Percentage",
+  "dataType": "decimal",
+  "sourceColumn": "Employment Percentage",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

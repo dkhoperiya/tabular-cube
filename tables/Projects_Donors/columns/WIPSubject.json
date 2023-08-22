@@ -1,0 +1,6 @@
+{
+  "name": "WIPSubject",
+  "dataType": "string",
+  "sourceColumn": "WIPSubject",
+  "sourceProviderType": "nvarchar"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "171e47d0-83ab-4971-b323-3cb281e829b7",
+  "fromTable": "FactProjectExpenses",
+  "fromColumn": "BI_Код Статьи PL",
+  "toTable": "PL Items",
+  "toColumn": "PL Item Code"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "b0b2c733-2842-469d-b61b-88b6e0d44e08",
+  "fromTable": "ProductFinancialMetrics",
+  "fromColumn": "MonthDate",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

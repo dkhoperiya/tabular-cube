@@ -1,0 +1,30 @@
+{
+  "name": "Reveresed Fact Days Count",
+  "expression": [
+    "SUMX (",
+    "    FILTER (",
+    "        ADDCOLUMNS (",
+    "            SUMMARIZE ( FactHours, Employees[Employee Code], Dates[Date] ),",
+    "            \"factx_\", CALCULATE ( SUM ( FactHours[NormSeconds] ) )",
+    "        ),",
+    "        [factx_] = 0",
+    "    ),",
+    "    1",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            SUMMARIZE ( FactHours, Employees[Employee Code], Dates[Date] ),",
+      "            \"factx_\", CALCULATE ( SUM ( FactHours[NormSeconds] ) )",
+      "        ),",
+      "        [factx_] = 0",
+      "    )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "9e14c47e-ea5d-4fe9-b51f-4a35c34da7f2",
+  "fromTable": "WIP_Acts_XLSX",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

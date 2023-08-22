@@ -1,0 +1,6 @@
+{
+  "name": "ContractId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ContractId"
+}

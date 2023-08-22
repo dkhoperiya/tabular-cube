@@ -1,0 +1,12 @@
+{
+  "name": "Project Closed Date",
+  "dataType": "dateTime",
+  "sourceColumn": "Project Closed Date",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

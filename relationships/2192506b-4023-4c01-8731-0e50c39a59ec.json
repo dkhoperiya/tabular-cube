@@ -1,0 +1,7 @@
+{
+  "name": "2192506b-4023-4c01-8731-0e50c39a59ec",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

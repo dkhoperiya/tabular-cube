@@ -1,0 +1,26 @@
+{
+  "name": "Plan Expenses (RMS)",
+  "expression": [
+    "[plan_exp_amnt]",
+    ""
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR pm =",
+      "    CALCULATE ( SELECTEDVALUE ( Options[Project Probability Mode] ) )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        ProjectExpenses_RMS,",
+      "        \"Project\", RELATED ( Projects[project] ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Expense Type\", RELATED ( ExpenseTypes[ExpenseType_Name] ),",
+      "        \"Customer\", 'ProjectExpenses_RMS'[CustomerBuCode] & \" - \"",
+      "            & RELATED ( BusinessUnits[BU Name] ),",
+      "        \"Expense Date\", ProjectExpenses_RMS[expense_date],",
+      "        \"Plan Resold Exp\", IF ( pm = \"Full\", 1, RELATED ( Projects[Project Probability] ) ) * [plan_expense_amount]",
+      "    )"
+    ]
+  }
+}

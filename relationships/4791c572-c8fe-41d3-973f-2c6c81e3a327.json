@@ -1,0 +1,7 @@
+{
+  "name": "4791c572-c8fe-41d3-973f-2c6c81e3a327",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "project_code",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

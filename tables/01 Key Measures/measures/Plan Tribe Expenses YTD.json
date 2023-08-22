@@ -1,0 +1,9 @@
+{
+  "name": "Plan Tribe Expenses YTD",
+  "expression": "CALCULATE ( [Plan Tribe Expenses], DATESYTD ( 'Dates'[Date] ) )",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Tribe Expenses] )"
+  }
+}

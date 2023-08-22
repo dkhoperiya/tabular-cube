@@ -1,0 +1,7 @@
+{
+  "name": "b8d4cfc5-5f52-40e0-bff7-0340ee568e31",
+  "fromTable": "FactHours",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

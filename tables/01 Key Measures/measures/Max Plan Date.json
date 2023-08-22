@@ -1,0 +1,5 @@
+{
+  "name": "Max Plan Date",
+  "expression": "MAX ( Milestones[Plan Date] )",
+  "displayFolder": "01. Project\\05. Info"
+}

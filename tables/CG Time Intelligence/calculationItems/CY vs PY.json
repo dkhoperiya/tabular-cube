@@ -1,0 +1,8 @@
+{
+  "name": "CY vs PY",
+  "expression": [
+    "CALCULATE ( SELECTEDMEASURE (), 'CG Time Intelligence'[Time Calc] = \"CY\" )",
+    "    - CALCULATE ( SELECTEDMEASURE (), 'CG Time Intelligence'[Time Calc] = \"SPLY\" )"
+  ],
+  "ordinal": 2
+}

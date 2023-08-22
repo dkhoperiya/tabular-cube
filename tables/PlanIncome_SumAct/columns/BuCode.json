@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "BuCode",
+  "dataType": "int64",
+  "isNameInferred": false,
+  "isHidden": true,
+  "sourceColumn": "[bu_code]"
+}

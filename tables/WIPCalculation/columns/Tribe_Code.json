@@ -1,0 +1,6 @@
+{
+  "name": "Tribe_Code",
+  "dataType": "int64",
+  "sourceColumn": "Tribe_Code",
+  "summarizeBy": "none"
+}

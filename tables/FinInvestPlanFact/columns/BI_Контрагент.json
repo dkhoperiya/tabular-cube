@@ -1,0 +1,6 @@
+{
+  "name": "BI_Контрагент",
+  "dataType": "string",
+  "sourceColumn": "BI_Контрагент",
+  "sourceProviderType": "nvarchar"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Вакансии",
+  "expression": [
+    "CALCULATE (",
+    "    SELECTEDMEASURE (),",
+    "    KEEPFILTERS ( Employees[Maternity Vacancy] = \"No\" ),",
+    "    KEEPFILTERS ( Employees[Is Vacancy] = TRUE ),",
+    "    KEEPFILTERS ( Employees[Confirmation Status] <> \"Not Confirmed\" )",
+    ")"
+  ]
+}

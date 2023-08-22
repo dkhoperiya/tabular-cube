@@ -1,0 +1,6 @@
+{
+  "name": "Формула В",
+  "expression": "DIVIDE([Формула А], (([Формула А] + [Plan Revenue G6]) - ([FactFotRub] + [Факт расходов всего]))) * [Plan Revenue G6]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате"
+}

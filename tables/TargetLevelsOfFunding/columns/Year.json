@@ -1,0 +1,7 @@
+{
+  "name": "Year",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Year",
+  "sourceProviderType": "int"
+}

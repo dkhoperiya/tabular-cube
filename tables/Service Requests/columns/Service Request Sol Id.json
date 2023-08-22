@@ -1,0 +1,5 @@
+{
+  "name": "Service Request Sol Id",
+  "dataType": "string",
+  "sourceColumn": "Service Request Sol Id"
+}

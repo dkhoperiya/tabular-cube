@@ -1,0 +1,14 @@
+{
+  "name": "G6InMonthMTSD_Projects",
+  "expression": [
+    "var maxDate = MAX(Dates[Date]) ",
+    "var planDate = MAX('Projects'[Max Plan Date G6 MTSD])",
+    "return",
+    "IF(",
+    "MONTH(planDate) = MONTH(maxDate) && YEAR(planDate) = YEAR(maxDate),",
+    "1,",
+    "0",
+    ")"
+  ],
+  "displayFolder": "16. WIP"
+}

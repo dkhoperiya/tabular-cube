@@ -1,0 +1,7 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "PlanSubcontrExp",
+  "dataType": "decimal",
+  "isNameInferred": true,
+  "sourceColumn": "[PlanSubcontrExp]"
+}

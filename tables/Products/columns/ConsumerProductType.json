@@ -1,0 +1,5 @@
+{
+  "name": "ConsumerProductType",
+  "dataType": "string",
+  "sourceColumn": "ConsumerProductType"
+}

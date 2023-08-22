@@ -1,0 +1,23 @@
+{
+  "name": "Fact MR27 Exp OEBS+Inc HFM",
+  "expression": [
+    "VAR _V =",
+    "    CALCULATE (",
+    "        [Fact Project Expenses OEBS],",
+    "        KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] IN { \"OPEX\" } ),",
+    "        KEEPFILTERS ( 'FactProjectExpenses'[IS_VGR_SUBCONTRACTOR] = FALSE () )",
+    "    )",
+    "        - CALCULATE (",
+    "            [Fact Project Expenses HFM - CurMonth],",
+    "            KEEPFILTERS ( 'PL Items'[PL Item Category] IN { \"Доходы\" } )",
+    "        ) + [Sum of Debet with K]",
+    "        + CALCULATE (",
+    "            SUM ( 'Budget_MR27'[Budget] ),",
+    "            KEEPFILTERS ( 'Budget_MR27'[FactOrPlan] = \"FACT\" )",
+    "        )",
+    "RETURN",
+    "    IF ( ISBLANK ( _V ), 0, DIVIDE ( _V, 1000000 ) )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\05. ExpensesDetails"
+}

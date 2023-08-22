@@ -1,0 +1,7 @@
+{
+  "name": "7e5563fb-fa36-44a1-9f95-86d12a6c96c2",
+  "fromTable": "Capacity",
+  "fromColumn": "CompetenceCode",
+  "toTable": "Competences",
+  "toColumn": "competence_code"
+}

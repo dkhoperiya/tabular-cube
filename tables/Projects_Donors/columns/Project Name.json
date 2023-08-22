@@ -1,0 +1,6 @@
+{
+  "name": "Project Name",
+  "dataType": "string",
+  "sourceColumn": "Name",
+  "sourceProviderType": "nvarchar"
+}

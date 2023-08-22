@@ -1,0 +1,14 @@
+{
+  "name": "FactRub SQA",
+  "expression": "CALCULATE ( [FactRub], KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 18 ) )",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\01. QA Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactRub] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 18 )",
+      ")"
+    ]
+  }
+}

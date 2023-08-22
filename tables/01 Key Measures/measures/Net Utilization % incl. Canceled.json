@@ -1,0 +1,32 @@
+{
+  "name": "Net Utilization % incl. Canceled",
+  "description": "Отношение утилизированного на проектах времени к емкости",
+  "expression": [
+    "VAR x =",
+    "    DIVIDE ( [Net Util Fact Hours incl. Canceled], [Net Util FTE] )",
+    "RETURN",
+    "    IF ( x > 1, 1, x )"
+  ],
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "04. Capacity\\01. Utilization",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        ADDCOLUMNS (",
+      "            VALUES ( Employees[Employee] ),",
+      "            \"NET Util Fact Hours incl.Canceled \", CALCULATE ( [Net Util Fact Hours incl. Canceled] ),",
+      "            \"NET Utilization \", CALCULATE ( [Net Util FTE] )",
+      "        ),",
+      "        \"NET Utilization % incl.Canceled \", IF (",
+      "            [NET Utilization ] < [NET Util Fact Hours incl.Canceled ],",
+      "            1,",
+      "            DIVIDE ( [NET Util Fact Hours incl.Canceled ], [NET Utilization ] )",
+      "        )",
+      "    ),",
+      "    [NET Utilization % incl.Canceled ] > 0",
+      "        || [NET Utilization ] > 0",
+      ")"
+    ]
+  }
+}

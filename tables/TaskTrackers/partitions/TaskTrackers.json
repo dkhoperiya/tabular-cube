@@ -1,0 +1,14 @@
+{
+  "name": "TaskTrackers",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    TS_TaskTrackers = Source{[Schema=\"dbo\",Item=\"viw_TS_TaskTrackers\"]}[Data]",
+      "in",
+      "    TS_TaskTrackers "
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Epic Url",
+  "dataType": "string",
+  "sourceColumn": "EpicUrl",
+  "dataCategory": "WebURL"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Plan Revenue",
+  "description": "Плановое значение доходов с учетом вероятности реализации проектов",
+  "expression": [
+    "VAR _PPM =",
+    "    SELECTEDVALUE ( Options[Project Probability Mode] )",
+    "RETURN",
+    "    IF ( _PPM = \"Full\", [plan_revenue_no_probability], [plan_revenue_probability] )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                PlanIncome,",
+      "                TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+      "            ),",
+      "            \"Project\", RELATED ( projects[project] ),",
+      "            \"Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "            \"Is Actual For Plan\", RELATED ( Projects[Has Revenue] ),",
+      "            \"Milestone\", RELATED ( Milestones[Milestone] ),",
+      "            \"Milestone Name\", RELATED ( Milestones[Milestone Name] ),",
+      "            \"Works Status\", RELATED ( Milestones[Works Status] ),",
+      "            \"Fin Act Status\", RELATED ( Milestones[Fin Act Status] ),",
+      "            \"Works Complete\", RELATED ( Milestones[Works Complete] ),",
+      "            \"KPI Date\", RELATED ( Milestones[KPI date] ),",
+      "            \"Status of Realization\", RELATED ( Milestones[Status of Realization] ),",
+      "            \"Comment\", RELATED ( Milestones[Comment] )",
+      "        ),",
+      "        [Is Actual For Plan]",
+      "    ),",
+      "    \"Project\", [Project],",
+      "    \"Tribe\", [Tribe],",
+      "    \"BuCode\", [BuCode],",
+      "    \"Milestone\", [Milestone],",
+      "    \"Milestone Name\", [Milestone Name],",
+      "    \"Works Statsus\", [Works Status],",
+      "    \"Fin Act Status\", [Fin Act Status],",
+      "    \"Works Complete\", [Works Complete],",
+      "    \"KPI Date\", [KPI date],",
+      "    \"Status of Realization\", [Status of Realization],",
+      "    \"Comment\", [Comment],",
+      "    \"KPI Revenue Full\", [kpi_revenue],",
+      "    \"KPI Revenue with Project Probability\", [kpi_revenue_probability]",
+      ")"
+    ]
+  }
+}

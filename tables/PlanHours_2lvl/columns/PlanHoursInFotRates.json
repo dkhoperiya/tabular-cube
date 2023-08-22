@@ -1,0 +1,7 @@
+{
+  "name": "PlanHoursInFotRates",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "PlanHoursInFotRates",
+  "sourceProviderType": "decimal"
+}

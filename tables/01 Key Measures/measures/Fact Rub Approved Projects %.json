@@ -1,0 +1,20 @@
+{
+  "name": "Fact Rub Approved Projects %",
+  "expression": "DIVIDE ( [Fact Rub Approved Projects], [FactRub] )",
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fact Rub Approved Projects] )",
+      "VAR _Y =",
+      "    CALCULATE ( [FactRub] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Rub Approved Projects\", _X,",
+      "        \"Fact Rub\", _Y,",
+      "        \"Fact Rub Approved Projects %\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

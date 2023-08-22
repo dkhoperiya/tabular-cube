@@ -1,0 +1,15 @@
+{
+  "type": "calculated",
+  "name": "Project G2 Status",
+  "dataType": "string",
+  "description": "Если Min Plan Date G2 находится в прошлом и сегодня относительно текущей даты, то \"дата наступила\";Если в будущем - \"дата не наступила\";Если пустая - \"дата не указана\"",
+  "expression": [
+    "VAR _MIN_PLAN_DATE_G2 = Projects[Min Plan Date G2]",
+    "RETURN",
+    "    IF (",
+    "        _MIN_PLAN_DATE_G2 = BLANK (),",
+    "        \"Дата не указана\",",
+    "        IF ( _MIN_PLAN_DATE_G2 <= TODAY (), \"Дата наступила\", \"Дата не наступила\" )",
+    "    )"
+  ]
+}

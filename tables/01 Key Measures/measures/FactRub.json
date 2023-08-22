@@ -1,0 +1,10 @@
+{
+  "name": "FactRub",
+  "description": "Сумма нормализованных часов списанных на проектах в трансфертных ставках",
+  "expression": "SUM ( 'FactHours'[FactInTransferRates] )",
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Hours] )"
+  }
+}

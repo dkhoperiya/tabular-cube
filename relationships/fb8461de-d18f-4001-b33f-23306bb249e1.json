@@ -1,0 +1,7 @@
+{
+  "name": "fb8461de-d18f-4001-b33f-23306bb249e1",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "employee_code",
+  "toTable": "Employees",
+  "toColumn": "Employee Code"
+}

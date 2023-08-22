@@ -1,0 +1,7 @@
+{
+  "name": "61626b80-9386-4655-847e-df80944ef2b2",
+  "fromTable": "TeamBudgeting_Hours_Calculation",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

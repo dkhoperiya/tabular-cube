@@ -1,0 +1,7 @@
+{
+  "name": "5518340e-ac75-44dc-900d-2d1b24e75a4f",
+  "fromTable": "WIP_Revenue_Correction",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ФормулаAM",
+  "expression": "[FactRub_AM] + [Субподряд_Командировки_Прочее] - [FactIncomeMTSD]",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactRub_AM]",
+      "VAR x2 = [Субподряд_Командировки_Прочее]",
+      "VAR x3 = - [FactIncomeMTSD]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactRub_AM\", x1,",
+      "        \"Субподряд_Командировки_Прочее\", x2,",
+      "        \"FactIncomeMTSD\", x3,",
+      "        \"ФормулаAM\",",
+      "            x1 + x2 + x3",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "BI_BUDGET_TYPE",
+  "dataType": "string",
+  "sourceColumn": "BI_BUDGET_TYPE"
+}

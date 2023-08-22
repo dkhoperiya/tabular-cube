@@ -1,0 +1,43 @@
+{
+  "name": "Performance Revenue G3",
+  "expression": [
+    "CALCULATE (",
+    "    DIVIDE ( [Ratio Fact Revenue G3], [Ratio Plan Revenue G3] ),",
+    "    FILTER (",
+    "        Milestones,",
+    "        YEAR ( Milestones[Plan Date] ) = YEAR ( Milestones[KPI Date] )",
+    "    )",
+    ")"
+  ],
+  "formatString": "0%;-0%;0%",
+  "displayFolder": "01. Project\\01. Revenue\\05. Ratio",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            CROSSJOIN (",
+      "                SUMMARIZE ( dates, dates[Year], Dates[Quarter Number] ),",
+      "                SUMMARIZE ( projects, projects[project], projects[Project Tribe] )",
+      "            ),",
+      "            \"Plan Revenue G3 \", [Plan Revenue G3],",
+      "            \"Fact Revenue G3 \", [Fact Revenue G3],",
+      "            \"Quarter Koefficient\", 5 - [Quarter Number]",
+      "        ),",
+      "        [Plan Revenue G3 ] > 0",
+      "            || [Fact Revenue G3 ] > 0",
+      "    ),",
+      "    \"Project\", [Project],",
+      "    \"Project Tribe\", [Project Tribe],",
+      "    \"Year\", [Year],",
+      "    \"Quarter\", [Quarter Number],",
+      "    \"Plan Revenue G3\", [Plan Revenue G3 ],",
+      "    \"Fact Revenue G3\", [Fact Revenue G3 ],",
+      "    \"Quarter Koefficient\", [Quarter Koefficient],",
+      "    \"Ratio Plan Revenue G3\", [Quarter Koefficient] * [Plan Revenue G3 ],",
+      "    \"Ratio Fact Revenue G3\", [Quarter Koefficient] * [Fact Revenue G3 ],",
+      "    \"Performance Revenue G3\", DIVIDE ( [Fact Revenue G3 ], [Plan Revenue G3 ] )",
+      ")"
+    ]
+  }
+}

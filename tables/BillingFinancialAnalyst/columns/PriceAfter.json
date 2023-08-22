@@ -1,0 +1,7 @@
+{
+  "name": "PriceAfter",
+  "dataType": "decimal",
+  "sourceColumn": "PriceAfter",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

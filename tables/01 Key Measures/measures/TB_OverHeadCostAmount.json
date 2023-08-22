@@ -1,0 +1,12 @@
+{
+  "name": "TB_OverHeadCostAmount",
+  "expression": [
+    "SUM(TeamBudgeting_Hours_Calculation[OverHeadCostAmount])",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"TB_OverHeadCostAmount\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации"
+}

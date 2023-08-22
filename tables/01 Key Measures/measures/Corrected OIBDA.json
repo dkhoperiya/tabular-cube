@@ -1,0 +1,26 @@
+{
+  "name": "Corrected OIBDA",
+  "description": "Скорректированный фин отделом показатель OIBDA",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'TribesFinKPICorrectedValues'[Value] ),",
+    "    KEEPFILTERS ( 'TribesFinKPICorrectedValues'[Attribute] IN { \"OIBDA\", \"Корректировка к OIBDA\" } )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\05. Corrected",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        TribesFinKPICorrectedValues,",
+      "        KEEPFILTERS ( 'TribesFinKPICorrectedValues'[Attribute] IN { \"OIBDA\", \"Корректировка к OIBDA\" } )",
+      "    ),",
+      "    \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"Year\", TribesFinKPICorrectedValues[Date],",
+      "    \"Fin KPI Name\", TribesFinKPICorrectedValues[Attribute],",
+      "    \"Fin KPI Corrected Value\", TribesFinKPICorrectedValues[Value]",
+      ")"
+    ]
+  }
+}

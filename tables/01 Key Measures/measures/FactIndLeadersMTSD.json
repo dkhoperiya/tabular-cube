@@ -1,0 +1,28 @@
+{
+  "name": "FactIndLeadersMTSD",
+  "description": "ФОТ Бигбоссов",
+  "expression": [
+    "CALCULATE (",
+    "    [FactIndFOTleadersMTSD] + [FactOverheadCostsAndMarginLeadersMTSD],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactIndLeadersMTSD\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\ФОТ ББ МТС Диджитал",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x1 = [FactIndFOTleadersMTSD]",
+      "VAR x2 = [FactOverheadCostsAndMarginLeadersMTSD]",
+      "RETURN",
+      "    ROW (",
+      "        \"FactIndFOTleadersMTSD\", x1,",
+      "        \"FactOverheadCostsAndMarginLeadersMTSD\", x2,",
+      "        \"FactIndLeadersMTSD\", x1 + x2",
+      "    )"
+    ]
+  }
+}

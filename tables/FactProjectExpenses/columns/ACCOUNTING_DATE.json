@@ -1,0 +1,6 @@
+{
+  "name": "ACCOUNTING_DATE",
+  "dataType": "dateTime",
+  "isHidden": true,
+  "sourceColumn": "ACCOUNTING_DATE"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "PositionName",
+  "dataType": "string",
+  "sourceColumn": "PositionName"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Отток с учетом стажеров",
+  "expression": [
+    "- CALCULATE (",
+    "    SUM ( 'EmployeeMovements'[In_Out] ),",
+    "    KEEPFILTERS ( 'EmployeeMovements'[Action] = \"Dismissal\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    CALCULATETABLE (",
+      "        EmployeeMovements,",
+      "        KEEPFILTERS ( 'EmployeeMovements'[Action] = \"Dismissal\" )",
+      "    ),",
+      "    \"Employee\", RELATED ( 'Employees'[Employee] ),",
+      "    \"Tribe\", RELATED ( 'Tribes'[Tribe] ),",
+      "    \"Role\", RELATED ( 'Roles'[Role] ),",
+      "    \"Legal Enity\", RELATED ( BusinessUnits[Entity Name] ),",
+      "    \"Age on Date\", RELATED ( EmployeeAgeRanges[AgeRange] ),",
+      "    \"Work Term on Date\", RELATED ( EmployeeWorkTermRanges[WorkTerm] ),",
+      "    \"Date\", EmployeeMovements[Date],",
+      "    \"Description\", 'EmployeeMovements'[Description],",
+      "    \"Action\", 'EmployeeMovements'[Action],",
+      "    \"ActionType\", 'EmployeeMovements'[ActionType]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Hyperion Plan_CapexMTS",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    stg_PMBI_WORLD_V_USERREQ_CAPEXBUD_27 = Source{[Schema=\"stg\",Item=\"PMBI_WORLD_V_USERREQ_CAPEXBUD_27\"]}[Data],",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(stg_PMBI_WORLD_V_USERREQ_CAPEXBUD_27,{\"SOURCE_SYSTEM\", \"BI_BUDGET_ITEM\", \"BI_COST_CENTER\", \"BI_RESP_CENTER\", \"BI_BUDGET_TYPE\", \"BI_DATA_TYPE\", \"CAPEX_BUDGET_ID\", \"P_MONTH\", \"PAYSUM\", \"PROJECTCODE\"}),",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Removed Other Columns\",{{\"P_MONTH\", type date}, {\"CAPEX_BUDGET_ID\", Int64.Type}}),",
+      "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Changed Type\",{{\"CAPEX_BUDGET_ID\", type text}}),",
+      "    AddColumns = Table.AddColumn(#\"Changed Type2\", \"r\", each [BI_BUDGET_ITEM_CODE=Text.BeforeDelimiter([BI_BUDGET_ITEM],\" \"),BUDGET_TYPE=\"CAPEX\", CUSTOMER=\"MTSru\", PROJECT_CODE_RMS=\"\", COMMENT=\"Данные получены авто выгрузкой из Hyperion\" ]),",
+      "    #\"Expanded r\" = Table.ExpandRecordColumn(AddColumns, \"r\", {\"BI_BUDGET_ITEM_CODE\", \"BUDGET_TYPE\", \"COMMENT\", \"CUSTOMER\", \"PROJECT_CODE_RMS\"}, {\"BI_BUDGET_ITEM_CODE\", \"BUDGET_TYPE\", \"COMMENT\", \"CUSTOMER\", \"PROJECT_CODE_RMS\"}),",
+      "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Expanded r\",{{\"CUSTOMER\", type text}, {\"BUDGET_TYPE\", type text}, {\"BI_BUDGET_ITEM_CODE\", type text}, {\"PROJECT_CODE_RMS\", type text}, {\"COMMENT\", type text}}), ",
+      "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"PROJECTCODE\", \"BI_BUDGET_ITEM\", \"BI_COST_CENTER\", \"BI_RESP_CENTER\", \"BI_BUDGET_TYPE\", \"BI_DATA_TYPE\", \"CAPEX_BUDGET_ID\", \"P_MONTH\", \"CUSTOMER\", \"BUDGET_TYPE\", \"BI_BUDGET_ITEM_CODE\", \"SOURCE_SYSTEM\", \"PAYSUM\"}),",
+      "    #\"Removed Other Columns1\" = Table.SelectColumns(#\"Reordered Columns\",{\"PROJECTCODE\", \"BI_BUDGET_ITEM\", \"BI_COST_CENTER\", \"BI_RESP_CENTER\", \"BI_BUDGET_TYPE\", \"BI_DATA_TYPE\", \"CAPEX_BUDGET_ID\", \"P_MONTH\", \"CUSTOMER\", \"BUDGET_TYPE\", \"BI_BUDGET_ITEM_CODE\", \"SOURCE_SYSTEM\", \"COMMENT\", \"PAYSUM\", \"PROJECT_CODE_RMS\"})",
+      "in",
+      "    #\"Removed Other Columns1\""
+    ]
+  },
+  "annotations": [
+    {
+      "name": "QueryEditorSerialization",
+      "value": [
+        "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+        "    Source = #\"SQL/plan-db-01 bss nvg ru;OLAP_Staging\",",
+        "    stg_PMBI_WORLD_V_USERREQ_CAPEXBUD_27 = Source{[Schema=\"stg\",Item=\"PMBI_WORLD_V_USERREQ_CAPEXBUD_27\"]}[Data],",
+        "    #\"Removed Other Columns\" = Table.SelectColumns(stg_PMBI_WORLD_V_USERREQ_CAPEXBUD_27,{\"SOURCE_SYSTEM\", \"BI_BUDGET_ITEM\", \"BI_COST_CENTER\", \"BI_RESP_CENTER\", \"BI_BUDGET_TYPE\", \"BI_DATA_TYPE\", \"CAPEX_BUDGET_ID\", \"P_MONTH\", \"PAYSUM\", \"PROJECTCODE\"}),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Removed Other Columns\",{{\"P_MONTH\", type date}, {\"CAPEX_BUDGET_ID\", Int64.Type}}),",
+        "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Changed Type\",{{\"CAPEX_BUDGET_ID\", type text}}),",
+        "    AddColumns = Table.AddColumn(#\"Changed Type2\", \"r\", each [BI_BUDGET_ITEM_CODE=Text.BeforeDelimiter([BI_BUDGET_ITEM],\" \"),BUDGET_TYPE=\"CAPEX\", CUSTOMER=\"MTSru\", PROJECT_CODE_RMS=\"\", COMMENT=\"Данные получены авто выгрузкой из Hyperion\" ]),",
+        "    #\"Expanded r\" = Table.ExpandRecordColumn(AddColumns, \"r\", {\"BI_BUDGET_ITEM_CODE\", \"BUDGET_TYPE\", \"COMMENT\", \"CUSTOMER\", \"PROJECT_CODE_RMS\"}, {\"BI_BUDGET_ITEM_CODE\", \"BUDGET_TYPE\", \"COMMENT\", \"CUSTOMER\", \"PROJECT_CODE_RMS\"}),",
+        "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Expanded r\",{{\"CUSTOMER\", type text}, {\"BUDGET_TYPE\", type text}, {\"BI_BUDGET_ITEM_CODE\", type text}, {\"PROJECT_CODE_RMS\", type text}, {\"COMMENT\", type text}}), ",
+        "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"PROJECTCODE\", \"BI_BUDGET_ITEM\", \"BI_COST_CENTER\", \"BI_RESP_CENTER\", \"BI_BUDGET_TYPE\", \"BI_DATA_TYPE\", \"CAPEX_BUDGET_ID\", \"P_MONTH\", \"CUSTOMER\", \"BUDGET_TYPE\", \"BI_BUDGET_ITEM_CODE\", \"SOURCE_SYSTEM\", \"PAYSUM\"}),",
+        "    #\"Removed Other Columns1\" = Table.SelectColumns(#\"Reordered Columns\",{\"PROJECTCODE\", \"BI_BUDGET_ITEM\", \"BI_COST_CENTER\", \"BI_RESP_CENTER\", \"BI_BUDGET_TYPE\", \"BI_DATA_TYPE\", \"CAPEX_BUDGET_ID\", \"P_MONTH\", \"CUSTOMER\", \"BUDGET_TYPE\", \"BI_BUDGET_ITEM_CODE\", \"SOURCE_SYSTEM\", \"COMMENT\", \"PAYSUM\", \"PROJECT_CODE_RMS\"})",
+        "in",
+        "    #\"Removed Other Columns1\"</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+      ]
+    }
+  ]
+}

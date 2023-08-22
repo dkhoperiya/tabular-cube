@@ -1,0 +1,31 @@
+{
+  "name": "FactOverheadCostsLab",
+  "expression": [
+    "/*Накладные расходы от списаний Лабы по ФОТ*/",
+    "VAR x1 =",
+    "    CALCULATE (",
+    "        [TB_OverHeadCostAmount],",
+    "        'Options'[Wip History Mode] = \"As Is\",",
+    "        KEEPFILTERS ( TeamBudgeting_Hours_Calculation[IsRenormEnabled] = 1 ),",
+    "        KEEPFILTERS ( BusinessUnits[Entity Code] = \"24\" )",
+    "    ) ",
+    " ",
+    "/*Накладные расходы от списаний Лабы по ТС*/",
+    "VAR x2 =",
+    "    CALCULATE (",
+    "        [FactRubOverHeadCostAmount],",
+    "        'Options'[Wip History Mode] = \"As Is\",",
+    "        KEEPFILTERS ( BusinessUnits[Entity Code] IN { \"24\" } ),",
+    "        KEEPFILTERS ( FactHours[IsRenormEnabled] = 0 )",
+    "    ) ",
+    "    ",
+    "RETURN",
+    "    ( x1 + (x2 / 0.79) )",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactOverheadCostsLab\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

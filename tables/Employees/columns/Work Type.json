@@ -1,0 +1,5 @@
+{
+  "name": "Work Type",
+  "dataType": "string",
+  "sourceColumn": "Work Type"
+}

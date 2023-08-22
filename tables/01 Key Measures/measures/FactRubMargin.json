@@ -1,0 +1,12 @@
+{
+  "name": "FactRubMargin",
+  "expression": [
+    "SUM(FactHours[MarginAmount])",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactRubMargin\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

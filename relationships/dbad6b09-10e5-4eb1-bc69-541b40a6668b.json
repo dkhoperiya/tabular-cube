@@ -1,0 +1,7 @@
+{
+  "name": "dbad6b09-10e5-4eb1-bc69-541b40a6668b",
+  "fromTable": "ProjectExpenses_RMS",
+  "fromColumn": "Expense Type",
+  "toTable": "ExpenseTypes",
+  "toColumn": "ExpenseType_BK"
+}

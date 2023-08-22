@@ -1,0 +1,7 @@
+{
+  "name": "PO_SUM",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "PO_SUM",
+  "sourceProviderType": "decimal"
+}

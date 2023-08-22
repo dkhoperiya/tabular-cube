@@ -1,0 +1,7 @@
+{
+  "name": "b9435fbd-4f24-4068-a542-13310a72f1f1",
+  "fromTable": "FactHours",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

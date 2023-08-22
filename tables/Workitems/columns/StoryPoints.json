@@ -1,0 +1,7 @@
+{
+  "name": "StoryPoints",
+  "dataType": "decimal",
+  "sourceColumn": "StoryPoints",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

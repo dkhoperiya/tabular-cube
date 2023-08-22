@@ -1,0 +1,7 @@
+{
+  "name": "687e142a-cf31-4297-9318-d7c58a977d18",
+  "fromTable": "OpexBudgetingFact",
+  "fromColumn": "TribeCode",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

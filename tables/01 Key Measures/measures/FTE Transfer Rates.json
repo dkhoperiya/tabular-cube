@@ -1,0 +1,51 @@
+{
+  "name": "FTE Transfer Rates",
+  "expression": [
+    "VAR BudgetRatesVersion =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "RETURN",
+    "    SUMX (",
+    "        FILTER (",
+    "            Capacity,",
+    "            'Capacity'[BudgetRates_Version] = BudgetRatesVersion",
+    "                && Capacity[IsVacancy] = FALSE ()",
+    "        ),",
+    "        'Capacity'[WorkingHours] * Capacity[TransferRate]",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        FILTER (",
+      "            Capacity,",
+      "            'Capacity'[BudgetRates_Version] = BudgetRatesVersion",
+      "                && Capacity[IsVacancy] = FALSE ()",
+      "        ),",
+      "        \"Employee\", RELATED ( Employees[Employee] ),",
+      "        \"Employee BU\", Capacity[BuCode],",
+      "        \"Employee Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Chapter\", RELATED ( 'Chapters'[Chapter] ),",
+      "        \"Competence\", RELATED ( Competences[Competence] ),",
+      "        \"Date\", Capacity[date],",
+      "        \"BudgetRatesVersion\", BudgetRatesVersion,",
+      "        \"FTE\", 'Capacity'[WorkingHours],",
+      "        \"Transfer Rate\", Capacity[TransferRate],",
+      "        \"FTE Transfer Rates\", 'Capacity'[WorkingHours] * Capacity[TransferRate]",
+      "    )"
+    ]
+  }
+}

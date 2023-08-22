@@ -1,0 +1,14 @@
+{
+  "name": "Fact - Plan Hours",
+  "expression": "[Fact Hours] - [Plan Hours]",
+  "formatString": "#,##0",
+  "displayFolder": "03. Hours\\04. Fact - Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _F = [Fact Hours]",
+      "VAR _P = [Plan Hours]",
+      "RETURN",
+      "    ROW ( \"Fact Hours\", _F, \"Plan Hours\", _P, \"Fact - Plan Hours\", _F - _P )"
+    ]
+  }
+}

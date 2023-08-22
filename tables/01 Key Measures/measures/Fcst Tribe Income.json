@@ -1,0 +1,29 @@
+{
+  "name": "Fcst Tribe Income",
+  "description": "Прогнозная (факт/план) сумма доходов трайба.",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE ( [Fact Tribe Income], KEEPFILTERS ( 'Dates'[Date] <= LastFactDate ) )",
+    "        + CALCULATE ( [Plan Tribe Income], KEEPFILTERS ( 'Dates'[Date] > LastFactDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _LAST_FACT_DATE =",
+      "    MAX ( DatesPlanFact[PF Date] )",
+      "VAR _FACT =",
+      "    CALCULATE ( [Fact Tribe Income], KEEPFILTERS ( 'Dates'[Date] <= _LAST_FACT_DATE ) )",
+      "VAR _PLAN =",
+      "    CALCULATE ( [Plan Tribe Income], KEEPFILTERS ( 'Dates'[Date] > _LAST_FACT_DATE ) )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact to Date\", _LAST_FACT_DATE,",
+      "        \"Fact Tribe Income\", _FACT,",
+      "        \"Plan Tribe Income\", _PLAN",
+      "    )"
+    ]
+  }
+}

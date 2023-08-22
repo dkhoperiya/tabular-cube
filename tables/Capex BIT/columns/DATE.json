@@ -1,0 +1,7 @@
+{
+  "name": "DATE",
+  "dataType": "dateTime",
+  "isHidden": true,
+  "sourceColumn": "DATE",
+  "sourceProviderType": "datetime"
+}

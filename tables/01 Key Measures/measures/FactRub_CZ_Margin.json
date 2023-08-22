@@ -1,0 +1,6 @@
+{
+  "name": "FactRub_CZ_Margin",
+  "expression": "DIVIDE([FactRub_CZ], 0.93)",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате"
+}

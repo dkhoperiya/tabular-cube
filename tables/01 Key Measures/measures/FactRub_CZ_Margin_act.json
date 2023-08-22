@@ -1,0 +1,23 @@
+{
+  "name": "FactRub_CZ_Margin_act",
+  "description": "Чехи с двойной маржой ",
+  "expression": [
+    "CALCULATE (",
+    "    [FactRub_CZ_act] + [Second_Margin_CZ_act],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactRub_CZ_Margin_act\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Субподряд из Timesheets",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR x = [FactRub_CZ_act]",
+      "RETURN",
+      "    ROW ( \"FactRub_CZ_act\", x, \"Koef\", 1 / 0.93, \"FactRub_CZ_Margin_act\", x / 0.93 )"
+    ]
+  }
+}

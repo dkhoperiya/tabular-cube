@@ -1,0 +1,7 @@
+{
+  "name": "1ff269ee-3dd6-423e-ba8c-141bd0fa23d7",
+  "fromTable": "Project Contracts",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

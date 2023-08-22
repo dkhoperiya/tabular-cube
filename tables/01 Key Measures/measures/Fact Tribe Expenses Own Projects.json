@@ -1,0 +1,10 @@
+{
+  "name": "Fact Tribe Expenses Own Projects",
+  "description": "ЗП сотрудников своего трайба + Расходы на привленечение трудозатрат прочих трайбов + Расходы трайба на собственные проекты: командировки, внешний и внутренний субподряд, НЗП. и пр.",
+  "expression": "[Fact Project Expenses]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Project Expenses] )"
+  }
+}

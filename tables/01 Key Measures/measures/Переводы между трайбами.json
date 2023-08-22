@@ -1,0 +1,11 @@
+{
+  "name": "Переводы между трайбами",
+  "expression": [
+    "CALCULATE (",
+    "    [Internal Flow],",
+    "    KEEPFILTERS ( 'EmployeeMovements'[TribeTransfer] = 1 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики\\01. Внутренние перемещения"
+}

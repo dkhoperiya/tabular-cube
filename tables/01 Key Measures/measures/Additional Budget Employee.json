@@ -1,0 +1,14 @@
+{
+  "name": "Additional Budget Employee",
+  "expression": "CALCULATE ( [Team Cost], KEEPFILTERS ( 'TeamCosts'[TypeId] IN { 5 } ) )",
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan\\01. Team Costs",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Team Cost] ),",
+      "    KEEPFILTERS ( 'TeamCosts'[TypeId] IN { 5 } )",
+      ")"
+    ]
+  }
+}

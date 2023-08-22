@@ -1,0 +1,8 @@
+{
+  "name": "ФОТ план",
+  "expression": [
+    "[Plan Cost of Works] + [Plan Transfer Cost of Works] + [Plan Subcontr CZ Exp]",
+    ""
+  ],
+  "ordinal": 0
+}

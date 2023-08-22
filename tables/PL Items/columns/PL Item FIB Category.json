@@ -1,0 +1,5 @@
+{
+  "name": "PL Item FIB Category",
+  "dataType": "string",
+  "sourceColumn": "PL_FIB_SHORT_CATEGORY"
+}

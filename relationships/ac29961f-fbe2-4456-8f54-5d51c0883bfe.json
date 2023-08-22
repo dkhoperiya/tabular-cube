@@ -1,0 +1,7 @@
+{
+  "name": "ac29961f-fbe2-4456-8f54-5d51c0883bfe",
+  "fromTable": "TeamCosts",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

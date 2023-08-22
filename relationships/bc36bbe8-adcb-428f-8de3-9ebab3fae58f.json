@@ -1,0 +1,7 @@
+{
+  "name": "bc36bbe8-adcb-428f-8de3-9ebab3fae58f",
+  "fromTable": "Assignments History",
+  "fromColumn": "PersonCode",
+  "toTable": "Employees",
+  "toColumn": "Employee Code"
+}

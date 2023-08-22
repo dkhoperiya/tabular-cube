@@ -1,0 +1,21 @@
+{
+  "name": "Fact_CAPEX_BIT_wo_MTSD",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'Capex BIT'[SUM_RUB] ),",
+    "    KEEPFILTERS ( NOT CONTAINSSTRING('Capex BIT'[BI_CONTRACTOR],\"мтс*ди\")),",
+    "    KEEPFILTERS ( 'Capex BIT'[STATUS_OEBS]=\"защищен\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "18. Capex BIT",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact_CAPEX_BIT] ),",
+      "    KEEPFILTERS ( NOT CONTAINSSTRING ( 'Capex BIT'[BI_CONTRACTOR], \"мтс*ди\" ) ),",
+      "    KEEPFILTERS ( 'Capex BIT'[STATUS_OEBS] = \"защищен\" )",
+      ")"
+    ]
+  }
+}

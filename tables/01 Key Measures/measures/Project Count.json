@@ -1,0 +1,28 @@
+{
+  "name": "Project Count",
+  "description": "Количество проектов (всех бех исключения)",
+  "expression": [
+    "CALCULATE (",
+    "    COUNTA ( 'Projects'[Project Code] ),",
+    "    TREATAS ( VALUES ( Tribes[Tribe Code] ), 'Projects'[project_tribe_code] ),",
+    "    TREATAS (",
+    "        VALUES ( 'Resource Tribe'[Resource Tribe Code] ),",
+    "        'Projects'[project_tribe_code]",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    Projects,",
+      "    TREATAS ( VALUES ( Tribes[Tribe Code] ), 'Projects'[project_tribe_code] ),",
+      "    TREATAS (",
+      "        VALUES ( 'Resource Tribe'[Resource Tribe Code] ),",
+      "        'Projects'[project_tribe_code]",
+      "    )",
+      ")"
+    ]
+  }
+}

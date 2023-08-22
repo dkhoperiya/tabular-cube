@@ -1,0 +1,7 @@
+{
+  "name": "WorkTermYears",
+  "dataType": "int64",
+  "sourceColumn": "WorkTermYears",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

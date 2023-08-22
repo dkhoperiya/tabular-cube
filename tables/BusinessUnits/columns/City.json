@@ -1,0 +1,6 @@
+{
+  "name": "City",
+  "dataType": "string",
+  "sourceColumn": "City",
+  "dataCategory": "City"
+}

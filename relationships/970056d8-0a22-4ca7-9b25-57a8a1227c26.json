@@ -1,0 +1,7 @@
+{
+  "name": "970056d8-0a22-4ca7-9b25-57a8a1227c26",
+  "fromTable": "FactHours",
+  "fromColumn": "RoleCode",
+  "toTable": "Roles",
+  "toColumn": "Role Code"
+}

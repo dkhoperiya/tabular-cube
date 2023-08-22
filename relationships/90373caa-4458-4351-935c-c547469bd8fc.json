@@ -1,0 +1,7 @@
+{
+  "name": "90373caa-4458-4351-935c-c547469bd8fc",
+  "fromTable": "FactHours_Renormilized",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

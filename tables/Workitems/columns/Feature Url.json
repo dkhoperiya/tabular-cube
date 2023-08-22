@@ -1,0 +1,6 @@
+{
+  "name": "Feature Url",
+  "dataType": "string",
+  "sourceColumn": "FeatureUrl",
+  "dataCategory": "WebURL"
+}

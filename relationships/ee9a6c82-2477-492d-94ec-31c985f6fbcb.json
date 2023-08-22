@@ -1,0 +1,7 @@
+{
+  "name": "ee9a6c82-2477-492d-94ec-31c985f6fbcb",
+  "fromTable": "BillingFinancialAnalyst",
+  "fromColumn": "MonthDate",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

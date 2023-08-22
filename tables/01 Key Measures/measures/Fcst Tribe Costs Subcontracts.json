@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Tribe Costs Subcontracts",
+  "description": "Прогнозная (факт/план) сумма расходов трайба на субподряд.",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Tribe Costs Subcontracts],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Tribe Costs Subcontracts],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03. Forecast"
+}

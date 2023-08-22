@@ -1,0 +1,7 @@
+{
+  "name": "fcd42389-c837-4fcd-8f22-c49930ba826a",
+  "fromTable": "FinInvestPlanFact",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

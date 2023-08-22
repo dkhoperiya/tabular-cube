@@ -1,0 +1,12 @@
+{
+  "name": "Fcst Resold Exp",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE ( [Fact Resold Exp], KEEPFILTERS ( 'Dates'[Date] <= LastFactDate ) )",
+    "        + CALCULATE ( [Plan Resold Exp], KEEPFILTERS ( 'Dates'[Date] > LastFactDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\03. Forecast"
+}

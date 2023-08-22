@@ -1,0 +1,18 @@
+{
+  "type": "calculated",
+  "name": "Status of Realization",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "VAR _GSTATUS = 'Milestones'[project_g_status]",
+    "RETURN",
+    "    SWITCH (",
+    "        _GSTATUS,",
+    "        0, \"1 - G2 Not Complete\",",
+    "        2, \"2 - G2 Complete\",",
+    "        3, \"3 - G3 Complete\",",
+    "        5, \"5 - G5 Complete\",",
+    "        6, \"6 - G6 Complete\"",
+    "    )"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "calculated",
+  "name": "Age Range ID",
+  "dataType": "int64",
+  "isDataTypeInferred": true,
+  "isHidden": true,
+  "expression": [
+    "VAR ag = Employees[Age]",
+    "RETURN",
+    "    SWITCH (",
+    "        TRUE (),",
+    "        ag > 0",
+    "            && ag < 25, 1,",
+    "        ag >= 25",
+    "            && ag < 35, 2,",
+    "        ag >= 35",
+    "            && ag < 45, 3,",
+    "        ag >= 45",
+    "            && ag < 55, 4,",
+    "        ag >= 55, 5",
+    "    )"
+  ]
+}

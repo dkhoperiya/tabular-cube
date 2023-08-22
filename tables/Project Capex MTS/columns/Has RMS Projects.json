@@ -1,0 +1,11 @@
+{
+  "type": "calculated",
+  "name": "Has RMS Projects",
+  "dataType": "string",
+  "expression": [
+    "VAR rms_pr =",
+    "    CALCULATE ( [Fact/Forecast Revenue G6] ) > 0",
+    "RETURN",
+    "    IF ( rms_pr, \"Сопоставлено\", \"Не сопоставлено\" )"
+  ]
+}

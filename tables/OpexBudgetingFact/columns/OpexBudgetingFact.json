@@ -1,0 +1,5 @@
+{
+  "name": "OpexBudgetingFact",
+  "dataType": "decimal",
+  "sourceColumn": "OpexFact"
+}

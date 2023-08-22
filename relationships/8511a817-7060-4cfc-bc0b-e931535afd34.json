@@ -1,0 +1,7 @@
+{
+  "name": "8511a817-7060-4cfc-bc0b-e931535afd34",
+  "fromTable": "WIPCalculation",
+  "fromColumn": "Tribe_Code",
+  "toTable": "Resource Tribe",
+  "toColumn": "Resource Tribe Code"
+}

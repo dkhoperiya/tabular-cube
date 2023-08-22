@@ -1,0 +1,7 @@
+{
+  "name": "6f7f4629-a76c-4171-b2d4-6a770753438c",
+  "fromTable": "FactIncome",
+  "fromColumn": "ContractId",
+  "toTable": "RevenueContracts",
+  "toColumn": "ContractId"
+}

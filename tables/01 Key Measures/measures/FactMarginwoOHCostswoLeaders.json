@@ -1,0 +1,15 @@
+{
+  "name": "FactMarginwoOHCostswoLeaders",
+  "expression": [
+    "CALCULATE (",
+    "    [FactMarginCostUnitheadMTSD] + [FactMarginClusterleadMTSD] + [FactMarginwoLeadersMTSD] + [FactTotalMarginSubcontr] + [FactMarginCommandOtherExp],",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactMarginwoOHCostswoLeaders\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики 2023"
+}

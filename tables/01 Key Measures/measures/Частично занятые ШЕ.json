@@ -1,0 +1,21 @@
+{
+  "name": "Частично занятые ШЕ",
+  "expression": [
+    "CALCULATE (",
+    "DISTINCTCOUNT(Employees[Employee Code]),",
+    "Employees[Is Vacancy] = False,",
+    "Employees[Employment Percentage] < 1,",
+    "TREATAS ( VALUES ( 'Tribes'[Tribe] ), Employees[Employee Tribe Current] )",
+    ")"
+  ],
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    Employees[Is Vacancy] = FALSE,",
+      "    Employees[Employment Percentage] < 1",
+      ")"
+    ]
+  }
+}

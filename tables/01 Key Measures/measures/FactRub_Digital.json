@@ -1,0 +1,11 @@
+{
+  "name": "FactRub_Digital",
+  "expression": [
+    "CALCULATE(",
+    "    [factrub],",
+    "    KEEPFILTERS('BusinessUnits'[Entity Code] = \"1\")",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\Без фильтра по дате"
+}

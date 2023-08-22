@@ -1,0 +1,12 @@
+{
+  "name": "LastLogonDate",
+  "dataType": "dateTime",
+  "sourceColumn": "LastLogonDate",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Plan Project Income no ORZ",
+  "description": "План часов * на трансфертную ставку",
+  "expression": "CALCULATE ( [PlanRub], KEEPFILTERS ( 'Projects'[incl_for_fin_plan] ) )",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\03. Income\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Plan Hours] ),",
+      "    KEEPFILTERS ( 'Projects'[incl_for_fin_plan] )",
+      ")"
+    ]
+  }
+}

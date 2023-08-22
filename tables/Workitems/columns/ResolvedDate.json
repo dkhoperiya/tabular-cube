@@ -1,0 +1,6 @@
+{
+  "name": "ResolvedDate",
+  "dataType": "dateTime",
+  "sourceColumn": "ResolvedDate",
+  "formatString": "dd.MM.yyyy"
+}

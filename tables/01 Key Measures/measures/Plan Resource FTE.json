@@ -1,0 +1,32 @@
+{
+  "name": "Plan Resource FTE",
+  "description": "Количество сотрудников, рассчитанное исходя плана трудозатрт деленное на количество чч одного сотрудника в месяце с учетом целевой утилизации трайба",
+  "expression": [
+    "DIVIDE (",
+    "    [Plan Hours],",
+    "    CALCULATE (",
+    "        [One Person Work Hours in Period],",
+    "        FILTER ( VALUES ( BusinessUnits[BU Code] ), [Plan Hours] > 0 )",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "04. Capacity\\02. Resource Planning",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [FactPlan Hours] )",
+      "VAR _Y =",
+      "    CALCULATE (",
+      "        [One Person Work Hours in Period],",
+      "        FILTER ( VALUES ( BusinessUnits[BU Code] ), [FactPlan Hours] > 0 )",
+      "    )",
+      "RETURN",
+      "    ROW (",
+      "        \"FactPlan Hours\", _X,",
+      "        \"Avg One Person Work Hours in Period by BU with FactPlan Hours\", _Y,",
+      "        \"Project Resource Plan FTE Count\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

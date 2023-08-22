@@ -1,0 +1,12 @@
+{
+  "name": "Fcst Tribe OIBDA",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE ( [Fact Tribe OIBDA], KEEPFILTERS ( 'Dates'[Date] <= LastFactDate ) )",
+    "        + CALCULATE ( [Plan Tribe OIBDA], KEEPFILTERS ( 'Dates'[Date] > LastFactDate ) )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04. Forecast"
+}

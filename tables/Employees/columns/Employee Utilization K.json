@@ -1,0 +1,7 @@
+{
+  "name": "Employee Utilization K",
+  "dataType": "decimal",
+  "sourceColumn": "Employee Utilization K",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

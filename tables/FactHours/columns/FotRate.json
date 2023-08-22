@@ -1,0 +1,6 @@
+{
+  "name": "FotRate",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "FotRate"
+}

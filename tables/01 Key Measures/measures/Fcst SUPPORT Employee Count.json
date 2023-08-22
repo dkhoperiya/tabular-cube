@@ -1,0 +1,21 @@
+{
+  "name": "Fcst SUPPORT Employee Count",
+  "description": "Прогноз FTE. Необходимая средняя численность трайба SUPPORT по воронке RMS",
+  "expression": "DIVIDE ( [Fcst Work Hours SUPPORT], [One Person Work Hours in Period SUPPORT] )",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\02. Support Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Work Hours SUPPORT] )",
+      "VAR _Y =",
+      "    CALCULATE ( [One Person Work Hours in Period SUPPORT] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours SUPPORT\", _X,",
+      "        \"One Person Work Hours in Period SUPPORT\", _Y,",
+      "        \"Fcst SUPPORT Employee Count\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

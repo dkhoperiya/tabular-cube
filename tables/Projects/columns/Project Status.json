@@ -1,0 +1,6 @@
+{
+  "name": "Project Status",
+  "dataType": "string",
+  "sourceColumn": "Project Status",
+  "sortByColumn": "project_status_id"
+}

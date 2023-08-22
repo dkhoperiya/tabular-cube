@@ -1,0 +1,5 @@
+{
+  "name": "Факт списаний на ставку",
+  "expression": "[FactIndRubSubcontr] + [FactIndRubMTSD]",
+  "displayFolder": "03. Hours\\02. Fact"
+}

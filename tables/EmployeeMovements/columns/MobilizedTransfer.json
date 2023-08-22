@@ -1,0 +1,7 @@
+{
+  "name": "MobilizedTransfer",
+  "dataType": "int64",
+  "sourceColumn": "MobilizedTransfer",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

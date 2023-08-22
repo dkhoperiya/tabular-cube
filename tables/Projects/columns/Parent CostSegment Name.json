@@ -1,0 +1,6 @@
+{
+  "name": "Parent CostSegment Name",
+  "dataType": "string",
+  "sourceColumn": "Parent CostSegment Name",
+  "displayFolder": "03. Capex MTS"
+}

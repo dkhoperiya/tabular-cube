@@ -1,0 +1,7 @@
+{
+  "name": "ReleaseProjectPlanKoef",
+  "dataType": "decimal",
+  "sourceColumn": "ReleaseProjectPlanKoef",
+  "formatString": "0.00%",
+  "summarizeBy": "none"
+}

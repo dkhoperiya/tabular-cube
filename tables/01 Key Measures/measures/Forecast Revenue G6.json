@@ -1,0 +1,53 @@
+{
+  "name": "Forecast Revenue G6",
+  "description": "Прогноз дохода по G6 (то же самое что план доходов по G6 только по плановой дате а не по дате KPI)",
+  "expression": [
+    "CALCULATE (",
+    "    [forecast revenue],",
+    "    FILTER ( Milestones, Milestones[Milestone] = \"[G6]\" )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FILTER (",
+      "        ADDCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                PlanIncome_SumAct,",
+      "                FILTER ( 'Projects', 'Projects'[Has Revenue] ),",
+      "                TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+      "            ),",
+      "            \"Project\", RELATED ( projects[project] ),",
+      "            \"Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "            \"Milestone\", RELATED ( Milestones[Milestone] ),",
+      "            \"Milestone Name\", RELATED ( Milestones[Milestone Name] ),",
+      "            \"Works Status\", RELATED ( Milestones[Works Status] ),",
+      "            \"Fin Act Status\", RELATED ( Milestones[Fin Act Status] ),",
+      "            \"Works Complete\", RELATED ( Milestones[Works Complete] ),",
+      "            \"Plan Date\", RELATED ( Milestones[Plan Date] ),",
+      "            \"KPI Date\", RELATED ( Milestones[KPI date] ),",
+      "            \"Status of Realization\", RELATED ( Milestones[Status of Realization] ),",
+      "            \"Comment\", RELATED ( Milestones[Comment] )",
+      "        ),",
+      "        [Milestone] = \"[G6]\"",
+      "    ),",
+      "    \"Project\", [Project],",
+      "    \"Tribe\", [Tribe],",
+      "    \"BuCode\", [BuCode],",
+      "    \"Milestone\", [Milestone],",
+      "    \"Milestone Name\", [Milestone Name],",
+      "    \"Works Statsus\", [Works Status],",
+      "    \"Fin Act Status\", [Fin Act Status],",
+      "    \"Works Complete\", [Works Complete],",
+      "    \"Plan Date\", [Plan Date],",
+      "    \"KPI Date\", [KPI date],",
+      "    \"Status of Realization\", [Status of Realization],",
+      "    \"Comment\", [Comment],",
+      "    \"KPI Sum Full\", [kpi_sum_full],",
+      "    \"KPI Sum w Project Prob\", [kpi_sum]",
+      ")"
+    ]
+  }
+}

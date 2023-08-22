@@ -1,0 +1,22 @@
+{
+  "type": "calculated",
+  "name": "Project G2 Complete",
+  "dataType": "boolean",
+  "isDataTypeInferred": true,
+  "expression": [
+    "VAR TotalG2Count =",
+    "    CALCULATE (",
+    "        COUNTROWS ( Milestones ),",
+    "        KEEPFILTERS ( Milestones[Milestone] = \"[G2]\" )",
+    "    )",
+    "VAR CompleteG2Count =",
+    "    CALCULATE (",
+    "        COUNTROWS ( Milestones ),",
+    "        KEEPFILTERS ( Milestones[Milestone] = \"[G2]\" ),",
+    "        KEEPFILTERS ( Milestones[Works Complete] )",
+    "    )",
+    "RETURN",
+    "    AND ( TotalG2Count > 0, TotalG2Count = CompleteG2Count )"
+  ],
+  "formatString": "\"TRUE\";\"TRUE\";\"FALSE\""
+}

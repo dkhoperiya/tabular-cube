@@ -1,0 +1,6 @@
+{
+  "name": "BI_CONTRACTOR",
+  "dataType": "string",
+  "sourceColumn": "BI_CONTRACTOR",
+  "sourceProviderType": "nvarchar"
+}

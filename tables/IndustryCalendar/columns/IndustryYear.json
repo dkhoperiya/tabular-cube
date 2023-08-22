@@ -1,0 +1,5 @@
+{
+  "name": "IndustryYear",
+  "dataType": "int64",
+  "sourceColumn": "IndustryYear"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "WIPCalculation",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    fin_viw_WIP_Calculation = Source{[Schema=\"fin\",Item=\"viw_WIP_Calculation\"]}[Data],",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(fin_viw_WIP_Calculation,{\"Project_Code\", \"ProjectTribe_Code\", \"Tribe_Code\", \"pl_code\", \"month_date\", \"responsibility_center\", \"bu_code\", \"Fact FOT K\", \"Debet\", \"Source Sheet\", \"Source WB\", \"InvestProjectPairId\", \"ContractId\"}),",
+      "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Other Columns\", each [month_date] < #date(2024, 1, 1))",
+      "in",
+      "    #\"Filtered Rows\"",
+      ""
+    ]
+  }
+}

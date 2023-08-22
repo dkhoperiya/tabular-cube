@@ -1,0 +1,7 @@
+{
+  "name": "1. Ориентировочная себестоимость",
+  "expression": "[sum_act_g6_full] * 1.07",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

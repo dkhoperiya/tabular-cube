@@ -1,0 +1,18 @@
+{
+  "name": "ParentCode",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "ParentCode",
+  "formatString": "0",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    },
+    {
+      "name": "Format",
+      "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+    }
+  ]
+}

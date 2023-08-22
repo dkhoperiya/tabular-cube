@@ -1,0 +1,5 @@
+{
+  "name": "Role Type",
+  "dataType": "string",
+  "sourceColumn": "Role Type"
+}

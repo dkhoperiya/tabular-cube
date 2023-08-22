@@ -1,0 +1,7 @@
+{
+  "name": "ProjectCode",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "ProjectCode",
+  "sourceProviderType": "nvarchar"
+}

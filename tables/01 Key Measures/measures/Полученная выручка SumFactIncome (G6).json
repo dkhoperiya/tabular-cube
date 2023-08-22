@@ -1,0 +1,9 @@
+{
+  "name": "Полученная выручка SumFactIncome (G6)",
+  "expression": "[Fact Revenue G6]",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( DETAILROWS ( [Fact Revenue G6] ) )"
+  }
+}

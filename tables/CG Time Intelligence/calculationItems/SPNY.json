@@ -1,0 +1,5 @@
+{
+  "name": "SPNY",
+  "expression": "CALCULATE ( SELECTEDMEASURE (), PARALLELPERIOD ( 'Dates'[Date], 1, YEAR ) )",
+  "ordinal": 4
+}

@@ -1,0 +1,6 @@
+{
+  "name": "CUSTOM4",
+  "dataType": "string",
+  "sourceColumn": "CUSTOM4",
+  "sourceProviderType": "nvarchar"
+}

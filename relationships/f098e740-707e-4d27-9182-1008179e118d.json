@@ -1,0 +1,7 @@
+{
+  "name": "f098e740-707e-4d27-9182-1008179e118d",
+  "fromTable": "TribesFinKPICorrectedValues",
+  "fromColumn": "TribeCode",
+  "toTable": "Tribes",
+  "toColumn": "Tribe Code"
+}

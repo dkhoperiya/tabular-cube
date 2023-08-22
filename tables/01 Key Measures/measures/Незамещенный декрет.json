@@ -1,0 +1,20 @@
+{
+  "name": "Незамещенный декрет",
+  "description": "Количество вакансий, которые в целевой структуре и которые образовались в результате выхода в декрет других сотрудников",
+  "expression": [
+    "CALCULATE (",
+    "    [EmployeeCount],",
+    "    KEEPFILTERS ( Employees[Maternity Vacancy] = \"Yes\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    KEEPFILTERS ( Employees[Maternity Vacancy] = \"Yes\" )",
+      ")"
+    ]
+  }
+}

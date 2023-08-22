@@ -1,0 +1,7 @@
+{
+  "name": "6dafc6e3-5919-47ad-b3a6-89a29a05e2f9",
+  "fromTable": "TargetLevelsOfFunding",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Fact Hours 2lvl",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( 'FactHours_2lvl'[fact_hours] ),",
+    "    KEEPFILTERS ( 'FactHours_2lvl'[is_subcontract] = 1 )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    'FactHours_2lvl',",
+      "    \"Employee Code\", 'FactHours_2lvl'[employee_code],",
+      "    \"Employee Name\", RELATED ( Employees[Employee Name] ),",
+      "    \"Employee Tribe\", RELATED ( 'Tribes'[Tribe] ),",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Project Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "    \"BU\", 'FactHours_2lvl'[Fact Employee BuCode],",
+      "    \"Role\", RELATED ( Roles[Role] ),",
+      "    \"Competence\", RELATED ( Competences[Competence] ),",
+      "    \"Investment Project\", 'FactHours_2lvl'[investmentproject],",
+      "    \"Invetsment Task\", 'FactHours_2lvl'[investmenttask],",
+      "    \"Date\", RELATED ( Dates[Date] ),",
+      "    \"Fact Hours\", 'FactHours_2lvl'[fact_hours],",
+      "    \"FOT Rate\", 'FactHours_2lvl'[Fot_Rate],",
+      "    \"Transfer Rate\", 'FactHours_2lvl'[Transfer_Rate],",
+      "    \"Fact Rub\", 'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[Transfer_Rate],",
+      "    \"Fact Fot Rub\", 'FactHours_2lvl'[fact_hours] * 'FactHours_2lvl'[Fot_Rate]",
+      ")"
+    ]
+  }
+}

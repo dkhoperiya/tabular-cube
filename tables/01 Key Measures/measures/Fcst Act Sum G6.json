@@ -1,0 +1,19 @@
+{
+  "name": "Fcst Act Sum G6",
+  "description": "Факт\\план дохода по G6 основанный на актуальных суммах РМС",
+  "expression": [
+    "VAR LastFactDate =",
+    "    TODAY ()",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Act Sum G6],",
+    "        FILTER ( 'Dates', 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Act Sum G6],",
+    "            FILTER ( 'Dates', 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\01. Revenue\\03. Forecast"
+}

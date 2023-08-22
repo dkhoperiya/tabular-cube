@@ -1,0 +1,6 @@
+{
+  "name": "Capex MTS",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Capex MTS"
+}

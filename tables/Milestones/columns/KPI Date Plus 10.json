@@ -1,0 +1,14 @@
+{
+  "type": "calculated",
+  "name": "KPI Date Plus 10",
+  "dataType": "dateTime",
+  "isDataTypeInferred": true,
+  "expression": " Milestones[KPI Date]+10",
+  "formatString": "Short Date",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

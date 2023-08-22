@@ -1,0 +1,7 @@
+{
+  "name": "86dbd65f-02f6-407b-9393-6c1ead48ff6d",
+  "fromTable": "FactHours_2lvl",
+  "fromColumn": "competence_code",
+  "toTable": "Competences",
+  "toColumn": "competence_code"
+}

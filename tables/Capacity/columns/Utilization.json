@@ -1,0 +1,6 @@
+{
+  "name": "Utilization",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "Utilization"
+}

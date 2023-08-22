@@ -1,0 +1,10 @@
+{
+  "name": "Количество ШЕ включая совместительские",
+  "description": "Количество сотрудников, на данный момент находящихся в декретном отпуске",
+  "expression": "DISTINCTCOUNT ( 'OrgStructOebs'[PositionId] )",
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": "OrgStructOebs"
+  }
+}

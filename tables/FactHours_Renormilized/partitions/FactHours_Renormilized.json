@@ -1,0 +1,13 @@
+{
+  "name": "FactHours_Renormilized",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    FactHours_Renormilized = Source{[Schema=\"dbo\",Item=\"viw_FactHours_Renormilized\"]}[Data]",
+      "in",
+      "    FactHours_Renormilized"
+    ]
+  }
+}

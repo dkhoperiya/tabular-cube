@@ -1,0 +1,19 @@
+{
+  "name": "Fcst SQA FotRub",
+  "description": "Прогноз чч трайба SQA * средневзвешенная ставка трайб SQA.",
+  "expression": "[Fcst Work Hours SQA] * [Historical WA Fot Rate SQA]",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\01. QA Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fcst Work Hours SQA]",
+      "VAR _Y = [Historical WA Fot Rate SQA]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours SQA\", _X,",
+      "        \"Historical WA Fot Rate SQA\", _Y,",
+      "        \"Fcst SQA FotRub\", _X * _Y",
+      "    )"
+    ]
+  }
+}

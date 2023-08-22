@@ -1,0 +1,5 @@
+{
+  "name": "PaymentTypeId",
+  "dataType": "int64",
+  "sourceColumn": "PaymentTypeId"
+}

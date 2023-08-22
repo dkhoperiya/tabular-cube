@@ -1,0 +1,6 @@
+{
+  "name": "LegalEntityCode",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "LegalEntityCode"
+}

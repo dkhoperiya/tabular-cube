@@ -1,0 +1,7 @@
+{
+  "name": "5c931a5e-d384-4c13-a847-506847cd4fd4",
+  "fromTable": "Capacity",
+  "fromColumn": "ChapterCode",
+  "toTable": "Chapters",
+  "toColumn": "chapter_code"
+}

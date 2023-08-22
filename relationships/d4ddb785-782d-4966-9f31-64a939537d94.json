@@ -1,0 +1,7 @@
+{
+  "name": "d4ddb785-782d-4966-9f31-64a939537d94",
+  "fromTable": "PL_ProductOwner_KPI",
+  "fromColumn": "Year_Date_Key",
+  "toTable": "Dates",
+  "toColumn": "DateKey"
+}

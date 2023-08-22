@@ -1,0 +1,7 @@
+{
+  "name": "7e2fa993-949e-4657-aebb-245e64df1988",
+  "fromTable": "Capacity",
+  "fromColumn": "WorkTermRangeId",
+  "toTable": "EmployeeWorkTermRanges",
+  "toColumn": "ID"
+}

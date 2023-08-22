@@ -1,0 +1,7 @@
+{
+  "name": "0dfe8d79-8b05-4933-b381-938d12d73744",
+  "fromTable": "TribesFinKPICorrectedValues",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Количество дней в проекте всего",
+  "expression": [
+    "DATEDIFF (",
+    "    MAX ( Projects[Project Start Date] ),",
+    "    MAX ( Projects[Finish Plan Date] ),",
+    "    DAY",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "16. WIP"
+}

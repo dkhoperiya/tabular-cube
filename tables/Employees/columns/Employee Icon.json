@@ -1,0 +1,6 @@
+{
+  "name": "Employee Icon",
+  "dataType": "string",
+  "sourceColumn": "Employee Icon",
+  "dataCategory": "ImageUrl"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ContractorBuCode",
+  "dataType": "string",
+  "sourceColumn": "ContractorBuCode",
+  "sourceProviderType": "nvarchar"
+}

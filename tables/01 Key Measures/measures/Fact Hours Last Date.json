@@ -1,0 +1,31 @@
+{
+  "name": "Fact Hours Last Date",
+  "expression": [
+    "VAR _LF_DATE =",
+    "    CALCULATE (",
+    "        CALCULATE (",
+    "            MAX ( Dates[Date] ),",
+    "            FILTER ( VALUES ( Dates[DateKey] ), [Fact Hours] > 0 )",
+    "        ),",
+    "        ALL ( Dates )",
+    "    )",
+    "RETURN",
+    "    MIN ( TODAY (), _LF_DATE )"
+  ],
+  "formatString": "dd.MM.yyyy",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _LAST_FACT_DATE =",
+      "    CALCULATE (",
+      "        CALCULATE (",
+      "            MAX ( Dates[Date] ),",
+      "            FILTER ( VALUES ( Dates[DateKey] ), [Fact Hours] > 0 )",
+      "        ),",
+      "        ALL ( Dates )",
+      "    )",
+      "RETURN",
+      "    ROW ( \"Last Fact Date\", MIN ( TODAY (), _LAST_FACT_DATE ) )"
+    ]
+  }
+}

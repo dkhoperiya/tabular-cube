@@ -1,0 +1,7 @@
+{
+  "name": "f92db090-b3a7-45eb-a772-481d15b9bc05",
+  "fromTable": "WIP_Acts_XLSX",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

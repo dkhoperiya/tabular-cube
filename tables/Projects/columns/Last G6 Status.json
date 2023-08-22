@@ -1,0 +1,24 @@
+{
+  "type": "calculated",
+  "name": "Last G6 Status",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "VAR LAST_G6_DATE =",
+    "    CALCULATE (",
+    "        MAX ( Milestones[Plan Date] ),",
+    "        KEEPFILTERS ( Milestones[Milestone] = \"[G6]\" )",
+    "    )",
+    "VAR LAST_GATE_ID =",
+    "    CALCULATE (",
+    "        MAX ( Milestones[milestone_code] ),",
+    "        KEEPFILTERS ( Milestones[Plan date] = LAST_G6_DATE ),",
+    "        KEEPFILTERS ( Milestones[Milestone] = \"[G6]\" )",
+    "    )",
+    "RETURN",
+    "    CALCULATETABLE (",
+    "        VALUES ( Milestones[Works Status] ),",
+    "        Milestones[milestone_code] = LAST_GATE_ID",
+    "    )"
+  ]
+}

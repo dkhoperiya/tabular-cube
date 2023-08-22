@@ -1,0 +1,7 @@
+{
+  "name": "59bcde8a-4057-49e5-b8ad-59a2ab5f633f",
+  "fromTable": "FactHours",
+  "fromColumn": "DateKey",
+  "toTable": "Dates",
+  "toColumn": "DateKey"
+}

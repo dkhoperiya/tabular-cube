@@ -1,0 +1,9 @@
+{
+  "name": "Project Contract Sum",
+  "expression": "SUM ( 'Project Contracts'[Sum] )",
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": "'Project Contracts'"
+  }
+}

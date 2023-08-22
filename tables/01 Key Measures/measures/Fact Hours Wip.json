@@ -1,0 +1,41 @@
+{
+  "name": "Fact Hours Wip",
+  "description": "Сумма нормализованных часов списанных на проектах",
+  "expression": [
+    "SUM ( 'FactHours'[NormSeconds] ) / 3600",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"Fact Hours Wip\" )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "03. Hours\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    FactHours,",
+      "    \"Employee Code\", 'FactHours'[PersonCode],",
+      "    \"Employee Name\", RELATED ( Employees[Employee Name] ),",
+      "    \"Employee Tribe\", RELATED ( 'Resource Tribe'[Resource Tribe] ),",
+      "    \"Project\", RELATED ( Projects[Project] ),",
+      "    \"Project Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "    \"BU\", FactHours[Fact Employee BuCode],",
+      "    \"Role\", RELATED ( Roles[Role] ),",
+      "    \"Competence\", RELATED ( Competences[Competence] ),",
+      "    \"Date\", RELATED ( Dates[Date] ),",
+      "    \"WorkItemId\", FactHours[WorkItemId],",
+      "    \"TaskTitle\", RELATED ( WorkItems[Title] ),",
+      "    \"TaskTracker\", RELATED ( WorkItems[TaskTracker] ),",
+      "    \"ProductionProjectCode\", FactHours[ProductionProjectCode],",
+      "    \"TaskId\", FactHours[TaskId],",
+      "    \"Fact Hours\", FactHours[NormSeconds] / 3600,",
+      "    \"Total Hours\", FactHours[TotalSeconds] / 3600,",
+      "    \"TaskTracker Hours\", FactHours[TaskTrackerSeconds] / 3600,",
+      "    \"FOT Rate\", FactHours[FotRate],",
+      "    \"Transfer Rate\", FactHours[TransferRate],",
+      "    \"Fact Rub\", FactHours[NormSeconds] / 3600 * FactHours[TransferRate],",
+      "    \"Fact Fot Rub\", FactHours[NormSeconds] / 3600 * FactHours[FotRate]",
+      ")"
+    ]
+  }
+}

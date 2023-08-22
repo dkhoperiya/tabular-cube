@@ -1,0 +1,7 @@
+{
+  "name": "7e7bb61f-a36a-469d-a5b8-eeb92c5d7283",
+  "fromTable": "FinInvestPlanFact",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

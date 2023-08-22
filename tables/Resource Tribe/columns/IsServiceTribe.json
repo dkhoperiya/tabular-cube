@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "IsServiceTribe",
+  "dataType": "int64",
+  "isNameInferred": false,
+  "isHidden": true,
+  "sourceColumn": "[IsServiceTribe]"
+}

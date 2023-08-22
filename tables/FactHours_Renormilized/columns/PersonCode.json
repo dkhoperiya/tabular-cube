@@ -1,0 +1,5 @@
+{
+  "name": "PersonCode",
+  "dataType": "string",
+  "sourceColumn": "PersonCode"
+}

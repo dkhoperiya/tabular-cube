@@ -1,0 +1,12 @@
+{
+  "type": "calculated",
+  "name": "ProjectGM_Share",
+  "dataType": "decimal",
+  "expression": [
+    "DIVIDE (",
+    "    project_capacity_allocation[ProjectGM],",
+    "    project_capacity_allocation[TribeYearProjectGM]",
+    ")"
+  ],
+  "formatString": "0.0000%;-0.0000%;0.0000%"
+}

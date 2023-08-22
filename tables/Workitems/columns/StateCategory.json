@@ -1,0 +1,5 @@
+{
+  "name": "StateCategory",
+  "dataType": "string",
+  "sourceColumn": "StateCategory"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "competence_code",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "competence_code",
+  "sourceProviderType": "int"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "f36aed10-2afc-4b4c-9365-c3568e20e8fc",
+  "fromTable": "FactHours",
+  "fromColumn": "WorkItemId",
+  "toTable": "Workitems",
+  "toColumn": "WorkItemId"
+}

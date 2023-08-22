@@ -1,0 +1,27 @@
+{
+  "name": "G6InMonthMTSD_Donors",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "VAR planDate =",
+    "    CALCULATE (",
+    "        MAX ( 'Projects_Donors'[Max Plan Date G6 MTSD] ),",
+    "        TREATAS (",
+    "            CALCULATETABLE ( VALUES ( Projects[Donor] ) ),",
+    "            Projects_Donors[Project Code]",
+    "        )",
+    "    )",
+    "RETURN",
+    "    IF (",
+    "        ISBLANK ( planDate ),",
+    "        BLANK (),",
+    "        IF (",
+    "            MONTH ( planDate ) = MONTH ( maxDate )",
+    "                && YEAR ( planDate ) = YEAR ( maxDate ),",
+    "            1,",
+    "            0",
+    "        )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP"
+}

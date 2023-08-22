@@ -1,0 +1,6 @@
+{
+  "name": "SolObjectId",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "SolObjectId"
+}

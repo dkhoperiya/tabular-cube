@@ -1,0 +1,14 @@
+{
+  "name": "EmployeeMovements",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    dbo_EmployeeMovements = Source{[Schema=\"dbo\",Item=\"viw_EmployeeMovements2\"]}[Data]",
+      "in",
+      "    dbo_EmployeeMovements"
+    ]
+  }
+}

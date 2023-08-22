@@ -1,0 +1,6 @@
+{
+  "name": "kpi_date",
+  "dataType": "dateTime",
+  "isHidden": true,
+  "sourceColumn": "kpi_date"
+}

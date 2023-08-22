@@ -1,0 +1,23 @@
+{
+  "name": "FactMarginExtrSubcontr",
+  "expression": [
+    "/*Маржа от прочего субподряда*/",
+    "CALCULATE (",
+    "    SUM ( 'FactProjectExpenses'[FactMargin] ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[Тип расходов RMS] = \"Субподряд\" ),",
+    "    KEEPFILTERS ( 'FactProjectExpenses'[EXPENSE_CLASS] = \"OPEX\" ),",
+    "    KEEPFILTERS ( NOT 'FactProjectExpenses'[Ссылка 2]",
+    "        IN {",
+    "        \"NVision Czech Republic a.s.\",",
+    "        \"Nvision Czech Republic ICT a.s.\",",
+    "        \"МТС ЛАБ ООО\"",
+    "    } )",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactMarginExtrSubcontr\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Метрики детализации актов"
+}

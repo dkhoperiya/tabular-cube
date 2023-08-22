@@ -1,0 +1,7 @@
+{
+  "name": "0f0b20f6-1ac3-4190-ba45-10d67264766c",
+  "fromTable": "PlanHours",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

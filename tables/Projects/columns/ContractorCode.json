@@ -1,0 +1,7 @@
+{
+  "name": "ContractorCode",
+  "dataType": "int64",
+  "description": "Код исполнителя из договора",
+  "isHidden": true,
+  "sourceColumn": "ContractorCode"
+}

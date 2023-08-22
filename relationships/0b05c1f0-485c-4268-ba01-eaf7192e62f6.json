@@ -1,0 +1,7 @@
+{
+  "name": "0b05c1f0-485c-4268-ba01-eaf7192e62f6",
+  "fromTable": "OpexBudgetingFact",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

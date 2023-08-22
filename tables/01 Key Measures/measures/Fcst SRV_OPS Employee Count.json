@@ -1,0 +1,21 @@
+{
+  "name": "Fcst SRV_OPS Employee Count",
+  "description": "Прогноз FTE. Необходимая средняя численность трайба SRV_OPS по воронке RMS",
+  "expression": "DIVIDE ( [Fcst Work Hours SRV_OPS], [One Person Work Hours in Period SRV_OPS] )",
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\03. SRV_OPS",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Work Hours SRV_OPS] )",
+      "VAR _Y =",
+      "    CALCULATE ( [One Person Work Hours in Period SRV_OPS] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Work Hours SRV_OPS\", _X,",
+      "        \"One Person Work Hours in Period SRV_OPS\", _Y,",
+      "        \"Fcst SRV_OPS Employee Count\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

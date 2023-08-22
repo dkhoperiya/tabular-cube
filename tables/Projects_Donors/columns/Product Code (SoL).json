@@ -1,0 +1,6 @@
+{
+  "name": "Product Code (SoL)",
+  "dataType": "string",
+  "sourceColumn": "CodeSol",
+  "sourceProviderType": "nvarchar"
+}

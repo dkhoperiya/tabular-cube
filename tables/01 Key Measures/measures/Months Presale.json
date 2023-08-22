@@ -1,0 +1,30 @@
+{
+  "name": "Months Presale",
+  "expression": [
+    "AVERAGEX (",
+    "    VALUES ( Projects[Project Code] ),",
+    "    CALCULATE (",
+    "        COUNT ( Dates[Datekey] ),",
+    "        FILTER ( VALUES ( Dates[DateKey] ), CALCULATE ( [Fact Hours Presale] ) > 0 )",
+    "    ) / 21",
+    ")",
+    ""
+  ],
+  "formatString": "#,##0.0",
+  "displayFolder": "03. Hours\\02. Fact\\01. Presale",
+  "detailRowsDefinition": {
+    "expression": [
+      "FILTER (",
+      "    ADDCOLUMNS (",
+      "        VALUES ( Projects[Project] ),",
+      "        \"Months Presale\",",
+      "            CALCULATE (",
+      "                COUNT ( Dates[Datekey] ),",
+      "                FILTER ( VALUES ( Dates[DateKey] ), CALCULATE ( [Fact Hours Presale] ) > 0 )",
+      "            ) / 21",
+      "    ),",
+      "    [Months Presale] > 0",
+      ")"
+    ]
+  }
+}

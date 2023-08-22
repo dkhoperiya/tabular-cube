@@ -1,0 +1,6 @@
+{
+  "name": "VacationSource",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "VacationSource"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Donor",
+  "dataType": "string",
+  "sourceColumn": "Donor"
+}

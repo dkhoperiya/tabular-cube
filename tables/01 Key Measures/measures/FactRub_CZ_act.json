@@ -1,0 +1,25 @@
+{
+  "name": "FactRub_CZ_act",
+  "description": "Списания чехов на ТС",
+  "expression": [
+    "CALCULATE (",
+    "    [FactRub],",
+    "    KEEPFILTERS ( BusinessUnits[Entity Code] = \"4\" ),",
+    "    'Options'[Wip History Mode] = \"As Is\"",
+    ")",
+    "    + CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactRub_CZ_act\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Субподряд из Timesheets",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactRub] ),",
+      "    KEEPFILTERS ( BusinessUnits[Entity Code] = \"4\" )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "67646023-59e8-4b65-aa44-f9ad8800ab90",
+  "fromTable": "EmployeeMovements",
+  "fromColumn": "RoleCode",
+  "toTable": "Roles",
+  "toColumn": "Role Code"
+}

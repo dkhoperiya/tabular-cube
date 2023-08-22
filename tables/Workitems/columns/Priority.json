@@ -1,0 +1,7 @@
+{
+  "name": "Priority",
+  "dataType": "int64",
+  "sourceColumn": "Priority",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

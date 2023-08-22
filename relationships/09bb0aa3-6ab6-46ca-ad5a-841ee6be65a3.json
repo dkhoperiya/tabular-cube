@@ -1,0 +1,7 @@
+{
+  "name": "09bb0aa3-6ab6-46ca-ad5a-841ee6be65a3",
+  "fromTable": "PlanIncome_SumAct",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

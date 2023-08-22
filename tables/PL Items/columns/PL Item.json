@@ -1,0 +1,7 @@
+{
+  "type": "calculated",
+  "name": "PL Item",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": "'PL Items'[PL Item Code] & \" - \" & 'PL Items'[PL Item Name]"
+}

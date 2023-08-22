@@ -1,0 +1,47 @@
+{
+  "name": "Fcst Tribe Expenses 19",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Tribe Expenses],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Tribe Expenses 19],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03a. Forecast 19",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR LastFactDate =",
+      "    MAX ( DatesPlanFact[PF Date] )",
+      "VAR MinDate =",
+      "    CALCULATE ( MIN ( Dates[Date] ) )",
+      "VAR MaxDate =",
+      "    CALCULATE ( MAX ( Dates[Date] ) )",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        ADDCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                VALUES ( Dates[Month Date] ),",
+      "                KEEPFILTERS ( Dates[Date] >= MinDate && Dates[Date] <= MaxDate )",
+      "            ),",
+      "            \"Fact Tribe Expenses\",",
+      "                CALCULATE (",
+      "                    [Fact Tribe Expenses],",
+      "                    KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+      "                ),",
+      "            \"Plan Tribe Expenses 19\",",
+      "                CALCULATE (",
+      "                    [Plan Tribe Expenses 19],",
+      "                    KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+      "                )",
+      "        )",
+      "    )"
+    ]
+  }
+}

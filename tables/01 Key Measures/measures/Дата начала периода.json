@@ -1,0 +1,20 @@
+{
+  "name": "Дата начала периода",
+  "expression": [
+    "var March = DATE(2022,03,31)",
+    "var January = DATE(2022,01,01)",
+    "var lastG6 = IF (",
+    "    HASONEVALUE ( 'Projects'[Project] ),",
+    "    CALCULATE (",
+    "        MAX ( Milestones[Plan Date] ),",
+    "        KEEPFILTERS ( Milestones[Milestone] = \"[G6]\" ),",
+    "        KEEPFILTERS ( Milestones[Plan Date] <= March ),",
+    "        TREATAS ( VALUES ( Tribes[Tribe Code] ), Milestones[tribe_code] )",
+    "    )",
+    ")",
+    "return",
+    "IF(ISBLANK(lastG6) || lastG6 < January, DATE(2022,01,01), lastG6)"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

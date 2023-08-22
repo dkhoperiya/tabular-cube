@@ -1,0 +1,6 @@
+{
+  "name": "Epic_WorkItemId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Epic_WorkItemId"
+}

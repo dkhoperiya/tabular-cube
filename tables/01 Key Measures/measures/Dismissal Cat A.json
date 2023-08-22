@@ -1,0 +1,21 @@
+{
+  "name": "Dismissal Cat A",
+  "expression": [
+    "CALCULATE (",
+    "    DISTINCTCOUNT ( EmployeeMovements[EmployeeCode] ),",
+    "    FILTER (",
+    "        EmployeeMovements,",
+    "        EmployeeMovements[Action] = \"Dismissal\"",
+    "            && EmployeeMovements[Description] <> \"Выход в декрет\"",
+    "            && EmployeeMovements[EmployeeCategory] = \"A\"",
+    "    ), ",
+    "    FILTER (",
+    "     Employees,",
+    "      Employees[Employee Status] = \"Redundant\"",
+    "  )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "09. HR\\00. Back Up"
+}

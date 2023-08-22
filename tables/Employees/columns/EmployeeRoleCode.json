@@ -1,0 +1,7 @@
+{
+  "name": "EmployeeRoleCode",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "EmployeeRoleCode",
+  "summarizeBy": "none"
+}

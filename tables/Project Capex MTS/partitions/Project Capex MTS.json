@@ -1,0 +1,17 @@
+{
+  "name": "Project Capex MTS",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    stg_VIW_PROJECT_CAPEX_MTS = Source{[Schema=\"dbo\",Item=\"viw_HyperionProjects\"]}[Data],",
+      "    #\"Trimmed Text\" = Table.TransformColumns(stg_VIW_PROJECT_CAPEX_MTS,{{\"Capex_MTS_ID\", Text.Trim, type text}}),",
+      "    #\"Removed Duplicates\" = Table.Distinct(#\"Trimmed Text\"),",
+      "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Duplicates\",{{\"PROJECT_NAME\", \"Hyperion Project Name\"}, {\"PROJECT_STATUS\", \"Hyperion Project Status\"}, {\"COST_CENTER\", \"Hyperion Project CostCenter\"}})",
+      "in",
+      "    #\"Renamed Columns\""
+    ]
+  }
+}

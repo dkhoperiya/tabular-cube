@@ -1,0 +1,18 @@
+{
+  "name": "Fact Hours Presale %",
+  "expression": "DIVIDE ( [Fact Hours Presale], [Fact Hours] )",
+  "formatString": "#,##0.0 %",
+  "displayFolder": "03. Hours\\02. Fact\\01. Presale",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Hours Presale]",
+      "VAR _Y = [Fact Hours]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Hours Presale\", _X,",
+      "        \"Fact Hours\", _Y,",
+      "        \"Fact Hours Presale %\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

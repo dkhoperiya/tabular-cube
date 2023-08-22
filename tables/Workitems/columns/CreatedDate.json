@@ -1,0 +1,6 @@
+{
+  "name": "CreatedDate",
+  "dataType": "dateTime",
+  "sourceColumn": "CreatedDate",
+  "formatString": "dd.MM.yyyy"
+}

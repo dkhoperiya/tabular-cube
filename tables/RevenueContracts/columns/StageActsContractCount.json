@@ -1,0 +1,5 @@
+{
+  "name": "StageActsContractCount",
+  "dataType": "string",
+  "sourceColumn": "StageActsContractCount"
+}

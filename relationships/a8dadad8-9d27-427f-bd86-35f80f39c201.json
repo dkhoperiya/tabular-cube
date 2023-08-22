@@ -1,0 +1,7 @@
+{
+  "name": "a8dadad8-9d27-427f-bd86-35f80f39c201",
+  "fromTable": "WIP_Acts_XLSX",
+  "fromColumn": "ProjectCode",
+  "toTable": "Projects",
+  "toColumn": "Project Code"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "_FACT_MONTH_COUNT",
+  "expression": [
+    "VAR _B_DATE =",
+    "    CALCULATE ( MIN ( Dates[Date] ), ALLSELECTED ( Dates ) )",
+    "VAR _F_DATE =",
+    "    DATE ( YEAR ( TODAY () ), MONTH ( TODAY () ), 1 ) - 1",
+    "RETURN",
+    "    DATEDIFF ( _B_DATE, TODAY(), MONTH )"
+  ],
+  "isHidden": true,
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses"
+}

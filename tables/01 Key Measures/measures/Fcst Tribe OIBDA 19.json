@@ -1,0 +1,6 @@
+{
+  "name": "Fcst Tribe OIBDA 19",
+  "expression": "[Fcst Tribe GM 19] - [Fcst Tribe OPEX]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\04.a Forecast 19"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Months Presale CT",
+  "expression": [
+    "AVERAGEX (",
+    "    VALUES ( Projects[Project Code] ),",
+    "    VAR _MAX_SELECTED_DATE =",
+    "        CALCULATE ( MAX ( Dates[Date] ) )",
+    "    VAR _END_PRESALE_DATE =",
+    "        CALCULATE (",
+    "            CALCULATE (",
+    "                MAX ( Dates[Date] ),",
+    "                FILTER ( VALUES ( Dates[DateKey] ), [Fact Hours Presale] > 0 )",
+    "            ),",
+    "            ALL ( Dates )",
+    "        )",
+    "    VAR _END_PRESALE_MONTH_DATE =",
+    "        DATE ( YEAR ( _END_PRESALE_DATE ), MONTH ( _END_PRESALE_DATE ) + 1, 1 )",
+    "    RETURN",
+    "    ",
+    "        IF (",
+    "            _MAX_SELECTED_DATE < _END_PRESALE_MONTH_DATE,",
+    "            CALCULATE (",
+    "                COUNT ( Dates[Datekey] ),",
+    "                FILTER (",
+    "                    ALL ( Dates ),",
+    "                    Dates[Date] <= _MAX_SELECTED_DATE",
+    "                        && CALCULATE ( [Fact Hours Presale] ) > 0",
+    "                )",
+    "            ) / 21",
+    "        )",
+    ")"
+  ],
+  "formatString": "#,##0.0",
+  "displayFolder": "03. Hours\\02. Fact\\01. Presale",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Months Presale] )"
+  }
+}

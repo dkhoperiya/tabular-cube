@@ -1,0 +1,6 @@
+{
+  "name": "IterationEndDate",
+  "dataType": "dateTime",
+  "sourceColumn": "IterationEndDate",
+  "formatString": "dd.MM.yyyy"
+}

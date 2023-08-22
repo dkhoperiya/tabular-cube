@@ -1,0 +1,7 @@
+{
+  "name": "baebcd87-f7f3-4bd2-bea5-34598d2cb110",
+  "fromTable": "PlanIncome",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

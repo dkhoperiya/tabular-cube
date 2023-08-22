@@ -1,0 +1,6 @@
+{
+  "name": "Номер Заказа на приобретение OEBS",
+  "dataType": "string",
+  "sourceColumn": "Номер Заказа на приобретение OEBS",
+  "sourceProviderType": "nvarchar"
+}

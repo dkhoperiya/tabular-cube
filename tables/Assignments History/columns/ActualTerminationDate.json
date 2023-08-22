@@ -1,0 +1,6 @@
+{
+  "name": "ActualTerminationDate",
+  "dataType": "dateTime",
+  "sourceColumn": "ActualTerminationDate",
+  "formatString": "dd.MM.yyyy"
+}

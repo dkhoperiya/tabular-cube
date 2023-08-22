@@ -1,0 +1,15 @@
+{
+  "name": "FactRub renorm",
+  "expression": [
+    "SUM ( 'FactHours_Renormilized'[FactRub] )",
+    "+ CALCULATE (",
+    "        [WIP Project Value Open Period],",
+    "        KEEPFILTERS ( 'WIP_ProjectMetricsHistory'[MeasureName] = \"FactRub renorm\" )",
+    "    )"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики перенормализации",
+  "detailRowsDefinition": {
+    "expression": "FactHours_Renormilized"
+  }
+}

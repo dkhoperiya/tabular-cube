@@ -1,0 +1,45 @@
+{
+  "name": "Historical WA Fot Rate SQA",
+  "description": "Средневзвешенная ставка ФОТ трайба SQA.",
+  "expression": [
+    "CALCULATE (",
+    "    [Historical WA Fot Rate],",
+    "    FILTER (",
+    "        ALLEXCEPT ( Capacity, Dates, Roles,'Competences' ),",
+    "        Capacity[TribeCode] = 18",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\01. QA Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR BudgetRatesVersion =",
+      "    IF (",
+      "        HASONEVALUE ( Capacity[BudgetRates_Version] ),",
+      "        SELECTEDVALUE ( Capacity[BudgetRates_Version] ),",
+      "        \"Ставки RMS\"",
+      "    )",
+      "RETURN",
+      "    FILTER (",
+      "        SELECTCOLUMNS (",
+      "            CALCULATETABLE (",
+      "                Capacity,",
+      "                ALLEXCEPT ( Capacity, Dates, Roles, 'Competences' ),",
+      "                Capacity[TribeCode] = 18,",
+      "                Capacity[BudgetRates_Version] = BudgetRatesVersion",
+      "            ),",
+      "            \"Employee\", RELATED ( Employees[Employee] ),",
+      "            \"BusinessUnit\", 'Capacity'[BuCode],",
+      "            \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "            \"Role\", RELATED ( Roles[Role] ),",
+      "            \"Competence\", RELATED ( 'Competences'[Competence] ),",
+      "            \"Date\", RELATED ( Dates[Date] ),",
+      "            \"SQA Fot Rate\", 'Capacity'[FotRate],",
+      "            \"Budget Rates Version\", BudgetRatesVersion",
+      "        ),",
+      "        [SQA Fot Rate] <> BLANK ()",
+      "    )"
+    ]
+  }
+}

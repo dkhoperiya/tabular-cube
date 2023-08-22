@@ -1,0 +1,6 @@
+{
+  "name": "CG FIN Expense Types",
+  "calculationGroup": {
+    "precedence": 1
+  }
+}

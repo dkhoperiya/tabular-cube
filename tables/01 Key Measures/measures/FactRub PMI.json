@@ -1,0 +1,19 @@
+{
+  "name": "FactRub PMI",
+  "expression": [
+    "CALCULATE (",
+    "    [FactRub],",
+    "    KEEPFILTERS ('Resource Tribe'[Resource Tribe Code]  = 60 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\02. PMI",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactRub] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 60 )",
+      ")"
+    ]
+  }
+}

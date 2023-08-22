@@ -1,0 +1,14 @@
+{
+  "name": "Budget MR27",
+  "expression": [
+    "CALCULATE (",
+    "    SUM ( Budget_MR27[Budget] ),",
+    "    KEEPFILTERS ( Budget_MR27[FactOrPlan] = \"PLAN\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\03. Budget MR27",
+  "detailRowsDefinition": {
+    "expression": "CALCULATETABLE ( Budget_MR27, KEEPFILTERS ( Budget_MR27[FactOrPlan] = \"PLAN\" ) )"
+  }
+}

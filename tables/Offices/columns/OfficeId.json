@@ -1,0 +1,8 @@
+{
+  "name": "OfficeId",
+  "dataType": "int64",
+  "isHidden": true,
+  "isKey": true,
+  "isNullable": false,
+  "sourceColumn": "OfficeId"
+}

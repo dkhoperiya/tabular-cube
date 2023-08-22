@@ -1,0 +1,12 @@
+{
+  "type": "calculated",
+  "name": "Max Plan Date G6",
+  "dataType": "dateTime",
+  "expression": [
+    "CALCULATE (",
+    "    MAX ( 'Milestones'[Plan Date] ),",
+    "    KEEPFILTERS ( 'Milestones'[Milestone] = \"[G6]\" )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy"
+}

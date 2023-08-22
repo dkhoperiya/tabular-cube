@@ -1,0 +1,35 @@
+{
+  "name": "Fcst Tribe Income Subcontracts",
+  "description": "Прогнозные (факт/план) доходы от привлечения сотрудников на проекты прочих трайбов.",
+  "expression": [
+    "VAR LastFactDate =",
+    "    MAX ( DatesPlanFact[PF Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Fact Tribe Income Subcontracts],",
+    "        KEEPFILTERS ( 'Dates'[Date] <= LastFactDate )",
+    "    )",
+    "        + CALCULATE (",
+    "            [Plan Tribe Income Subcontracts],",
+    "            KEEPFILTERS ( 'Dates'[Date] > LastFactDate )",
+    "        )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _LAST_FACT_DATE =",
+      "    MAX ( DatesPlanFact[PF Date] )",
+      "VAR _FACT =",
+      "    CALCULATE ( [Fact Tribe Income Subcontracts], KEEPFILTERS ( 'Dates'[Date] <= _LAST_FACT_DATE ) )",
+      "VAR _PLAN =",
+      "    CALCULATE ( [Plan Tribe Income Subcontracts], KEEPFILTERS ( 'Dates'[Date] > _LAST_FACT_DATE ) )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact to Date\", _LAST_FACT_DATE,",
+      "        \"Fact Tribe Income Subcontracts\", _FACT,",
+      "        \"Plan Tribe Income Subcontracts\", _PLAN",
+      "    )"
+    ]
+  }
+}

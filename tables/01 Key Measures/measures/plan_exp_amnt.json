@@ -1,0 +1,31 @@
+{
+  "name": "plan_exp_amnt",
+  "expression": [
+    "VAR o =",
+    "    SELECTEDVALUE ( Options[Project Probability Mode] )",
+    "RETURN",
+    "    IF ( o = \"Full\", [plan_exp_amnt_full], [plan_exp_amnt_probability] )"
+  ],
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR pm =",
+      "    CALCULATE ( SELECTEDVALUE ( Options[Project Probability Mode] ) )",
+      "RETURN",
+      "    SELECTCOLUMNS (",
+      "        ProjectExpenses_RMS,",
+      "        \"Project\", RELATED ( Projects[project] ),",
+      "        \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "        \"Expense Type\", RELATED ( ExpenseTypes[ExpenseType_Name] ),",
+      "        \"Customer\",",
+      "            'ProjectExpenses_RMS'[CustomerBuCode] & \" - \"",
+      "                & RELATED ( BusinessUnits[BU Name] ),",
+      "        \"Expense Date\", ProjectExpenses_RMS[expense_date],",
+      "        \"Plan Subcontr Exp\",",
+      "            IF ( pm = \"Full\", 1, RELATED ( Projects[Project Probability] ) ) * [plan_expense_amount]",
+      "    )"
+    ]
+  }
+}

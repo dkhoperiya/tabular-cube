@@ -1,0 +1,10 @@
+{
+  "name": "FR_CM",
+  "expression": [
+    "    CALCULATE (",
+    "        DIVIDE ( [FactRub], 0.93 ) - [FactRub],",
+    "        KEEPFILTERS ( BusinessUnits[Entity Code] = \"4\" )",
+    "    )"
+  ],
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact overhead costs and margin details"
+}

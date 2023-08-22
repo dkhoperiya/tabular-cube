@@ -1,0 +1,6 @@
+{
+  "name": "GrossMargin",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "GrossMargin"
+}

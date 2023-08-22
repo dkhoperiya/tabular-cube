@@ -1,0 +1,6 @@
+{
+  "name": "TransferRate",
+  "dataType": "decimal",
+  "isHidden": true,
+  "sourceColumn": "TransferRate"
+}

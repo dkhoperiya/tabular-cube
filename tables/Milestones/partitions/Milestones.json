@@ -1,0 +1,36 @@
+{
+  "name": "Milestones",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "  Source = #\"DWH\",",
+      "  //Source = Sql.Database(\"pmo-dwh01\",\"Olap_staging_dw\"),",
+      "  dbo_Income = Source{[Schema = \"dbo\", Item = \"viw_RMS_Milestones\"]}[Data],",
+      "  #\"Renamed Columns\" = Table.RenameColumns(",
+      "      dbo_Income, ",
+      "      {",
+      "        {\"ProjectCode\", \"project_code\"}, ",
+      "        {\"KpiDate\", \"KPI Date\"}, ",
+      "        {\"GateDescription\", \"Milestone Name\"}, ",
+      "        {\"PlanDate\", \"Plan Date\"}, ",
+      "        {\"FinActStatus\", \"Fin Act Status\"}, ",
+      "        {\"КТ\", \"Milestone\"}, ",
+      "        {\"WorkStatus\", \"Works Status\"}, ",
+      "        {\"Code\", \"milestone_code\"}, ",
+      "        {\"Contour_Code\", \"tribe_code\"}",
+      "      }",
+      "    ),",
+      "  #\"Added Custom\" = Table.AddColumn(",
+      "      #\"Renamed Columns\", ",
+      "      \"Works Complete\", ",
+      "      each Text.Upper([Works Status]) = \"ВЫПОЛНЕНО\", ",
+      "      type logical",
+      "    ),",
+      "  #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Custom\", {{\"tribe_code\", Int64.Type}})",
+      "in",
+      "  #\"Changed Type\""
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Plan Cost of Works 19",
+  "expression": " IF( [Project Capacity Fot Rates] = 0,BLANK(), [Project Capacity Fot Rates] )",
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01a. Plan 19",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Project Capacity Fot Rates] )"
+  }
+}

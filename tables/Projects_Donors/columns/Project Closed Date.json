@@ -1,0 +1,7 @@
+{
+  "name": "Project Closed Date",
+  "dataType": "dateTime",
+  "sourceColumn": "ClosedDate",
+  "formatString": "dd.MM.yyyy",
+  "sourceProviderType": "datetime2"
+}

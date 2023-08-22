@@ -1,0 +1,7 @@
+{
+  "name": "d65aa3d8-1c3f-4b9a-8591-66686d7c70c2",
+  "fromTable": "Projects",
+  "fromColumn": "Customer",
+  "toTable": "Customers",
+  "toColumn": "Customer"
+}

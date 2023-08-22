@@ -1,0 +1,7 @@
+{
+  "name": "VacantDate",
+  "dataType": "dateTime",
+  "sourceColumn": "VacantDate",
+  "formatString": "dd.MM.yyyy",
+  "summarizeBy": "none"
+}

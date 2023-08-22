@@ -1,0 +1,18 @@
+{
+  "name": "Fact Tribe GM %",
+  "expression": "DIVIDE ( [Fact Tribe GM], [Fact Tribe Income] )",
+  "formatString": "0.0%;-0.0%;0.0%",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X = [Fact Tribe GM]",
+      "VAR _Y = [Fact Tribe Income]",
+      "RETURN",
+      "    ROW (",
+      "        \"Fact Tribe GM\", _X,",
+      "        \"Fact Tribe Income\", _Y,",
+      "        \"Fact Tribe GM %\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

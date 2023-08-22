@@ -1,0 +1,21 @@
+{
+  "name": "Internal Tribe Turnover",
+  "expression": [
+    "COUNTROWS (",
+    "    FILTER (",
+    "        ADDCOLUMNS (",
+    "            SUMMARIZE (",
+    "                EmployeeMovements,",
+    "                EmployeeMovements[EmployeeCode],",
+    "                Dates[Month Date],",
+    "                Tribes[Tribe]",
+    "            ),",
+    "            \"TM\", [Переводы между трайбами]",
+    "        ),",
+    "        [TM] < 0",
+    "    )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики\\01. Внутренние перемещения"
+}

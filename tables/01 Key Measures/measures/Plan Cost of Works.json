@@ -1,0 +1,28 @@
+{
+  "name": "Plan Cost of Works",
+  "description": "Плановая стоимость трудозатрат собственных сотрудников в ставках ФОТ. ",
+  "expression": [
+    "VAR _BUDGET_VERSION =",
+    "    IF (",
+    "        HASONEVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        SELECTEDVALUE ( 'Budget Rates Versions'[Budget Rates Version] ),",
+    "        \"Ставки RMS\"",
+    "    )",
+    "VAR _USE_PROJECT_PROBABILITY =",
+    "    IF ( SELECTEDVALUE ( Options[Project Probability Mode] ) = \"Full\", 0, 1 )",
+    "RETURN",
+    "    CALCULATE (",
+    "        [PlanFotRub],",
+    "        KEEPFILTERS ( 'PlanHours'[is_subcontract] = 0 ),",
+    "        KEEPFILTERS ( 'PlanHours'[UseProjectProbability] = _USE_PROJECT_PROBABILITY ),",
+    "        KEEPFILTERS ( 'PlanHours'[BudgetRates_Version] = _BUDGET_VERSION ),",
+    "        KEEPFILTERS ( 'Projects'[incl_for_fin_plan] ),",
+    "        KEEPFILTERS ( Projects[Project Category Code] <> \"10\" )",
+    "    )"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS([Plan Hours])"
+  }
+}

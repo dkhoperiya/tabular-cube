@@ -1,0 +1,20 @@
+{
+  "name": "Fact Project SUPPORT Expenses",
+  "description": "Фактические расходы на субподряд трайба SUPPORT по трансфертным ставкам.",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Transfer Cost of Works],",
+    "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 26 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\02. Support Service",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Transfer Cost of Works] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 26 )",
+      ")"
+    ]
+  }
+}

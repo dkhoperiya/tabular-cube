@@ -1,0 +1,15 @@
+{
+  "name": "Fact Project Income no ORZ",
+  "expression": "CALCULATE ( [FactRub], KEEPFILTERS ( 'Work Types'[Expense Type] <> \"ОРЗ\" ) )",
+  "formatString": "#,0",
+  "isHidden": true,
+  "displayFolder": "01. Project\\03. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactRub] ),",
+      "    KEEPFILTERS ( 'Work Types'[Expense Type] <> \"ОРЗ\" )",
+      ")"
+    ]
+  }
+}

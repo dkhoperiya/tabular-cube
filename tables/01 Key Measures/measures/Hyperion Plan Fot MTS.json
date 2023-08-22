@@ -1,0 +1,14 @@
+{
+  "name": "Hyperion Plan Fot MTS",
+  "description": "Сумма плана затарт на персонал МТС из Hyperion где BI_BUDGET_TYPE = \"PAY Оплата\" и BI_BUDGET_ITEM_CODE  =\"B40020504 Капитализируемые расходы на штатный персонал\"",
+  "expression": [
+    "CALCULATE (",
+    "    [Hyperion Plan Capex Simple],",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BI_BUDGET_TYPE] = \"PAY Оплата\" ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[EXPENCE_GROUP_CODE] IN {\"401\"} ),",
+    "    KEEPFILTERS ( 'Hyperion Plan'[BU_CODE] IN {\"4000\"} )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget\\01. Hyperion Plan Capex"
+}

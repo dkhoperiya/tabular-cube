@@ -1,0 +1,6 @@
+{
+  "name": "Service Request Finish",
+  "dataType": "dateTime",
+  "sourceColumn": "Service Request Finish",
+  "formatString": "dd.MM.yyyy"
+}

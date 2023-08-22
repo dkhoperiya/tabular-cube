@@ -1,0 +1,8 @@
+{
+  "name": "Date",
+  "dataType": "dateTime",
+  "isUnique": true,
+  "isKey": true,
+  "sourceColumn": "Date",
+  "formatString": "dd.MM.yyyy"
+}

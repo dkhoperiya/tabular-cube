@@ -1,0 +1,7 @@
+{
+  "name": "fd91324e-6b27-4afb-8132-ae98eb6a7b4e",
+  "fromTable": "FactIncome",
+  "fromColumn": "InvestProjectPairId",
+  "toTable": "InvestProjectPairs",
+  "toColumn": "InvestProjectPairId"
+}

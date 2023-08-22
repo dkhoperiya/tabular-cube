@@ -1,0 +1,31 @@
+{
+  "name": "EmployeeCount",
+  "description": "Базовая метрика подсчета количества сотрудников из Employees",
+  "expression": [
+    "CALCULATE (",
+    "    COUNTA ( Employees[Employee Code] ),",
+    "    TREATAS ( VALUES ( 'Tribes'[Tribe Code] ), Employees[EmployeeTribeCode] ),",
+    "    TREATAS ( VALUES ( 'Resource Tribe'[Resource Tribe Code] ), Employees[EmployeeTribeCode] ),",
+    "    TREATAS ( VALUES ( 'BusinessUnits'[BU Code] ), Employees[Employee Bu Code] ),",
+    "    TREATAS ( VALUES ( 'EmployeeAgeRanges'[ID] ), 'Employees'[Age Range ID] ),",
+    "    TREATAS ( VALUES ( 'EmployeeWorkTermRanges'[ID] ), 'Employees'[Work Term ID] ),",
+    "    TREATAS ( VALUES ( 'Roles'[Role Code] ), 'Employees'[EmployeeRoleCode] )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    'Employees',",
+      "    TREATAS ( VALUES ( 'Tribes'[Tribe Code] ), Employees[EmployeeTribeCode] ),",
+      "    TREATAS ( VALUES ( 'Resource Tribe'[Resource Tribe Code] ), Employees[EmployeeTribeCode] ),",
+      "    TREATAS ( VALUES ( 'BusinessUnits'[BU Code] ), Employees[Employee Bu Code] ),",
+      "    TREATAS ( VALUES ( 'EmployeeAgeRanges'[ID] ), 'Employees'[Age Range ID] ),",
+      "    TREATAS ( VALUES ( 'EmployeeWorkTermRanges'[ID] ), 'Employees'[Work Term ID] ),",
+      "    TREATAS ( VALUES ( 'Roles'[Role Code] ), 'Employees'[EmployeeRoleCode] )",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ориентировочная себестоимость",
+  "expression": "([Plan Revenue G6] - [Fact Revenue G6]) * 0.07",
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Без фильтра по дате",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR PlanReveneue =",
+      "    CALCULATE ( [Plan Revenue G6] )",
+      "VAR FactRevenue =",
+      "    CALCULATE ( [Fact Revenue G6] )",
+      "VAR koef = 0.07",
+      "RETURN",
+      "    ROW (",
+      "        \"Plan Revenue G6\", PlanReveneue,",
+      "        \"Fact Revenue G6\", FactRevenue,",
+      "        \"PlanReveneue - FactRevenue\", PlanReveneue - FactRevenue,",
+      "        \"koef\", koef,",
+      "        \"Ориентировочная себестоимость\",",
+      "            ( PlanReveneue - FactRevenue ) * koef",
+      "    )"
+    ]
+  }
+}

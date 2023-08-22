@@ -1,0 +1,19 @@
+{
+  "name": "Fact Product Opex",
+  "expression": [
+    "CALCULATE (",
+    "    [Fact Product Metric Value],",
+    "    KEEPFILTERS ( 'ProductFinancialMetrics'[Metric] = \"opex\" )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "19. Product",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Product Metric Value] ),",
+      "    KEEPFILTERS ( 'ProductFinancialMetrics'[Metric] = \"opex\" )",
+      ")"
+    ]
+  }
+}

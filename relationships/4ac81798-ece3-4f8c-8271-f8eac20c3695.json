@@ -1,0 +1,7 @@
+{
+  "name": "4ac81798-ece3-4f8c-8271-f8eac20c3695",
+  "fromTable": "Capacity",
+  "fromColumn": "Date",
+  "toTable": "Dates",
+  "toColumn": "Date"
+}

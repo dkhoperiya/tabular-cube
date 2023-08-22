@@ -1,0 +1,6 @@
+{
+  "name": "Entity Code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Entity Code"
+}

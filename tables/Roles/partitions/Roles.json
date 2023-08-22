@@ -1,0 +1,17 @@
+{
+  "name": "Roles",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    //Source = Sql.Database(\"0411pmobidwh02\",\"olap_staging_dw\"),",
+      "    dbo_DimRoles = Source{[Schema=\"dbo\",Item=\"viw_PMO_Finance_Roles\"]}[Data],",
+      "    #\"Renamed Columns\" = Table.RenameColumns(dbo_DimRoles,{{\"CODE\", \"role_code\"}, {\"NAME\", \"Role\"}, {\"IS_IN_PROJECT\", \"Is In Projects\"}, {\"GROUP_NAME\", \"Role Group\"}, {\"CATEGORY\", \"Role Category\"}, {\"TYPE\", \"Role Type\"}, {\"CAPITALIZATION_PERCENT\", \"Capitalization Percent\"}}),",
+      "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Renamed Columns\",{\"role_code\", \"Role\", \"Role Group\", \"Role Category\", \"Role Type\", \"Is In Projects\", \"Capitalization Percent\", \"Is_Leader\",\"RoleWorkAreaId\", \"RoleWorkAreaName\"})",
+      "in",
+      "    #\"Removed Other Columns\""
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Fact Cost of Works MTS",
+  "description": "Факт по ставкам ФОТ из RMS по bu=4000 (MTS)",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ( FactHours[Fact Employee BuCode] = 4000),",
+    "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact\\01. Additional",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [FactFotRub] ),",
+      "    KEEPFILTERS ( FactHours[Fact Employee BuCode] = 4000 ),",
+      "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+      ")"
+    ]
+  }
+}

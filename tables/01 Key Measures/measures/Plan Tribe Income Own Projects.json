@@ -1,0 +1,10 @@
+{
+  "name": "Plan Tribe Income Own Projects",
+  "description": "Плановые доходы трайба от собственных проектов: чч * трансфертную ставку + перепродаваемые расходы",
+  "expression": "[Plan Project Income]",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\01. Plan",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Project Income] )"
+  }
+}

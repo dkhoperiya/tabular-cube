@@ -1,0 +1,14 @@
+{
+  "name": "Project Contracts",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_Contracts_RMS = Source{[Schema=\"dbo\",Item=\"viw_Contracts_RMS\"]}[Data]",
+      "in",
+      "    viw_Contracts_RMS"
+    ]
+  }
+}

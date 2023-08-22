@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "ContractId",
+  "dataType": "string",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[ContractId]"
+}

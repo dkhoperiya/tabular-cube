@@ -1,0 +1,24 @@
+{
+  "name": "Текущая численность ДГПХ",
+  "description": "Количество сотрудников, которые работатют по договору ГПХ",
+  "expression": [
+    "CALCULATE(",
+    "    COUNTROWS('Assignments History'),",
+    "    KEEPFILTERS('Assignments History'[HireDate] <= TODAY()), ",
+    "    KEEPFILTERS('Assignments History'[ActualTerminationDate] >= TODAY()),",
+    "    KEEPFILTERS('Assignments History'[AssignmentType] = \"DGPH\"),",
+    "    KEEPFILTERS('Assignments History'[AssignmentStatus] = \"Акт. назначение\")",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\01. Текущая численность",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [EmployeeCount] ),",
+      "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ),",
+      "    KEEPFILTERS ( Employees[Outsourcer] = \"Yes\" )",
+      ")"
+    ]
+  }
+}

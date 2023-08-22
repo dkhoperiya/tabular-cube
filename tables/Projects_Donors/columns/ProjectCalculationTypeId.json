@@ -1,0 +1,8 @@
+{
+  "name": "ProjectCalculationTypeId",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "ProjectCalculationTypeId",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

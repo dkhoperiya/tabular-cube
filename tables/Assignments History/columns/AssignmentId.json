@@ -1,0 +1,6 @@
+{
+  "name": "AssignmentId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "AssignmentId"
+}

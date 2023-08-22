@@ -1,0 +1,23 @@
+{
+  "name": "Среднесп. численность кат. C",
+  "expression": [
+    "VAR _CATEGORY = \"C\"",
+    "RETURN",
+    "    CALCULATE (",
+    "        [Среднесп. численность кат.],",
+    "        KEEPFILTERS ( 'ImportantEmployee'[Employee Category] = _CATEGORY )",
+    "    )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики\\02. По категорям персонала",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _CATEGORY = \"A\"",
+      "RETURN",
+      "    CALCULATETABLE (",
+      "        DETAILROWS ( [Среднесп. численность кат.] ),",
+      "        KEEPFILTERS ( 'ImportantEmployee'[Employee Category] = _CATEGORY )",
+      "    )"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Fin Utilization FTE",
+  "expression": [
+    "CALCULATE (",
+    "    SUMX (Capacity, 'Capacity'[WorkingHours] * Capacity[FotRate] ),",
+    "    KEEPFILTERS ( Roles[Is in Projects] = 1 ),",
+    "    KEEPFILTERS ( NOT (Capacity[StatusCode]) IN {30, 40} ),",
+    "    KEEPFILTERS ( Capacity[BudgetRates_Version] = \"Ставки RMS\" ),",
+    "    KEEPFILTERS ( Capacity[EmploymentType] IN { \"Штатное расписание\", \"Стажер\" } )",
+    ")"
+  ],
+  "displayFolder": "04. Capacity\\01. Utilization\\Fin Utilization"
+}

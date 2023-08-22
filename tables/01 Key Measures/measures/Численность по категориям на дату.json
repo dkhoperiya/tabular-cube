@@ -1,0 +1,22 @@
+{
+  "name": "Численность по категориям на дату",
+  "expression": [
+    "VAR MAXDATE =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        COUNTROWS (",
+    "            FILTER (",
+    "                ImportantEmployee,",
+    "                'ImportantEmployee'[Start Date] <= MAXDATE",
+    "                    && (",
+    "                        MAXDATE <= 'ImportantEmployee'[Finish Date]",
+    "                            || ISBLANK ( 'ImportantEmployee'[Finish Date] )",
+    "                    )",
+    "            )",
+    "        )",
+    "    )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "09. HR\\02. HR - метрики\\02. По категорям персонала"
+}

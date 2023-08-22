@@ -1,0 +1,10 @@
+{
+  "name": "Fcst Tribe Income Own Projects YTD",
+  "description": "Прогнозная (факт/план) сумма доходов от собственных проектов трайба накопительным итогом по году. ",
+  "expression": "CALCULATE([Fcst Tribe Income Own Projects],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\03. Forecast",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fcst Tribe Income Own Projects] )"
+  }
+}

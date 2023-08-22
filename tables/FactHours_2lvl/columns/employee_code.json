@@ -1,0 +1,7 @@
+{
+  "name": "employee_code",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "employee_code",
+  "sourceProviderType": "nvarchar"
+}

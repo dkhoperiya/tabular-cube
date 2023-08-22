@@ -1,0 +1,17 @@
+{
+  "name": "Tribe KPI Revenue G3 YTD",
+  "expression": "CALCULATE([Tribe KPI Revenue G3],DATESYTD(Dates[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\03. Fin KPI\\03. Goal",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "    PL_Tribe_KPI,",
+      "    \"Tribe\", RELATED ( Tribes[Tribe] ),",
+      "    \"KPI Date\", PL_Tribe_KPI[kpi_date],",
+      "    \"BusinessUnit\", 'PL_Tribe_KPI'[BuCode],",
+      "    \"Tribe KPI Revenue G2\", PL_Tribe_KPI[G2_Revenue]",
+      ")"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Fact/Forecast MTS CAPEXFOT",
+  "expression": [
+    "CALCULATE (",
+    "    [PlanFotRub],",
+    "    KEEPFILTERS ( BusinessUnits[BU Code] = \"4000\" ),",
+    "    FILTER ( Projects, SEARCH ( \"CAPEXFOT\", Projects[Project], 1, 0 ) > 0 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "08. BIT Budget",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Plan Hours] )"
+  }
+}

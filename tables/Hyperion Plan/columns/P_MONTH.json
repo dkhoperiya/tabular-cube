@@ -1,0 +1,6 @@
+{
+  "name": "P_MONTH",
+  "dataType": "dateTime",
+  "sourceColumn": "P_MONTH",
+  "formatString": "0"
+}

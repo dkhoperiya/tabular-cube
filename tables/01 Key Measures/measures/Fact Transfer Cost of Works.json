@@ -1,0 +1,26 @@
+{
+  "name": "Fact Transfer Cost of Works",
+  "description": "Расходы проекта/трайба на субподряд. Стоимость часов прочих трайбов (кроме SUB_CZ и SUB_MINSK) по трансфертным ставкам.",
+  "expression": [
+    "CALCULATE (",
+    "    [FactRub],",
+    "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 1 ),",
+    "    KEEPFILTERS ( 'Resource Tribe'[IsExternalSubcontractTribe] = 0 ),",
+    "    KEEPFILTERS ( 'BusinessUnits'[Is Subcontractor] = FALSE () ),",
+    "    KEEPFILTERS ( 'Projects'[incl_for_fin_fact] )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "01. Project\\02. Expenses\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fact Hours] ),",
+      "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 1 ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[IsExternalSubcontractTribe] = 0 ),",
+      "    KEEPFILTERS ( 'BusinessUnits'[Is Subcontractor] = FALSE () ),",
+      "    KEEPFILTERS ( 'Projects'[incl_for_fin_fact] )",
+      ")"
+    ]
+  }
+}

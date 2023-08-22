@@ -1,0 +1,6 @@
+{
+  "name": "ФормулаАМ до даты",
+  "expression": "[FactRub_AM до даты] + [Субподряд_Командировки_Прочее до даты] - [FactIncomeMTSD до даты]",
+  "formatString": "#,##0.00",
+  "displayFolder": "16. WIP\\Метрики WIP платежи\\С фильтом по дате"
+}

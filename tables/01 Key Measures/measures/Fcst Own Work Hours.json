@@ -1,0 +1,21 @@
+{
+  "name": "Fcst Own Work Hours",
+  "description": "Прогноз собственных человекочасов по проекту. Прогноз собственных расходов по проекту / средневзвешенную ставку трайба",
+  "expression": "DIVIDE ( [Fcst Project Own Expenses], [Historical WA Own Transfer Rate] )",
+  "formatString": "#,##0",
+  "displayFolder": "12. Projects Funnel\\01. Project Own Expenses",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR _X =",
+      "    CALCULATE ( [Fcst Project Own Expenses] )",
+      "VAR _Y =",
+      "    CALCULATE ( [Historical WA Own Transfer Rate] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Fcst Project Own Expenses\", _X,",
+      "        \"Historical WA Transfer Rate\", _Y,",
+      "        \"Fcst Own Employee Count\", DIVIDE ( _X, _Y )",
+      "    )"
+    ]
+  }
+}

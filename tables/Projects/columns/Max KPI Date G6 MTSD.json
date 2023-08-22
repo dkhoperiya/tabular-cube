@@ -1,0 +1,14 @@
+{
+  "type": "calculated",
+  "name": "Max KPI Date G6 MTSD",
+  "dataType": "dateTime",
+  "isDataTypeInferred": true,
+  "expression": [
+    "CALCULATE (",
+    "    MAX ( 'PlanIncome'[kpi_date] ),",
+    "    KEEPFILTERS ( 'Milestones'[Milestone] = \"[G6]\" ),",
+    "    KEEPFILTERS ( 'PlanIncome'[BuCode] = 1060 )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy"
+}

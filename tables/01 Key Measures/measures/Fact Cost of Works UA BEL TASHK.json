@@ -1,0 +1,38 @@
+{
+  "name": "Fact Cost of Works UA BEL TASHK",
+  "description": "Факт по ставкам ФОТ из RMS по bu=UA, BEL, Tashkent), где трайб проекта равен трайбу сотрудника",
+  "expression": [
+    "CALCULATE (",
+    "    [FactFotRub],",
+    "    KEEPFILTERS ( FactHours[Fact Employee BuCode] IN { 1040, 1050, 2080 } ),",
+    "    KEEPFILTERS ( 'FactHours'[IsSubcontract] = 0 )",
+    ")"
+  ],
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\02. Fact\\01. Additional",
+  "detailRowsDefinition": {
+    "expression": [
+      "SELECTCOLUMNS (",
+      "        FILTER (",
+      "            FactHours,",
+      "            ( FactHours[Fact Employee BuCode] = \"1040\"",
+      "                || FactHours[Fact Employee BuCode] = \"1050\"",
+      "                || FactHours[Fact Employee BuCode] = \"2080\" )",
+      "                && 'FactHours'[Fact Employee TribeCode] = 'FactHours'[Project_TribeCode]",
+      "        ),",
+      "        \"Employee Code\", 'FactHours'[PersonCode],",
+      "        \"Employee Name\", RELATED ( Employees[Employee Name] ),",
+      "        \"Employee Tribe\", 'FactHours'[Fact Employee TribeCode],",
+      "        \"Project\", RELATED ( Projects[Project] ),",
+      "        \"Project Tribe\", 'FactHours'[Project_TribeCode],",
+      "        \"BU\", FactHours[Fact Employee BuCode],",
+      "        \"Role\", RELATED ( Roles[Role] ),",
+      "        \"Competence\", RELATED ( Competences[Competence] ),",
+      "        \"Date\", 'FactHours'[DateKey],",
+      "        \"Fact Hours\", 'FactHours'[NormSeconds],",
+      "        \"FOT Rate\", 'FactHours'[FotRate],",
+      "        \"Fact Fot Rub\", 'FactHours'[NormSeconds] * 'FactHours'[FotRate]",
+      "    )"
+    ]
+  }
+}

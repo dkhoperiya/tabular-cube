@@ -1,0 +1,6 @@
+{
+  "name": "RESPONSIBILITY_CENTER",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "RESPONSIBILITY_CENTER"
+}

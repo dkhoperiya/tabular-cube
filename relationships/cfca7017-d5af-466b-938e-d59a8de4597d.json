@@ -1,0 +1,7 @@
+{
+  "name": "cfca7017-d5af-466b-938e-d59a8de4597d",
+  "fromTable": "BillingFinancialAnalyst",
+  "fromColumn": "ProductSolObjectId",
+  "toTable": "Business Products",
+  "toColumn": "BusinessProductObjectId"
+}

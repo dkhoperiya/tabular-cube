@@ -1,0 +1,10 @@
+{
+  "name": "FR до даты",
+  "expression": [
+    "VAR maxDate =",
+    "    MAX ( Dates[Date] )",
+    "RETURN",
+    "    CALCULATE ( [FR], FILTER ( ALL ( Dates ), Dates[Date] <= maxDate ) )"
+  ],
+  "displayFolder": "16. WIP\\Метрики перенормализации\\Fact ind FOT details"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "WIP_Acts_XLSX",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = #\"DWH\",",
+      "    viw_XLS_WIP_ACTS = Source{[Schema=\"dbo\",Item=\"viw_XLS_WIP_ACTS\"]}[Data]",
+      "in",
+      "    viw_XLS_WIP_ACTS"
+    ]
+  }
+}

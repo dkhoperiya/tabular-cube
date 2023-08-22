@@ -1,0 +1,14 @@
+{
+  "name": "ФормулаА до даты",
+  "expression": [
+    "var maxDate = MAX(Dates[Date])",
+    "return",
+    "CALCULATE (",
+    "    [ФормулаА],",
+    "    FILTER ( ALL(Dates),",
+    "        Dates[Date] <= maxDate )",
+    ")"
+  ],
+  "isHidden": true,
+  "displayFolder": "16. WIP\\Метрики и формулы"
+}

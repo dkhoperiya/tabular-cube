@@ -1,0 +1,5 @@
+{
+  "name": "Дельта внешние подрядчики план",
+  "expression": "CALCULATE ( [Plan Subcontr Exp], 'CG Time Intelligence'[Time Calc] = \"SPNY\" ) - [Fact Subcontr Exp]",
+  "ordinal": 7
+}

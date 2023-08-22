@@ -1,0 +1,20 @@
+{
+  "name": "Fcst Transfer Cost of Works SRV_OPS",
+  "description": "Стоимость трудозатрат трайба SRV_OPS в трансфертных ставках",
+  "expression": [
+    "CALCULATE (",
+    "    [Fcst Transfer Cost of Works],",
+    "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 35 )",
+    ")"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\02. Expenses\\04. Service Expenses\\03. Other Services\\03. SRV_OPS",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    DETAILROWS ( [Fcst Transfer Cost of Works] ),",
+      "    KEEPFILTERS ( 'Resource Tribe'[Resource Tribe Code] = 35 )",
+      ")"
+    ]
+  }
+}

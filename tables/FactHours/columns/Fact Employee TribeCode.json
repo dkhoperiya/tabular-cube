@@ -1,0 +1,6 @@
+{
+  "name": "Fact Employee TribeCode",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "fact_employee_tribe"
+}

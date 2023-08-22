@@ -1,0 +1,7 @@
+{
+  "name": "Name",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "Name",
+  "sortByColumn": "Ordinal"
+}

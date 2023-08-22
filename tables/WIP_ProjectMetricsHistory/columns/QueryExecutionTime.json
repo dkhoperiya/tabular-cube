@@ -1,0 +1,5 @@
+{
+  "name": "QueryExecutionTime",
+  "dataType": "dateTime",
+  "sourceColumn": "QueryExecutionTime"
+}

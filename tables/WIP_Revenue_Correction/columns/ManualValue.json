@@ -1,0 +1,5 @@
+{
+  "name": "ManualValue",
+  "dataType": "decimal",
+  "sourceColumn": "ManualValue"
+}

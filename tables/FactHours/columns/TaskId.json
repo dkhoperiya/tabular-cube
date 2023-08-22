@@ -1,0 +1,7 @@
+{
+  "name": "TaskId",
+  "dataType": "string",
+  "sourceColumn": "TaskId",
+  "formatString": "0",
+  "summarizeBy": "none"
+}

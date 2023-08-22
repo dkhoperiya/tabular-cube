@@ -1,0 +1,15 @@
+{
+  "type": "calculated",
+  "name": "Project Util Category",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "IF (",
+    "     ( Projects[Admin Project] = \"Отпуска, болезни, админ\" )",
+    "        || Projects[Project Category Code] IN { \"11\", \"12\" },",
+    "    \"Административный\",",
+    "    \"Производственный\"",
+    ")"
+  ],
+  "displayFolder": "02. Info"
+}

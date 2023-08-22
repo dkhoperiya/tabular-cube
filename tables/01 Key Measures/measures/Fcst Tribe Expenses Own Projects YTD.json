@@ -1,0 +1,7 @@
+{
+  "name": "Fcst Tribe Expenses Own Projects YTD",
+  "description": "Прогнозная (факт/план) сумма расходов на собственные проекты трайба накопительным итогом по году. ",
+  "expression": "CALCULATE([Fcst Tribe Expenses Own Projects],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\02. Expenses\\03. Forecast"
+}

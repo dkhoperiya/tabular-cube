@@ -1,0 +1,7 @@
+{
+  "name": "CompletedWork",
+  "dataType": "decimal",
+  "sourceColumn": "CompletedWork",
+  "formatString": "#,##0",
+  "summarizeBy": "none"
+}

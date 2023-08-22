@@ -1,0 +1,6 @@
+{
+  "name": "SubProductSolObjectId",
+  "dataType": "string",
+  "isHidden": true,
+  "sourceColumn": "SubProductSolObjectId"
+}

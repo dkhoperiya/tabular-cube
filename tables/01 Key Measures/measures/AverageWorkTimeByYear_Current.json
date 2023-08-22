@@ -1,0 +1,15 @@
+{
+  "name": "AverageWorkTimeByYear_Current",
+  "expression": [
+    "CALCULATE (",
+    "    [WorkTimeAverage],",
+    "    KEEPFILTERS ( Employees[Employee Status] = \"Active\" ), -- Не уволен, не мобилизован, не в декрете",
+    "    KEEPFILTERS ( Employees[Is Vacancy] = FALSE ), -- Не открытая вакансия",
+    "    KEEPFILTERS ( Employees[Trainee] = \"No\" ), -- Не стажер",
+    "    KEEPFILTERS ( Employees[AssigmentCombinationStatus] = \"Основное назначение\" ), -- Не совместитель",
+    "    KEEPFILTERS ( Employees[AssigmentTypeName] = \"STUFF\" ) -- Штатный сотрудник",
+    ")"
+  ],
+  "formatString": "#,##0.00",
+  "displayFolder": "09. HR"
+}

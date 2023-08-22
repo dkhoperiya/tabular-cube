@@ -1,0 +1,6 @@
+{
+  "name": "AgeRange",
+  "dataType": "string",
+  "sourceColumn": "AgeRange",
+  "sortByColumn": "ID"
+}

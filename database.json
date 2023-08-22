@@ -1,0 +1,26 @@
+{
+  "name": "PMO_Finance",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "ru-RU",
+    "discourageImplicitMeasures": true,
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      },
+      {
+        "name": "TabularEditor_SerializeOptions",
+        "value": "{\"IgnoreInferredObjects\":true,\"IgnoreInferredProperties\":true,\"IgnoreTimestamps\":true,\"SplitMultilineStrings\":true,\"PrefixFilenames\":false,\"LocalTranslations\":false,\"LocalPerspectives\":false,\"LocalRelationships\":false,\"Levels\":[\"Data Sources\",\"Shared Expressions\",\"Perspectives\",\"Relationships\",\"Roles\",\"Tables\",\"Tables/Columns\",\"Tables/Hierarchies\",\"Tables/Measures\",\"Tables/Partitions\",\"Tables/Calculation Items\",\"Translations\"]}"
+      },
+      {
+        "name": "BestPracticeAnalyzer_IgnoreRules",
+        "value": "{\"RuleIDs\":[\"LAYOUT_HIDE_FK_COLUMNS\",\"RELATIONSHIP_COLUMN_NAMES\",\"PERF_UNUSED_COLUMNS\",\"PERF_UNUSED_MEASURES\",\"AVOID_SINGLE_ATTRIBUTE_DIMENSIONS\",\"PARTITION_NAMES_SHOULD_MATCH_TABLE_NAMES\",\"NO_CAMELCASE_MEASURES_TABLES\",\"NO_CAMELCASE_COLUMNS_HIERARCHIES\",\"LAYOUT_COLUMNS_HIERARCHIES_DF\",\"DISABLE_ATTRIBUTE_HIERACHIES\"]}"
+      },
+      {
+        "name": "BestPracticeAnalyzer_ExternalRuleFiles",
+        "value": "[\"C:\\\\Repos\\\\PmoDatabase\\\\BI\\\\TabularEditor\\\\Rules\\\\BPARules-standard.custom.json\",\"C:\\\\Repos\\\\PmoDatabase\\\\BI\\\\TabularEditor\\\\Rules\\\\BPARules-PMO_Finance.json\"]"
+      }
+    ]
+  }
+}

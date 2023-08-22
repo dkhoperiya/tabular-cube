@@ -1,0 +1,7 @@
+{
+  "name": "5c7440a4-9f2e-4089-b73f-09bfe5222d7b",
+  "fromTable": "IndustryCalendar",
+  "fromColumn": "BuCode",
+  "toTable": "BusinessUnits",
+  "toColumn": "BU Code"
+}

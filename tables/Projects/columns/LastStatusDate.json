@@ -1,0 +1,6 @@
+{
+  "name": "LastStatusDate",
+  "dataType": "dateTime",
+  "sourceColumn": "LastStatusDate",
+  "formatString": "dd.MM.yyyy"
+}

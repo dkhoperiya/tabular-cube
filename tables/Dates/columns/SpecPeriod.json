@@ -1,0 +1,17 @@
+{
+  "type": "calculated",
+  "name": "SpecPeriod",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "IF (",
+    "    Dates[Date] < TODAY (),",
+    "    \"Before\",",
+    "    IF (",
+    "        Dates[Date] = TODAY (),",
+    "        \"Today\",",
+    "        IF ( Dates[Date] <= EOMONTH ( TODAY (), 0 ), \"This Month\", \"After\" )",
+    "    )",
+    ")"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "WipContractSum",
+  "dataType": "decimal",
+  "sourceColumn": "WipContractSum",
+  "formatString": "#,##0.00",
+  "summarizeBy": "none"
+}

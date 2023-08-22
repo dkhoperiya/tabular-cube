@@ -1,0 +1,8 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "Expense Type",
+  "dataType": "string",
+  "isNameInferred": true,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Expense Type]"
+}

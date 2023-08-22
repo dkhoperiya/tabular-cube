@@ -1,0 +1,23 @@
+{
+  "name": "Overdue Days G2",
+  "description": "Просрочено дней по G2",
+  "expression": [
+    "VAR d = [Expired Date G2]",
+    "RETURN",
+    "    IF ( NOT ( ISBLANK ( d ) ), INT ( TODAY () - d ) )"
+  ],
+  "formatString": "#,##0",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "VAR d =",
+      "    CALCULATE ( [Expired Date G2] )",
+      "RETURN",
+      "    ROW (",
+      "        \"Today\", TODAY (),",
+      "        \"G2 Date\", d,",
+      "        \"Days Expired\", IF ( NOT ( ISBLANK ( d ) ), INT ( TODAY () - d ) )",
+      "    )"
+    ]
+  }
+}

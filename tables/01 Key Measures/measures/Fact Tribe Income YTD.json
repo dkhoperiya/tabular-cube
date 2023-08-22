@@ -1,0 +1,10 @@
+{
+  "name": "Fact Tribe Income YTD",
+  "description": "Фактические доходы трайба накопительным итогом по году",
+  "expression": "CALCULATE([Fact Tribe Income],DATESYTD('Dates'[Date]))",
+  "formatString": "#,0",
+  "displayFolder": "02. Tribe\\01. Income\\02. Fact",
+  "detailRowsDefinition": {
+    "expression": "DETAILROWS ( [Fact Tribe Income] )"
+  }
+}

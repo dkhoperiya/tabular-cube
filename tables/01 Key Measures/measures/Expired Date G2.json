@@ -1,0 +1,55 @@
+{
+  "name": "Expired Date G2",
+  "description": "Дата наступления точки G2. Только прошедшие даты невыполненных точек",
+  "expression": [
+    "IF (",
+    "    HASONEVALUE ( 'Projects'[Project Code] ),",
+    "    CALCULATE (",
+    "        MIN ( Milestones[KPI Date] ),",
+    "        FILTER (",
+    "            Milestones,",
+    "            Milestones[Milestone] = \"[G2]\"",
+    "                && Milestones[Works Complete] = FALSE ()",
+    "                && Milestones[KPI Date] < TODAY ()",
+    "        )",
+    "    )",
+    ")"
+  ],
+  "formatString": "dd.MM.yyyy",
+  "displayFolder": "01. Project\\05. Info",
+  "detailRowsDefinition": {
+    "expression": [
+      "CALCULATETABLE (",
+      "    ADDCOLUMNS (",
+      "        SELECTCOLUMNS (",
+      "            TOPN (",
+      "                1,",
+      "                FILTER (",
+      "                    Milestones,",
+      "                    Milestones[Milestone] = \"[G2]\"",
+      "                        && Milestones[Works Complete] = FALSE ()",
+      "                        && Milestones[KPI Date] < TODAY ()",
+      "                ),",
+      "                Milestones[KPI Date], ASC",
+      "            ),",
+      "            \"Project\", RELATED ( Projects[Project] ),",
+      "            \"Tribe\", RELATED ( Projects[Project Tribe] ),",
+      "            \"Milestone\", Milestones[Milestone],",
+      "            \"Milestone Name\", Milestones[Milestone Name],",
+      "            \"Works Status\", Milestones[Works Status],",
+      "            \"Works Complete\", Milestones[Works Complete],",
+      "            \"KPI Date\", Milestones[KPI Date],",
+      "            \"Milestone Progress Status\", Milestones[Milestone_NameStatus]",
+      "        ),",
+      "        \"KPI Revenue G2 \", CALCULATE ( [Plan Revenue G2] )",
+      "    )",
+      ")"
+    ]
+  },
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeShortDatePattern\" />"
+    }
+  ]
+}

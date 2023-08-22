@@ -1,0 +1,14 @@
+{
+  "name": "Partition",
+  "dataView": "full",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = DWH,",
+      "    dbo_viw_RoleModel_PL = Source{[Schema=\"dbo\",Item=\"viw_RoleModel_PL\"]}[Data]",
+      "in",
+      "    dbo_viw_RoleModel_PL"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Max Fact Date",
+  "expression": [
+    "VAR _LAST_FACT_DATE =",
+    "    MAX ( FactHours[DateKey] )",
+    "RETURN",
+    "    CALCULATE (",
+    "        MAX ( Dates[Date] ),",
+    "        KEEPFILTERS ( Dates[DateKey] = _LAST_FACT_DATE )",
+    "    )"
+  ],
+  "formatString": "dd.MM.yyyy",
+  "displayFolder": "11. QBR Reporting"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "IsExternalSubcontractTribe",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "IsExternalSubcontractTribe"
+}

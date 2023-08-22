@@ -1,0 +1,6 @@
+{
+  "name": "ClosedDate",
+  "dataType": "dateTime",
+  "sourceColumn": "ClosedDate",
+  "formatString": "dd.MM.yyyy"
+}

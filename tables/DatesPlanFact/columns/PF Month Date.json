@@ -1,0 +1,15 @@
+{
+  "type": "calculatedTableColumn",
+  "name": "PF Month Date",
+  "dataType": "dateTime",
+  "isNameInferred": false,
+  "isDataTypeInferred": true,
+  "sourceColumn": "[Month Date]",
+  "formatString": "MMMM yyyy",
+  "annotations": [
+    {
+      "name": "Format",
+      "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1049\" Group=\"YearMonth\" FormatString=\"MMMM yyyy\" /></DateTimes></Format>"
+    }
+  ]
+}

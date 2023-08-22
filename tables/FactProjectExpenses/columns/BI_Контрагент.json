@@ -1,0 +1,5 @@
+{
+  "name": "BI_Контрагент",
+  "dataType": "string",
+  "sourceColumn": "BI_CONTRACTOR"
+}
